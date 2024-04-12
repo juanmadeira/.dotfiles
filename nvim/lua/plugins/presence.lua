@@ -1,3 +1,4 @@
+-- plugin: presence
 return {
     "andweeb/presence.nvim",
     config = function()
