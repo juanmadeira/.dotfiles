@@ -1,5 +1,3 @@
-# ~/AppData/Local/nvim/init.lua
-
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -13,6 +11,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-require("vim-options")
 require("lazy").setup("plugins")
+
+-- vim-options
+require("vim-options")
