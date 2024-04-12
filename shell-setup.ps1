@@ -1,7 +1,7 @@
 <#
 	Script de configuração do meu powershell.
 	
-	— Juan
+	— juan.
 	Data: 2024-04-11
 
 	Última atualização: 2024-04-11
