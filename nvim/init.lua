@@ -1,3 +1,5 @@
+-- windows: ~/%localappdata%/nvim
+
 -- vim-options
 require("vim-options")
 
