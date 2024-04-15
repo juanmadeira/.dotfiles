@@ -1,6 +1,5 @@
-// ~/%localappdata%/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
-
 {
+    "_comment": "~/%localappdata%/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState",
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
