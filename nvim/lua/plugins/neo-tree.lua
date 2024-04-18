@@ -1,4 +1,3 @@
--- plugin: neo-tree
 return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -7,7 +6,12 @@ return {
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
-    config = function()    
-        vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
+    config = function()
+        require("neo-tree").setup({
+            window = {
+                position = "left",
+                width = 25,
+            },
+        })
     end
 }

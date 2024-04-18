@@ -1,4 +1,3 @@
--- plugin: Comment
 return {
     "numToStr/Comment.nvim",
     lazy= false,
