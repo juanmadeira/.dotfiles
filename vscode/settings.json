@@ -6,6 +6,7 @@
         ".env.local": ".env*",
         ".env": ".env*"
     },
+    "explorer.compactFolders": false,
 
     "editor.minimap.enabled": true,
     "editor.minimap.showSlider": "always",
