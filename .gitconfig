@@ -1,4 +1,4 @@
-# %userprofile%/.gitconfig
+# ~/.gitconfig
 
 [user]
 	name = juan
