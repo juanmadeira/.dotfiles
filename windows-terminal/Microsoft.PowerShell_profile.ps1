@@ -1,7 +1,7 @@
-# ~/Documents/WindowsPowerShell
+# %userprofile%/Documents/WindowsPowerShell
 
 # starship
 Invoke-Expression (&starship init powershell)
 
 # PSFzf
-Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'

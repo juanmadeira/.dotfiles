@@ -1,4 +1,4 @@
-# ~/.config/starship.toml
+# %userprofile%/.config/starship.toml
 
 format = """
 [ ヾ•ω•`o ](bg:#171A1D fg:#959da5)\
