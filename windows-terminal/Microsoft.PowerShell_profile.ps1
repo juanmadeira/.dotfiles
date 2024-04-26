@@ -1,4 +1,4 @@
-# %userprofile%/Documents/WindowsPowerShell
+# ~/Documents/WindowsPowerShell
 
 # starship
 Invoke-Expression (&starship init powershell)
