@@ -11,12 +11,11 @@ set.tabstop = 4
 set.shiftwidth = 4
 set.softtabstop = 4
 
-
 -- mappings
 vim.g.mapleader = " "
 
-map("n", "<A-z>", ":set wrap!<CR>", {}) -- toggle word wrapping
-map("n", "<C-b>", ":Neotree toggle<CR>", {}) -- toggle neotree
+map("n", "<A-z>", ":set wrap!<CR>", {}) -- alterna quebra de linha
+map("n", "<C-b>", ":Neotree toggle<CR>", {}) -- alterna neotree
 
 -- plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
