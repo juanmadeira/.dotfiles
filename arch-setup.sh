@@ -16,8 +16,8 @@ makepkg -si;
 
 # waybar
 sudo pacman -S waybar;
-sudo cp ~/.dotfiles/waybar ~/.config/;
-yay -S ttf-hack-nerd;
+sudo cp -r ~/.dotfiles/waybar ~/.config/;
+yay -S ttf-ubuntu-mono-nerd;
 
 # outros pacotes
-sudo pacman -S btop neofetch lazygit firefox;
+sudo pacman -S btop neofetch fzf lazygit firefox;
