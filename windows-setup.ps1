@@ -16,8 +16,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-Res
 # Instalação do Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
-    # Importação dos pacotes do Chocolatey
-    choco install "packages/chocolatey-packages.config";
+	# Importação dos pacotes do Chocolatey
+	choco install "packages/chocolatey-packages.config";
 
 # Instalação do WinGet
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe;
