@@ -1,5 +1,12 @@
-# clonar .dotfiles
-git clone https://github.com/juanmadeira/.dotfiles;
+#
+#	script de configuração do meu hyprland
+#   [!!!] feito para ser executado após a instalação completa do arch com hyprwm
+#
+#	— juan.
+#	data: 2024-06-02
+#
+#	última atualização: 2024-06-02
+#
 
 # instalar yay
 sudo pacman -Sy --needed git base-devel;
@@ -9,5 +16,8 @@ makepkg -si;
 
 # waybar
 sudo pacman -S waybar;
-sudo cp ~/.dotfiles/waybar ~/.config/
+sudo cp ~/.dotfiles/waybar ~/.config/;
 yay -S ttf-hack-nerd;
+
+# outros pacotes
+sudo pacman -S btop neofetch lazygit firefox;
