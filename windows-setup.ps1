@@ -13,6 +13,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-Res
 	# importação dos pacotes do scoop
 	scoop import "packages/scoop-packages.json";
 
+	# neovim
+	# cp -r nvim %localappdata%;
+
 # instalação do chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
