@@ -14,21 +14,19 @@ git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
 
-# pip
-sudo pacman -S python python-pip;
-python3 -m venv .venv;
-source .venv/bin/activate;
-pip install requests;
-    # pywal
-    sudo pip3 install pywal;
-deactivate;
-
 # waybar
 sudo pacman -S waybar;
 sudo cp -r ~/.dotfiles/waybar ~/.config/;
 yay -S ttf-ubuntu-mono-nerd;
 
+# pip
+sudo pacman -S python python-pip python-pipx;
+pipx ensurepath;
 
+# wallpaper setting
+yay -S swww;
+pipx install waypaper pywal colorz;
+wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
 
 # outros pacotes
 sudo pacman -S btop neofetch fzf lazygit firefox;
