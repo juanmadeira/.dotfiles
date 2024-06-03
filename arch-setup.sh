@@ -27,13 +27,22 @@ yay -S ttf-ubuntu-mono-nerd;
 sudo pacman -S rofi;
 sudo cp -r ~/.dotfiles/rofi ~/.config/;
 
+# eww [compilar]
+cd /opt;
+git clone https://github.com/elkowar/eww;
+cd eww;
+cargo build --release --no-default-features --features=wayland;
+cd target/release;
+chmod +x ./eww;
+cd ~;
+
 # pip
 sudo pacman -S python python-pip python-pipx;
 pipx ensurepath;
 
 # wallpaper setting
 
-    # compilar o swww do código fonte
+    # swww [compilar]
     cd /opt;
     git clone https://github.com/LGFae/swww;
     cd swww;
