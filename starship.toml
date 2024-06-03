@@ -2,7 +2,7 @@
 # https://starship.rs
 
 format = """
-[ ヾ•ω•`o ](bg:#171a1d fg:#959da5)\
+[ •ω•`o ](bg:#171a1d fg:#959da5)\
 [](bg:#171a1d fg:#171a1d)\
 $directory\
 [](fg:#171a1d bg:#24292e)\
