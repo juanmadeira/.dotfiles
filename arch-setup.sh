@@ -44,4 +44,4 @@ pipx install waypaper pywal colorz;
 wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
 
 # outros pacotes
-sudo pacman -S btop neofetch fzf lazygit firefox;
+sudo pacman -S btop fzf github-cli lazygit opera neofetch starship;
