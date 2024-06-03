@@ -14,10 +14,18 @@ git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
 
+# hyprconfig
+sudo cp -r ~/.dotfiles/hypr ~/.config/;
+
 # waybar
 sudo pacman -S waybar;
 sudo cp -r ~/.dotfiles/waybar ~/.config/;
 yay -S ttf-ubuntu-mono-nerd;
+
+
+# rofi (menu launcher)
+sudo pacman -S rofi;
+sudo cp -r ~/.dotfiles/rofi ~/.config/;
 
 # pip
 sudo pacman -S python python-pip python-pipx;
