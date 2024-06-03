@@ -1,5 +1,5 @@
 # .dotfiles do juan =)
-Bem-vindo(a/e) ao meu repositório de .dotfiles! Aqui manterei arquivos de configuração para os meus sistemas Windows 10 e em breve Arch Linux (Hyprland).
+bem-vindo(a/e) ao meu repositório de .dotfiles! Aqui manterei arquivos de configuração para os meus sistemas windows 10 e arch linux (hyprland).
 >ヾ(•ω•`)o
 
 ## clone o repositório
