@@ -10,4 +10,4 @@ git clone https://github.com/juanmadeira/.dotfiles
 ## screenshots
 > windows 10:
 
-![screenshot](.screenshots/screenshot.png)
+![windows 10 screenshot](.screenshots/windows-screenshot.png)
