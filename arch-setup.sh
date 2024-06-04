@@ -22,10 +22,12 @@ sudo pacman -S waybar;
 sudo cp -r ~/.dotfiles/waybar ~/.config/;
 yay -S ttf-ubuntu-mono-nerd;
 
-
 # rofi (menu launcher)
 sudo pacman -S rofi;
 sudo cp -r ~/.dotfiles/rofi ~/.config/;
+
+    # rofi scripts
+    # [https://github.com/niraj998/Rofi-Scripts]
 
 # eww [compilar]
 cd /opt;
@@ -35,6 +37,9 @@ cargo build --release --no-default-features --features=wayland;
 cd target/release;
 chmod +x ./eww;
 cd ~;
+
+    # eww widgets
+    # barra de status [https://github.com/Saimoomedits/eww-widgets]
 
 # pip
 sudo pacman -S python python-pip python-pipx;
