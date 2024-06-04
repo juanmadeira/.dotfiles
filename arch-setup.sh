@@ -51,7 +51,7 @@ pipx ensurepath;
     cd /opt;
     git clone https://github.com/LGFae/swww;
     cd swww;
-    cargo build --release;
+    sudo cargo build --release;
     cd target/release;
     sudo cp -r swww ~/.local/bin;
     sudo cp -r swww-daemon ~/.local/bin;
