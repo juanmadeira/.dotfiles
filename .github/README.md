@@ -6,11 +6,6 @@
 bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas windows 10 e arch linux (hyprland).
 >ヾ(•ω•`)o
 
-## clone o repositório
-```code
-git clone https://github.com/juanmadeira/.dotfiles
-```
-
 #### packages (pacman)
 |                 |                |
 | --------------- | -------------- |
@@ -23,4 +18,7 @@ git clone https://github.com/juanmadeira/.dotfiles
 | editor          | neovim, vscode |
 | música          | mpd, spotify   |
 
-## screenshots
+#### clone o repositório
+```code
+git clone https://github.com/juanmadeira/.dotfiles
+```
