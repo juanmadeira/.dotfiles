@@ -29,7 +29,7 @@ sudo cp -r ~/.dotfiles/rofi ~/.config/;
 
 # eww [compilar]
 cd /opt;
-git clone https://github.com/elkowar/eww;
+sudo git clone https://github.com/elkowar/eww;
 cd eww;
 cargo build --release --no-default-features --features=wayland;
 cd target/release;
