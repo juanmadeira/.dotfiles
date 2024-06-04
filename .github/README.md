@@ -7,8 +7,7 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 git clone https://github.com/juanmadeira/.dotfiles
 ```
 
-#### programas que eu uso
-
+#### packages (pacman)
 |                 |                |
 | --------------- | -------------- |
 | wm              | hyprland       |
@@ -23,4 +22,4 @@ git clone https://github.com/juanmadeira/.dotfiles
 ## screenshots
 > windows 10:
 
-![windows 10 screenshot](.screenshots/windows-screenshot.png)
+![windows 10 screenshot](../.screenshots/windows-screenshot.png)
