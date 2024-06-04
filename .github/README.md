@@ -1,9 +1,8 @@
 # .dotfiles do juan =)
 <p align="center">
-    <i align="right">windows 10:</i>
-	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/.screenshots/windows-screenshot.png" align="right" width="400px">
+	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/.screenshots/windows-screenshot.png" align="right" width="400px" alt="windows screenshot" />
 </p>
-bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas windows 10 e arch linux (hyprland).
+bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e windows 10.
 >ヾ(•ω•`)o
 
 #### packages (pacman)
