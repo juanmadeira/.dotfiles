@@ -1,4 +1,8 @@
 # .dotfiles do juan =)
+<p align="center">
+    <p style="color: aqua; font-size: 0.75em;">windows 10:</p>
+	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/.screenshots/windows-screenshot.png" align="right" width="400px">
+</p>
 bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas windows 10 e arch linux (hyprland).
 >ヾ(•ω•`)o
 
@@ -20,6 +24,3 @@ git clone https://github.com/juanmadeira/.dotfiles
 | música          | mpd, spotify   |
 
 ## screenshots
-> windows 10:
-
-![windows 10 screenshot](../.screenshots/windows-screenshot.png)
