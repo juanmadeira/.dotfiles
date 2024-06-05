@@ -128,13 +128,13 @@
             "red": "#C50F1F",
             "white": "#F2F2F2",
             "yellow": "#E0AF68",
-            "brightBlack": "#0C0C0C",
+            "brightBlack": "#808080",
             "brightBlue": "#7AA2F7",
             "brightCyan": "#008B8B",
             "brightGreen": "#13A10E",
             "brightPurple": "#881798",
             "brightRed": "#C50F1F",
-            "brightWhite": "#F2F2F2",
+            "brightWhite": "#FFFFFF",
             "brightYellow": "#E0AF68"
         }
     ],
