@@ -5,7 +5,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-06-02
+#	última atualização: 2024-06-08
 #
 
 # yay
@@ -25,9 +25,10 @@ yay -S ttf-ubuntu-mono-nerd;
 # rofi (menu launcher)
 sudo pacman -S rofi;
 sudo cp -r ~/.dotfiles/rofi ~/.config/;
+yay -S ttf-fira-code;
 
     # rofi scripts
-    # [https://github.com/niraj998/Rofi-Scripts]
+    # música, wifi, mount, screenshot, launcher [https://github.com/niraj998/Rofi-Scripts]
 
 # eww [compilar]
 cd /opt;
