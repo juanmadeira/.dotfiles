@@ -45,7 +45,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "jutipia",
+            "colorScheme": "vintage",
             "elevate": true,
             "experimental.retroTerminalEffect": false,
             "font": 
@@ -112,30 +112,27 @@
     "schemes": 
     [
         {
-            "name": "jutipia",
-
+            "name": "vintage",
             "cursorColor": "#FFFFFF",
             "selectionBackground": "#FFFFFF",
-
-            "background": "#0C0C0C",
-            "foreground": "#CCCCCC",
-
-            "black": "#0C0C0C",
-            "blue": "#7AA2F7",
-            "cyan": "#008B8B",
-            "green": "#13A10E",
-            "purple": "#881798",
-            "red": "#C50F1F",
-            "white": "#F2F2F2",
-            "yellow": "#E0AF68",
+            "background": "#000000",
+            "foreground": "#C0C0C0",
             "brightBlack": "#808080",
-            "brightBlue": "#7AA2F7",
-            "brightCyan": "#008B8B",
-            "brightGreen": "#13A10E",
-            "brightPurple": "#881798",
-            "brightRed": "#C50F1F",
+            "brightBlue": "#0000FF",
+            "brightCyan": "#00FFFF",
+            "brightGreen": "#00FF00",
+            "brightPurple": "#FF00FF",
+            "brightRed": "#FF0000",
             "brightWhite": "#FFFFFF",
-            "brightYellow": "#E0AF68"
+            "brightYellow": "#FFFF00",
+            "black": "#000000",
+            "blue": "#000080",
+            "cyan": "#008080",
+            "green": "#008000",
+            "purple": "#800080",
+            "red": "#800000",
+            "white": "#C0C0C0",
+            "yellow": "#808000"
         }
     ],
     "themes": []
