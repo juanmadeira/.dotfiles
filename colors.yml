@@ -1,24 +1,24 @@
 terminal_colors:
-  name: 'jutipia'
-  cursorColor: '#FFFFFF'
-  selectionBackground: '#FFFFFF'
-  background: '#0C0C0C'
-  foreground: '#CCCCCC'
+  name: 'vintage',
+  cursorColor: '#FFFFFF',
+  selectionBackground: '#FFFFFF',
+  background: '#000000',
+  foreground: '#C0C0C0',
   bright:
-    black: '#808080'
-    blue: '#7AA2F7'
-    cyan: '#008B8B'
-    green: '#13A10E'
-    purple: '#881798'
-    red: '#C50F1F'
-    white: '#FFFFFF'
-    yellow: '#E0AF68'
+    brightBlack: '#808080',
+    brightBlue: '#0000FF',
+    brightCyan: '#00FFFF',
+    brightGreen: '#00FF00',
+    brightPurple: '#FF00FF',
+    brightRed: '#FF0000',
+    brightWhite: '#FFFFFF',
+    brightYellow: '#FFFF00',
   normal:
-    black: '#0C0C0C'
-    blue: '#7AA2F7'
-    cyan: '#008B8B'
-    green: '#13A10E'
-    purple: '#881798'
-    red: '#C50F1F'
-    white: '#F2F2F2'
-    yellow: '#E0AF68'
+    black: '#000000',
+    blue: '#000080',
+    cyan: '#008080',
+    green: '#008000',
+    purple: '#800080',
+    red: '#800000',
+    white: '#C0C0C0',
+    yellow: '#808000'
