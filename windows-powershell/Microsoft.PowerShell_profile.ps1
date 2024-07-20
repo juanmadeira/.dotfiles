@@ -12,5 +12,7 @@ if (Test-Path($ChocolateyProfile)) {
 # aliases
 function ~ { cd ~ }
 function .. { cd .. }
-function gt { D:\Documents\documentos\programas\_cli\gt\gt.exe }
 function caderninho { cd D:\Documents\documentos\caderninho }
+
+New-Alias -Name gt -Value D:\Documents\documentos\programas\_cli\gt\gt.exe
+
