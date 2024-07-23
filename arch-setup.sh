@@ -5,7 +5,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-06-08
+#	última atualização: 2024-07-23
 #
 
 # yay
