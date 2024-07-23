@@ -1,350 +1,262 @@
-;; Variables
-(defpoll clock_time :interval "5m" "date +\%I")
-(defpoll clock_minute :interval "5s" "date +\%M")
-(defpoll clock_date :interval "10h" "date '+%d/%m'")
-(defpoll volume_percent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
-(defpoll battery :interval "15s" "./scripts/battery --bat")
-(defpoll battery_status :interval "1m" "./scripts/battery --bat-st")
-(defpoll memory :interval "15s" "scripts/memory")
-(defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
-(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
-(defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-(defvar vol_reveal false)
-(defvar br_reveal false)
-(defvar music_reveal false)
-(defvar wifi_rev false)
-(defvar time_rev false)
-(deflisten workspace "scripts/workspace")
 
-(defvar eww "$HOME/.local/bin/eww/eww -c $HOME/.config/eww/bar")
+;;; ┬ ┬┬┌┬┐┌─┐┌─┐┌┬┐┌─┐
+;;; ││││ │││ ┬├┤  │ └─┐
+;;; └┴┘┴─┴┘└─┘└─┘ ┴ └─┘
+
+;; <-- Launcher -->
+(defwidget launcher []
+	(box :orientation "h" :space-evenly "false" :spacing 5 :class "launcher"
+  (button :tooltip "Launcher" :onclick "./scripts/popup srch" :class "search" "")))
 
 
-(defpoll COL_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --COL")
-(defpoll ESSID_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --ESSID")
-(defpoll WLAN_ICON :interval "1m" "~/.config/eww/bar/scripts/wifi --ICON")
+;; <-- Workspaces Monitor0 -->
+(defwidget workspc0 []
+	(box :halign "center" :valign "center"
+	(literal :content workspaces0)))
 
+(deflisten workspaces0 "./scripts/workspace 0")
 
-(defpoll song :interval "2s"  "~/.config/eww/bar/scripts/music_info --song")
-(defpoll song_artist :interval "2s"  "~/.config/eww/bar/scripts/music_info --artist")
-(defpoll current_status :interval "1s"  "~/.config/eww/bar/scripts/music_info --time")
-(defpoll song_status :interval "2s"  "~/.config/eww/bar/scripts/music_info --status")
-(defpoll cover_art :interval "2s"  "~/.config/eww/bar/scripts/music_info --cover")
+;; <-- Workspaces Monitor1 -->
+(defwidget workspc1 []
+	(box :halign "center" :valign "center"
+	(literal :content workspaces1)))
 
-(defpoll calendar_day :interval "20h" "date '+%d'")
-(defpoll calendar_year :interval "20h" "date '+%Y'")
+(deflisten workspaces1 "./scripts/workspace 1")
 
-;; widgets
+;; <-- Time	-->
+(defwidget sbtime []
+	(box	:orientation "h" :halign "end" :space-evenly "false" :spacing 2 :class "time"
+;;  (label	:class "timeicon"	:text "󱑎")
+	(label	:class "timefont"	:text sbtime)))
 
-(defwidget wifi [] 
-  (eventbox :onhover "${eww} update wifi_rev=true"
-			  :onhoverlost "${eww} update wifi_rev=false"
-		(box :vexpand "false" :hexpand "false" :space-evenly "false"
-				(button :class "module-wif" :onclick "networkmanager_dmenu" :wrap "false" :limit-width 12 :style "color: ${COL_WLAN};" WLAN_ICON)
-	(revealer :transition "slideright"
-			  :reveal wifi_rev
-			  :duration "350ms"
-	(label    :class "module_essid"
-			  :text ESSID_WLAN
-			  :orientation "h"
-			  )))))
+(defpoll sbtime	:interval "45s"	"date '+%H:%M'")
 
+;; <-- date	-->
+(defwidget sbdate []
+	(box	:orientation "h" :halign "end" :space-evenly "false" :spacing 5 :class "date"
+;;	(label	:class "dateicon"	:text "󰭦")
+	(label	:class "datefont"	:text sbdatev)))
 
-(defwidget workspaces []
-  (literal :content workspace))
+(defpoll sbdatev	:interval "24h"	"date '+%d %b \(%a\)'")
 
+;; <-- Music -->
+(defwidget msc []
+	(box :orientation "h" :space-evenly "false" :class "music"
+	(revealer :transition "slideright" :reveal mscex :duration "200ms"
+	(box :orientation "h"
+	(button :onclick "eww update mscex=false && eww update mscco=true" :class "musicicon" "󰎅")))
+	(revealer :transition "slideright" :reveal mscco :duration "200ms"
+	(box :orientation "h" :spacing 3 :space-evenly "false"
+	(button :onclick "eww update mscex=true && eww update mscco=false" :class "musicicon" "󰎄")
+	(button :class "previcon"  :onclick "~/.config/eww/scripts/music previous" "󰅁" )
+	(button :class "toggleicon"  :onclick "~/.config/eww/scripts/music toggle" playpause )
+	(button :class "nexticon"  :onclick "~/.config/eww/scripts/music next" "󰅂" )
+	(label	:class "playlist"	:limit-width 20 :text playlist)
+	(label	:class "title"	:limit-width 20 :text title)))))
 
-(defwidget bat []
-		(box :class "bat_module" :vexpand "false" :hexpand "false" 
-            (circular-progress :value battery
-                :class "batbar"
-                :thickness 4
-            (button 
-                :class "iconbat"
-                :limit-width 2
-                :tooltip "battery on ${battery}%"
-                :show_truncated false
-                :onclick "$HOME/.config/eww/bar/scripts/pop system"
-                :wrap false
-                ""))))
+(defpoll title		:interval "1s"  "~/.config/eww/scripts/music title")
+(defpoll playpause	:interval "1s"  "~/.config/eww/scripts/music statusicon")
+(defpoll playlist	:interval "1s"	"~/.config/eww/scripts/music playlist")
+(defvar mscex true)
+(defvar mscco false)
 
+;; <-- etc -->
+(defwidget etc []
+	(box :orientation "h" :space-evenly "false" :halign "end" :class "etc"
+	(revealer :transition "slideright" :reveal etcex :duration "200ms"
+	(box :orientation "h"
+	(button :onclick "eww update etcex=false && eww update etcco=true" :class "etcicon" "󰬨")))
+	(revealer :transition "slideright" :reveal etcco :duration "200ms"
+	(box :orientation "h" :spacing 0 :space-evenly "false" :valign "center" :halign "center"
+	(sbpkg)
+	(sbram)
+	(sbrfs)
+	(button :onclick "eww update etcex=true && eww update etcco=false" :class "etcicon" "󰬪")))))
 
-(defwidget mem []
-		(box :class "mem_module" :vexpand "false" :hexpand "false" 
-            (circular-progress :value memory
-                :class "membar"
-                :thickness 4
-            (button 
-                :class "iconmem"
-                :limit-width 2
-                :tooltip "using ${memory}% ram"
-                :onclick "$HOME/.config/eww/bar/scripts/pop system"
-                :show_truncated false
-                :wrap false
-                ""))))
+(defvar etcex true)
+(defvar etcco false)
 
+;; <-- Pkg -->
+(defwidget sbpkg []
+	(box :class "package" :tooltip "Packages" "󰳡${update} 󰮯${sbpkg}"  ))
 
+(defpoll sbpkg	:interval "6h"	"pacman -Qq | wc -l")
+(defpoll update		:interval "6h"  "~/.config/eww/scripts/update")
 
-(defwidget sep []
-  (box :class "module-2" :vexpand "false" :hexpand "false"
-    (label :class "separ" :text "|")))
+;; <-- Ram -->
+(defwidget sbram []
+	(box :class "ram" :tooltip "RAM usage" "󰘚${sbram}M"))
 
-(defwidget clock_module []
-  (eventbox :onhover "${eww} update time_rev=true"
-			  :onhoverlost "${eww} update time_rev=false"
-    (box :class "module" :space-evenly "false" :orientation "h" :spacing "3" 
-      (label :text clock_time :class "clock_time_class" )
-      (label :text "" :class "clock_time_sep" )
-      (label :text clock_minute :class "clock_minute_class")
-	  (revealer :transition "slideleft"
-			  :reveal time_rev
-			  :duration "350ms"
-      (button :class "clock_date_class"
-             :onclick "$HOME/.config/eww/bar/scripts/pop calendar" clock_date
-        )
-  ))))
-  
-(defwidget volume []
-  (eventbox :onhover "${eww} update vol_reveal=true"
-			  :onhoverlost "${eww} update vol_reveal=false"
-  (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
-	(button   :onclick "scripts/pop audio"   :class "volume_icon" "")
-	(revealer :transition "slideleft"
-			  :reveal vol_reveal
-			  :duration "350ms"
-	(scale    :class "volbar"
-			  :value volume_percent
-			  :orientation "h"
-			  :tooltip "${volume_percent}%"
-			  :max 100
-			  :min 0
-			  :onchange "amixer -D pulse sset Master {}%" )))))
+(defpoll sbram	:interval "10s"	"free -m | grep Mem | awk '{print $3}'")
 
+;; <-- Refresh -->
+(defwidget sbrfs []
+	(button :onclick "bspc wm -r" :tooltip "BSPWM Restart" :class "reload" "󰦛"))
+
+;; <-- Wifi	-->
+(defwidget sbnet []
+  (box :space-evenly "false" :class "internet"
+  (button :class "ethicon" :onclick "./scripts/popup wire" :tooltip wirename  wire)
+  (eventbox	:onhover "eww update wifinm=true" 		:onhoverlost "eww update wifinm=false"
+	(box		:orientation "h"	:space-evenly "false"	:spacing 5
+	(revealer	:transition "slideright" :reveal wifinm		:duration "400ms"
+	(label 		:class "wifiname" :text wname))
+	(button		:onclick "~/.config/eww/scripts/popup wifi"	:class "wifiicon" sbwifi)))))
+
+(defvar wifinm false)
+(defpoll sbwifi :interval "1m" "scripts/sbwifi icon")
+(defpoll wname :interval "1m" "scripts/sbwifi name")
+(defpoll wire :interval "10m" "scripts/sbwifi wired")
+(defpoll wirename :interval "1h" "scripts/sbwifi wname")
+
+;; <-- Bluetooth -->
+(defwidget sbbt []
+	(eventbox	:onhover "eww update btnm=true" 		:onhoverlost "eww update btnm=false" :class "bluetooth"
+	(box		:orientation "h"	:space-evenly "false"	:spacing 5
+	(revealer	:transition "slideright" :reveal btnm		:duration "500ms"
+	(label 		:class "bluename" 	:text btname))
+	(button		:onclick "blueberry"	:class "blueicon" btic))))
+
+(defvar btnm false)
+(defpoll btic :interval "1s" "./scripts/sbbt icon")
+(defpoll btname :interval "1s" "./scripts/sbbt name")
+
+;; <-- Brightness -->
 (defwidget bright []
-  (eventbox :onhover "${eww} update br_reveal=true" :onhoverlost "${eww} update br_reveal=false"
-  (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
-    (label :text "" :class "bright_icon" :tooltip "brightness")
-	(revealer :transition "slideleft"
-			  :reveal br_reveal
-			  :duration "350ms"
-	(scale    :class "brightbar"
-			  :value brightness_percent
-			  :orientation "h"
-			  :tooltip "${brightness_percent}%"
-			  :max 100
-			  :min 0
-			  :onchange "brightnessctl set {}%" )))))
+	(eventbox	:onscroll "./scripts/sbbri {}"
+  (label :class "briicon" :text "" :tooltip brightnes )))
 
+(defpoll brightnes :interval "5m" "xbacklight -get | cut -d \".\" -f 1 " )
+(defvar bright false)
 
+;; <-- Volume	-->
+(defwidget sbvol []
+	(eventbox	:onscroll "./scripts/sbvol {}"
+	(box		:orientation "h"	:space-evenly "false"
+	(button		:class "volicon"		:onclick "./scripts/popup audio" volicon)
+	(label		:class "volperc"		:text "${volv}%"))))
 
-	;;  Music 
-(defwidget music [] 
-  (eventbox :onhover "${eww} update music_reveal=true"
-			  :onhoverlost "${eww} update music_reveal=false"
-		(box :class "module-2" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
-			(box :class "song_cover_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
-			(button :class "song" :wrap "true" :onclick "~/.config/eww/bar/scripts/pop music" song)
-	    (revealer :transition "slideright"
-			      :reveal music_reveal
-			      :duration "350ms"
-          (box :vexpand "false" :hexpand "false" :oreintation "h" 
-                    (button :class "song_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev" "")
-					(button :class "song_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle" song_status)
-					(button :class "song_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next" ""))))))
+(deflisten volv :initial "0" "./scripts/sbvol percent")
+(defpoll volicon	:interval "10m"	"./scripts/sbvol icon")
 
+;; <-- Battery	-->
+(defwidget sbbat []
+	(box	:orientation "h"	:space-evenly "false" :class "battery"
+	(label	:class "baticon"		:halign "end"		:text sbbat)
+	(label	:class "batperc"		:halign "end"		:text "${batv}%")))
 
+(defpoll sbbat	:interval "10m"	"scripts/sbbat icon")
+(defpoll batv	:interval "5m"	"scripts/sbbat percent")
 
-(defwidget left []
-	(box :orientation "h" 
-		 :space-evenly false  
-         :halign "end"
-		 :class "left_modules"
-(bright)
-(volume)
-(wifi)
-(sep)
-(bat)
-(mem)
-(sep)
-(clock_module)))
+;; <-- Power -->
+(defwidget sbpower []
+	(eventbox	:onhover "eww update sbpower=true"	:onhoverlost "eww update sbpower=false"
+	(box		:orientation "h"	:space-evenly "false" :vexpand "false" :class "power"
+	(revealer	:transition "slideright"	:reveal sbpower		:duration "550ms"
+	(box		:orientation "h"	:space-evenly "false"
+  (button		:class "restart" :onclick "reboot"	"󰜉")
+	(button		:class "logout" :onclick "killall bspwm" "󰗽")
+	(button		:class "lock" :onclick "betterlockscreen -l"	"󰌾")))
+	(button		:class "shutdown" :onclick "shutdown now"	"󰐥"))))
 
+(defvar sbpower false)
 
-(defwidget right []
-	(box :orientation "h" 
-		 :space-evenly false  
-         :halign "start"
-		 :class "right_modules"
-(workspaces)))
-
-
-(defwidget center []
-	(box :orientation "h" 
-		 :space-evenly false  
-         :halign "center"
-		 :class "center_modules"
-(music)))
-
-(defwidget bar_1 []
-  (box :class "bar_class"
-       :orientation "h"
-  (right)
-  (center)
-  (left)
-    ))
-
-(defwindow bar
-          :geometry (geometry :x "0%"
-                       :y "9px"
-                       :width "98%"
-                       :height "30px"
-                       :anchor "top center")
-          :stacking "fg"
-          :windowtype "dock"
-  (bar_1))
-  
-(defwidget system []
-  (box :class "sys_win" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 0
-  (box :class "sys_bat_box" :orientation "h" :space-evenly "false"
-      (circular-progress :value battery
-                :class "sys_bat"
-                :thickness 9
-            (label :text ""
-                :class "sys_icon_bat"
-                :limit-width 2
-                :show_truncated false
-                :wrap false))
-            (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
-            (label :text "battery"
-                :halign "start"
-                :class "sys_text_bat"
-                :limit-width 9
-                :show_truncated false
-                :wrap false)
-            (label :text "${battery}%"
-                :halign "start"
-                :class "sys_text_bat_sub"
-                :limit-width 22
-                :show_truncated false
-                :wrap false)
-            (label :text "${battery_status}"
-                :halign "start"
-                :class "sys_text_bat_sub"
-                :limit-width 22
-                :show_truncated false
-                :wrap false)))
-            (label :text "" :class "sys_sep" :halign "center")
-  (box :class "sys_mem_box" :orientation "h" :space-evenly "false" :halign "start"
-      (circular-progress :value memory
-                :class "sys_mem"
-                :thickness 9
-            (label :text ""
-                :class "sys_icon_mem"
-                :limit-width 2
-                :show_truncated false
-                :wrap false
-                :angle 0.0))
-            (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
-            (label :text "memory"
-                :halign "start"
-                :class "sys_text_mem"
-                :limit-width 9
-                :show_truncated false
-                :wrap false)
-            (label :text "${memory_used_mb} | ${memory_total_mb}mb "
-                :halign "start"
-                :class "sys_text_mem_sub"
-                :limit-width 22
-                :show_truncated false
-                :wrap false)
-            (label :text "${memory_free_mb}mb free"
-                :halign "start"
-                :class "sys_text_mem_sub"
-                :limit-width 22
-                :show_truncated false
-                :wrap false)))))
-
+;; <-- Calendar -->
 (defwidget cal []
-	(box :class "cal" :orientation "v"
-	(box :class "cal-in"
-	(calendar :class "cal" 
-			  :day calendar_day 
-			  :year calendar_year))))
+	(box :class "calbox" :orientation "v"
+	(box :class "calinbox"
+	(calendar :class "cal" :day dat ))))
+
+(defpoll dat	:interval "10h"	"date '+%d'")
+
+;;; ┬ ┬┬┌┐┌┌┬┐┌─┐┬ ┬┌─┐
+;;; │││││││ │││ ││││└─┐
+;;; └┴┘┴┘└┘─┴┘└─┘└┴┘└─┘
+
+(defwindow bar0
+	:geometry (geometry :x 0 :y 0 :height "30px" :width "100%")
+	:monitor 0
+	:reserve (struts :distance "30px" :side "top")
+	:wm-ignore false
+	:hexpand "false"
+	:vexpand "false"
+  	(bar0))
+
+(defwindow bar1
+	:geometry (geometry :x 0 :y 0 :height "45px" :width "100%")
+	:monitor 1
+	:reserve (struts :distance "30px" :side "top")
+	:wm-ignore false
+	:hexpand "false"
+	:vexpand "false"
+  	(bar1))
+
 
 (defwindow calendar
-	:geometry (geometry :x "-20px" 
-						:y "7%" 
-                        :anchor "top right"
-						:width "270px" 
-						:height "60px")
-(cal))
+	:geometry (geometry
+	:x "39%"
+	:y "40px"
+	:width "270px"
+	:height "60px")
+			(cal))
 
+;;; ┌┐ ┌─┐┬─┐  ┌─┐┌─┐┌┬┐┌─┐┌─┐┌┐┌┌─┐┌┐┌┌┬┐
+;;; ├┴┐├─┤├┬┘  │  │ ││││├─┘│ ││││├┤ │││ │
+;;; └─┘┴ ┴┴└─  └─┘└─┘┴ ┴┴  └─┘┘└┘└─┘┘└┘ ┴
 
+(defwidget bar1 []
+	(centerbox :orientation "h" :vexpand "false" :hexpand "false" :valign "center" :class "iconfont"
+		(top1)
+    (cen)
+		(end)))
 
-(defwidget audio []
-	(box :class "audio-box" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
-	(box :halign "v" :space-evenly "false" :hexpand "false" :vexpand "false"
-	(box :class "speaker_icon" :orientation "v")
-	(box :orientation "v" :halign "center" :vexpand "false" :hexpand "false"
-    (label :class "speaker_text" :text "speaker" :valign "center" :halign "left" )
-	(box :class "speaker_bar" :halign "center" :vexpand "false" :hexpand "false"
-	(scale    :value volume_percent
-              :space-evenly "false"
-			  :orientation "h"
-			  :onchange "amixer -D pulse sset Master {}%" 
-              :tooltip "volume on ${volume_percent}%"
-			  :max 100
-			  :min 0))))
-            (label :text "" :class "audio_sep" :halign "center")
-	(box :halign "v" :space-evenly "false" :hexpand "false" :vexpand "false"
-	(box :class "mic_icon" :orientation "v")
-	(box :orientation "v" :halign "center" :vexpand "false" :hexpand "false"
-    (label :class "mic_text" :text "mic" :valign "center" :halign "left" )
-	(box :class "mic_bar" :halign "center" :vexpand "false" :hexpand "false"
-	(scale    :value mic_percent
-              :space-evenly "false"
-			  :orientation "h"
-              :tooltip "mic on ${mic_percent}%"
-			  :onchange "amixer -D pulse sset Capture {}%" 
-			  :max 100
-			  :min 0))))))
+(defwidget top1 []
+	(box	:orientation "h" :space-evenly "false" :valign "center"
+  (launcher)
+;;	(label  :class "white" :text "┃")
+  (workspc1)
+  (msc)
+  ))
 
-(defwindow audio_ctl
-	:geometry (geometry :x "-20px" 
-						:y "7%" 
-                        :anchor "top right"
-						:width "280px" 
-						:height "60px")
-(audio))
+(defwidget bar0 []
+	(centerbox :orientation "h" :vexpand "false" :hexpand "false" :valign "center" :class "iconfont"
+		(top)
+    (cen)
+		(end)))
 
+(defwidget top []
+	(box	:orientation "h" :space-evenly "false"
+  (launcher)
+  (workspc0)
+  (msc)
+  ))
 
-(defwindow system
-	:geometry (geometry :x "-20px" 
-						:y "7%" 
-                        :anchor "top right"
-						:width "290px" 
-						:height "120px")
-(system))
+(defwidget cen []
+(button :onclick "./scripts/popup cal"
+  (box :orientation "h" :space-evenly "false" :halign "center" :spacing 2 :class "timedate"
+  (sbdate)
+  (label  :class "timefont" :text "❘")
+  (sbtime))))
 
+(defwidget end []
+	(box :orientation "h" :space-evenly "false" :halign "end" :spacing 0
+  (etc)
+  (control)
+  (bottom)))
 
+(defwidget control []
+	(box :orientation "h" :space-evenly false  :halign "end" :spacing 0 :class "network"
+  (sbnet)
+  (label  :class "timefont" :class "baticon" :text "❘")
+  (sbbt)))
 
-;;  Music
-(defwidget music_pop []
-		(box :class "music_pop" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
-			(box :class "music_cover_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
-			(box :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
-				(label :halign "center" :class "music" :wrap "true" :limit-width 13 :text song)
-				(label :halign "center" :class "music_artist" :wrap "true" :limit-width 15 :text song_artist)
-				(box :orientation "h" :spacing 15 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
-					(button :class "music_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev" "")
-					(button :class "music_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle" song_status)
-					(button :class "music_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next" ""))
-				(box :class "music_bar" :halign "center" :vexpand "false" :hexpand "false" :space-evenly "false"
-					(scale :onscroll "mpc -q seek {}" :min 0 :active "true" :max 100 :value current_status)))))
+(defwidget bottom []
+	(box	:orientation "h" :space-evenly false :halign "end"
+	(box	:orientation "h" :space-evenly false :halign "end" :spacing 0 :class "sysbox"
+  (bright)
+  (sbvol)
+  (sbbat))
+  (box	:orientation "h" :space-evenly false :halign "end" :class "power"
+  (sbpower))
 
-
-;;  music
-		(defwindow music_win :stacking "fg" :focusable "false" :screen 1
-			    :geometry (geometry :x "0" :y "7%" :width 428 :height 104 :anchor "top center")
-			     				(music_pop))
-
+  ))
