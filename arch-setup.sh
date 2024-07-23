@@ -14,39 +14,48 @@ git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
 
+# pip
+sudo pacman -S python python-pip python-pipx;
+pipx ensurepath;
+
+# npm
+yay -S nodejs npm;
+
+# outros pacotes
+sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
+
+# fontes e icones
+yay -S ttf-fira-code ttf-ubuntu-mono-nerd;
+sudo npm -g install material-icons@latest;
+
 # hyprconfig
 sudo cp -r ~/.dotfiles/hypr ~/.config/;
 
-# waybar
-sudo pacman -S waybar;
-sudo cp -r ~/.dotfiles/waybar ~/.config/;
-yay -S ttf-ubuntu-mono-nerd;
-
-# rofi (menu launcher)
-sudo pacman -S rofi;
-sudo cp -r ~/.dotfiles/rofi ~/.config/;
-yay -S ttf-fira-code;
-
-    # rofi scripts
-    # música, wifi, mount, screenshot, launcher [https://github.com/niraj998/Rofi-Scripts]
-
 # eww [compilar]
-cd /opt;
-sudo git clone https://github.com/elkowar/eww;
+cd ~;
+mkdir build;
+cd build;
+sudo git clone https://aur.archlinux.org/eww.git;
 cd eww;
-cargo build --release --no-default-features --features=wayland;
-cd target/release;
-chmod +x ./eww;
+gpg --recv-keys 862BA3D7D7760F13;
+makepkg -si;
 cd ~;
 
     # eww widgets
     # barra de status [https://github.com/Saimoomedits/eww-widgets]
 
-# pip
-sudo pacman -S python python-pip python-pipx;
-pipx ensurepath;
+# rofi (menu launcher)
+sudo pacman -S rofi;
+sudo cp -r ~/.dotfiles/rofi ~/.config/;
 
-# wallpaper setting
+    # rofi scripts
+    # música, wifi, mount, screenshot, launcher [https://github.com/niraj998/Rofi-Scripts]
+
+# waybar
+# sudo pacman -S waybar;
+# sudo cp -r ~/.dotfiles/waybar ~/.config/;
+
+# wallpaper
 
     # swww [compilar]
     cd /opt;
@@ -65,6 +74,3 @@ pipx ensurepath;
 
 pipx install waypaper pywal colorz;
 wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
-
-# outros pacotes
-sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
