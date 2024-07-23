@@ -29,7 +29,7 @@ yay -S ttf-fira-code ttf-ubuntu-mono-nerd;
 sudo npm -g install material-icons@latest;
 
 # hyprconfig
-sudo cp -r ~/.dotfiles/hypr ~/.config/;
+sudo cp -r ~/.dotfiles/.config/hypr ~/.config/;
 
 # eww [compilar]
 cd ~;
@@ -46,14 +46,14 @@ cd ~;
 
 # rofi (menu launcher)
 sudo pacman -S rofi;
-sudo cp -r ~/.dotfiles/rofi ~/.config/;
+sudo cp -r ~/.dotfiles/.config/rofi ~/.config/;
 
     # rofi scripts
     # música, wifi, mount, screenshot, launcher [https://github.com/niraj998/Rofi-Scripts]
 
 # waybar
 # sudo pacman -S waybar;
-# sudo cp -r ~/.dotfiles/waybar ~/.config/;
+# sudo cp -r ~/.dotfiles/.config/waybar ~/.config/;
 
 # wallpaper
 
