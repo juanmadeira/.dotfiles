@@ -1,5 +1,5 @@
 terminal_colors:
-  name: 'vintage',
+  name: 'jutipia',
   cursorColor: '#FFFFFF',
   selectionBackground: '#FFFFFF',
   background: '#000000',
