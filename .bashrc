@@ -17,4 +17,4 @@ alias ..="cd .."
 alias dots="cd ~/.dotfiles"
 
 alias update="sudo pacman -Syu"
-alias vi="neovim"
+alias vi="nvim"
