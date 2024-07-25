@@ -5,7 +5,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-07-23
+#	última atualização: 2024-07-25
 #
 
 ############
@@ -26,7 +26,7 @@ pipx ensurepath;
 yay -S nodejs npm;
 
 # fontes e icones
-yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-fira-code noto-fonts-cjk noto-fonts-emoji noto-fonts;
+yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-spacemono ttf-fira-code r-fontawesome ttf-roboto-variable noto-fonts-cjk noto-fonts-emoji noto-fonts;
 sudo npm -g install material-icons@latest;
 cd ~/.dotfiles/fonts;
 chmod +x fonts.sh;
@@ -43,6 +43,9 @@ sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
 
 # hyprland
 sudo cp -r ~/.dotfiles/.config/hypr ~/.config/;
+
+# kitty
+sudo cp -r ~/.dotfiles/.config/kitty ~/.config/;
 
 # waybar
 sudo pacman -S waybar;
@@ -63,10 +66,8 @@ sudo cp -r ~/.dotfiles/.config/rofi ~/.config/;
     sudo cp -r swww-daemon ~/.local/bin;
     cd ~;
 
-    #
     # para fazer:
     # configurar o swww -> waypaper -> pywal
-    #
 
     pipx install waypaper pywal colorz;
     wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
