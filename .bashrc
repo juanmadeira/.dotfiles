@@ -22,14 +22,14 @@ alias games="cd /games"
 
 alias c="clear"
 alias cls="clear"
+alias qt="exit"
 alias vi="nvim"
 alias lg="lazygit"
 
+alias bsu="source ~/.bashrc"
 alias update="sudo pacman -Syu"
 alias orfaos="sudo pacman -Qqtd"
 alias deleteOrfaos="sudo pacman -Qqtd | sudo pacman -Rns -"
 alias cleanup="kitty --app-id dotfiles-floating ~/.dotfiles/scripts/limpeza.sh"
-
-alias bsu="source ~/.bashrc"
 alias music='tmux new-session -s $$ "tmux source-file ~/.ncmpcpp/tsession"'
 _trap_exit() { tmux kill-session -t $$; }
