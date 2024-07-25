@@ -30,6 +30,8 @@
     "workbench.startupEditor": "none",
     "workbench.statusBar.visible": true,
 
+    "vim.disableExtension": true,
+
     "discord.enabled": false,
     "discord.removeLowerDetails": true,
     "discord.removeRemoteRepository": true,
@@ -42,5 +44,5 @@
     },
     "apc.stylesheet": {
         ".title-label > h2": "display: none;"
-    },
+    }
 }
