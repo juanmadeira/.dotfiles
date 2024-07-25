@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 
 # this script installs all fonts from the current directory on arch linux
 # https://github.com/miguelgargallo/install-arch-fonts
