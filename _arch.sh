@@ -37,8 +37,8 @@ sudo ./fonts.sh;
 cd ~;
 
 # cli apps
-sudo pacman -S btop eza fzf starship neofetch github-cli lazygit;
-yay -S cava pipes.sh cmatrix-neo-git;
+sudo pacman -S btop eza fzf starship neofetch onefetch github-cli lazygit;
+yay -S cava cbonsai cmatrix-neo-git pipes.sh; 
 pipx install pycowsay;
 
 # outros pacotes
