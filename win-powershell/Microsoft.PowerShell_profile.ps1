@@ -15,4 +15,8 @@ function .. { cd .. }
 function caderninho { cd D:\Documents\documentos\caderninho }
 function dots { cd C:\Users\juan\.dotfiles }
 
+function c { clear }
+function qt { exit }
+function lg { lazygit }
+
 New-Alias -Name gt -Value D:\Documents\documentos\programas\_cli\gt\gt.exe
