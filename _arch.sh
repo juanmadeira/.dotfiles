@@ -25,7 +25,7 @@ yay -S nodejs npm;
 sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
 
 # fontes e icones
-yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-fira-code;
+yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-fira-code noto-fonts-cjk noto-fonts-emoji noto-fonts;
 sudo npm -g install material-icons@latest;
 
 # hyprconfig
