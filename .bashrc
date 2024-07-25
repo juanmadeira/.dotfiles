@@ -14,7 +14,18 @@ eval "$(starship init bash)"
 # aliases
 alias ~="cd ~"
 alias ..="cd .."
+alias root="cd /"
 alias dots="cd ~/.dotfiles"
+alias cfg="cd ~/.config"
+alias media="cd /media"
+alias games="cd /games"
+
+alias vi="nvim"
 
 alias update="sudo pacman -Syu"
-alias vi="nvim"
+alias orfaos="sudo pacman -Qqtd"
+alias deleteOrfaos="sudo pacman -Qqtd | sudo pacman -Rns -"
+
+alias bsu="source ~/.bashrc"
+alias music='tmux new-session -s $$ "tmux source-file ~/.ncmpcpp/tsession"'
+_trap_exit() { tmux kill-session -t $$; }
