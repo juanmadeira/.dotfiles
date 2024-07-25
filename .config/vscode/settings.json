@@ -13,6 +13,11 @@
     "editor.semanticHighlighting.enabled": false,
     "editor.stickyScroll.enabled": false,
 
+    "emmet.includeLanguages": {
+        "php": "html",
+        "javascript": "html",
+    },
+
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 12,
 
@@ -23,19 +28,19 @@
     "workbench.iconTheme": "symbols",
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
-    "workbench.statusBar.visible": false,
-    
+    "workbench.statusBar.visible": true,
+
+    "discord.enabled": false,
     "discord.removeLowerDetails": true,
     "discord.removeRemoteRepository": true,
 
-    "glassit.alpha": 230,
-
     "symbols.hidesExplorerArrows": false,
     
+    "diffEditor.hideUnchangedRegions.enabled": true,
     "apc.listRow": {
         "height": 24
     },
     "apc.stylesheet": {
         ".title-label > h2": "display: none;"
-    }
+    },
 }
