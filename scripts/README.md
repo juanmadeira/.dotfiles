@@ -10,3 +10,9 @@ git clone https://github.com/miguelgargallo/install-arch-fonts
 chmod +x fonts.sh
 sudo ./fonts.sh
 ```
+
+## installupdates e limpeza
+
+```code
+https://github.com/gustavomarchesim/dotfiles
+```
