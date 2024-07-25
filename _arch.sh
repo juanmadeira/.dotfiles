@@ -23,7 +23,10 @@ sudo pacman -S python python-pip python-pipx;
 pipx ensurepath;
 
 # npm
-yay -S nodejs npm;
+sudo pacman -S nodejs npm;
+
+# php
+sudo pacman -S php apache mariadb;
 
 # fontes e icones
 yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-spacemono ttf-fira-code r-fontawesome ttf-roboto-variable noto-fonts-cjk noto-fonts-emoji noto-fonts;
@@ -33,8 +36,11 @@ chmod +x fonts.sh;
 sudo ./fonts.sh;
 cd ~;
 
+# cli apps
+sudo pacman -S btop eza fzf starship neofetch github-cli lazygit
+
 # outros pacotes
-sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
+sudo pacman -S firefox;
 
 
 #################
