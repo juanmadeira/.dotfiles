@@ -37,7 +37,9 @@ sudo ./fonts.sh;
 cd ~;
 
 # cli apps
-sudo pacman -S btop eza fzf starship neofetch github-cli lazygit
+sudo pacman -S btop eza fzf starship neofetch github-cli lazygit;
+yay -S cava pipes.sh cmatrix-neo-git;
+pipx install pycowsay;
 
 # outros pacotes
 sudo pacman -S firefox;
