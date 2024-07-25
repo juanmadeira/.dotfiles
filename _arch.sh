@@ -8,55 +8,47 @@
 #	última atualização: 2024-07-23
 #
 
+############
+### ARCH ###
+############
+
 # yay
 sudo pacman -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
 
-# pip
+# pipx
 sudo pacman -S python python-pip python-pipx;
 pipx ensurepath;
 
 # npm
 yay -S nodejs npm;
 
-# outros pacotes
-sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
-
 # fontes e icones
 yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-fira-code noto-fonts-cjk noto-fonts-emoji noto-fonts;
 sudo npm -g install material-icons@latest;
 
-# hyprconfig
+# outros pacotes
+sudo pacman -S btop firefox fzf github-cli lazygit neofetch starship;
+
+
+#################
+### HYPRLAND ###
+#################
+
+# hyprland
 sudo cp -r ~/.dotfiles/.config/hypr ~/.config/;
 
-# eww [compilar]
-cd ~;
-mkdir build;
-cd build;
-sudo git clone https://aur.archlinux.org/eww.git;
-cd eww;
-gpg --recv-keys 862BA3D7D7760F13;
-makepkg -si;
-cd ~;
-
-    # eww widgets
-    # barra de status [https://github.com/Saimoomedits/eww-widgets]
+# waybar
+sudo pacman -S waybar;
+sudo cp -r ~/.dotfiles/.config/waybar ~/.config/;
 
 # rofi (menu launcher)
 yay -Sy rofi playerctl mpc jq maim simple-mtpfs ffmpeg fuse2 wmctrl xclip;
 sudo cp -r ~/.dotfiles/.config/rofi ~/.config/;
 
-    # rofi scripts
-    # música, wifi, mount, screenshot, launcher [https://github.com/niraj998/Rofi-Scripts]
-
-# waybar
-# sudo pacman -S waybar;
-# sudo cp -r ~/.dotfiles/.config/waybar ~/.config/;
-
 # wallpaper
-
     # swww [compilar]
     cd /opt;
     git clone https://github.com/LGFae/swww;
@@ -67,10 +59,10 @@ sudo cp -r ~/.dotfiles/.config/rofi ~/.config/;
     sudo cp -r swww-daemon ~/.local/bin;
     cd ~;
 
-#
-# para fazer:
-# configurar o swww -> waypaper -> pywal
-#
+    #
+    # para fazer:
+    # configurar o swww -> waypaper -> pywal
+    #
 
-pipx install waypaper pywal colorz;
-wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
+    pipx install waypaper pywal colorz;
+    wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
