@@ -36,8 +36,13 @@ chmod +x fonts.sh;
 sudo ./fonts.sh;
 cd ~;
 
+# grub
+# xhost si:localuser:root
+# sudo -s
+# grub-customizer
+
 # cli apps
-sudo pacman -S btop eza fzf starship neofetch onefetch github-cli lazygit;
+sudo pacman -S btop eza man fzf starship neofetch onefetch github-cli lazygit;
 yay -S cava cbonsai cmatrix-neo-git pipes.sh; 
 pipx install pycowsay;
 
@@ -50,32 +55,30 @@ sudo pacman -S firefox;
 #################
 
 # hyprland
-sudo cp -r ~/.dotfiles/.config/hypr ~/.config/;
+cp -r ~/.dotfiles/.config/hypr ~/.config/;
 
 # kitty
-sudo cp -r ~/.dotfiles/.config/kitty ~/.config/;
+cp -r ~/.dotfiles/.config/kitty ~/.config/;
+
+# sddm
+sudo pacman -S sddm qt6-5compat qt6-declarative qt6-svg;
+sudo cp ~/.dotfiles/.config/sddm /usr/share/sddm/themes/;
+sudo cp ~/.dotfiles/.config/sddm/Fonts/* /usr/share/fonts/;
+sudo cp ~/.dotfiles/.config/sddm.conf /etc/;
+
+# thunar
+sudo pacman -S thunar;
+cp ~/.dotfiles/.config/xfce4 ~/.config/;
 
 # waybar
 sudo pacman -S waybar;
-sudo cp -r ~/.dotfiles/.config/waybar ~/.config/;
+cp -r ~/.dotfiles/.config/waybar ~/.config/;
 
 # rofi (menu launcher)
-yay -Sy rofi playerctl mpc jq maim simple-mtpfs ffmpeg fuse2 wmctrl xclip;
-sudo cp -r ~/.dotfiles/.config/rofi ~/.config/;
+yay -Sy rofi;
+cp -r ~/.dotfiles/.config/rofi ~/.config/;
 
-# wallpaper
-    # swww [compilar]
-    cd /opt;
-    git clone https://github.com/LGFae/swww;
-    cd swww;
-    sudo cargo build --release;
-    cd target/release;
-    sudo cp -r swww ~/.local/bin;
-    sudo cp -r swww-daemon ~/.local/bin;
-    cd ~;
-
-    # para fazer:
-    # configurar o swww -> waypaper -> pywal
-
-    pipx install waypaper pywal colorz;
-    wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
+# swww e waypaper
+yay -S swww waypaper;
+# pipx install waypaper pywal colorz;
+# wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
