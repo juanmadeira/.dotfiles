@@ -26,6 +26,7 @@ alias qt="exit"
 alias vi="nvim"
 alias lg="lazygit"
 alias ls="eza -la --icons"
+alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
 alias update="sudo pacman -Syu"
