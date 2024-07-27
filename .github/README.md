@@ -12,8 +12,8 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 | terminal        | kitty          |
 | shell           | bash           |
 | prompt          | starship       |
-| menu            | rofi           |
-| barra de status | eww            |
+| menu            | wofi           |
+| barra de status | waybar         |
 | editor          | neovim, vscode |
 | música          | mpd, spotify   |
 
