@@ -1,6 +1,7 @@
 # .dotfiles do juan =)
 >ヾ(•ω•`)o
 <p align="center">
+	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/.screenshots/hyprland-screenshot.png" align="right" width="400px" alt="hyprland screenshot"
 	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/.screenshots/windows-screenshot.png" align="right" width="400px" alt="windows screenshot" />
 </p>
 bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e windows 10.
