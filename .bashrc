@@ -26,6 +26,7 @@ alias qt="exit"
 alias vi="nvim"
 alias lg="lazygit"
 alias ls="eza -la --icons"
+alias figlet="printf '\e[1;96m'; figlet"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
