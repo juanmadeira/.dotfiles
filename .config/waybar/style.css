@@ -1,14 +1,15 @@
 window#waybar {
-    font-size: 0.8rem;
     border-radius: 0.5rem;
-    background-color: rgba(0,0,0,0);
+    font-size: 0.8rem;
     font-family: "Hack Mono Nerd Font";
+    background-color: rgba(0,0,0,0);
 }
 
 .modules-left, .modules-center {
     padding: 1px;
     border-radius: 0.5rem;
     opacity: 1;
+    color: rgba(119, 136, 153, 0.5);
     background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0, 139, 139, 0.5));
 }
 
@@ -17,6 +18,17 @@ window#waybar {
     border-radius: 0.5rem;
     opacity: 1;
     background-color: rgba(0,0,0,0.5);
+}
+
+tooltip {
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    background-color: rgba(0,0,0,0.5);
+}
+
+tooltip * {
+    padding: 2.5px;
+    color: rgb(119, 136, 153);
 }
 
 /* left */
@@ -38,7 +50,19 @@ window#waybar {
     background-color: rgba(0,0,0,0.5);
 }
 
-/* right */        
+/* right */
+#tray {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#idle_inhibitor {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#wireplumber {
+    color: rgba(119, 136, 153, 0.5);
+}
+
 /* #battery {
     color: rgba(144, 238, 144, 0.5);
 } */
@@ -63,4 +87,5 @@ window#waybar {
     padding: 0 5px 0 0;
     border-radius: 0.5rem;
     font-weight: bolder;
+    color: rgba(119, 136, 153, 0.5);
 }
