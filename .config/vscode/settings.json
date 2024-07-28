@@ -15,13 +15,14 @@
 
     "emmet.includeLanguages": {
         "php": "html",
-        "javascript": "html",
+        "javascript": "html"
     },
 
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 12,
 
     "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
 
     "workbench.activityBar.location": "hidden",
     "workbench.colorTheme": "Tokyo Night",
