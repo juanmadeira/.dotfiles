@@ -54,7 +54,7 @@ sudo cp ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
 sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 ```
 
-### fontes e ícones
+### fontes
 ```shell
 yay -S hack-nf-mono-git hack-nf-git; # kitty
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
