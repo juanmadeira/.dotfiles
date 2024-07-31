@@ -5,12 +5,19 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-07-30
+#	última atualização: 2024-07-31
 #
 
-############
-### ARCH ###
-############
+##################
+### INSTALAÇÃO ###
+##################
+
+# .dotfiles
+git clone https://github.com/juanmadeira/.dotfiles;
+cd .dotfiles;
+cp -r .config/* ~/.config;
+cp -r .scripts ~/;
+cd ~;
 
 # yay
 sudo pacman -Sy --needed git base-devel;
@@ -18,79 +25,38 @@ git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
 
-# pipx
-sudo pacman -S python python-pip python-pipx;
+# linguagens
+yay -S nodejs npm php apache mariadb python python-pip python-pipx;
 pipx ensurepath;
 
-# npm
-sudo pacman -S nodejs npm;
-
-# php
-sudo pacman -S php apache mariadb;
-
-# grub
-sudo pacman -S grub-customizer;
-    # xhost si:localuser:root
-    # sudo -s
-    # grub-customizer
+# sddm
+yay -S sddm qt6-5compat qt6-declarative qt6-svg;
+sudo cp ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
+sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 
 # fontes e icones
-yay -S hack-nf-mono-git hack-nf-git ttf-ubuntu-mono-nerd ttf-spacemono ttf-fira-code r-fontawesome ttf-roboto-variable noto-fonts-cjk noto-fonts-emoji noto-fonts;
-sudo npm -g install material-icons@latest;
-cd ~/.dotfiles/fonts;
-chmod +x fonts.sh;
-sudo ./fonts.sh;
-cd ~;
+yay -S hack-nf-mono-git hack-nf-git; # kitty
+yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
+sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
+    # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
+    # sddm  -> OpenSans
 
-# cli apps
+# outros
+yay -S firefox thunar waybar rofi-wayland swww waypaper grub-customizer;
 yay -S btop eza man unzip tar fzf starship github-cli lazygit;
 yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh; 
+yay -S neovim mpv mpd hyprshot clipse;
 pipx install pycowsay;
 
-# outros pacotes
-sudo pacman -S firefox;
-yay -S hyprshot clipse;
-
-
-################
-### HYPRLAND ###
-################
-
-# hyprland
-cp -r ~/.dotfiles/.config/hypr ~/.config/;
-
-# kitty
-cp -r ~/.dotfiles/.config/kitty ~/.config/;
-
-# sddm
-sudo pacman -S sddm qt6-5compat qt6-declarative qt6-svg;
-sudo cp ~/.dotfiles/.config/sddm /usr/share/sddm/themes/;
-sudo cp ~/.dotfiles/.config/sddm/Fonts/* /usr/share/fonts/;
-sudo cp ~/.dotfiles/.config/sddm.conf /etc/;
-
-# thunar
-yay -S thunar;
-cp ~/.dotfiles/.config/xfce4 ~/.config/;
-
-# waybar
-yay -S waybar;
-cp -r ~/.dotfiles/.config/waybar ~/.config/;
-
-# rofi (menu launcher)
-yay -S rofi-wayland;
-cp -r ~/.dotfiles/.config/rofi ~/.config/;
-
-# mpv
-yay -S mpv;
-cp -r ~/.dotfiles/.config/mpv ~/.config/;
-
-# swww e waypaper
-yay -S swww waypaper;
-cp -r ~/.dotfiles/.config/waypaper ~/.config/;
 
 ##############
 ### OUTROS ###
 ##############
+
+# grub-customizer
+    # xhost si:localuser:root
+    # sudo -s
+    # grub-customizer
 
 # /etc/pacman.conf
     # ParallelDownloads = 7
