@@ -43,7 +43,7 @@ cd yay; makepkg -si; cd ~
 
 ### linguagens
 ```shell
-yay -S nodejs npm php apache mariadb python python-pip python-pipx;
+yay -S nodejs npm php apache mariadb go python python-pip python-pipx;
 pipx ensurepath;
 ```
 
@@ -66,7 +66,7 @@ sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
 ### outros
 ```shell
 yay -S waybar rofi-wayland dunst swww waypaper grub-customizer;
-yay -S btop eza man unzip tar fzf starship github-cli lazygit;
+yay -S btop eza man unzip tar gum fzf starship github-cli lazygit;
 yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh;
 yay -S neovim mpv mpd hyprshot clipse;
 yay -S firefox thunar spotify;
