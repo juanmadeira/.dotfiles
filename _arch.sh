@@ -1,11 +1,11 @@
 #
-#	script de configuração do meu hyprland
-#   [!!!] feito para ser executado após a instalação completa do arch com hyprwm
+#	script de configuração do meu arch linux
+#   [!!!] feito para ser executado após a instalação completa do arch com hyprland
 #
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-07-27
+#	última atualização: 2024-07-30
 #
 
 ############
@@ -77,10 +77,13 @@ yay -S waybar;
 cp -r ~/.dotfiles/.config/waybar ~/.config/;
 
 # rofi (menu launcher)
-yay -S rofi;
+yay -S rofi-wayland;
 cp -r ~/.dotfiles/.config/rofi ~/.config/;
+
+# mpv
+yay -S mpv;
+cp -r ~/.dotfiles/.config/mpv ~/.config/;
 
 # swww e waypaper
 yay -S swww waypaper;
-# pipx install waypaper pywal colorz;
-# wal --backend colorz -i ".dotfiles/wallpapers/DSCF9244-1.jpg";
+cp -r ~/.dotfiles/.config/waypaper ~/.config/;
