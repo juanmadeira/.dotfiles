@@ -52,9 +52,9 @@ sudo pacman -S firefox;
 yay -S hyprshot clipse;
 
 
-#################
+################
 ### HYPRLAND ###
-#################
+################
 
 # hyprland
 cp -r ~/.dotfiles/.config/hypr ~/.config/;
@@ -87,3 +87,11 @@ cp -r ~/.dotfiles/.config/mpv ~/.config/;
 # swww e waypaper
 yay -S swww waypaper;
 cp -r ~/.dotfiles/.config/waypaper ~/.config/;
+
+##############
+### OUTROS ###
+##############
+
+# /etc/pacman.conf
+    # ParallelDownloads = 7
+    # ILoveCandy 
