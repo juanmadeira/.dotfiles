@@ -30,9 +30,5 @@ alias figlet="printf '\e[1;96m'; figlet"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
-alias update="sudo pacman -Syu"
-alias orfaos="sudo pacman -Qqtd"
-alias deleteOrfaos="sudo pacman -Qqtd | sudo pacman -Rns -"
-alias cleanup="kitty --app-id dotfiles-floating ~/.dotfiles/scripts/limpeza.sh"
-alias music='tmux new-session -s $$ "tmux source-file ~/.ncmpcpp/tsession"'
-_trap_exit() { tmux kill-session -t $$; }
+alias limpeza="kitty --app-id dotfiles-floating ~/.scripts/limpeza.sh"
+alias update="kitty --app-id dotfiles-floating ~/.scripts/update.sh"
