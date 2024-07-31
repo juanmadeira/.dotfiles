@@ -7,7 +7,7 @@
 </p>
 bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e windows 10.
 
-#### packages (pacman)
+#### dependências
 |                 |                |
 | --------------- | -------------- |
 | wm              | hyprland       |
