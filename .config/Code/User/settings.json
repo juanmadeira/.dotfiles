@@ -1,0 +1,49 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, bun.lockb, nest*",
+        "tailwind.config.js": "tailwind.config*, postcss.config*",
+        ".env.local": ".env*",
+        ".env": ".env*"
+    },
+    "explorer.compactFolders": false,
+
+    "editor.minimap.enabled": true,
+    "editor.minimap.showSlider": "always",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.stickyScroll.enabled": false,
+
+    "emmet.includeLanguages": {
+        "php": "html",
+        "javascript": "html"
+    },
+
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "terminal.integrated.fontSize": 12,
+
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
+
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "symbols",
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": true,
+
+    "vim.disableExtension": true,
+
+    "discord.enabled": false,
+    "discord.removeLowerDetails": true,
+    "discord.removeRemoteRepository": true,
+
+    "symbols.hidesExplorerArrows": false,
+    
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "apc.listRow": {
+        "height": 24
+    },
+    "apc.stylesheet": {
+        ".title-label > h2": "display: none;"
+    }
+}
