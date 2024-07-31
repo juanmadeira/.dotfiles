@@ -43,6 +43,12 @@ tooltip * {
     font-size: 0.6rem;
 }
 
+#workspaces button:hover {
+    border-color: transparent;
+    color: transparent;
+    background: transparent;
+}
+
 /* center */
 #window {
     padding: 2px 5px;
