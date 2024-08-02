@@ -15,6 +15,6 @@ then
     exit 1
 else
     # Run wlogout with the specified delay
-    wlogout -b 2
+    wlogout -b 3
 fi
 
