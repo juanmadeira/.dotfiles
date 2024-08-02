@@ -42,8 +42,8 @@ sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # sddm  -> OpenSans
 
 # outros
-yay -S waybar rofi-wayland wlogout wayland-logout dunst swww waypaper grub-customizer;
-yay -S btop eza man unzip tar gum fzf starship github-cli lazygit;
+yay -S waybar rofi-wayland wlogout swaylock dunst swww waypaper grub-customizer;
+yay -S btop eza man p7zip-gui tar gum fzf starship github-cli lazygit;
 yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh;
 yay -S neovim mpv mpd swappy hyprshot clipse;
 yay -S firefox thunar spotify;
@@ -54,10 +54,13 @@ pipx install pycowsay;
 ### OUTROS ###
 ##############
 
+# gparted
+    # xhost si:localuser:root
+    # sudo gparted
+
 # grub-customizer
     # xhost si:localuser:root
-    # sudo -s
-    # grub-customizer
+    # sudo grub-customizer
 
 # /etc/pacman.conf
     # ParallelDownloads = 7
