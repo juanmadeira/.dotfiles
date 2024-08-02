@@ -41,7 +41,7 @@
     show_age_threshold = 60
 
     markup = "full"
-    font = "Hack Mono Nerd Font"
+    font = "JetBrainsMono NF Medium"
     format = "<b>%s</b>\n%b:
 
     word_wrap = "yes"
