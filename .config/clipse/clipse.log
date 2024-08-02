@@ -1,0 +1,11 @@
+2024/07/27 01:45:54 logger.go:19: ERROR: could not get img identifier due to irregular filename | '84-052511263 -0300 -03 m=.png'
+2024/07/27 01:45:54 logger.go:19: ERROR: could not get img identifier due to irregular filename | '640089-608265513 -0300 -03 m=.png'
+2024/07/28 01:41:14 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1271593-896702679 -0300 -03 m=.png'
+2024/07/28 01:41:14 logger.go:19: ERROR: could not get img identifier due to irregular filename | '773389-478370164 -0300 -03 m=.png'
+2024/07/31 08:17:14 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1100637-104592532 -0300 -03 m=.png'
+2024/07/31 08:17:14 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1084183-877443677 -0300 -03 m=.png'
+2024/07/31 08:17:15 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1084183-877443677 -0300 -03 m=.png'
+2024/07/31 08:17:15 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1086209-989376044 -0300 -03 m=.png'
+2024/08/01 12:28:41 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1052021-834747883 -0300 -03 m=.png'
+2024/08/01 12:28:41 logger.go:19: ERROR: could not get img identifier due to irregular filename | '1274595-317137346 -0300 -03 m=.png'
+2024/08/01 21:17:43 logger.go:19: ERROR: exit status 1
