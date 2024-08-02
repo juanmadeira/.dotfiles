@@ -42,10 +42,10 @@ sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # sddm  -> OpenSans
 
 # outros
-yay -S waybar rofi-wayland dunst swww waypaper grub-customizer;
+yay -S waybar rofi-wayland wlogout wayland-logout dunst swww waypaper grub-customizer;
 yay -S btop eza man unzip tar gum fzf starship github-cli lazygit;
 yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh;
-yay -S neovim mpv mpd hyprshot clipse;
+yay -S neovim mpv mpd swappy hyprshot clipse;
 yay -S firefox thunar spotify;
 pipx install pycowsay;
 
