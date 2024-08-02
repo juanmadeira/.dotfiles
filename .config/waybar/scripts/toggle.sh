@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Verifica se o Waybar está rodando
+# verifica se o waybar está rodando
 if pgrep -x "waybar" > /dev/null
 then
-    # Se estiver rodando, envia o sinal SIGTERM para encerrar o Waybar
+    # se estiver rodando, envia o sinal SIGTERM para encerrar o waybar
     killall -q waybar
 else
-    # Se não estiver rodando, inicia o Waybar
+    # se não estiver rodando, inicia o waybar
     waybar &
 fi
