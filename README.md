@@ -21,9 +21,9 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 | vídeo           | mpv, vlc       |
 
 ---
-## instalação
+## Instalação
 > [!CAUTION]
-> isso irá sobrescrever suas atuais configurações!
+> Isso irá sobrescrever suas atuais configurações!
 ```shell
 git clone https://github.com/juanmadeira/.dotfiles
 cd .dotfiles
@@ -34,7 +34,7 @@ cd ~
 
 ### yay
 > [!IMPORTANT]
-> é necessário o [yay](https://aur.archlinux.org/yay.git) para a instalação dos futuros pacotes.
+> É necessário o [yay](https://aur.archlinux.org/yay.git) para a instalação dos futuros pacotes.
 ```shell
 sudo pacman -Sy --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
