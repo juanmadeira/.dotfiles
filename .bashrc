@@ -28,12 +28,17 @@ alias cls="clear"
 alias qt="exit"
 alias vi="nvim"
 alias lg="lazygit"
-alias ls="eza -la --icons"
+alias of="onefetch"
+alias ff="fastfetch"
+alias ls="eza -a --icons"
+alias ll="eza -al --icons"
+alias lt="eza -a --tree --level=1 --icons"
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
+alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 
 alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
 alias limpeza="kitty --app-id dotfiles-floating ~/.scripts/limpeza.sh"
-alias update="kitty --app-id dotfiles-floating ~/.scripts/update.sh"
+alias atualizar="kitty --app-id dotfiles-floating ~/.scripts/atualizar.sh"
