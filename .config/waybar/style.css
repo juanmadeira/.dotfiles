@@ -57,9 +57,9 @@ tooltip * {
 }
 
 /* right */
-/* #tray {
+#tray {
     color: rgba(119, 136, 153, 0.5);
-} */
+}
 
 #idle_inhibitor {
     color: rgba(119, 136, 153, 0.5);
@@ -69,9 +69,9 @@ tooltip * {
     color: rgba(119, 136, 153, 0.5);
 }
 
-/* #battery {
+#battery {
     color: rgba(144, 238, 144, 0.5);
-} */
+}
 
 #disk {
     color: rgba(135, 206, 250, 0.5);
