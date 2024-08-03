@@ -32,7 +32,7 @@ alias of="onefetch"
 alias ff="fastfetch"
 alias ls="eza -a --icons"
 alias ll="eza -al --icons"
-alias lt="eza -a --tree --level=1 --icons"
+alias lt="eza -a --tree --level=2 --icons"
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 
