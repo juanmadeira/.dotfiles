@@ -35,9 +35,9 @@ sudo cp ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
 sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 
 # fontes e icones
-yay -S hack-nf-mono-git hack-nf-git; # kitty
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
 sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
+    # geral -> FiraCode-..., HackNerdFontMono-... 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
     # sddm  -> OpenSans
 
