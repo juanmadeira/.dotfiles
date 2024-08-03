@@ -26,7 +26,7 @@ cd yay;
 makepkg -si;
 
 # linguagens
-yay -S nodejs npm php apache mariadb go python python-pip python-pipx;
+yay -S python python-pip python-pipx nodejs npm php apache mariadb go ;
 pipx ensurepath;
 
 # sddm
@@ -41,13 +41,24 @@ sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
     # sddm  -> OpenSans
 
+# hyprland
+yay -S waybar rofi-wayland dunst; # barra de notificacoes
+yay -S wlogout hyprlock hypridle; # bloqueio de tela
+yay -S wl-clipboard clipse; # area de transferencia
+yay -S swww waypaper; # papel de parede
+yay -S hyprshot; # captura de tela
+yay -S gparted grub-customizer; # particionamento
+
 # outros
-yay -S waybar rofi-wayland wlogout swaylock dunst swww waypaper grub-customizer;
-yay -S btop eza man p7zip-gui tar gum fzf starship github-cli lazygit;
-yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh;
-yay -S neovim mpv mpd swappy hyprshot wl-clipboard clipse;
-yay -S firefox thunar spotify;
+yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
+yay -S neofetch onefetch; # fetches
+yay -S neovim nano visual-studio-code-bin # editores de texto
+yay -S mpv mpd ffmpeg swappy rhythmbox spotify stremio; # reproducao de midia
+yay -S firefox thunar p7zip-gui;
 pipx install pycowsay;
+
+# :)
+yay -S cava cbonsai cmatrix-neo-git pipes.sh;
 
 
 ##############
