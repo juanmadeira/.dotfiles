@@ -74,6 +74,8 @@ yay -S gparted grub-customizer; # particionamento
 ```
 
 ### outros
+> [!IMPORTANT]
+> A partir daqui são programas de escolha mais pessoal e não tão relacionadas ao ricing. 
 ```shell
 yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
