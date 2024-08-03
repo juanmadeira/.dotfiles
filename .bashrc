@@ -11,6 +11,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # starship
 eval "$(starship init bash)"
 
+# fzf
+eval "$(fzf --bash)"
+
 # aliases
 alias ~="cd ~"
 alias ..="cd .."
@@ -26,7 +29,9 @@ alias qt="exit"
 alias vi="nvim"
 alias lg="lazygit"
 alias ls="eza -la --icons"
-alias figlet="printf '\e[1;96m'; figlet"
+alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
+
+alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
