@@ -16,9 +16,9 @@ configuration {
 	normalize-match: true;
 	show-icons: true;
 	icon-theme: "Papirus";
-/*	cache-dir: ;*/
+	/*cache-dir: ;*/
 	steal-focus: false;
-/*	dpi: -1;*/
+	/*dpi: -1;*/
 
 	/*---------- Matching setting ----------*/
 	matching: "normal";
@@ -40,7 +40,7 @@ configuration {
 	drun-reload-desktop-cache: false;
 	drun {
 		/** Parse user desktop files. */
-		parse-user:   true;
+		parse-user: true;
 		/** Parse system desktop files. */
 		parse-system: true;
     }
@@ -62,9 +62,9 @@ configuration {
 	window-thumbnail: false;
 
 	/*---------- Combi settings ----------*/
-/*	combi-modi: "window,run";*/
-/*	combi-hide-mode-prefix: false;*/
-/*	combi-display-format: "{mode} {text}";*/
+	/*combi-modi: "window,run";*/
+	/*combi-hide-mode-prefix: false;*/
+	/*combi-display-format: "{mode} {text}";*/
 
 	/*---------- History and Sorting ----------*/
 	disable-history: false;
@@ -87,24 +87,30 @@ configuration {
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
-/*	ignored-prefixes: "";*/
-/*	pid: "/run/user/1000/rofi.pid";*/
+	/*ignored-prefixes: "";*/
+	/*pid: "/run/user/1000/rofi.pid";*/
 
 	/*---------- File browser settings ----------*/
     filebrowser {
-/*	  directory: "/home";*/
-      directories-first: true;
-      sorting-method:    "name";
+		directory: "/";
+    	directories-first: true;
+    	sorting-method:    "name";
+    }
+	recursivebrowser {
+        directory: "/";
+        cancel-returns-1: true;
+		directories-first: true;
+    	sorting-method: "name";
+        command: "xdg-open";
     }
 
 	/*---------- Other settings ----------*/
     timeout {
-      action: "kb-cancel";
-      delay:  0;
+		action: "kb-cancel";
+		delay:  0;
     }
 
 	/*---------- Keybindings ----------*/
-/*
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";
 	kb-clear-line: "Control+w";
@@ -177,5 +183,4 @@ configuration {
 	me-select-entry: "MousePrimary";
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
-*/
 }
