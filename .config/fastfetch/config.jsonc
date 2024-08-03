@@ -9,7 +9,7 @@
             "1": "cyan"
         },
         "padding": {
-            "top": 1,
+            "top": 3,
             "left": 2
         }
     },
@@ -17,6 +17,7 @@
         "separator": " "
     },
     "modules": [
+        "break", "break",
         {
             "type": "os",
             "key": "  ",
