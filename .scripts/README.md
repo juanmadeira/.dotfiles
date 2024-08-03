@@ -11,7 +11,7 @@ chmod +x fonts.sh
 sudo ./fonts.sh
 ```
 
-## update.sh e limpeza.sh
+## atualizar.sh e limpeza.sh
 
 ```shell
 https://github.com/gustavomarchesim/dotfiles
