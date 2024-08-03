@@ -1,20 +1,19 @@
 #!/bin/bash
-# Script to run wlogout with a 2 second delay if it's not already running
+# script to run wlogout if it's not already running
 
-# Check if wlogout is installed
+# check if wlogout is installed
 if ! command -v wlogout &> /dev/null
 then
     echo "wlogout could not be found. Please install it first."
     exit 1
 fi
 
-# Check if wlogout is already running
+# check if wlogout is already running
 if pgrep -x "wlogout" > /dev/null
 then
     echo "wlogout is already running. Exiting."
     exit 1
 else
-    # Run wlogout with the specified delay
     wlogout -b 3
 fi
 
