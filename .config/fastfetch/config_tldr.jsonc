@@ -17,6 +17,7 @@
         "separator": " "
     },
     "modules": [
+        "break", "break", "break", "break", "break",
         {
             "type": "os",
             "key": "  ",
@@ -46,37 +47,6 @@
             "type": "shell",
             "key": "  ",
             "keyColor": "yellow"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
-        },
-            "break",
-        {
-            "type": "host",
-            "key": "  ",
-            "keyColor": "bright_blue"
-        },
-        {
-            "type": "cpu",
-            "key": "  ",
-            "keyColor": "bright_green"
-        },
-        {
-            "type": "gpu",
-            "key": "  󱤓",
-            "keyColor": "red"
-        },
-        {
-            "type": "memory",
-            "key": "  󰍛",
-            "keyColor": "bright_yellow"
-        },
-        {
-            "type": "disk",
-            "key": "  ",
-            "keyColor": "bright_cyan"
         }
     ]
 }
