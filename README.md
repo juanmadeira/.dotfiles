@@ -56,19 +56,34 @@ sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 
 ### fontes
 ```shell
-yay -S hack-nf-mono-git hack-nf-git; # kitty
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
 sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
+    # geral -> FiraCode-..., HackNerdFontMono-... 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
     # sddm  -> OpenSans
 ``` 
 
+### hyprland
+```shell
+yay -S waybar rofi-wayland dunst; # barra de notificacoes
+yay -S wlogout hyprlock hypridle; # bloqueio de tela
+yay -S wl-clipboard clipse; # area de transferencia
+yay -S swww waypaper; # papel de parede
+yay -S hyprshot; # captura de tela
+yay -S gparted grub-customizer; # particionamento
+```
+
 ### outros
 ```shell
-yay -S waybar rofi-wayland dunst swww waypaper grub-customizer;
-yay -S btop eza man unzip tar gum fzf starship github-cli lazygit;
-yay -S neofetch onefetch cava cbonsai cmatrix-neo-git pipes.sh;
-yay -S neovim mpv mpd hyprshot clipse;
-yay -S firefox thunar spotify;
+yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
+yay -S neofetch onefetch; # fetches
+yay -S neovim nano visual-studio-code-bin # editores de texto
+yay -S mpv mpd ffmpeg swappy rhythmbox spotify stremio; # reproducao de midia
+yay -S firefox thunar p7zip-gui;
 pipx install pycowsay;
+```
+
+### :)
+```shell
+yay -S cava cbonsai cmatrix-neo-git pipes.sh;
 ```
