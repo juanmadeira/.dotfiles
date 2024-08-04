@@ -33,6 +33,8 @@ pipx ensurepath;
 yay -S sddm qt6-5compat qt6-declarative qt6-svg;
 sudo cp -r ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
 sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
+systemctl start sddm.service;
+systemctl enable sddm;
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
@@ -70,6 +72,7 @@ yay -S cava cbonsai cmatrix-neo-git tty-clock pipes.sh;
     # sudo gparted
 
 # grub-customizer
+    sudo cp -r ~/.dotfiles/.etc/grub/evangelion-grub-theme /boot/grub/themes/
     # xhost si:localuser:root
     # sudo grub-customizer
 
