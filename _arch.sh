@@ -52,14 +52,16 @@ yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer; # particionamento
 
 # gtk
-sudo cp -r ~/.dotfiles/.config/gtk-3.0/* /usr/share/themes
+sudo cp -r ~/.dotfiles/.config/gtk-3.0/themes/* /usr/share/themes
+sudo cp -r ~/.dotfiles/.config/gtk-3.0/icons/* /usr/share/icons
 gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
+gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
 
 # outros
 yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
 yay -S neovim nano visual-studio-code-bin # editores de texto
-yay -S mpv mpd ffmpeg swappy rhythmbox stremio; # reproducao de midia
+yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
 yay -S firefox thunar p7zip-gui qalculate-gtk;
 pipx install pycowsay;
 
