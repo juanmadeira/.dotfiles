@@ -5,7 +5,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-07-31
+#	última atualização: 2024-08-04
 #
 
 ##################
@@ -55,12 +55,18 @@ yay -S gparted grub-customizer; # particionamento
 yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
 yay -S neovim nano visual-studio-code-bin # editores de texto
-yay -S mpv mpd ffmpeg swappy rhythmbox spotify stremio; # reproducao de midia
-yay -S firefox thunar p7zip-gui;
+yay -S mpv mpd ffmpeg swappy rhythmbox stremio; # reproducao de midia
+yay -S firefox thunar p7zip-gui qalculate-gtk;
 pipx install pycowsay;
 
+# spotify
+yay -S spotify spicetify-cli;
+sudo chmod a+wr /opt/spotify;
+sudo chmod a+wr /opt/spotify/Apps -R;
+curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh;
+
 # :)
-yay -S cava cbonsai cmatrix-neo-git tty-clock pipes.sh;
+yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
 
 
 ##############
