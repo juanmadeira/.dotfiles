@@ -31,7 +31,7 @@ pipx ensurepath;
 
 # sddm
 yay -S sddm qt6-5compat qt6-declarative qt6-svg;
-sudo cp ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
+sudo cp -r ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
 sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 
 # fontes e icones
