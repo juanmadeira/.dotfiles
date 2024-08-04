@@ -54,6 +54,14 @@ sudo cp ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
 sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
 ```
 
+### gtk
+```shell
+sudo cp -r ~/.dotfiles/.config/gtk-3.0/themes/* /usr/share/themes
+sudo cp -r ~/.dotfiles/.config/gtk-3.0/icons/* /usr/share/icons
+gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
+gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
+```
+
 ### fontes
 ```shell
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
