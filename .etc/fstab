@@ -3,13 +3,13 @@
 
 # <file system> <dir> <type> <options> <dump> <pass>
 # /dev/sda7
-UUID=d3d1e19f-a440-4b60-a633-54c68bd125b6	/         	ext4      	rw,relatime	0 1
+    # /
 
 # /dev/sda5
-UUID=B29B-68EE      				/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+    # /boot
 
 # /dev/sda6
-UUID=b80dbb59-aad7-4b08-a47f-6f3805434b9f	none      	swap      	defaults  	0 0
+    # swap
 
 # /dev/sda3
 /dev/sda3		/eva01		ntfs3		defaults		0 0
