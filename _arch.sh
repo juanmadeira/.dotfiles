@@ -58,7 +58,7 @@ yay -S firefox thunar p7zip-gui;
 pipx install pycowsay;
 
 # :)
-yay -S cava cbonsai cmatrix-neo-git pipes.sh;
+yay -S cava cbonsai cmatrix-neo-git tty-clock pipes.sh;
 
 
 ##############
