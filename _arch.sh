@@ -51,6 +51,10 @@ yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer; # particionamento
 
+# gtk
+sudo cp -r ~/.dotfiles/.config/gtk-3.0/* /usr/share/themes
+gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
+
 # outros
 yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
