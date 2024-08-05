@@ -19,3 +19,9 @@
 
 # /dev/sdc1
 /dev/sdc1		/eva03		ntfs3		defaults		0 0
+
+
+# sudo chmod o+rwx /eva01 -R
+# sudo chmod o+rwx /eva02 -R
+# sudo chmod o+rwx /eva03 -R
+
