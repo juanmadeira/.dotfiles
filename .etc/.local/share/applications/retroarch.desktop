@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/eva02/Documents/documentos/jogos/RetroArch/retroarch.AppImage
+Name=RetroArch
+Icon=~/.local/share/applications/icons/retroarch.png

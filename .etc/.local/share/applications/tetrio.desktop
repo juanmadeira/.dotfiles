@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/eva02/Documents/documentos/jogos/TETR.IO/TETRI.IO
+Name=TETR.IO
+Icon=~/.local/share/applications/icons/tetrio.png
