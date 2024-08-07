@@ -51,7 +51,7 @@ sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # sddm  -> OpenSans
 
 # hyprland
-yay -S waybar rofi-wayland dunst; # barra de notificacoes
+yay -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
 yay -S wlogout hyprlock hypridle; # bloqueio de tela
 yay -S wl-clipboard clipse; # area de transferencia
 yay -S swww waypaper; # papel de parede
