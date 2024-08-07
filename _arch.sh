@@ -44,6 +44,7 @@ gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
+yay -S ttf-ms-fonts; # fontes da microsoft x(
 sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # geral -> FiraCode-..., HackNerdFontMono-... 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
@@ -62,7 +63,7 @@ yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
-yay -S firefox thunar p7zip-gui qalculate-gtk;
+yay -S firefox thunar thunar-volman gvfs p7zip-gui qalculate-gtk;
 pipx install pycowsay;
 
 # spotify
