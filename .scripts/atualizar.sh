@@ -6,11 +6,11 @@
 sleep 1
 clear
 
-# Exibe "Atualizações" usando figlet
+# Exibir "Atualizações" usando figlet
 figlet "Atualizar"
 echo
 
-# Função para verificar se um pacote está instalado com yay
+# Verificar se um pacote está instalado com yay
 _isInstalledYay() {
     package="$1"
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "${package} ")"
@@ -21,11 +21,7 @@ _isInstalledYay() {
     fi
 }
 
-# ------------------------------------------------------
-# Confirmar Início
-# ------------------------------------------------------
-
-# Pergunta ao usuário se deseja iniciar a atualização
+# Perguntar ao usuário se deseja iniciar a atualização
 if gum confirm "VOCÊ DESEJA INICIAR A ATUALIZAÇÃO AGORA?"; then
     echo 
     echo ":: Atualização iniciada."
@@ -34,10 +30,11 @@ elif [ $? -eq 130 ]; then
 else
     echo
     echo ":: Atualização cancelada."
+    kitty @ close-window
     exit
 fi
 
-# Verifica se o timeshift está instalado
+# Verificar se o timeshift está instalado
 if _isInstalledYay "timeshift"; then
     # Pergunta ao usuário se deseja criar um snapshot
     if gum confirm "VOCÊ DESEJA CRIAR UM SNAPSHOT?"; then
@@ -59,11 +56,16 @@ if _isInstalledYay "timeshift"; then
     echo
 fi
 
-# Executa a atualização com yay
+# Executar a atualização com yay
 yay
 
-# Envia uma notificação informando que a atualização foi concluída
+# Enviar uma notificação informando que a atualização foi concluída
 notify-send "Atualização completa"
 echo 
 echo ":: Atualização completa"
+
+# Pausar para o usuário visualizar a mensagem
 sleep 2
+
+# Fechar janela do Kitty
+kitty @ close-window

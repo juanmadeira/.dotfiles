@@ -25,3 +25,7 @@ cp -r $font_folder/*.otf /usr/share/fonts/
 fc-cache -f -v
 
 echo "All fonts have been successfully installed."
+echo
+sleep 2
+
+kitty @ close-window
