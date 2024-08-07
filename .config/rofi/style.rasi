@@ -9,23 +9,25 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run";
-    show-icons:                 false;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
+	modi:                       "drun,emoji,run,filebrowser,recursivebrowser,window";
+    show-icons:                 true;
+    display-drun:               "󰀻";
+    display-emoji:              ":)";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-recursivebrowser:   "󰚝";
     display-window:             "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+
+@import "~/.config/rofi/colors/adapta.rasi"
 
 * {
     border-colour:               var(selected);
-    handle-colour:               var(foreground);
+    handle-colour:               var(selected);
     background-colour:           var(background);
     foreground-colour:           var(foreground);
     alternate-background:        var(background-alt);
@@ -47,6 +49,7 @@ configuration {
     alternate-urgent-foreground: var(background);
     alternate-active-background: var(active);
     alternate-active-foreground: var(background);
+    font: "Hack Mono Nerd Font 10";
 }
 
 /*****----- Main Window -----*****/
@@ -56,7 +59,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -65,7 +68,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               8px;
+    border-radius:               10px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -90,7 +93,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -104,7 +107,7 @@ inputbar {
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
-    children:                    [ "prompt", "entry" ];
+    children:                    [ "textbox-prompt-colon", "entry", "mode-switcher" ];
 }
 
 prompt {
@@ -114,17 +117,19 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
+    padding:                     5px 0px;
     expand:                      false;
-    str:                         "::";
+    str:                         "";
     background-color:            inherit;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
+    padding:                     5px 0px;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "search...";
+    placeholder:                 "Procurar...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
@@ -156,10 +161,10 @@ case-indicator {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    lines:                       8;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   false;
+    scrollbar:                   true;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
@@ -178,18 +183,18 @@ listview {
 scrollbar {
     handle-width:                5px ;
     handle-color:                @handle-colour;
-    border-radius:               8px;
+    border-radius:               10px;
     background-color:            @alternate-background;
 }
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     8px;
+    spacing:                     10px;
     margin:                      0px;
-    padding:                     8px;
+    padding:                     5px 10px;
     border:                      0px solid;
-    border-radius:               4px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
@@ -208,8 +213,8 @@ element normal.active {
     text-color:                  var(active-foreground);
 }
 element selected.normal {
-    background-color:            var(normal-foreground);
-    text-color:                  var(normal-background);
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
 }
 element selected.urgent {
     background-color:            var(selected-urgent-background);
@@ -259,17 +264,17 @@ mode-switcher{
     text-color:                  @foreground-colour;
 }
 button {
-    padding:                     8px;
+    padding:                     5px 10px;
     border:                      0px solid;
-    border-radius:               4px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(normal-foreground);
-    text-color:                  var(normal-background);
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
 }
 
 /*****----- Message -----*****/
@@ -284,9 +289,9 @@ message {
     text-color:                  @foreground-colour;
 }
 textbox {
-    padding:                     8px;
+    padding:                     8px 10px;
     border:                      0px solid;
-    border-radius:               4px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  @foreground-colour;
@@ -299,8 +304,8 @@ textbox {
 }
 error-message {
     padding:                     10px;
-    border:                      0px solid;
-    border-radius:               4px;
+    border:                      2px solid;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
