@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,emoji,run,filebrowser,recursivebrowser,window";
+	modi:                       "drun,run,filebrowser,recursivebrowser,window";
     show-icons:                 true;
     display-drun:               "󰀻";
     display-emoji:              ":)";
