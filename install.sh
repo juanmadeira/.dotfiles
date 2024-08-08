@@ -12,13 +12,6 @@
 ### INSTALAÇÃO ###
 ##################
 
-# .dotfiles
-git clone https://github.com/juanmadeira/.dotfiles;
-cd .dotfiles;
-cp -r .config/* ~/.config;
-cp -r .scripts ~/;
-cd ~;
-
 # yay
 sudo pacman -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
