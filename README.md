@@ -4,7 +4,7 @@
 	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/screenshots/hyprland-fastfetch.png" align="right" width="400px" alt="hyprland screenshot"
 </p>
 <br>
-bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas <span style="text-decoration: underline;">arch linux (hyprland)</span> e <a href="https://github.com/juanmadeira/.dotfiles/blob/main/_windows">windows 10</a>.
+bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas <u>arch linux (hyprland)</u> e <a href="https://github.com/juanmadeira/.dotfiles/blob/main/_windows">windows 10</a>.
 
 #### dependências
 |                 |                      |
