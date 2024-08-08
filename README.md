@@ -3,20 +3,20 @@
 <p align="center">
 	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/screenshots/hyprland-fastfetch.png" align="right" width="400px" alt="hyprland screenshot"
 </p>
-bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e windows 10.
+bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e [windows 10](https://github.com/juanmadeira/.dotfiles/blob/main/_windows).
 
 #### dependências
-|                 |                |
-| --------------- | -------------- |
-| wm              | hyprland       |
-| terminal        | kitty          |
-| shell           | bash           |
-| prompt          | starship       |
-| menu            | rofi           |
-| barra de status | waybar         |
-| editor de texto | neovim, vscode |
-| música          | mpd, spotify   |
-| vídeo           | mpv, vlc       |
+|                 |                      |
+| --------------- | -------------------- |
+| wm              | hyprland             |
+| terminal        | kitty                |
+| shell           | bash                 |
+| prompt          | starship             |
+| menu            | rofi                 |
+| barra de status | waybar               |
+| editor de texto | neovim, vscode       |
+| música          | rhythmbox, spotify   |
+| vídeo           | mpv, vlc             |
 
 ---
 ## Instalação
