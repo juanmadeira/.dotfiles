@@ -1,0 +1,18 @@
+# ~/.gitconfig
+
+[user]
+	name = juan
+	email = 21133654+juanmadeira@users.noreply.github.com
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[safe]
+	directory = /eva02/Documents/git/
+	directory = *
