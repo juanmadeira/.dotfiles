@@ -36,7 +36,7 @@ gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
 gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
 
 # fontes e icones
-yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # caracteres japoneses
+yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 yay -S ttf-ms-fonts; # fontes da microsoft x(
 sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
     # geral -> FiraCode-..., HackNerdFontMono-... 
