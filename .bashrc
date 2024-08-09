@@ -14,6 +14,10 @@ eval "$(starship init bash)"
 # fzf
 eval "$(fzf --bash)"
 
+# ncmpcpp
+alias music='tmux new-session -s $$ "tmux source-file ~/.config/ncmpcpp/tsession"'
+_trap_exit() { tmux kill-session -t $$; }
+
 # aliases
 alias ~="cd ~"
 alias ..="cd .."
@@ -43,5 +47,5 @@ alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
 alias bsu="source ~/.bashrc"
-alias limpeza="kitty --app-id dotfiles-floating ~/.scripts/limpeza.sh"
-alias atualizar="kitty --app-id dotfiles-floating ~/.scripts/atualizar.sh"
+alias limpeza="kitty ~/.scripts/limpeza.sh"
+alias atualizar="kitty ~/.scripts/atualizar.sh"
