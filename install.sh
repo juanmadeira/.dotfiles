@@ -59,7 +59,10 @@ yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
 yay -S firefox thunar thunar-volman gvfs p7zip-gui qalculate-gtk;
 pipx install pycowsay;
 
-# spotify
+# jogos
+yay -S lutris mangohud;
+
+# spotify/spicetify
 yay -S spotify spicetify-cli;
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
@@ -84,4 +87,5 @@ yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
 
 # /etc/pacman.conf
     # ParallelDownloads = 7
-    # ILoveCandy 
+    # ILoveCandy
+
