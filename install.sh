@@ -30,10 +30,11 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # gtk
-sudo cp -r ~/.dotfiles/.config/gtk-3.0/themes/* /usr/share/themes
-sudo cp -r ~/.dotfiles/.config/gtk-3.0/icons/* /usr/share/icons
+cp -r ~/.dotfiles/.config/gtk-3.0/themes ~/.local/share/
+cp -r ~/.dotfiles/.config/gtk-3.0/icons ~/.local/share/
 gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
 gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
+gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
