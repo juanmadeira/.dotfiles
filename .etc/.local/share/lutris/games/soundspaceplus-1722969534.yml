@@ -1,0 +1,6 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/SoundSpacePlus/SoundSpacePlus.exe
+system:
+  prefix_command: mangohud
+wine:
+  version: system

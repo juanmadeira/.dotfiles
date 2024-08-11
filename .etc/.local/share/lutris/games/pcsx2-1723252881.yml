@@ -1,0 +1,4 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/RetroArch/system/pcsx2/pcsx2.AppImage
+system:
+  prefix_command: mangohud

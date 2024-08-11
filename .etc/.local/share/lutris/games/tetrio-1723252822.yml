@@ -1,0 +1,4 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/TETR.IO/TETR.IO
+system:
+  prefix_command: mangohud

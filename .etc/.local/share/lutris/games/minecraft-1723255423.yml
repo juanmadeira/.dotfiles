@@ -1,0 +1,11 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/PrismLauncher/prismlauncher.AppImage
+system:
+  disable_runtime: true
+  env: {}
+  manual_command: ''
+  prefer_system_libs: true
+  prefix_command: ''
+  prelaunch_command: ''
+  xephyr: 'off'
+  xephyr_fullscreen: true

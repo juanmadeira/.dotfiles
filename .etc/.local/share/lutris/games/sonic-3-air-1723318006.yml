@@ -1,0 +1,4 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/Sonic 3 AIR/Sonic3AIR.exe
+wine:
+  version: system

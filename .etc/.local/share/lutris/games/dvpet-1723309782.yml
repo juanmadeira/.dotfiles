@@ -1,0 +1,5 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/DVPet Tournament/DVPet/DVPet.jar
+system:
+  disable_runtime: true
+  prefix_command: java -jar

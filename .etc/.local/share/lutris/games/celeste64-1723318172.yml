@@ -1,0 +1,4 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/Celeste64/Celeste64.exe
+wine:
+  version: system

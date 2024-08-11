@@ -1,0 +1,4 @@
+game:
+  exe: /home/juan/Documents/documentos/jogos/Sonic Robo Blast 2/srb2win.exe
+wine:
+  version: system
