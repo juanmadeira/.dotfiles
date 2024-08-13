@@ -57,8 +57,8 @@ yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
-yay -S firefox thunar thunar-volman gvfs p7zip-gui qalculate-gtk;
-pipx install pycowsay;
+yay -S thunar thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
+yay -S firefox p7zip-gui qalculate-gtk; # outros
 
 # jogos
 yay -S lutris mangohud;
@@ -71,6 +71,7 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resource
 
 # :)
 yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
+pipx install pycowsay;
 
 
 ##############
@@ -82,7 +83,7 @@ yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
     # sudo gparted
 
 # grub-customizer
-    sudo cp -r ~/.dotfiles/.etc/grub/evangelion-grub-theme /boot/grub/themes/
+    sudo cp -r ~/.dotfiles/.etc/grub/evangelion-grub-theme /boot/grub/themes/;
     # xhost si:localuser:root
     # sudo grub-customizer
 
