@@ -22,6 +22,7 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 ---
 ## Instalação
 > O script foi feito para ser executado após uma instalação limpa do sistema.
+
 > [!CAUTION]
 > Isso irá sobrescrever suas atuais configurações!
 ```shell
