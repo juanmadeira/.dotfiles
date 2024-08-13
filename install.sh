@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 #	script de configuração do meu arch linux
 #   [!!!] feito para ser executado após a instalação completa do arch com hyprland
@@ -11,6 +12,11 @@
 ##################
 ### INSTALAÇÃO ###
 ##################
+
+sleep 2
+clear;
+figlet ".dotfiles";
+echo
 
 # yay
 sudo pacman -Sy --needed git base-devel;
