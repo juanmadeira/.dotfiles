@@ -21,17 +21,15 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 
 ---
 ## Instalação
-```shell
-git clone https://github.com/juanmadeira/.dotfiles;
-cd .dotfiles;
-cp -r .config/* ~/.config;
-cp -r .scripts ~/;
-```
-
 > [!CAUTION]
 > Isso irá sobrescrever suas atuais configurações!
 ```shell
-sudo chmod +x .dotfiles/install.sh;
-.dotfiles/install.sh;
+cd ~;
+git clone https://github.com/juanmadeira/.dotfiles;
+cd .dotfiles;
+cp -r .config ~/;
+cp -r .scripts ~/;
+sudo chmod +x install.sh;
+./install.sh;
 ```
 
