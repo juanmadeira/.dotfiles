@@ -21,8 +21,6 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 
 ---
 ## Instalação
-> [!CAUTION]
-> Isso irá sobrescrever suas atuais configurações!
 ```shell
 git clone https://github.com/juanmadeira/.dotfiles;
 cd .dotfiles;
@@ -30,9 +28,8 @@ cp -r .config/* ~/.config;
 cp -r .scripts ~/;
 ```
 
-### yay
-> [!IMPORTANT]
-> É necessário o [yay](https://aur.archlinux.org/yay.git) para a instalação dos futuros pacotes.
+> [!CAUTION]
+> Isso irá sobrescrever suas atuais configurações!
 ```shell
 sudo chmod +x .dotfiles/install.sh;
 .dotfiles/install.sh;
