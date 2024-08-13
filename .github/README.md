@@ -21,6 +21,7 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 
 ---
 ## Instalação
+> [!IMPORTANT]
 > O script foi feito para ser executado após uma instalação limpa do sistema.
 
 > [!CAUTION]
