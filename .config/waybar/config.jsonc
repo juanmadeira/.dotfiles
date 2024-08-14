@@ -21,24 +21,16 @@
     "modules-center": ["hyprland/window"],
     "modules-right": [
         // "tray",
-        //"idle_inhibitor",
         // "backlight",
         "wireplumber",
         // "battery",
         "disk",
         "memory",
         "cpu",
+        "idle_inhibitor",
         "temperature",
         "clock"
-    ],
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰛊 ",
-            "deactivated": "󰾫 "
-        }
-    },
+    ], 
 
     "backlight": {
         "interval": 2,
@@ -48,10 +40,13 @@
     },
 
     "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 ",
-        "on-click": "amixer sset Master toggle",
-        "format-icons": ["", "", "", "", ""]
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰖁 mutado",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "scroll-step": 5,
+        "tooltip": true,
+        "tooltip-format": "dispositivo: {node_name}"
     },
 
     "battery": {
@@ -82,6 +77,14 @@
     "temperature": {
         "interval": 10,
         "tooltip": false
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰛊",
+            "deactivated": "󰾫"
+        }
     },
 
     "clock": {
