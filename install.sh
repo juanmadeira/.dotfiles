@@ -18,6 +18,10 @@ clear;
 figlet ".dotfiles";
 echo
 
+# copiar configurações
+cp -r .config ~/;
+cp -r .scripts ~/;
+
 # yay
 sudo pacman -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
@@ -30,14 +34,14 @@ pipx ensurepath;
 
 # sddm
 yay -S sddm qt6-5compat qt6-declarative qt6-svg;
-sudo cp -r ~/.dotfiles/.etc/sddm /usr/share/sddm/themes/;
-sudo cp ~/.dotfiles/.etc/sddm/sddm.conf /etc/;
+sudo cp -r .etc/sddm /usr/share/sddm/themes/;
+sudo cp .etc/sddm/sddm.conf /etc/;
 systemctl start sddm.service;
 systemctl enable sddm;
 
 # gtk
-cp -r ~/.dotfiles/.config/gtk-3.0/themes ~/.local/share/
-cp -r ~/.dotfiles/.config/gtk-3.0/icons ~/.local/share/
+cp -r .config/gtk-3.0/themes ~/.local/share/
+cp -r .config/gtk-3.0/icons ~/.local/share/
 gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
 gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
 gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
@@ -45,7 +49,7 @@ gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 yay -S ttf-ms-fonts; # fontes da microsoft x(
-sudo cp ~/.dotfiles/fonts/* /usr/share/fonts/;
+sudo cp -r fonts/* /usr/share/fonts/;
     # geral -> FiraCode-..., HackNerdFontMono-... 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
     # sddm  -> OpenSans
@@ -63,7 +67,7 @@ yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
 yay -S neofetch onefetch; # fetches
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
-yay -S thunar thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
+yay -S thunar tumbler thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
 yay -S firefox p7zip-gui qalculate-gtk; # outros
 
 # jogos
@@ -89,7 +93,7 @@ pipx install pycowsay;
     # sudo gparted
 
 # grub-customizer
-    sudo cp -r ~/.dotfiles/.etc/grub/evangelion-grub-theme /boot/grub/themes/;
+    sudo cp -r .etc/grub/evangelion-grub-theme /boot/grub/themes/;
     # xhost si:localuser:root
     # sudo grub-customizer
 
