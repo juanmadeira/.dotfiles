@@ -41,7 +41,7 @@
 
     "wireplumber": {
         "format": "󰕾 {volume}%",
-        "format-muted": "󰖁 mutado",
+        "format-muted": "󰖁 [{volume}%]",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol",
         "scroll-step": 5,
