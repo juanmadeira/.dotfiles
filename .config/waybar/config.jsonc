@@ -27,8 +27,8 @@
         "disk",
         "memory",
         "cpu",
-        "idle_inhibitor",
         "temperature",
+        "idle_inhibitor",
         "clock"
     ], 
 
