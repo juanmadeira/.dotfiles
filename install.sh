@@ -21,6 +21,9 @@ echo
 # copiar configurações
 cp -r .config ~/;
 cp -r .scripts ~/;
+sudo chmod +x ~/.scripts/*;
+sudo chmod +x ~/.config/hypr/scripts/*;
+sudo chmod +x ~/.config/rofi/scripts/*;
 
 # yay
 sudo pacman -Sy --needed git base-devel;
