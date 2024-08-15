@@ -30,9 +30,11 @@ sudo pacman -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
+cd ..;
+sudo rm -rf yay/;
 
 # linguagens
-yay -S python python-pip python-pipx nodejs npm php apache mariadb go ;
+yay -S python python-pip python-pipx nodejs npm php apache mariadb go;
 pipx ensurepath;
 
 # sddm
@@ -43,11 +45,11 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # gtk
-cp -r .config/gtk-3.0/themes ~/.local/share/
-cp -r .config/gtk-3.0/icons ~/.local/share/
-gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
-gsettings set org.gnome.desktop.interface icon-theme Nordic-darker
-gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
+cp -r .config/gtk-3.0/themes ~/.local/share/;
+cp -r .config/gtk-3.0/icons ~/.local/share/;
+gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta;
+gsettings set org.gnome.desktop.interface icon-theme Nordic-darker;
+gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice;
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
