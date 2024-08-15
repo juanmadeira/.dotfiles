@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # script to run wlogout if it's not already running
 
 # check if wlogout is installed

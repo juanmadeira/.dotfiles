@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # script to run clipse if it's not already running
 
 # check if clipse is installed
