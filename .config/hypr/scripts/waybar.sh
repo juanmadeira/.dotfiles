@@ -1,6 +1,7 @@
-#!/usr/bin/env sh
+#!/bin/bash
+# script para adicionar ao waybar a função de toggle
 
-# verifica se o waybar está rodando
+# verificar se o waybar está rodando
 if pgrep -x "waybar" > /dev/null
 then
     # se estiver rodando, envia o sinal SIGTERM para encerrar o waybar

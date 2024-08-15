@@ -1,14 +1,14 @@
-#!/usr/bin/env sh
-# script to run clipse if it's not already running
+#!/bin/bash
+# script para executar o clipse se não estiver sendo executado
 
-# check if clipse is installed
+# verificar se o clipse está instalado
 if ! command -v clipse &> /dev/null
 then
     echo "clipse could not be found. Please install it first."
     exit 1
 fi
 
-# check if clipse is already running
+# verificar se o clipse está rodando
 if pgrep -x "clipse" > /dev/null
 then
     echo "clipse is already running. Exiting."
