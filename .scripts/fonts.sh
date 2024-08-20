@@ -1,31 +1,33 @@
 #!/bin/bash
 
-# this script installs all fonts from the current directory on arch linux
-# https://github.com/miguelgargallo/install-arch-fonts
+# script para instalar todas as fontes do diretório atual
+# autor: https://github.com/miguelgargallo/install-arch-fonts
 
-# check if user is running as root
+# conferir se o usuário está rodando como root
 if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root"
     exit 1
 fi
 
-# get the current working directory
+# definir diretório atual
 font_folder=$(pwd)
 
-# check if the folder exists
+# conferir se a pasta de fontes existe
 if [ ! -d "$font_folder" ]; then
     echo "The current working directory does not exist"
     exit 1
 fi
 
-# copy all fonts to the system fonts folder
+# copiar todas as fontes para a pasta de fontes do sistema
 cp -r $font_folder/*.otf /usr/share/fonts/
 
-# update font cache
+# atualizar cache das fontes
 fc-cache -f -v
 
 echo "All fonts have been successfully installed."
 echo
 sleep 2
 
+# fechar janela do kitty 
 kitty @ close-window
+

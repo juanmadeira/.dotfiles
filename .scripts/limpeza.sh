@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# https://github.com/gustavomarchesim/dotfiles
+# script para limpar pacotes órfãos e cache do yay/pacman
+# autor: https://github.com/gustavomarchesim/dotfiles
 
-# Esperar 1 segundo e limpa a tela
+# esperar 1 segundo e limpar a tela
 sleep 1
 clear
 
-# Exibir "Limpeza" usando figlet
+# exibir "Limpeza" usando figlet
 figlet "Limpeza"
 echo
 
-# Perguntar ao usuário se deseja iniciar a limpeza
+# perguntar ao usuário se deseja iniciar a limpeza
 if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?"; then
     echo 
     echo ":: Limpeza iniciada."
@@ -23,7 +24,7 @@ else
     exit
 fi
 
-# Remover pacotes órfãos
+# remover pacotes órfãos
 if sudo pacman -Rns $(pacman -Qtdq); then
     echo ":: Pacotes órfãos removidos com sucesso"
     sleep 2
@@ -32,7 +33,7 @@ else
     sleep 2
 fi
 
-# Limpar cache do Yay
+# limpar cache do yay
 if yay -Scc --noconfirm; then
     echo ":: Cache do Yay limpo com sucesso"
     sleep 2
@@ -41,13 +42,14 @@ else
     sleep 2
 fi
 
-# Enviar notificação de conclusão
+# enviar notificação de conclusão
 notify-send "Limpeza completa"
 echo
 echo ":: Limpeza completa"
 
-# Pausar para o usuário visualizar a mensagem
+# pausar para o usuário visualizar a mensagem
 sleep 2
 
-# Fechar janela do Kitty
+# fechar janela do kitty
 kitty @ close-window
+

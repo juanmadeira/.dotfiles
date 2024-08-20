@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# https://github.com/gustavomarchesim/dotfiles
+# script para atualizar o sistema através do yay
+# autor: https://github.com/gustavomarchesim/dotfiles
 
-# Espera 1 segundo e limpa a tela
+# espera 1 segundo e limpa a tela
 sleep 1
 clear
 
-# Exibir "Atualizações" usando figlet
+# exibir "Atualizações" usando figlet
 figlet "Atualizar"
 echo
 
-# Verificar se um pacote está instalado com yay
+# verificar se um pacote está instalado com yay
 _isInstalledYay() {
     package="$1"
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "${package} ")"
@@ -21,7 +22,7 @@ _isInstalledYay() {
     fi
 }
 
-# Perguntar ao usuário se deseja iniciar a atualização
+# perguntar ao usuário se deseja iniciar a atualização
 if gum confirm "VOCÊ DESEJA INICIAR A ATUALIZAÇÃO AGORA?"; then
     echo 
     echo ":: Atualização iniciada."
@@ -34,7 +35,7 @@ else
     exit
 fi
 
-# Verificar se o timeshift está instalado
+# verificar se o timeshift está instalado
 if _isInstalledYay "timeshift"; then
     # Pergunta ao usuário se deseja criar um snapshot
     if gum confirm "VOCÊ DESEJA CRIAR UM SNAPSHOT?"; then
@@ -56,16 +57,17 @@ if _isInstalledYay "timeshift"; then
     echo
 fi
 
-# Executar a atualização com yay
+# executar a atualização com yay
 yay
 
-# Enviar uma notificação informando que a atualização foi concluída
+# enviar uma notificação informando que a atualização foi concluída
 notify-send "Atualização completa"
 echo 
 echo ":: Atualização completa"
 
-# Pausar para o usuário visualizar a mensagem
+# pausar para o usuário visualizar a mensagem
 sleep 2
 
-# Fechar janela do Kitty
+# fechar janela do kitty
 kitty @ close-window
+

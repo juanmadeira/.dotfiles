@@ -1,18 +1,19 @@
 ## fonts.sh
 
+script para instalar todas as fontes do diretório atual
+> mover o arquivo fonts.sh para o diretório em que as fontes serão baixadas
+
+autor:
 ```shell
 https://github.com/miguelgargallo/install-arch-fonts
 ```
 
-> mover o arquivo fonts.sh para o diretorio em que as fontes serao baixadas
+## atualizar.sh, limpeza.sh
 
-```shell
-chmod +x fonts.sh
-sudo ./fonts.sh
-```
+cript para atualizar o sistema através do yay
+script para limpar pacotes órfãos e cache do yay/pacman
 
-## atualizar.sh e limpeza.sh
-
+autor:
 ```shell
 https://github.com/gustavomarchesim/dotfiles
 ```

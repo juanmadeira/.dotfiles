@@ -1,9 +1,12 @@
 #!/bin/bash
-# Esperar 1 segundo e limpa a tela
+
+# script para exibir os pacotes instalados por ordem cronológica
+
+# esperar 1 segundo e limpar a tela
 sleep 1
 clear
 
-# Exibir "Pacotes por data" usando figlet
+# exibir "Pacotes por data" usando figlet
 figlet "Pacotes por data"
 echo
 
@@ -14,3 +17,4 @@ done | \
     sort -u | \
     sed -e 's/\[ALPM\] installed //' -e 's/(.*$//'
 bash
+
