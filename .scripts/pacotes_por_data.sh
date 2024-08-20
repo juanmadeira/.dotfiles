@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# script para exibir os pacotes instalados por ordem cronológica
+# script para exibir os pacotes instalados em ordem cronológica
 
 # esperar 1 segundo e limpar a tela
 sleep 1
