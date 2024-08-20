@@ -46,7 +46,9 @@ alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
+# scripts
 alias bsu="source ~/.bashrc"
 alias limpeza="kitty ~/.scripts/limpeza.sh"
 alias atualizar="kitty ~/.scripts/atualizar.sh"
 alias ppd="kitty ~/.scripts/pacotes_por_data.sh"
+alias retroarch="~/.scripts/retroarch.sh"
