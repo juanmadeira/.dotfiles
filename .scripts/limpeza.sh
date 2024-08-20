@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# script para limpar pacotes órfãos e cache do yay/pacman
 # autor: https://github.com/gustavomarchesim/dotfiles
+# script para limpar pacotes órfãos e cache do yay/pacman
 
 # esperar 1 segundo e limpar a tela
 sleep 1
