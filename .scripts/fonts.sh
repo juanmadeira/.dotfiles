@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# script para instalar todas as fontes do diretório atual
 # autor: https://github.com/miguelgargallo/install-arch-fonts
+# script para instalar todas as fontes do diretório atual
 
 # conferir se o usuário está rodando como root
 if [[ $EUID -ne 0 ]]; then
