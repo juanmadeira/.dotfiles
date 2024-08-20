@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# script para atualizar o sistema através do yay
 # autor: https://github.com/gustavomarchesim/dotfiles
+# script para atualizar o sistema através do yay
 
 # espera 1 segundo e limpa a tela
 sleep 1
