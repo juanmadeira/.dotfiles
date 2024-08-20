@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# script para atualizar arquivo de configuração do retroarch após ter usado pela última vez no windows por meio de dual boot
+# script para atualizar arquivo de configuração do RetroArch após ter usado pela última vez no windows por meio de dual boot
 
 # esperar 1 segundo e limpar a tela
 sleep 1
