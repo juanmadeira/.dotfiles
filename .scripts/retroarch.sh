@@ -15,7 +15,7 @@ RA_DIR="/home/juan/Documents/documentos/jogos/RetroArch/RetroArch.AppImage.home/
 
 # excluir arquivo de configuração do windows e renomear o do linux para ser o atual
 cd $RA_DIR
-rm retroarch.cfg
+rm -f retroarch.cfg
 echo ":: Excluindo retroarch.cfg"
 cp retroarch_linux.cfg retroarch.cfg
 echo ":: Copiando retroarch_linux.cfg"
