@@ -7,8 +7,7 @@
         ".env": ".env*"
     },
     "explorer.compactFolders": false,
-
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.minimap.showSlider": "always",
     "editor.semanticHighlighting.enabled": false,
     "editor.stickyScroll.enabled": false,
@@ -23,13 +22,12 @@
 
     "window.commandCenter": false,
     "window.menuBarVisibility": "toggle",
-
     "workbench.activityBar.location": "hidden",
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "symbols",
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
-    "workbench.statusBar.visible": true,
+    "workbench.statusBar.visible": false,
 
     "vim.disableExtension": true,
 
