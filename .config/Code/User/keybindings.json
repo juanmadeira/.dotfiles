@@ -5,7 +5,19 @@
         "command": "-workbench.action.quit"
     },
     {
-        "key": "ctrl+shift+oem_2",
+        "key": "ctrl+alt+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
+        "key": "ctrl+alt+.",
+        "command": "editor.action.toggleMinimap"
+    },
+    {
+        "key": "ctrl+alt+oem_2",
         "command": "toggleVim"
     }
 ]
