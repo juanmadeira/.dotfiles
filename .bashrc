@@ -19,6 +19,12 @@ alias music='tmux new-session -s $$ "tmux source-file ~/.config/ncmpcpp/tsession
 _trap_exit() { tmux kill-session -t $$; }
 
 # aliases
+    # terminal
+alias c="clear"
+alias cls="clear"
+alias qt="exit"
+
+    # cd
 alias ~="cd ~"
 alias ..="cd .."
 alias root="cd /"
@@ -26,9 +32,7 @@ alias dots="cd ~/.dotfiles"
 alias cfg="cd ~/.config"
 alias doc="cd /eva02/Documents/documentos"
 
-alias c="clear"
-alias cls="clear"
-alias qt="exit"
+    # cli
 alias vi="nvim"
 alias lg="lazygit"
 alias y="yazi"
@@ -42,13 +46,16 @@ alias lt="eza -a --tree --level=2 --icons"
 alias clock="tty-clock -C 6 -D -B -c -s"
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
+alias pycowsay="v; pycowsay"
 
+    # conf
 alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
-# scripts
+    # scripts
 alias bsu="source ~/.bashrc"
+alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python3
 alias limpeza="kitty ~/.scripts/limpeza.sh"
 alias atualizar="kitty ~/.scripts/atualizar.sh"
-alias ppd="kitty ~/.scripts/pacotes_por_data.sh"
+alias ppd="~/.scripts/pacotes_por_data.sh"
 alias retroarch="~/.scripts/retroarch.sh"
