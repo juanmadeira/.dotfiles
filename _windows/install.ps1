@@ -4,23 +4,37 @@
 	— juan.
 	data: 2024-04-11
 
-	última atualização: 2024-06-02
+	última atualização: 2024-09-01
 #>
 
-# instalação do scoop
+##################
+### INSTALAÇÃO ###
+##################
+
+sleep 2;
+clear;
+figlet ".dotfiles";
+echo "";
+
+# instalar o scoop
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression;
 
 	# importação dos pacotes do scoop
+    scoop bucket add extras; scoop bucket add games
 	scoop import "packages/scoop-packages.json";
 
-	# neovim
-	cp -r .dotfiles/nvim AppData/Local;
 
-# instalação do chocolatey
+# instalar o chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
-	# importação dos pacotes do chocolatey
+	# importar os pacotes do chocolatey
 	choco install "packages/chocolatey-packages.config";
 
-# instalação do winget
+
+# instalar o winget
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe;
+
+
+# copiar configurações
+cp ../.config/starship.toml ~/.config
+cp -r ../.config/nvim ~/AppData/Local;
