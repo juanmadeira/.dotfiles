@@ -13,10 +13,10 @@
 ### INSTALAÇÃO ###
 ##################
 
-sleep 2
+sleep 2;
 clear;
 figlet ".dotfiles";
-echo
+echo;
 
 # copiar configurações
 cp -r .config ~/;
