@@ -16,25 +16,25 @@ clear;
 figlet ".dotfiles";
 echo "";
 
-# instalar o scoop
+# instalar scoop
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression;
 
-	# importação dos pacotes do scoop
-    scoop bucket add extras; scoop bucket add games
+	# importar pacotes do scoop
+    scoop bucket add extras; scoop bucket add games;
 	scoop import "packages/scoop-packages.json";
 
 
-# instalar o chocolatey
+# instalar chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
-	# importar os pacotes do chocolatey
+	# importar pacotes do chocolatey
 	choco install "packages/chocolatey-packages.config";
 
 
-# instalar o winget
+# instalar winget
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe;
 
 
 # copiar configurações
-cp ../.config/starship.toml ~/.config
+cp ../.config/starship.toml ~/.config;
 cp -r ../.config/nvim ~/AppData/Local;
