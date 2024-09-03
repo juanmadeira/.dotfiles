@@ -68,15 +68,15 @@ yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer; # particionamento
 
 # outros
-yay -S btop eza man tar gum fzf starship github-cli lazygit; # terminal
-yay -S neofetch onefetch; # fetches
+yay -S btop eza man tar gum fzf starship github-cli lazygit neofetch onefetch; # terminal
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc swappy rhythmbox stremio; # reproducao de midia
+yay -S easytag handbrake kdenlive; # edicao de media
 yay -S thunar tumbler thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
-yay -S firefox p7zip-gui qalculate-gtk; # outros
+yay -S firefox tor-browser p7zip-gui qalculate-gtk; # outros
 
 # jogos
-yay -S lutris mangohud;
+yay -S lutris steam mangohud;
 
 # spotify/spicetify
 yay -S spotify spicetify-cli;
