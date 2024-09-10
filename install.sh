@@ -68,7 +68,7 @@ yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer; # particionamento
 
 # outros
-yay -S btop eza man tar gum fzf starship github-cli lazygit neofetch onefetch; # terminal
+yay -S btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch; # terminal
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc gwenview rhythmbox stremio; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
