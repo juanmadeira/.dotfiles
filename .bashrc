@@ -44,6 +44,7 @@ alias ls="eza -a --icons"
 alias ll="eza -al --icons"
 alias lt="eza -a --tree --level=2 --icons"
 alias clock="tty-clock -C 6 -D -B -c -s"
+alias xhost="xhost si:localuser:root"
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 alias pycowsay="v; pycowsay"
