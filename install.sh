@@ -9,6 +9,7 @@
 #	última atualização: 2024-08-04
 #
 
+
 ##################
 ### INSTALAÇÃO ###
 ##################
@@ -93,16 +94,10 @@ pipx install pycowsay;
 ### OUTROS ###
 ##############
 
-# gparted
-    # xhost si:localuser:root
-    # sudo gparted
-
 # grub-customizer
     sudo cp -r .etc/grub/evangelion-grub-theme /boot/grub/themes/;
-    # xhost si:localuser:root
-    # sudo grub-customizer
 
 # /etc/pacman.conf
-    # ParallelDownloads = 7
+    # ParallelDownloads = 5
     # ILoveCandy
 
