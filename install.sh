@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-08-04
+#	última atualização: 2024-09-21
 #
 
 
@@ -22,6 +22,8 @@ echo;
 # copiar configurações
 cp -r .config ~/;
 cp -r .scripts ~/;
+cp -r .config/gtk-3.0/icons ~/.local/share/;
+cp -r .config/gtk-3.0/themes ~/.local/share/;
 sudo chmod +x ~/.scripts/*;
 sudo chmod +x ~/.config/hypr/scripts/*;
 sudo chmod +x ~/.config/rofi/scripts/*;
@@ -45,13 +47,6 @@ sudo cp .etc/sddm/sddm.conf /etc/;
 systemctl start sddm.service;
 systemctl enable sddm;
 
-# gtk
-cp -r .config/gtk-3.0/themes ~/.local/share/;
-cp -r .config/gtk-3.0/icons ~/.local/share/;
-gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta;
-gsettings set org.gnome.desktop.interface icon-theme Nordic-darker;
-gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice;
-
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 yay -S ttf-ms-fonts; # fontes da microsoft x(
@@ -66,15 +61,13 @@ yay -S wlogout hyprlock hypridle; # bloqueio de tela
 yay -S wl-clipboard clipse; # area de transferencia
 yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
-yay -S gparted grub-customizer; # particionamento
-
-# outros
+yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch; # terminal
 yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc gwenview rhythmbox stremio; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
-yay -S firefox obsidian filezilla tor-browser p7zip-gui qalculate-gtk; # outros
+yay -S firefox obsidian filezilla tor-browser qbittorrent thunderbird p7zip-gui qalculate-gtk; # outros
 
 # jogos
 yay -S lutris steam mangohud;
