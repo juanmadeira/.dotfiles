@@ -27,6 +27,7 @@ cp -r .config/gtk-3.0/themes ~/.local/share/;
 sudo chmod +x ~/.scripts/*;
 sudo chmod +x ~/.config/hypr/scripts/*;
 sudo chmod +x ~/.config/rofi/scripts/*;
+sudo cp -r .etc/grub/evangelion-grub-theme /boot/grub/themes/;
 
 # yay
 sudo pacman -Sy --needed git base-devel;
@@ -81,16 +82,4 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resource
 # :)
 yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
 pipx install pycowsay;
-
-
-##############
-### OUTROS ###
-##############
-
-# grub-customizer
-    sudo cp -r .etc/grub/evangelion-grub-theme /boot/grub/themes/;
-
-# /etc/pacman.conf
-    # ParallelDownloads = 5
-    # ILoveCandy
 
