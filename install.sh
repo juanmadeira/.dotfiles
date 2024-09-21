@@ -71,7 +71,7 @@ yay -S neovim nano visual-studio-code-bin # editores de texto
 yay -S ffmpeg mpv mpd vlc gwenview rhythmbox stremio; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs yazi perl-image-exiftool mediainfo; # gerenciamento de arquivos
-yay -S firefox obsidian filezilla tor-browser qbittorrent thunderbird p7zip-gui qalculate-gtk; # outros
+yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird p7zip-gui qalculate-gtk; # outros
 
 # jogos
 yay -S lutris steam mangohud;
