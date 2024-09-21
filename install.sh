@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#	script de configuração do meu arch linux
-#   [!!!] feito para ser executado após a instalação completa do arch com hyprland
+#	script de configuração do meu arch hyprland
+#   [!!!] feito para ser executado após a instalação limpa do arch linux
 #
 #	— juan.
 #	data: 2024-06-02
@@ -19,7 +19,10 @@ clear;
 figlet ".dotfiles";
 echo;
 
-# copiar configurações
+# hyprland
+sudo pacman -S hyprland;
+
+# copiar configuracoes
 cp -r .config ~/;
 cp -r .scripts ~/;
 cp -r .config/gtk-3.0/icons ~/.local/share/;
@@ -83,3 +86,4 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resource
 yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
 pipx install pycowsay;
 
+reboot
