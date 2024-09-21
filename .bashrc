@@ -14,10 +14,6 @@ eval "$(starship init bash)"
 # fzf
 eval "$(fzf --bash)"
 
-# ncmpcpp
-alias music='tmux new-session -s $$ "tmux source-file ~/.config/ncmpcpp/tsession"'
-_trap_exit() { tmux kill-session -t $$; }
-
 # aliases
     # terminal
 alias c="clear"
@@ -43,18 +39,20 @@ alias f="fastfetch -c ~/.config/fastfetch/config_tldr.jsonc"
 alias ls="eza -a --icons"
 alias ll="eza -al --icons"
 alias lt="eza -a --tree --level=2 --icons"
-alias clock="tty-clock -C 6 -D -B -c -s"
-alias xhost="xhost si:localuser:root"
+alias clock="tty-clock -C 6 -D -B -c -s" # tty-clock sempre ciano
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
+alias xhost="xhost si:localuser:root"
 alias pycowsay="v; pycowsay"
+alias gparted="xhost; gparted"
+alias grub-customizer="xhost; grub-customizer"
 
     # conf
 alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
     # scripts
-alias bsu="source ~/.bashrc"
+alias bsu="source ~/.bashrc" # atualizar .bashrc
 alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python3
 alias limpeza="kitty ~/.scripts/limpeza.sh"
 alias atualizar="kitty ~/.scripts/atualizar.sh"
