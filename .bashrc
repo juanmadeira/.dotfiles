@@ -44,8 +44,8 @@ alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 alias xhost="xhost si:localuser:root"
 alias pycowsay="v; pycowsay"
-alias gparted="xhost; gparted"
-alias grub-customizer="xhost; grub-customizer"
+alias gparted="xhost; sudo gparted"
+alias grub-customizer="xhost; sudo grub-customizer"
 
     # conf
 alias .rc="nvim ~/.bashrc"
