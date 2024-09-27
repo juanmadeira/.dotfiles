@@ -90,6 +90,7 @@
     "clock": {
         "interval": 1,
 	    "format": "{:%H:%M:%S}",
+        "on-click-right": "wlogout",
 	    //"format-alt": "{:%A, %B %d, %Y (%R)}  ",
 	    "tooltip-format": "<tt><small>{calendar}</small></tt>",
 	    "calendar": {
