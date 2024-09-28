@@ -21,6 +21,7 @@ echo;
 
 # hyprland
 sudo pacman -S hyprland;
+sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland;
 
 # copiar configuracoes
 cp -r .config ~/;
