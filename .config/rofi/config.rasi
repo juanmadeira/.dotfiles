@@ -97,7 +97,7 @@ configuration {
     	sorting-method:    "name";
     }
 	recursivebrowser {
-        directory: "/";
+        directory: "/home/$USER";
         cancel-returns-1: true;
 		directories-first: true;
     	sorting-method: "name";
