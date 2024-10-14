@@ -68,7 +68,7 @@ yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch; # terminal
-yay -S neovim nano visual-studio-code-bin # editores de texto
+yay -S neovim nano visual-studio-code-bin; # editores de texto
 yay -S ffmpeg mpv mpd vlc gwenview zathura-pdf-mupdf rhythmbox stremio; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
@@ -76,6 +76,8 @@ yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thu
 
 # jogos
 yay -S lutris steam mangohud;
+yay -S wine winetricks;
+winetricks corefonts;
 
 # spotify/spicetify
 yay -S spotify spicetify-cli;
