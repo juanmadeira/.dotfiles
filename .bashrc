@@ -8,28 +8,26 @@ PS1='[\u@\h \W]\$ '
 # path
 export PATH="$HOME/.local/bin:$PATH"
 
-# starship
+# eval
 eval "$(starship init bash)"
-
-# fzf
 eval "$(fzf --bash)"
 
 # aliases
-    # terminal
+## terminal
 alias c="clear"
 alias cls="clear"
 alias qt="exit"
 
-    # cd
+## cd
 alias ~="cd ~"
 alias ..="cd .."
-alias root="cd /"
-alias dots="cd ~/.dotfiles"
 alias cfg="cd ~/.config"
-alias doc="cd /eva02/Documents/documentos"
+alias dots="cd ~/.dotfiles"
+alias doc="cd ~/Documents/documentos"
 
-    # cli
+## cli
 alias vi="nvim"
+alias vim="nvim"
 alias lg="lazygit"
 alias y="yazi"
 alias of="onefetch"
@@ -43,15 +41,15 @@ alias clock="tty-clock -C 6 -D -B -c -s" # tty-clock sempre ciano
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
 alias xhost="xhost si:localuser:root"
-alias pycowsay="v; pycowsay"
 alias gparted="xhost; sudo gparted"
 alias grub-customizer="xhost; sudo grub-customizer"
+alias pycowsay="v; pycowsay"
 
-    # conf
+## conf
 alias .rc="nvim ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
 
-    # scripts
+## scripts
 alias bsu="source ~/.bashrc" # atualizar .bashrc
 alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python3
 alias limpeza="kitty ~/.scripts/limpeza.sh"
