@@ -67,7 +67,7 @@ yay -S wl-clipboard clipse; # area de transferencia
 yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
-yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch; # terminal
+yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
 yay -S neovim nano visual-studio-code-bin; # editores de texto
 yay -S ffmpeg mpv mpd vlc gwenview zathura-pdf-mupdf rhythmbox stremio; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
