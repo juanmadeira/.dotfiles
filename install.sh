@@ -42,7 +42,7 @@ cd ..;
 sudo rm -rf yay/;
 
 # linguagens
-yay -S python python-pip python-pipx nodejs npm php apache mariadb go;
+yay -S python python-pip python-pipx nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jre8-openjdk-headless;
 pipx ensurepath;
 
 # sddm
