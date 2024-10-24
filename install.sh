@@ -23,16 +23,6 @@ echo;
 sudo pacman -S hyprland;
 sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland;
 
-# copiar configuracoes
-cp -r .config ~/;
-cp -r .scripts ~/;
-cp -r .config/gtk-3.0/icons ~/.local/share/;
-cp -r .config/gtk-3.0/themes ~/.local/share/;
-sudo chmod +x ~/.scripts/*;
-sudo chmod +x ~/.config/hypr/scripts/*;
-sudo chmod +x ~/.config/rofi/scripts/*;
-sudo cp -r .etc/grub/evangelion-grub-theme /boot/grub/themes/;
-
 # yay
 sudo pacman -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
@@ -41,16 +31,27 @@ makepkg -si;
 cd ..;
 sudo rm -rf yay/;
 
-# linguagens
-yay -S python python-pip python-pipx nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jre8-openjdk-headless;
-pipx ensurepath;
+# copiar configuracoes
+cp -r .config ~/;
+cp -r .scripts ~/;
+sudo chmod +x ~/.scripts/*;
+sudo chmod +x ~/.config/hypr/scripts/*;
+sudo chmod +x ~/.config/rofi/scripts/*;
 
-# sddm
-yay -S sddm qt6-5compat qt6-declarative qt6-svg;
-sudo cp -r .etc/sddm /usr/share/sddm/themes/;
-sudo cp .etc/sddm/sddm.conf /etc/;
+# gtk, qt, grub e sddm
+yay -S sddm qt6-5compat qt6-declarative qt6-svg kvantum;
+cp -r .config/gtk-3.0/icons ~/.local/share/; # icones gtk
+cp -r .config/gtk-3.0/themes ~/.local/share/; # temas gtk
+sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum/; # temas qt
+sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
+sudo cp -r .etc/sddm /usr/share/sddm/themes/; # temas sddm
+sudo cp .etc/sddm/sddm.conf /etc/; # config sddm
 systemctl start sddm.service;
 systemctl enable sddm;
+
+# linguagens
+yay -S python python-pip python-pipx nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
+pipx ensurepath;
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
