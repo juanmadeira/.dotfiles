@@ -3,7 +3,7 @@
 #![enable(unwrap_variant_newtypes)]
 (
     address: "127.0.0.1:6600",
-    theme: None,
+    theme: Some("theme"),
     cache_dir: None,
     on_song_change: ["~/.config/rmpc/notify.sh"],
     volume_step: 5,
