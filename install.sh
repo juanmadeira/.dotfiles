@@ -50,7 +50,7 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay -S python python-pip python-pipx nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay -S python python-pip nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
 pipx ensurepath;
 
 # fontes e icones
@@ -87,7 +87,6 @@ sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh;
 
 # :)
-yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock;
-pipx install pycowsay;
+yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay;
 
 reboot
