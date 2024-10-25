@@ -37,6 +37,7 @@ cp -r .scripts ~/;
 sudo chmod +x ~/.scripts/*;
 sudo chmod +x ~/.config/hypr/scripts/*;
 sudo chmod +x ~/.config/rofi/scripts/*;
+sudo chmod +x ~/.config/rmpc/scripts/*;
 
 # gtk, qt, grub e sddm
 yay -S sddm qt6-5compat qt6-declarative qt6-svg kvantum;
@@ -70,7 +71,7 @@ yay -S hyprshot; # captura de tela
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
 yay -S neovim nano visual-studio-code-bin; # editores de texto
-yay -S ffmpeg mpv mpd vlc gwenview zathura-pdf-mupdf rhythmbox stremio; # reproducao de midia
+yay -S ffmpeg mpv mpd mpdscribble rmpc-git rhythmbox vlc stremio gwenview zathura-pdf-mupdf; # reproducao de midia
 yay -S easytag handbrake kdenlive; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
 yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird p7zip-gui qalculate-gtk; # outros
