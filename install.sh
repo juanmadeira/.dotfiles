@@ -51,7 +51,7 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay -S python python-pip python-mpd2 nodejs npm php apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay -S python python-pip python-mpd2 nodejs npm php composer apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
 python -m venv ~/.venv;
 source ~/.venv/bin/activate;
 
