@@ -1,19 +1,15 @@
 -- configurações
-local set = vim.opt
-local cmd = vim.cmd
-local o = vim.o
-local map = vim.api.nvim_set_keymap
-
-set.number = true
-set.numberwidth = 2
-set.expandtab = true
-set.tabstop = 4
-set.shiftwidth = 4
-set.softtabstop = 4
+vim.opt.number = true
+vim.opt.numberwidth = 2
+vim.opt.expandtab = true
+vim.opttabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 
 -- mappings
 vim.g.mapleader = " "
 
+local map = vim.api.nvim_set_keymap
 map("n", "<A-z>", ":set wrap!<CR>", {}) -- alterna quebra de linha
 map("n", "<C-b>", ":Neotree toggle<CR>", {}) -- alterna neotree
 
@@ -32,5 +28,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
--- temas
-cmd[[colorscheme tokyonight]]
+-- cores
+vim.cmd("colorscheme tokyonight")
+vim.cmd("hi BufferTabpageFill guibg=transparent")
+vim.cmd("hi BufferCurrent guibg=transparent guifg=white")
+vim.cmd("hi BufferInactive guibg=transparent guifg=gray")
+vim.cmd("hi BufferVisible guibg=transparent guifg=gray")
