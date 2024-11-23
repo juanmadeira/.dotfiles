@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-09-21
+#	última atualização: 2024-11-17
 #
 
 
@@ -51,9 +51,18 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay -S python python-pip python-mpd2 nodejs npm php composer apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go docker jdk-openjdk jdk21-openjdk jdk8-openjdk;
 python -m venv ~/.venv;
 source ~/.venv/bin/activate;
+
+# compilados localmente
+mkdir ~/.local/build;
+cd ~/.local/build;
+git clone https://github.com/phpmyadmin/phpmyadmin.git;
+cd phpmyadmin;
+composer install;
+yarn install;
+cd ~/;
 
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
