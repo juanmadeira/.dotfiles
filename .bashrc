@@ -6,7 +6,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # path
-#export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 
 # eval
