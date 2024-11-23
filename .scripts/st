@@ -8,3 +8,4 @@ mpv $HOME/.scripts/src/stereo-test.mp3
 
 echo
 echo ":: Teste finalizado."
+
