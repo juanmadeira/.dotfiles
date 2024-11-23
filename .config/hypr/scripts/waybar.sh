@@ -10,3 +10,4 @@ else
     # se não estiver rodando, inicia o waybar
     waybar &
 fi
+
