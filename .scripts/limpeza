@@ -3,12 +3,8 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 # script para limpar pacotes órfãos e cache do yay/pacman
 
-# esperar 1 segundo e limpar a tela
-sleep 1
-clear
-
 # exibir "Limpeza" usando figlet
-figlet "Limpeza"
+printf '\e[1;96m'; figlet "Limpeza"
 echo
 
 # perguntar ao usuário se deseja iniciar a limpeza
@@ -45,11 +41,5 @@ fi
 # enviar notificação de conclusão
 notify-send "Limpeza completa"
 echo
-echo ":: Limpeza completa"
-
-# pausar para o usuário visualizar a mensagem
-sleep 2
-
-# fechar janela do kitty
-kitty @ close-window
+echo ":: Limpeza completa."
 

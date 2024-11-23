@@ -3,12 +3,8 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 # script para atualizar o sistema através do yay
 
-# espera 1 segundo e limpa a tela
-sleep 1
-clear
-
 # exibir "Atualizações" usando figlet
-figlet "Atualizar"
+printf '\e[1;96m'; figlet "Atualizar"
 echo
 
 # verificar se um pacote está instalado com yay
@@ -63,11 +59,8 @@ yay
 # enviar uma notificação informando que a atualização foi concluída
 notify-send "Atualização completa"
 echo 
-echo ":: Atualização completa"
+echo ":: Atualização completa."
 
 # pausar para o usuário visualizar a mensagem
 sleep 2
-
-# fechar janela do kitty
-kitty @ close-window
 

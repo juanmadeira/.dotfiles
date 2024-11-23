@@ -5,7 +5,7 @@
 
 # conferir se o usuário está rodando como root
 if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root"
+    echo ":: Esse script deve ser executado como root."
     exit 1
 fi
 
@@ -14,7 +14,7 @@ font_folder=$(pwd)
 
 # conferir se a pasta de fontes existe
 if [ ! -d "$font_folder" ]; then
-    echo "The current working directory does not exist"
+    echo ":: O diretório desejado não existe."
     exit 1
 fi
 
@@ -24,10 +24,5 @@ cp -r $font_folder/*.otf /usr/share/fonts/
 # atualizar cache das fontes
 fc-cache -f -v
 
-echo "All fonts have been successfully installed."
-echo
-sleep 2
-
-# fechar janela do kitty 
-kitty @ close-window
+echo ":: Fontes instaladas com sucesso."
 

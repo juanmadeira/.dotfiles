@@ -7,7 +7,7 @@ sleep 1
 clear
 
 # exibir "Pacotes por data" usando figlet
-figlet "Pacotes por data"
+printf '\e[1;96m'; figlet "Pacotes por data"
 echo
 
 for i in $(pacman -Qq)
