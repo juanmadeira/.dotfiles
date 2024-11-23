@@ -16,7 +16,7 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 | menu            | rofi                 |
 | barra de status | waybar               |
 | editor de texto | neovim, vscode       |
-| música          | rhythmbox, spotify   |
+| música          | rmpc, spotify        |
 | vídeo           | mpv, vlc             |
 
 ---
