@@ -6,7 +6,8 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # path
-export PATH="$HOME/.local/bin:$PATH"
+#export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.scripts:$PATH"
 
 # eval
 eval "$(starship init bash)"
@@ -48,14 +49,7 @@ alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python
 alias lyrics="v; lyrics"
 alias spotdl="v; spotdl"
 
-
 # conf
 alias .rc="nvim ~/.bashrc"
 alias bsu="source ~/.bashrc" # atualizar .bashrc
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
-
-# scripts
-alias retroarch="~/.scripts/retroarch.sh"
-alias ppd="~/.scripts/pacotes_por_data.sh"
-alias limpeza="kitty ~/.scripts/limpeza.sh"
-alias atualizar="kitty ~/.scripts/atualizar.sh"
