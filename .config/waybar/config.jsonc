@@ -43,7 +43,7 @@
         "format": "󰕾 {volume}%",
         "format-muted": "󰖁 [{volume}%]",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "pavucontrol",
+        "on-click-right": "kitty --class pulsemixer -e 'pulsemixer'",
         "scroll-step": 5,
         "tooltip": true,
         "tooltip-format": "dispositivo: {node_name}"
@@ -145,8 +145,7 @@
         "icon-size": 20,
         "rewrite": {
             "(.*) — Mozilla Firefox": "$1 - Firefox",
-            "(.*) - Visual Studio Code": "$1 - 󰨞 ",
-            "(.*) - Discord": "$1 - 󰙯 ",
+            "(.*) - Visual Studio Code": "$1 - VSCode ",
             "Spotify Free": "Spotify"
         }
     }
