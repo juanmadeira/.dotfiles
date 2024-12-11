@@ -3,7 +3,7 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 # script para atualizar o sistema através do yay
 
-# exibir "Atualizações" usando figlet
+# exibir "Atualizar" através do figlet
 printf '\e[1;96m'; figlet "Atualizar"
 echo
 

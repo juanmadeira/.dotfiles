@@ -2,8 +2,10 @@
 
 # script para testar os lados stereo do fone de ouvido/auto-falante
 
+# exibir "Stereo test" através do figlet
 printf '\e[1;96m'; figlet "Stereo test"
 
+# executar teste através do mpv
 mpv $HOME/.scripts/src/stereo-test.mp3
 
 echo

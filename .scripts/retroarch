@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# script para atualizar arquivo de configuração do RetroArch após ter usado pela última vez no windows por meio de dual boot
+# script para atualizar arquivo de configuração do RetroArch após ter sido utilizado pela última vez no windows em dual boot
 
 # esperar 1 segundo e limpar a tela
 sleep 1
 clear
 
-# exibir "RetroArch" usando figlet
+# exibir "RetroArch" através do figlet
 printf '\e[1;96m'; figlet "RetroArch"
 echo
 

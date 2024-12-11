@@ -3,7 +3,7 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 # script para limpar pacotes órfãos e cache do yay/pacman
 
-# exibir "Limpeza" usando figlet
+# exibir "Limpeza" através do figlet
 printf '\e[1;96m'; figlet "Limpeza"
 echo
 
@@ -26,6 +26,15 @@ if sudo pacman -Rns $(pacman -Qtdq); then
     sleep 2
 else
     echo ":: Nenhum pacote órfão encontrado ou erro ao remover pacotes"
+    sleep 2
+fi
+
+# limpar cache do pacman
+if sudo paccache -r && sudo paccache -ruk0; then
+    echo ":: Cache do Pacman limpo com sucesso"
+    sleep 2
+else
+    echo ":: Erro ao limpar o cache do Pacman"
     sleep 2
 fi
 
