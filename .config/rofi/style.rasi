@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,recursivebrowser,window";
+    modi:                       "drun,run,filebrowser,recursivebrowser,window";
     show-icons:                 true;
     display-drun:               "󰀻";
     display-emoji:              ":)";
@@ -17,8 +17,8 @@ configuration {
     display-filebrowser:        "";
     display-recursivebrowser:   "󰚝";
     display-window:             "";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/

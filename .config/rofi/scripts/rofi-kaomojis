@@ -4,7 +4,7 @@
 # convenient for me since i also use this emacs package
 
 moji_dir=$(dirname "$0")
-moji_path="$moji_dir/KAOMOJIS"
+moji_path="$moji_dir/kaomojis"
 categories=$(grep -o -E '\<[A-Z][a-z]{2,}\>' "$moji_path")
 select_random="Control+Return"
 
