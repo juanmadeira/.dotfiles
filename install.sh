@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-11-17
+#	última atualização: 2024-12-11
 #
 
 
@@ -41,7 +41,7 @@ sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
 # gtk, qt, grub e sddm
-yay -S sddm qt6-5compat qt6-declarative qt6-svg kvantum;
+yay -S sddm qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5;
 cp -r .config/gtk-3.0/icons ~/.local/share/; # icones gtk
 cp -r .config/gtk-3.0/themes ~/.local/share/; # temas gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum/; # temas qt
@@ -91,7 +91,7 @@ yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool media
 yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk; # outros
 
 # musica
-yay -S mpd mpdscribble rmpc-git rhythmbox spotify spicetify-cli; # players de musica
+yay -S mpd mpdscribble rmpc-git spotify spicetify-cli; # players de musica
 pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
 pip install spotdl; # spotify downloader
 sudo chmod a+wr /opt/spotify;
