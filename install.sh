@@ -81,7 +81,7 @@ yay -S wlogout hyprlock hypridle; # bloqueio de tela
 yay -S wl-clipboard clipse; # area de transferencia
 yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
-yay -S bluetooth blueman xone-dlundqvist-dkms-git; # bluetooth
+yay -S bluetooth blueman xpadneo-dkms; # bluetooth
 yay -S pipewire-pulse pulsemixer; # audio
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
