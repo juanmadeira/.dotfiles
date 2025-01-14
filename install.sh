@@ -67,6 +67,11 @@ yarn install;
 cd ~-;
 cp -r .etc/phpmyadmin/* ~/.local/build/phpmyadmin/public/themes;
 
+# flatpak
+yay -S flatpak;
+flatpak install flathub com.obsproject.Studio;
+flatpak install flathub com.obsproject.Studio.Plugin.DroidCam;
+
 # fontes e icones
 yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 yay -S ttf-ms-fonts; # fontes da microsoft x(
