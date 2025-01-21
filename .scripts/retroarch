@@ -11,7 +11,7 @@ printf '\e[1;96m'; figlet "RetroArch"
 echo
 
 # definir diretório do RetroArch
-RA_DIR="$HOME/Documents/documentos/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/"
+RA_DIR="$HOME/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/"
 
 # excluir arquivo de configuração do windows e renomear o do linux para ser o atual
 cd $RA_DIR
