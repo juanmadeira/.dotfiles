@@ -91,7 +91,7 @@ yay -S pipewire-pulse pulsemixer; # audio
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
 yay -S neovim nano visual-studio-code-bin; # editores de texto
-yay -S ffmpeg mpv vlc stremio gwenview kimageformats zathura-pdf-mupdf; # reproducao de midia
+yay -S ffmpeg mpv vlc stremio gwenview kimageformats sioyek; # reproducao de midia
 yay -S easytag handbrake kdenlive krita darktable; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
 yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk; # outros
@@ -105,7 +105,7 @@ sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
 
 # jogos
-yay -S lutris steam mangohud retroarch-assets-git;
+yay -S lutris steam mangohud gamemode retroarch-assets-git;
 yay -S wine winetricks;
 winetricks corefonts;
 
