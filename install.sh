@@ -99,7 +99,8 @@ yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thu
 # musica
 yay -S mpd mpdscribble rmpc-git spotify spicetify-cli; # players de musica
 pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
-pip install yt-dlp spotdl; # spotify downloader
+pip install bandcamp-downloader; # bandcamp downloader
+pip install spotdl; # spotify downloader
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
