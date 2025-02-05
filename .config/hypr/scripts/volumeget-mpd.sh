@@ -3,5 +3,5 @@
 
 volumempd=$(mpc volume)
 
-notify-send "mpd $(mpc volume)" -h string:x-canonical-private-synchronous:anythin
+notify-send "󰕾 mpd $(mpc volume)" -h string:x-canonical-private-synchronous:anythin
 
