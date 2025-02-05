@@ -52,7 +52,7 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby jdk-openjdk jdk21-openjdk jdk8-openjdk;
 python -m venv ~/.venv;
 source ~/.venv/bin/activate;
 
@@ -94,7 +94,7 @@ yay -S neovim nano visual-studio-code-bin; # editores de texto
 yay -S ffmpeg mpv vlc stremio gwenview kimageformats sioyek; # reproducao de midia
 yay -S easytag handbrake kdenlive krita darktable; # edicao de midia
 yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
-yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk; # outros
+yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
 
 # musica
 yay -S mpd mpdscribble rmpc-git spotify spicetify-cli; # players de musica
