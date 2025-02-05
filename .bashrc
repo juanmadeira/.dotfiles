@@ -6,8 +6,9 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # path
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # eval
 eval "$(starship init bash)"
@@ -21,7 +22,7 @@ alias ~="cd ~"
 alias ..="cd .."
 alias cfg="cd ~/.config"
 alias dots="cd ~/.dotfiles"
-alias doc="cd ~/Documents/documentos"
+alias doc="cd ~/Documents/"
 
 # cli
 alias y="yazi"
@@ -38,11 +39,13 @@ alias lt="eza -a --tree --level=2 --icons"
 alias clock="tty-clock -C 6 -D -B -c -s" # tty-clock sempre ciano
 alias figlet="printf '\e[1;96m'; figlet" # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16" # neomatrix sempre ciano
+alias pid="ps ax | grep "
 
 # xhost
 alias xhost="xhost si:localuser:root"
 alias gparted="xhost; sudo gparted"
 alias grub-customizer="xhost; sudo grub-customizer"
+alias gnome-disks="xhost; sudo gnome-disks"
 
 # python
 alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python
