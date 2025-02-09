@@ -53,8 +53,16 @@ systemctl enable sddm;
 
 # linguagens
 yay -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby jdk-openjdk jdk21-openjdk jdk8-openjdk;
-python -m venv ~/.venv;
-source ~/.venv/bin/activate;
+
+# pip
+mkdir ~/.venv;
+python -m venv ~/.venv/venv;
+python -m venv ~/.venv/spotdl;
+source ~/.venv/spotdl/bin/activate;
+pip install spotdl; # spotify downloader
+source ~/.venv/venv/bin/activate;
+pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
+pip install bandcamp-downloader; # bandcamp downloader
 
 # compilados localmente
 # phpmyadmin
@@ -98,9 +106,6 @@ yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thu
 
 # musica
 yay -S mpd mpdscribble rmpc-git spotify spicetify-cli; # players de musica
-pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
-pip install bandcamp-downloader; # bandcamp downloader
-pip install spotdl; # spotify downloader
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify

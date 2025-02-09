@@ -48,9 +48,10 @@ alias grub-customizer="xhost; sudo grub-customizer"
 alias gnome-disks="xhost; sudo gnome-disks"
 
 # python
-alias v="source ~/.venv/bin/activate" # ativar ambiente virtual python
+alias v="source ~/.venv/venv/bin/activate" # ativar ambiente virtual python
 alias lyrics="v; lyrics"
-alias spotdl="v; spotdl"
+alias bandcamp-dl="v; bandcamp-dl"
+alias spotdl="source ~/.venv/spotdl/bin/activate; spotdl"
 
 # conf
 alias .rc="nvim ~/.bashrc"
