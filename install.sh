@@ -111,7 +111,7 @@ sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
 
 # jogos
-yay -S lutris steam mangohud gamemode retroarch-assets-git;
+yay -S lutris steam heroic-games-launcher-bin mangohud gamemode retroarch-assets-git;
 yay -S wine winetricks;
 winetricks corefonts;
 
