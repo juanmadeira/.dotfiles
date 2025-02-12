@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2024-12-11
+#	última atualização: 2025-02-12
 #
 
 
@@ -15,9 +15,12 @@
 ##################
 
 sleep 2;
-clear;
-figlet ".dotfiles";
-echo;
+echo "       _       _    __ _ _          ";
+echo "    __| | ___ | |_ / _(_) | _______ ";
+echo "   / _| |/ _ || __| |_| | |/ _ | __|";
+echo "  | (_| | (_) | |_|  _| | | __/|__ |";
+echo "(_)___,_||___/|_| |_| |_|_|___|____/";
+echo "                                    ";
 
 # hyprland
 sudo pacman -S hyprland;
