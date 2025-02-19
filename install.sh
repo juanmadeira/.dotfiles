@@ -92,15 +92,14 @@ sudo cp -r fonts/* /usr/share/fonts/;
     # sddm  -> OpenSans
 
 # hyprland
+yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
+yay -S wlogout hyprlock hypridle hyprpaper; # bloqueio de tela e papel de parede
 yay -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
-yay -S wlogout hyprlock hypridle; # bloqueio de tela
 yay -S wl-clipboard clipse; # area de transferencia
-yay -S swww waypaper; # papel de parede
 yay -S hyprshot; # captura de tela
 yay -S bluetooth blueman xpadneo-dkms; # bluetooth
 yay -S pipewire-pulse pulsemixer; # audio
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
-yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
 yay -S neovim nano visual-studio-code-bin; # editores de texto
 yay -S ffmpeg mpv vlc stremio shotwell sioyek; # reproducao de midia
 yay -S easytag handbrake kdenlive krita darktable; # edicao de midia
