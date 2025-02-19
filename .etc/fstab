@@ -22,14 +22,3 @@
 
 # /dev/sdd1
 /dev/sdd1		/eva04		ntfs3		defaults		0 0
-
-# BINDS
-/eva02/documentos	/home/juan/Documents	none	bind    		0 0
-/eva02/musicas		/home/juan/Music	none	bind    		0 0
-/eva02/imagens		/home/juan/Pictures	none	bind        		0 0
-/eva02/jogos            /home/juan/Games        none    bind                    0 0
-/eva02/programas        /home/juan/Programs     none    bind                    0 0
-
-# sudo chmod o+rwx /eva01 -R -v
-# sudo chmod o+rwx /eva02 -R -v
-# sudo chmod o+rwx /eva03 -R -v
