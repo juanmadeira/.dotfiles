@@ -1,0 +1,8 @@
+game:
+  exe: /eva02/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/xenia/Emulators/Xenia
+    Canary/mods/Sonic Unleashed/Unleashed Mod Manager.exe
+  prefix: /eva02/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/xenia/xenia.wine
+system:
+  prefix_command: mangohud
+wine:
+  version: system

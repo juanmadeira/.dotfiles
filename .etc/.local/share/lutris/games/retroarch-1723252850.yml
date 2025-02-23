@@ -1,2 +1,8 @@
 game:
-  exe: /home/juan/Documents/documentos/jogos/RetroArch/retroarch.AppImage
+  exe: /eva02/jogos/RetroArch/RetroArch.AppImage
+system:
+  disable_runtime: false
+  env: {}
+  mangohud: false
+  prefer_system_libs: true
+  prefix_command: ''

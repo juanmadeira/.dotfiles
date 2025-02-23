@@ -1,4 +1,4 @@
 game:
-  exe: /home/juan/Documents/documentos/jogos/osu!/osu!lazer.AppImage
+  exe: /eva02/jogos/osu!/osu!lazer.AppImage
 wine:
   version: system

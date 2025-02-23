@@ -1,6 +1,6 @@
 game:
   arch: auto
-  exe: /home/juan/Documents/documentos/jogos/Clone Hero/Clone Hero.exe
+  exe: /eva02/jogos/Clone Hero/Clone Hero.exe
 system:
   prefix_command: mangohud
 wine:

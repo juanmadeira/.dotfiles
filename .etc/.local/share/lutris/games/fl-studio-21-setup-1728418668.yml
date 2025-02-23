@@ -1,0 +1,30 @@
+game:
+  exe: /eva02/programas/fl studio 21/drive_c/Program Files/Image-Line/FL Studio 21/FL64.exe
+  prefix: /eva02/programas/fl studio 21
+game_slug: fl-studio-21
+name: FL Studio 21
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/juan/Documents/documentos/downloads/programas/FL Studio 21
+        - Producer Edition (Cracked).exe
+      prefix: /home/juan/Documents/documentos/programas/fl studio 21
+      wine_path: /home/juan/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: fl-studio-21-setup
+system:
+  env:
+    LC_ALL: ''
+version: Setup file
+wine:
+  version: wine-ge-8-26-x86_64

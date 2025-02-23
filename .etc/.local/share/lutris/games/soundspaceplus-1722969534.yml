@@ -1,6 +1,6 @@
 game:
-  exe: /home/juan/Documents/documentos/jogos/SoundSpacePlus/SoundSpacePlus.exe
+  exe: /eva02/jogos/SoundSpacePlus/SoundSpacePlus.exe
 system:
   prefix_command: mangohud
 wine:
-  version: system
+  version: wine-ge-8-26-x86_64

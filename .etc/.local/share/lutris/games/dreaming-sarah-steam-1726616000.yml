@@ -1,0 +1,13 @@
+game:
+  appid: '296870'
+  run_without_steam: true
+game_slug: dreaming-sarah
+name: Dreaming Sarah
+script:
+  game:
+    appid: 296870
+service: steam
+service_id: '296870'
+slug: dreaming-sarah-steam
+version: Steam
+year: 2015
