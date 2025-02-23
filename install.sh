@@ -98,7 +98,7 @@ yay -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
 yay -S wl-clipboard clipse; # area de transferencia
 yay -S hyprshot; # captura de tela
 yay -S bluetooth blueman xpadneo-dkms; # bluetooth
-yay -S pipewire-pulse pulsemixer; # audio
+yay -S pipewire-pulse lib32-pipewire lib32-libpulse pulsemixer; # audio
 yay -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay -S neovim nano visual-studio-code-bin; # editores de texto
 yay -S ffmpeg mpv vlc stremio shotwell sioyek; # reproducao de midia
