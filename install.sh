@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2025-02-12
+#	última atualização: 2025-03-07
 #
 
 
@@ -107,7 +107,7 @@ yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool media
 yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
 
 # musica
-yay -S mpd mpdscribble rmpc-git spotify spicetify-cli songrec;
+yay -S mpd mpdscribble mpd-discord-rpc rmpc-git spotify spicetify-cli songrec;
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
