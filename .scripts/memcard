@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# script para automatizar a copia entre arquivos do memory card para computador e vice-versa.
+
+printf '\e[1;96m'; figlet "Memcard"
+printf '\033[0m';
+echo;
+
+COPY="$(gum choose "MEMCARD -> PC" "PC -> MEMCARD" "Sair" --cursor.foreground="#e0ffff" --cursor.background="#003030" --item.foreground="#ffffff")";
+
+if [ -d /run/media/$USER/EVAMEMCARD ]; then
+    :
+else
+    echo;
+    echo ":: Diretório do memory card não encontrado. Cópia cancelada.";
+    sleep 1;
+    exit;
+fi
+
+MEMCARD_DIR="/run/media/$USER/EVAMEMCARD";
+RA_DIR="$HOME/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/";
+
+if [ "$COPY" == "MEMCARD -> PC" ]; then
+    echo ":: Copiando arquivos do memory card para o computador local.";
+    sleep 2;
+    mkdir -p $RA_DIR/saves;
+    cp -r -v $MEMCARD_DIR/saves $RA_DIR;
+    exit;
+elif [ "$COPY" == "PC -> MEMCARD" ]; then
+    echo ":: Copiando arquivos do computador local para o memory card.";
+    sleep 2;
+    mkdir -p $MEMCARD_DIR/saves;
+    cp -r -v $RA_DIR/saves $MEMCARD_DIR;
+    exit;
+elif [ "$COPY" == "Sair" ]; then
+    echo;
+    echo ":: Cópia cancelada";
+    sleep 1;
+    exit;
+else
+    echo;
+    echo ":: Cópia cancelada.";
+    sleep 1;
+    exit;
+fi
+
