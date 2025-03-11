@@ -10,19 +10,20 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # definir diretório atual
-font_folder=$(pwd)
+FONT_DIR=$(pwd)
 
 # conferir se a pasta de fontes existe
-if [ ! -d "$font_folder" ]; then
+if [ ! -d "$FONT_DIR" ]; then
     echo ":: O diretório desejado não existe."
     exit 1
 fi
 
 # copiar todas as fontes para a pasta de fontes do sistema
-cp -r $font_folder/*.otf /usr/share/fonts/
+cp -r $FONT_DIR/*.otf /usr/share/fonts/;
+cp -r $FONT_DIR/*.ttf /usr/share/fonts/;
 
 # atualizar cache das fontes
-fc-cache -f -v
+fc-cache -f -v;
 
 echo ":: Fontes instaladas com sucesso."
 

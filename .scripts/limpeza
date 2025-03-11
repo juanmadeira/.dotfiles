@@ -8,7 +8,7 @@ printf '\e[1;96m'; figlet "Limpeza"
 echo
 
 # perguntar ao usuário se deseja iniciar a limpeza
-if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?"; then
+if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
     echo 
     echo ":: Limpeza iniciada."
 elif [ $? -eq 130 ]; then

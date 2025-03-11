@@ -19,7 +19,7 @@ _isInstalledYay() {
 }
 
 # perguntar ao usuário se deseja iniciar a atualização
-if gum confirm "VOCÊ DESEJA INICIAR A ATUALIZAÇÃO AGORA?"; then
+if gum confirm "VOCÊ DESEJA INICIAR A ATUALIZAÇÃO AGORA?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
     echo 
     echo ":: Atualização iniciada."
 elif [ $? -eq 130 ]; then
