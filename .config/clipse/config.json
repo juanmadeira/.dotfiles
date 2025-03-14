@@ -3,6 +3,6 @@
     "historyFile": "history.json",
     "maxHistory": 100,
     "logFile": "clipse.log",
-    "themeFile": "theme.json",
+    "themeFile": "wallust.json",
     "tempDir": "clipboard"
 }

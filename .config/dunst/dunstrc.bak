@@ -4,19 +4,19 @@ progress_bar_min_width = 250
 progress_bar_max_width = 300
 offset = 3x3
 frame_width = 1
-frame_color = "#1D7E8C"
+frame_color = "#008b8b80"
 corner_radius = 10
 separator_color= frame
 
 [urgency_low]
-background = "#0B0E0F"
-foreground = "#D6ECE2"
+background = "#000000bf"
+foreground = "#cdd6f4"
 
 [urgency_normal]
-background = "#0B0E0F"
-foreground = "#D6ECE2"
+background = "#000000bf"
+foreground = "#cdd6f4"
 
 [urgency_critical]
-frame_color = "#ff0000"
-background = "#0B0E0F"
-foreground = "#D6ECE2"
+frame_color = "#cc0303bf"
+background = "#000000bf"
+foreground = "#cdd6f4"

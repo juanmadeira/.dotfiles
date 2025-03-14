@@ -25,7 +25,7 @@ echo "                                    ";
 # hyprland
 sudo pacman-key --populate;
 sudo pacman --noconfirm -Syu hyprland;
-sudo pacman --noconfirm -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland;
+sudo pacman --noconfirm -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland xdg-desktop-portal-hyprland xdg-desktop-portal-wlr;
 
 # yay
 sudo pacman --noconfirm -Sy --needed git base-devel;
@@ -44,8 +44,8 @@ sudo chmod +x ~/.config/rofi/scripts/*;
 sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
-# gtk, qt, grub e sddm
-yay --noconfirm -S sddm qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5;
+# pywal, gtk, qt, grub e sddm
+yay --noconfirm -S pywal xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 sddm;
 cp -r .config/gtk-3.0/icons ~/.local/share/; # icones gtk
 cp -r .config/gtk-3.0/themes ~/.local/share/; # temas gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum/; # temas qt
@@ -56,7 +56,7 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby rust lua jdk-openjdk jdk21-openjdk jdk8-openjdk;
 
 # pip
 mkdir ~/.venv;
@@ -97,7 +97,7 @@ sudo cp -r fonts/* /usr/share/fonts/;
 
 # hyprland
 yay --noconfirm -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
-yay --noconfirm -S wlogout hyprlock hypridle hyprpaper; # bloqueio de tela e papel de parede
+yay --noconfirm -S wlogout hyprlock hypridle hyprpaper hyprpicker; # bloqueio de tela e papel de parede
 yay --noconfirm -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
 yay --noconfirm -S wl-clipboard clipse; # area de transferencia
 yay --noconfirm -S hyprshot; # captura de tela

@@ -90,8 +90,8 @@
     "clock": {
         "interval": 1,
 	    "format": "{:%H:%M:%S}",
-        "on-click-right": "wlogout",
-	    //"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+            "on-click-right": "wlogout",
+            //"format-alt": "{:%A, %B %d, %Y (%R)}  ",
 	    "tooltip-format": "<tt><small>{calendar}</small></tt>",
 	    "calendar": {
 		    "mode"          : "year",
@@ -129,15 +129,6 @@
             "urgent": "",
             "special": "󰠱"
         }
-        // "format-window-separator": "|",
-        // "window-rewrite-default": "",
-        // "window-rewrite": {
-        //   "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-        //   "class<firefox>": " ", // Windows whose classes are "firefox"
-        //   "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-        //   "class<alacritty>": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-        //   "code": "󰨞"
-        //   }
     },
     "hyprland/window": {
         "max-length": 75,

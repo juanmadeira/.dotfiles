@@ -1,0 +1,104 @@
+window#waybar {
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-family: "FiraCode Medium";
+    background-color: rgba(0,0,0,0);
+}
+
+.modules-left, .modules-center {
+    padding: 1px;
+    border-radius: 0.5rem;
+    opacity: 1;
+    color: rgba(119, 136, 153, 0.5);
+    background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0, 139, 139, 0.5));
+}
+
+.modules-right {
+    padding: 0px 5px 0px 10px;
+    border-radius: 0.5rem;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+tooltip {
+    border-radius: 0.5rem;
+    font-size: 0.65rem;
+    font-family: "FiraCode Medium";
+    background-color: rgba(0,0,0,0.25);
+}
+
+tooltip * {
+    padding: 5px;
+    border-radius: 0.5rem;
+    color: rgb(119, 136, 153);
+}
+
+button {
+  min-height: 24px;
+  min-width: 16px;
+}
+
+/* left */
+#workspaces {
+    padding: 0 5px;
+    border-radius: 0.5rem;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#workspaces button {
+    color: rgba(255,255,255,0.5);
+    padding: 0 0.3rem 0 0;
+    font-size: 0.6rem;
+}
+
+#workspaces button:hover {
+    color: rgba(255,255,255,1);
+    background: transparent;
+}
+
+/* center */
+#window {
+    padding: 2px 5px;
+    border-radius: 0.5rem;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* right */
+#tray {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#wireplumber {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#battery {
+    color: rgba(144, 238, 144, 0.5);
+}
+
+#disk {
+    color: rgba(135, 206, 250, 0.5);
+}
+
+#memory {
+    color: rgba(255, 182, 193, 0.5);
+}
+
+#cpu {
+    color: rgba(250, 250, 210, 0.5);
+}
+
+#temperature {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#idle_inhibitor {
+    color: rgba(119, 136, 153, 0.5);
+}
+
+#clock {
+    padding: 0 5px 0 0;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+    color: rgba(119, 136, 153, 0.5);
+}

@@ -1,11 +1,3 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Colors
- **/
-
 * {
     background:     rgba(34, 45, 50, 0.9);
     background-alt: rgb(41, 53, 59, 0.9);
