@@ -1,12 +1,12 @@
 #!/bin/bash
 #
 #	script de configuração do meu arch hyprland
-#   [!!!] feito para ser executado após a instalação limpa do arch linux
+#       [!!!] feito para ser executado após a instalação limpa do arch linux
 #
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2025-03-07
+#	última atualização: 2025-03-14
 #
 
 
@@ -23,11 +23,12 @@ echo "(_)___,_||___/|_| |_| |_|_|___|____/";
 echo "                                    ";
 
 # hyprland
-sudo pacman -S hyprland;
-sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland;
+sudo pacman-key --populate;
+sudo pacman --noconfirm -Syu hyprland;
+sudo pacman --noconfirm -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader egl-wayland;
 
 # yay
-sudo pacman -Sy --needed git base-devel;
+sudo pacman --noconfirm -Sy --needed git base-devel;
 git clone https://aur.archlinux.org/yay.git;
 cd yay;
 makepkg -si;
@@ -44,7 +45,7 @@ sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
 # gtk, qt, grub e sddm
-yay -S sddm qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5;
+yay --noconfirm -S sddm qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5;
 cp -r .config/gtk-3.0/icons ~/.local/share/; # icones gtk
 cp -r .config/gtk-3.0/themes ~/.local/share/; # temas gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum/; # temas qt
@@ -55,7 +56,7 @@ systemctl start sddm.service;
 systemctl enable sddm;
 
 # linguagens
-yay -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby jdk-openjdk jdk21-openjdk jdk8-openjdk;
 
 # pip
 mkdir ~/.venv;
@@ -67,9 +68,8 @@ source ~/.venv/venv/bin/activate;
 pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
 pip install bandcamp-downloader; # bandcamp downloader
 
-# compilados localmente
-# phpmyadmin
-mkdir ~/.local/build;
+# phpmyadmin [compilado localmente]
+mkdir -p ~/.local/build;
 cd ~/.local/build;
 git clone https://github.com/phpmyadmin/phpmyadmin.git;
 cd phpmyadmin;
@@ -78,47 +78,49 @@ yarn install;
 cd ~-;
 cp -r .etc/phpmyadmin/* ~/.local/build/phpmyadmin/public/themes;
 
+# wine
+yay --noconfirm -S wine winetricks;
+winetricks corefonts allfonts;
+
 # flatpak
-yay -S flatpak;
+yay --noconfirm -S flatpak;
 flatpak install flathub com.obsproject.Studio;
 flatpak install flathub com.obsproject.Studio.Plugin.DroidCam;
 
 # fontes e icones
-yay -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
-yay -S ttf-ms-fonts; # fontes da microsoft x(
+yay --noconfirm -S ttf-ms-fonts; # fontes da microsoft x(
+yay --noconfirm -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 sudo cp -r fonts/* /usr/share/fonts/;
     # geral -> FiraCode-..., HackNerdFontMono-... 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
     # sddm  -> OpenSans
 
 # hyprland
-yay -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
-yay -S wlogout hyprlock hypridle hyprpaper; # bloqueio de tela e papel de parede
-yay -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
-yay -S wl-clipboard clipse; # area de transferencia
-yay -S hyprshot; # captura de tela
-yay -S bluetooth blueman xpadneo-dkms; # bluetooth
-yay -S pipewire-pulse lib32-pipewire lib32-libpulse pulsemixer; # audio
-yay -S gparted grub-customizer gnome-disk-utility; # particionamento
-yay -S neovim nano visual-studio-code-bin; # editores de texto
-yay -S ffmpeg mpv vlc stremio shotwell sioyek; # reproducao de midia
-yay -S puddletag handbrake kdenlive krita darktable; # edicao de midia
-yay -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
-yay -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
+yay --noconfirm -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
+yay --noconfirm -S wlogout hyprlock hypridle hyprpaper; # bloqueio de tela e papel de parede
+yay --noconfirm -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
+yay --noconfirm -S wl-clipboard clipse; # area de transferencia
+yay --noconfirm -S hyprshot; # captura de tela
+yay --noconfirm -S bluetooth blueman xpadneo-dkms; # bluetooth
+yay --noconfirm -S lib32-pipewire lib32-libpulse pipewire-pulse pipewire-jack pulsemixer; # audio
+yay --noconfirm -S gparted grub-customizer gnome-disk-utility; # particionamento
+yay --noconfirm -S neovim nano visual-studio-code-bin; # editores de texto
+yay --noconfirm -S ffmpeg mpv vlc stremio shotwell sioyek; # reproducao de midia
+yay --noconfirm -S puddletag handbrake kdenlive krita darktable; # edicao de midia
+yay --noconfirm -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
+yay --noconfirm -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
 
 # musica
-yay -S mpd mpdscribble mpd-discord-rpc rmpc-git spotify spicetify-cli songrec;
+yay --noconfirm -S mpd mpdscribble mpd-discord-rpc rmpc-git spotify spicetify-cli songrec;
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
 
 # jogos
-yay -S lutris steam heroic-games-launcher-bin mangohud gamemode retroarch-assets-git;
-yay -S wine winetricks;
-winetricks corefonts allfonts;
+yay --noconfirm -S lutris steam heroic-games-launcher-bin mangohud gamemode retroarch-assets-git;
 
 # :)
-yay -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay;
+yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay;
 
 # breathe and
 reboot
