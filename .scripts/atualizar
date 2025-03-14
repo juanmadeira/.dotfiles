@@ -54,7 +54,7 @@ if _isInstalledYay "timeshift"; then
 fi
 
 # executar a atualização com yay
-yay --devel
+yay
 
 # enviar uma notificação informando que a atualização foi concluída
 notify-send "Atualização completa"
