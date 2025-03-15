@@ -1,0 +1,4 @@
+system:
+  prefix_command: mangohud
+wine:
+  version: system

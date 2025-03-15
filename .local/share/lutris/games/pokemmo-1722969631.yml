@@ -1,0 +1,6 @@
+game:
+  exe: /eva02/jogos/PokeMMO/drive_c/Program Files/PokeMMO/PokeMMO.exe
+system:
+  prefix_command: mangohud
+wine:
+  version: system

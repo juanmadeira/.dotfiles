@@ -1,0 +1,4 @@
+game:
+  exe: /eva02/jogos/PrismLauncher/prismlauncher.AppImage
+system:
+  prefix_command: mangohud
