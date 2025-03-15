@@ -1,7 +1,7 @@
 game:
   arch: win64
   exe: /eva02/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/xenia/XeniaManager.DesktopApp.exe
-  prefix: /eva02/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/xenia/xenia.wine
+  prefix: /eva02/jogos/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/xenia/.wine
 system:
   disable_runtime: false
   prefer_system_libs: true

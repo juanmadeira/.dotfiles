@@ -1,5 +1,6 @@
 game:
-  exe: /eva02/programas/fl studio 21/drive_c/Program Files/Image-Line/FL Studio 21/FL64.exe
+  exe: /eva02/programas/fl studio 21/.wine/drive_c/Program Files/Image-Line/FL Studio
+    21/FL64.exe
   prefix: /eva02/programas/fl studio 21
 game_slug: fl-studio-21
 name: FL Studio 21

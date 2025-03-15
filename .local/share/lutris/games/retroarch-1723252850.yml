@@ -5,4 +5,4 @@ system:
   env: {}
   mangohud: false
   prefer_system_libs: true
-  prefix_command: ''
+  prefix_command: mangohud
