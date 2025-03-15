@@ -67,3 +67,6 @@ spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
 
 waybar.template = 'waybar.css'
 waybar.target = '~/.config/waybar/wallust.css'
+
+wlogout.template = 'wlogout.css'
+wlogout.target = '~/.config/wlogout/style.css'

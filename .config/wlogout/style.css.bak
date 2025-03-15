@@ -18,11 +18,11 @@ button {
 
 button:focus,
 button:active {
-	background-color: rgba(162,89,40, 0.5);
+	background-color: rgba(13, 205, 205, 0.5);
 }
 
 button:hover {
-	background-color: rgba(162,89,40, 0.25);
+	background-color: rgba(13, 205, 205, 0.25);
 }
 
 #lock {
