@@ -44,16 +44,12 @@ sudo chmod +x ~/.config/rofi/scripts/*;
 sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
-# pywal, gtk, qt, grub e sddm
-yay --noconfirm -S pywal xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 sddm;
+# pywal, gtk, ly e grub
+yay --noconfirm -S pywal xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
 cp -r .local/share/themes ~/.local/share; # temas gtk
 cp -r .local/share/icons ~/.local/share; # icones gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
 sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
-sudo cp -r .etc/sddm /usr/share/sddm/themes; # temas sddm
-sudo cp .etc/sddm/sddm.conf /etc; # config sddm
-systemctl start sddm.service;
-systemctl enable sddm;
 
 # linguagens
 yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby rust lua jdk-openjdk jdk21-openjdk jdk8-openjdk;
@@ -91,9 +87,8 @@ flatpak install flathub com.obsproject.Studio.Plugin.DroidCam;
 yay --noconfirm -S ttf-ms-fonts; # fontes da microsoft x(
 yay --noconfirm -S noto-fonts-cjk noto-fonts-emoji noto-fonts; # emojis e caracteres japoneses
 sudo cp -r fonts/* /usr/share/fonts/;
-    # geral -> FiraCode-..., HackNerdFontMono-... 
+    # geral -> FiraCode-..., HackNerdFontMono-..., OpenSans 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
-    # sddm  -> OpenSans
 
 # hyprland
 yay --noconfirm -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
@@ -122,5 +117,23 @@ yay --noconfirm -S lutris steam heroic-games-launcher-bin mangohud gamemode retr
 # :)
 yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay;
 
-# breathe and
-reboot
+
+# reiniciar sistema
+echo; echo; echo
+figlet "Instalacao concluida!"
+echo
+if gum confirm "REINICIAR SISTEMA?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+    echo
+    echo ":: Reiniciando sistema..."
+    sleep 2
+
+    # breathe and
+    reboot
+
+elif [ $? -eq 130 ]; then
+    echo
+    echo ":: Reinicialização cancelada."
+else
+    echo
+    echo ":: Reinicialização cancelada."
+fi
