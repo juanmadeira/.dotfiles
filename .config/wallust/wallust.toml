@@ -74,6 +74,9 @@ pywalfox.target = '~/.cache/wal/colors.json'
 rofi.template = 'rofi.rasi'
 rofi.target = '~/.config/rofi/colors/wallust.rasi'
 
+rmpc.template = 'rmpc.ron'
+rmpc.target = '~/.config/rmpc/themes/wallust.ron'
+
 spicetify.template = 'spicetify.ini'
 spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
 
