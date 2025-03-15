@@ -53,6 +53,18 @@ clipse.target = '~/.config/clipse/wallust.json'
 dunstrc.template = 'dunstrc'
 dunstrc.target = '~/.config/dunst/dunstrc'
 
+gtk-2-0.template = 'gtk-2.0'
+gtk-2-0.target = '~/.local/share/themes/wallust/gtk-2.0/gtkrc'
+
+gtk-3-0.template = 'gtk-3.0.css'
+gtk-3-0.target = '~/.local/share/themes/wallust/gtk-3.0/gtk.css'
+
+gtk-3-20.template = 'gtk-3.20.css'
+gtk-3-20.target = '~/.local/share/themes/wallust/gtk-3.20/gtk.css'
+
+kvantum.template = 'kvantum.kvconfig'
+kvantum.target = '/usr/share/Kvantum/wallust/wallust.kvconfig'
+
 pywal.template = 'pywal'
 pywal.target = '~/.cache/wal/colors'
 
