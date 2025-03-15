@@ -1,6 +1,0 @@
-game:
-  exe: /eva02/jogos/DVPet Tournament/DVPet/DVPet.jar
-system:
-  disable_runtime: false
-  prefer_system_libs: false
-  prefix_command: java -jar

@@ -1,4 +1,0 @@
-game:
-  exe: /eva02/jogos/osu!/osu!lazer.AppImage
-wine:
-  version: system

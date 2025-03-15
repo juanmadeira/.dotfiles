@@ -1,6 +1,0 @@
-game:
-  appid: '71340'
-system:
-  disable_runtime: true
-  prefer_system_libs: true
-  prefix_command: mangohud

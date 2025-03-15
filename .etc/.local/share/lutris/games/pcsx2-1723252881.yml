@@ -1,4 +1,0 @@
-game:
-  exe: /home/juan/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/pcsx2/pcsx2.AppImage
-system:
-  prefix_command: mangohud
