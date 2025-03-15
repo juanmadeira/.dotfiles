@@ -62,5 +62,8 @@ pywalfox.target = '~/.cache/wal/colors.json'
 rofi.template = 'rofi.rasi'
 rofi.target = '~/.config/rofi/colors/wallust.rasi'
 
+spicetify.template = 'spicetify.ini'
+spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
+
 waybar.template = 'waybar.css'
 waybar.target = '~/.config/waybar/wallust.css'
