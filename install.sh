@@ -46,12 +46,12 @@ sudo chmod +x -R ~/*.AppImage
 
 # pywal, gtk, qt, grub e sddm
 yay --noconfirm -S pywal xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 sddm;
-cp -r .config/gtk-3.0/icons ~/.local/share/; # icones gtk
-cp -r .config/gtk-3.0/themes ~/.local/share/; # temas gtk
-sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum/; # temas qt
+cp -r .local/share/themes ~/.local/share; # temas gtk
+cp -r .local/share/icons ~/.local/share; # icones gtk
+sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
 sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
-sudo cp -r .etc/sddm /usr/share/sddm/themes/; # temas sddm
-sudo cp .etc/sddm/sddm.conf /etc/; # config sddm
+sudo cp -r .etc/sddm /usr/share/sddm/themes; # temas sddm
+sudo cp .etc/sddm/sddm.conf /etc; # config sddm
 systemctl start sddm.service;
 systemctl enable sddm;
 
