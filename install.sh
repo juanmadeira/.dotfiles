@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2025-03-14
+#	última atualização: 2025-03-15
 #
 
 
@@ -44,8 +44,8 @@ sudo chmod +x ~/.config/rofi/scripts/*;
 sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
-# pywal, gtk, ly e grub
-yay --noconfirm -S pywal xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
+# wallust, gtk, ly e grub
+yay --noconfirm -S wallust xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
 cp -r .local/share/themes ~/.local/share; # temas gtk
 cp -r .local/share/icons ~/.local/share; # icones gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
@@ -100,13 +100,13 @@ yay --noconfirm -S bluetooth blueman xpadneo-dkms; # bluetooth
 yay --noconfirm -S lib32-pipewire lib32-libpulse pipewire-pulse pipewire-jack pulsemixer; # audio
 yay --noconfirm -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay --noconfirm -S neovim nano visual-studio-code-bin; # editores de texto
-yay --noconfirm -S ffmpeg mpv vlc stremio shotwell sioyek; # reproducao de midia
+yay --noconfirm -S ffmpeg mpv vlc stremio shotwell libreoffice sioyek; # reproducao de midia
 yay --noconfirm -S puddletag handbrake kdenlive krita darktable; # edicao de midia
 yay --noconfirm -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
-yay --noconfirm -S firefox obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
+yay --noconfirm -S firefox chromium obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
 
 # musica
-yay --noconfirm -S mpd mpdscribble mpd-discord-rpc rmpc-git spotify spicetify-cli songrec;
+yay --noconfirm -S mpd mpdscribble mpd-discord-rpc rmpc spotify spicetify-cli songrec;
 sudo chmod a+wr /opt/spotify;
 sudo chmod a+wr /opt/spotify/Apps -R;
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh; # spicetify
@@ -117,6 +117,20 @@ yay --noconfirm -S lutris steam heroic-games-launcher-bin mangohud gamemode retr
 # :)
 yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay;
 
+# systemd units
+echo; echo; echo
+if gum confirm "HABILITAR UNIDADES SYSTEMD? (ly; jellyfin; mpd-discord-rpc)" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+    echo
+    sudo systemctl enable --now ly
+    sudo systemctl enable --now jellyfin
+    systemctl --user enable --now mpd-discord-rpc 
+elif [ $? -eq 130 ]; then
+    echo
+    echo ":: Unidades não iniciadas. O display manager (ly) terá de ser habilitado manualmente."
+else
+    echo
+    echo ":: Unidades não iniciadas. O display manager (ly) terá de ser habilitado manualmente."
+fi
 
 # reiniciar sistema
 echo; echo; echo
