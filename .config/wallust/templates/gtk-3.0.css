@@ -1,11 +1,11 @@
 /* Default color scheme */
-@define-color bg_color {{color0}};
-@define-color fg_color {{color15}};
+@define-color bg_color {{background}};
+@define-color fg_color {{foreground}};
 @define-color base_color {{color1}};
-@define-color text_color {{color15}};
-@define-color selected_bg_color {{active}};
-@define-color selected_fg_color {{color15}};
-@define-color tooltip_bg_color {{color0}};
+@define-color text_color {{color1}};
+@define-color selected_bg_color {{color1}};
+@define-color selected_fg_color {{color1}};
+@define-color tooltip_bg_color {{background}};
 @define-color tooltip_fg_color {{color15}};
 
 /* colormap actually used by the theme, to be overridden in other css files */

@@ -15,13 +15,13 @@
 @define-color color13 {{color13}};
 @define-color color14 {{color14}};
 @define-color color15 {{foreground}};
-@define-color selected_bg_color {{color4}};
-@define-color bg_color mix(@color0, @color15, 0.12);
-@define-color tooltip_bg_color mix(@color0, @color15, 0.04);
-@define-color base_color mix(@color0, @color15, 0);
+@define-color selected_bg_color {{color1}};
+@define-color bg_color {{background}};
+@define-color tooltip_bg_color mix (@color0, black, 0.5);
+@define-color base_color @color0;
 @define-color fg_color @color15;
 @define-color text_color @color15;
-@define-color selected_fg_color @color15;
+@define-color selected_fg_color {{color15}};
 @define-color tooltip_fg_color @color15;
 
 /* colormap actually used by the theme, to be overridden in other css files */
