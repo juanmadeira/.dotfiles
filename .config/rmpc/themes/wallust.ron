@@ -65,9 +65,9 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "blue", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "blue", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "blue", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#1D464A", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "#1D464A", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#1D464A", modifiers: "Bold"))
                 ],
                 center: [
                     (kind: Property(Song(Title)), style: (modifiers: "Bold"),
@@ -88,8 +88,8 @@
                     (kind: Text(" kbps)"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "blue", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "blue", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#1D464A", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "#1D464A", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
                     (kind: Property(Song(Album)),
