@@ -48,6 +48,7 @@ sudo chmod +x -R ~/*.AppImage
 yay --noconfirm -S wallust xdg-desktop-portal-gtk libportal-gtk3 libportal-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
 cp -r .local/share/themes ~/.local/share; # temas gtk
 cp -r .local/share/icons ~/.local/share; # icones gtk
+sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes; # link para o tema gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
 sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
 
