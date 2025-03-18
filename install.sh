@@ -54,7 +54,7 @@ sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
 sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
 
 # linguagens
-yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb go ruby rust lua jdk-openjdk jdk21-openjdk jdk8-openjdk;
+yay --noconfirm -S python python-pip python-mpd2 nodejs npm php composer yarn apache mariadb phpmyadmin go ruby rust lua jdk-openjdk jdk21-openjdk jdk8-openjdk;
 
 # pip
 mkdir ~/.venv;
@@ -66,24 +66,14 @@ source ~/.venv/venv/bin/activate;
 pip install lyrics-in-terminal lyrics-in-terminal[mpd]; # letras no terminal
 pip install bandcamp-downloader; # bandcamp downloader
 
-# phpmyadmin [compilado localmente]
-mkdir -p ~/.local/build;
-cd ~/.local/build;
-git clone https://github.com/phpmyadmin/phpmyadmin.git;
-cd phpmyadmin;
-composer install;
-yarn install;
-cd ~-;
-cp -r .etc/phpmyadmin/* ~/.local/build/phpmyadmin/public/themes;
-
 # wine
 yay --noconfirm -S wine winetricks;
 winetricks corefonts allfonts;
 
 # flatpak
 yay --noconfirm -S flatpak;
-flatpak install flathub com.obsproject.Studio;
-flatpak install flathub com.obsproject.Studio.Plugin.DroidCam;
+flatpak -y install flathub com.obsproject.Studio;
+flatpak -y install flathub com.obsproject.Studio.Plugin.DroidCam;
 
 # fontes e icones
 yay --noconfirm -S ttf-ms-fonts; # fontes da microsoft x(
