@@ -36,6 +36,7 @@ cd ..;
 sudo rm -rf yay/;
 
 # copiar configuracoes
+cp .bashrc ~/;
 cp -r .config ~/;
 cp -r .scripts ~/;
 sudo chmod +x ~/.scripts/*;
@@ -45,9 +46,9 @@ sudo chmod +x ~/.config/rmpc/scripts/*;
 sudo chmod +x -R ~/*.AppImage
 
 # wallust, gtk, ly e grub
-yay --noconfirm -S wallust gtk2 gtk3 gtk4 awf-gtk2 awf-gtk3 awf-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
-cp -r .local/share/themes ~/.local/share; # temas gtk
-cp -r .local/share/icons ~/.local/share; # icones gtk
+yay --noconfirm -S wallust python-pywalfox gtk2 gtk3 gtk4 awf-gtk2 awf-gtk3 awf-gtk4 qt5ct qt6ct qt6-5compat qt6-declarative qt6-svg kvantum kvantum-qt5 ly;
+cp -r .local/share/themes/ ~/.local/share; # temas gtk
+cp -r .local/share/icons/ ~/.local/share; # icones gtk
 sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes; # link para o tema gtk
 sudo cp -r .config/Kvantum/themes/* /usr/share/Kvantum; # temas qt
 sudo cp -r .etc/grub/* /boot/grub/themes/; # temas grub
@@ -92,7 +93,7 @@ sudo cp -r fonts/* /usr/share/fonts/;
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
 
 # hyprland
-yay --noconfirm -S kitty btop eza man tar gum fzf downgrade starship github-cli lazygit neofetch onefetch cpufetch; # terminal
+yay --noconfirm -S kitty bat btop eza man tar gum fzf downgrade starship github-cli lazygit fastfetch onefetch cpufetch xorg-xhost; # terminal
 yay --noconfirm -S wlogout hyprlock hypridle hyprpaper hyprpicker; # bloqueio de tela e papel de parede
 yay --noconfirm -S waybar rofi-wayland rofi-emoji-git dunst; # barra de notificacoes
 yay --noconfirm -S wl-clipboard clipse; # area de transferencia
@@ -102,7 +103,7 @@ yay --noconfirm -S lib32-pipewire lib32-libpulse pipewire-pulse pipewire-jack pu
 yay --noconfirm -S gparted grub-customizer gnome-disk-utility; # particionamento
 yay --noconfirm -S neovim nano visual-studio-code-bin; # editores de texto
 yay --noconfirm -S ffmpeg mpv vlc stremio shotwell libreoffice sioyek; # reproducao de midia
-yay --noconfirm -S puddletag handbrake kdenlive krita darktable; # edicao de midia
+yay --noconfirm -S imagemagick puddletag handbrake kdenlive krita darktable; # edicao de midia
 yay --noconfirm -S thunar tumbler thunar-volman gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g; # gerenciamento de arquivos
 yay --noconfirm -S firefox chromium obsidian filezilla syncthing jellyfin tor-browser qbittorrent thunderbird ark qalculate-gtk gramps goocanvas; # outros
 
