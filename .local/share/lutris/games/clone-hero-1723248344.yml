@@ -1,8 +1,0 @@
-game:
-  arch: auto
-  exe: /eva02/jogos/Clone Hero/Clone Hero.exe
-system:
-  prefix_command: mangohud
-wine:
-  system_winetricks: false
-  version: UMU-Proton-9.0-2

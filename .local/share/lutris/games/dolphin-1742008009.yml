@@ -1,5 +1,0 @@
-game:
-  exe: /home/juan/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/dolphin-emu/Dolphin.win/Dolphin.exe
-  prefix: /home/juan/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/system/dolphin-emu/Dolphin.win/.wine
-wine:
-  version: system

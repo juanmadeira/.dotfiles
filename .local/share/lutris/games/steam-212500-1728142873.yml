@@ -1,7 +1,0 @@
-game:
-  appid: '212500'
-system:
-  manual_command: '''/home/juan/Documents/documentos/jogos/.etc/The Lord of the Rings
-    Online/lotro_hide'''
-  prelaunch_command: ''
-  prelaunch_wait: false
