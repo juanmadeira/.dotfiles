@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# script feito para automatizar a troca de wallpaper e sua sincronização com wallust
+
+DIR="$HOME/.dotfiles/wallpapers"
+
+WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "~/.config/rofi/style.rasi" -show-icons)
+
+if [ -n "$WALL" ]; then
+	WALL_PATH="$DIR/$WALL"
+	echo "$WALL_PATH"
+else
+	echo ":: Nenhum papel de parede selecionado. Saindo..."
+	exit 0
+fi
+
+echo '' > ~/.config/hypr/hyprpaper.conf
+echo "preload = $WALL_PATH" >>  ~/.config/hypr/hyprpaper.conf
+echo "wallpaper =,$WALL_PATH" >>  ~/.config/hypr/hyprpaper.conf
+
+hyprctl hyprpaper preload "$WALL_PATH"
+hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
+
+killall dunst
+
+sleep 1.5
+wallust -s run "$WALL_PATH"
+
+### Firefox
+spicetify apply
+pywalfox update
