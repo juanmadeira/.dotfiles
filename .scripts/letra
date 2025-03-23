@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source ~/.venv/venv/bin/activate
+
+SONG_PATH="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2)"
+SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1)
+SONG_ARTIST=$(mpc current -f %artist%)
+SONG_TITLE=$(mpc current -f %title%)
+
+syncedlyrics -o "$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_ARTIST - $SONG_TITLE"
