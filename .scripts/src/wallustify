@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if gum confirm "Reiniciar o Spotify para aplicar o tema do wallust?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+    spicetify apply
+    exit    
+elif [ $? -eq 130 ]; then
+    echo ":: Tema do Spotify não atualizado."
+    sleep 0.5
+    exit 130
+else
+    echo ":: Tema do Spotify não atualizado."
+    sleep 0.5
+    exit
+fi
