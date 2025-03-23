@@ -7,11 +7,11 @@ DIR="$HOME/.dotfiles/wallpapers"
 WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "~/.config/rofi/style.rasi" -show-icons)
 
 if [ -n "$WALL" ]; then
-	WALL_PATH="$DIR/$WALL"
-	echo "$WALL_PATH"
+    WALL_PATH="$DIR/$WALL"
+    echo "$WALL_PATH"
 else
-	echo ":: Nenhum papel de parede selecionado. Saindo..."
-	exit 0
+    echo ":: Nenhum papel de parede selecionado. Saindo..."
+    exit 0
 fi
 
 # hyprpaper
@@ -23,6 +23,14 @@ hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 
 # wallust
 wallust -s run "$WALL_PATH"
-spicetify apply
 pywalfox update
 killall dunst
+
+ps -C spotify > /dev/null
+if [ $? = 0 ]; then
+    kitty --app-id confirm ~/.scripts/src/wallustify
+    exit
+else
+    spicetify apply
+    exit
+fi
