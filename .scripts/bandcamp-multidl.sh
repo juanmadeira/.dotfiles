@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# autor: https://github.com/calebccff
+# script para baixar toda discografia de um artista atraves do bandcamp-dl
+
+# bandcampdiscog URL [DESTINATION]
+
+if [ -z $1 ]; then
+    echo ":: Nenhuma URL especificada. Uso: 'bandcampdiscog URL [DESTINO]'"
+    exit 1
+fi
+
+if [ ! which bandcamp-dl ]; then
+    echo ":: Não foi possível encontrar 'bandcamp-dl' no PATH. Por favor, instale-o"
+    exit 1
+fi
+
+die() {
+    echo ":: Algo deu errado"
+    exit 1
+}
+
+FULL_URL=$1
+ARTIST_NAME=$(echo $FULL_URL | cut -d"/" -f3 | cut -d "." -f1)
+BASE_URL="https://$(echo $FULL_URL | cut -d"/" -f3)"
+echo "Artist URL: $BASE_URL"
+echo "Artist name: $ARTIST_NAME"
+if [ ! -z $2 ]; then
+    DOWNLOAD_DIR=$2
+else
+    DOWNLOAD_DIR="$(pwd)/$ARTIST_NAME"
+fi
+mkdir $DOWNLOAD_DIR || die
+pushd $DOWNLOAD_DIR
+echo ":: Baixando em $(pwd)/$ARTIST_NAME"
+
+ALBUMS=$(curl -s "$FULL_URL/music" | grep "href=\"/album" | cut -d"\"" -f2)
+echo ":: Álbuns encontrados:"
+echo -e $ALBUMS | tr " " "\n"
+# $ALBUMS:
+# /album/xys
+# /track/abc
+
+# For each line in ALBUMS
+while IFS= read -r album; do
+    ALBUM=$BASE_URL$album
+    echo
+    echo ":: Baixando: $album com bandcamp-dl"
+    echo "$ALBUM"
+    bandcamp-dl $ALBUM || die
+done <<< "$ALBUMS"
+
+popd
