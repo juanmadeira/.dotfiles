@@ -93,7 +93,7 @@ yay --noconfirm -S ffmpeg ffmpegthumbnailer mpv vlc shotwell stremio
 yay --noconfirm -S imagemagick handbrake kdenlive krita darktable
 
 # audio e musica
-yay --noconfirm -S lib32-pipewire lib32-libpulse pipewire-pulse pipewire-jack pulsemixer
+yay --noconfirm -S lib32-pipewire lib32-libpulse pipewire-alsa pipewire-pulse pipewire-jack pulsemixer
 yay --noconfirm -S mpd mpdscribble mpd-discord-rpc mpc rmpc spotify spicetify-cli songrec puddletag
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
