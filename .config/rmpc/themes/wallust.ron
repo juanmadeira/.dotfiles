@@ -14,25 +14,25 @@
     modal_background_color: None,
     tab_bar: (
         enabled: true,
-        active_style: (fg: "black", bg: "#1D7E8C", modifiers: "Bold"),
+        active_style: (fg: "black", bg: "#438A15", modifiers: "Bold"),
         inactive_style: (),
     ),
-    highlighted_item_style: (fg: "#1D7E8C", modifiers: "Bold"),
-    current_item_style: (fg: "black", bg: "#1D7E8C", modifiers: "Bold"),
-    borders_style: (fg: "#1D7E8C"),
-    highlight_border_style: (fg: "#1D7E8C"),
+    highlighted_item_style: (fg: "#438A15", modifiers: "Bold"),
+    current_item_style: (fg: "black", bg: "#438A15", modifiers: "Bold"),
+    borders_style: (fg: "#438A15"),
+    highlight_border_style: (fg: "#438A15"),
     symbols: (song: "S", dir: "D", marker: "M"),
     progress_bar: (
         symbols: ["-", ">", " "],
         track_style: (fg: "#1e2030"),
-        elapsed_style: (fg: "#1D7E8C"),
-        thumb_style: (fg: "#1D7E8C", bg: "#1e2030"),
+        elapsed_style: (fg: "#438A15"),
+        thumb_style: (fg: "#438A15", bg: "#1e2030"),
     ),
     scrollbar: (
         symbols: ["│", "█", "▲", "▼"],
         track_style: (),
         ends_style: (),
-        thumb_style: (fg: "#1D7E8C"),
+        thumb_style: (fg: "#438A15"),
     ),
     song_table_format: [
         (
@@ -65,9 +65,9 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "#1D464A", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "#1D464A", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "#1D464A", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#711F42", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "#711F42", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#711F42", modifiers: "Bold"))
                 ],
                 center: [
                     (kind: Property(Song(Title)), style: (modifiers: "Bold"),
@@ -75,7 +75,7 @@
                     )
                 ],
                 right: [
-                    (kind: Property(Widget(Volume)), style: (fg: "#1D7E8C"))
+                    (kind: Property(Widget(Volume)), style: (fg: "#438A15"))
                 ]
             ),
             (
@@ -88,8 +88,8 @@
                     (kind: Text(" kbps)"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#1D464A", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "#1D464A", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#711F42", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "#711F42", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
                     (kind: Property(Song(Album)),

@@ -10,7 +10,6 @@ mkdir -p "$TMP_DIR"
 ALBUM_ART_PATH="$TMP_DIR/notification_cover"
 
 # Path to fallback album art if no album art is found by rmpc/mpd
-# Change this to your needs
 DEFAULT_ALBUM_ART_PATH="$TMP_DIR/default_album_art.jpg"
 
 # Save album art of the currently playing song to a file
@@ -21,3 +20,6 @@ fi
 
 # Send the notification
 notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE"
+
+# Executa o script de letra 
+exec "~/.scripts/letra"
