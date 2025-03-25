@@ -2,9 +2,17 @@
 
 source ~/.venv/venv/bin/activate
 
-SONG_PATH="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2)"
-SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1)
 SONG_ARTIST=$(mpc current -f %artist%)
 SONG_TITLE=$(mpc current -f %title%)
 
+SONG_PATH="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2)"
+SONG_PATH_CORRECTED="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2 | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')"
+SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1)
+SONG_FILENAME_CORRECTED=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1 | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')
+
+echo
+echo ":: $SONG_ARTIST - $SONG_TITLE"
+echo
 syncedlyrics -o "$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_ARTIST - $SONG_TITLE"
+echo
+eyeD3 --quiet --add-lyrics="$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_PATH/$SONG_FILENAME.mp3"
