@@ -14,5 +14,5 @@ echo
 echo ":: $SONG_ARTIST - $SONG_TITLE"
 echo
 syncedlyrics -o "$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_ARTIST - $SONG_TITLE"
-echo
-eyeD3 --quiet --add-lyrics="$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_PATH/$SONG_FILENAME.mp3"
+
+eyeD3 --quiet --add-lyrics="$SONG_PATH/$SONG_FILENAME.lrc" "$SONG_PATH/$SONG_FILENAME.mp3" > /dev/null 2>&1
