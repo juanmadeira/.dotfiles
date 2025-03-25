@@ -5,6 +5,8 @@
 
 # bandcampdiscog URL [DESTINATION]
 
+source ~/.venv/venv/bin/activate
+
 if [ -z $1 ]; then
     echo ":: Nenhuma URL especificada. Uso: 'bandcampdiscog URL [DESTINO]'"
     exit 1
