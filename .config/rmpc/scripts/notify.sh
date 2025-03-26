@@ -1,25 +1,24 @@
 #!/usr/bin/env sh
 
-# Directory where to store temporary data
+# diretorio temporario
 TMP_DIR="/tmp/rmpc"
 
-# Ensure the directory is created
+# garante que o diretorio eixste
 mkdir -p "$TMP_DIR"
 
-# Where to temporarily store the album art received from rmpc
+# temporariamente guarda a capa recebida pelo rmpc
 ALBUM_ART_PATH="$TMP_DIR/notification_cover"
 
-# Path to fallback album art if no album art is found by rmpc/mpd
+# caminho para a capa se nenhuma for encontrada pelo rmpc/mpd
 DEFAULT_ALBUM_ART_PATH="$TMP_DIR/default_album_art.jpg"
 
-# Save album art of the currently playing song to a file
+# salva a capa do album tocando em um arquivo
 if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
-    # Use default album art if rmpc returns non-zero exit code
+    # usa a capa padrao se o rmpc retornar um exit code diferente de zero
     ALBUM_ART_PATH="${DEFAULT_ALBUM_ART_PATH}"
 fi
 
-# Send the notification
 notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE"
 
-# Executa o script de letra 
-exec "~/.scripts/letra"
+# executa o script de letra (sem exibir o output para evitar bugar o rmpc)
+exec "~/.scripts/letra" > /dev/null 2>&1
