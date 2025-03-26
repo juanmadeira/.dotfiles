@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 # autor: https://github.com/gustavomarchesim/dotfiles
 # script para atualizar o sistema através do yay

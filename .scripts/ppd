@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 # script para exibir os pacotes instalados em ordem cronológica
 

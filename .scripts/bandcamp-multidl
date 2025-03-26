@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 # autor: https://github.com/calebccff
 # script para baixar toda discografia de um artista atraves do bandcamp-dl

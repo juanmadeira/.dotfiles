@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 # script para automatizar a copia entre arquivos do memory card para computador e vice-versa.
 

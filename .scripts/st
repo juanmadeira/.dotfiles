@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 # script para testar os lados stereo do fone de ouvido/auto-falante
 

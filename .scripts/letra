@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 source ~/.venv/venv/bin/activate
 
@@ -10,6 +10,7 @@ SONG_PATH_CORRECTED="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2 | se
 SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1)
 SONG_FILENAME_CORRECTED=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1 | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')
 
+clear
 echo
 echo ":: $SONG_ARTIST - $SONG_TITLE"
 echo

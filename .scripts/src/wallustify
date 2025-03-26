@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env sh
 
 if gum confirm "Reiniciar o Spotify para aplicar o tema do wallust?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
     spicetify apply
