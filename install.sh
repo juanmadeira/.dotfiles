@@ -103,13 +103,14 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resource
 yay --noconfirm -S kitty starship
 yay --noconfirm -S github-cli lazygit
 yay --noconfirm -S fastfetch onefetch cpufetch
+yay --noconfirm -S yazi perl-image-exiftool mediainfo
 yay --noconfirm -S bat btop eza man gum fzf downgrade
 yay --noconfirm -S neovim nano visual-studio-code-bin obsidian libreoffice sioyek
 
 # gerenciamento de arquivos e particionamento
-yay --noconfirm -S thunar thunar-volman tumbler ark gvfs gvfs-mtp yazi perl-image-exiftool mediainfo ntfs-3g tar rar
+yay --noconfirm -S thunar thunar-volman tumbler tumbler-extra-thumbnailers gvfs gvfs-mtp ark rar tar
 yay --noconfirm -S filezilla syncthing jellyfin qbittorrent thunderbird
-yay --noconfirm -S gparted gnome-disk-utility
+yay --noconfirm -S ntfs-3g gparted gnome-disk-utility
 
 # outros
 yay --noconfirm -S firefox chromium tor-browser # navegadores
