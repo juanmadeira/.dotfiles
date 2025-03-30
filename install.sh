@@ -123,7 +123,7 @@ yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay
 
 # systemd units
 echo; echo; echo
-if gum confirm "HABILITAR UNIDADES SYSTEMD? (ly; jellyfin; mpd-discord-rpc)" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+if gum confirm "HABILITAR UNIDADES SYSTEMD? (ly; bluetooth; jellyfin; mpd-discord-rpc)" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
     echo
     sudo systemctl enable ly
     sudo systemctl enable jellyfin
