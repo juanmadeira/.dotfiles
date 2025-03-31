@@ -86,6 +86,9 @@ rmpc.target = '~/.config/rmpc/themes/wallust.ron'
 spicetify.template = 'spicetify.ini'
 spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
 
+starship.template = 'starship.toml'
+starship.target= '~/.config/starship.toml'
+
 wallpaper.template = 'wallpaper'
 wallpaper.target = '~/.cache/wallust/wallpaper'
 
