@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg version="1.1" width="64" height="64" color-interpolation="linearRGB"
+     xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <path style="fill:none; stroke:#000000; stroke-opacity:0.4; stroke-width:3; stroke-linecap:round; stroke-linejoin:round"
+        d="M23 26C23 26 19 8 34 8C49 8 45 26 45 26C44.33 26 43.66 26 43 26C43 26 47 10 34 10C21 10 25 26 25 26C24.33 26 23.66 26 23 26V26V26z
+           M16 21C16 34 16 47 16 60C28 60 40 60 52 60C52 47 52 34 52 21C40 21 28 21 16 21V21V21z"
+  />
+  <path style="fill:none; stroke:#004080; stroke-width:4; stroke-linecap:round; stroke-linejoin:round"
+        d="M14 19C14 32 14 45 14 58C26 58 38 58 50 58C50 45 50 32 50 19C38 19 26 19 14 19V19V19z"
+  />
+  <linearGradient id="gradient0" gradientUnits="userSpaceOnUse" x1="166.89" y1="6.53" x2="166.89" y2="54.9">
+   <stop offset="0" stop-color="#abd5ff"/>
+   <stop offset="1" stop-color="#006cd9"/>
+  </linearGradient>
+  <path style="fill:url(#gradient0)"
+        d="M14 19C14 32 14 45 14 58C26 58 38 58 50 58C50 45 50 32 50 19C38 19 26 19 14 19V19V19z"
+  />
+  <path style="fill:#000000"
+        d="M21 24C21 24 17 6 32 6C47 6 43 24 43 24C42.33 24 41.66 24 41 24C41 24 45 8 32 8C19 8 23 24 23 24C22.33 24 21.66 24 21 24V24V24z"
+  />
+  <path style="fill:none; stroke:#000000; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round"
+        d="M22 21C20 21 19 22 19 24C19 26 20 27 22 27C24 27 25 26 25 24C25 22 24 21 22 21V21V21z"
+  />
+  <path style="fill:none; stroke:#000000; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round"
+        d="M42 21C40 21 39 22 39 24C39 26 40 27 42 27C44 27 45 26 45 24C45 22 44 21 42 21V21V21z"
+  />
+ </g>
+</svg>

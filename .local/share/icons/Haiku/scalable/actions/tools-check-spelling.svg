@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg version="1.1" width="64" height="64" color-interpolation="linearRGB"
+     xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <path style="fill:none; stroke:#000000; stroke-opacity:0.4; stroke-width:2.6777"
+        d="M26 15V53H33C36.81 53 40 51.33 40 47V43C40 38.63 36.81 34 33 34H26
+           M59 34H51C47.16 34 45 37.63 45 42V44C45 48.34 47.16 53 51 53H59
+           M5.35 53.34V44.11C5.35 41.47 10.78 20.37 12.13 20.37C13.49 20.37 18.91 41.47 18.91 44.11V53.34"
+        transform="matrix(1,0,0,1,2,-7)"
+  />
+  <path style="fill:none; stroke:#000000; stroke-width:2.6777"
+        d="M5.35 53.34V44.11C5.35 41.47 10.78 20.37 12.13 20.37C13.49 20.37 18.91 41.47 18.91 44.11V53.34
+           M6.71 44.11H17.56
+           M26 15V53H33C36.81 53 40 51.33 40 47V43C40 38.63 36.81 34 33 34H26
+           M59 34H51C47.16 34 45 37.63 45 42V44C45 48.34 47.16 53 51 53H59"
+        transform="matrix(1,0,0,1,0,-10)"
+  />
+  <path style="fill:none; stroke:#000000; stroke-opacity:0.4823; stroke-width:4; stroke-linecap:square"
+        d="M7.61 51.09L12.66 44.83L17.71 51.09L22.76 44.83L27.81 51.09L32.86 44.83L37.91 51.09L42.97 44.83L48.01 51.09L53.06 44.83L58.11 51.09"
+        transform="matrix(1,0,0,1,0,9)"
+  />
+  <path style="fill:none; stroke:#ff0000; stroke-width:3; stroke-linecap:square"
+        d="M5.86 48.15L10.91 41.9L15.96 48.15L21 41.9L26.05 48.15L31.11 41.9L36.16 48.15L41.21 41.9L46.26 48.15L51.3 41.9L56.36 48.15"
+        transform="matrix(1,0,0,1,0,9)"
+  />
+ </g>
+</svg>

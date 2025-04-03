@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg version="1.1" width="64" height="64" color-interpolation="linearRGB"
+     xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <path style="fill:none; stroke:#000000; stroke-opacity:0.4; stroke-width:6.4785; stroke-linecap:round; stroke-linejoin:round"
+        d="M12.74 31.98H56.61V59.88H12.74V31.98z"
+        transform="matrix(0.8701,0,0,0.8558,2.7736,4.1024)"
+  />
+  <path style="fill:none; stroke:#000000; stroke-opacity:0.4; stroke-width:12.9572"
+        d="M46.49 25.79V21.13C46.49 15.14 41.19 10.28 34.68 10.28C28.13 10.28 22.86 15.14 22.86 21.13V25.79"
+        transform="matrix(0.8701,0,0,0.8558,3.7959,5.1024)"
+  />
+  <path style="fill:none; stroke:#545454; stroke-width:12.9572; stroke-linecap:square"
+        d="M43.11 22.69V18.04C43.11 12.05 37.81 7.19 31.3 7.19C24.75 7.19 19.49 12.05 19.49 18.04V22.69"
+        transform="matrix(0.8701,0,0,0.8558,3.7959,5.1024)"
+  />
+  <path style="fill:none; stroke:#bf5000; stroke-width:6.4785; stroke-linecap:round; stroke-linejoin:round"
+        d="M9.36 28.88H53.24V56.79H9.36V28.88z"
+        transform="matrix(0.8701,0,0,0.8558,3.7959,5.1024)"
+  />
+  <linearGradient id="gradient0" gradientUnits="userSpaceOnUse" x1="211.86" y1="25.79" x2="211.86" y2="56.79">
+   <stop offset="0" stop-color="#ffff80"/>
+   <stop offset="1" stop-color="#ffd400"/>
+  </linearGradient>
+  <path style="fill:url(#gradient0)"
+        d="M9.36 28.88H53.24V56.79H9.36V28.88z"
+        transform="matrix(0.8701,0,0,0.8558,3.7959,5.1024)"
+  />
+  <radialGradient id="gradient1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="64" gradientTransform="matrix(0,0.4356,-0.3424,0,27.9361,24.2488)">
+   <stop offset="0.2865" stop-color="#acacac"/>
+   <stop offset="0.583" stop-color="#ffffff"/>
+   <stop offset="0.9185" stop-color="#acacac"/>
+  </radialGradient>
+  <path style="fill:none; stroke:url(#gradient1); stroke-width:6.4785; stroke-linecap:square"
+        d="M43.11 22.69V18.04C43.11 12.05 37.81 7.19 31.3 7.19C24.75 7.19 19.49 12.05 19.49 18.04V22.69"
+        transform="matrix(0.8701,0,0,0.8558,3.7959,5.1024)"
+  />
+ </g>
+</svg>
