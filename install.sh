@@ -119,7 +119,7 @@ yay --noconfirm -S qalculate-gtk gramps wine winetricks # outros
 yay --noconfirm -S hyprlock hypridle hyprpaper hyprpicker hyprshot # hyprtools
 yay --noconfirm -S lutris steam heroic-games-launcher-bin mangohud gamemode # jogos
 yay --noconfirm -S waybar rofi-wayland rofi-emoji-git dunst wlogout clipse # ferramentas
-yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet pipes.sh tty-clock cowsay # legal :)
+yay --noconfirm -S cava cbonsai cmatrix-neo-git figlet sl pipes.sh tty-clock cowsay # legal :)
 
 # systemd units
 echo; echo; echo
