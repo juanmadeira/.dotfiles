@@ -2,9 +2,10 @@
 # script para desabilitar animações e papel de parede para focar no desempenho e inibir distrações
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+
 if [ "$HYPRGAMEMODE" = 1 ] ; then
-    killall -q hyprpaper
     killall -q waybar
+    killall -q hyprpaper 
     hyprctl --batch "\
         keyword animations:enabled 0;\
         keyword decoration:drop_shadow 0;\
@@ -15,7 +16,10 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword decoration:rounding 0"
     exit
 fi
-hyprpaper &
-waybar &
-hyprctl reload
 
+if [ -z $(pgrep waybar) ]; then
+    waybar & # executar waybar se nao houver nenhum processo rodando
+fi
+
+hyprpaper &
+hyprctl reload
