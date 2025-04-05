@@ -2,7 +2,7 @@
 
 export WALLUST_CURSOR="{{cursor | strip}}"
 export WALLUST_BACKGROUND="{{background | strip}}"
-export WALLUST_BACKGROUND="{{foreground | strip}}"
+export WALLUST_FOREGROUND="{{foreground | strip}}"
 export WALLUST_COLOR0="{{color0 | strip}}"
 export WALLUST_COLOR1="{{color1 | strip}}"
 export WALLUST_COLOR2="{{color2 | strip}}"
