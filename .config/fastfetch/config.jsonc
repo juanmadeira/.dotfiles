@@ -4,10 +4,7 @@
     "$schema": "./schema.json",
     "logo": {
         "type": "file",
-        "source": "~/.config/fastfetch/logo.txt",
-        "color": {
-            "1": "cyan"
-        },
+        "source": "~/.config/fastfetch/logo.txt", 
         "padding": {
             "top": 3,
             "left": 2
