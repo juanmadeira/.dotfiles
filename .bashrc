@@ -1,18 +1,16 @@
 # ~/.bashrc
 
 [[ $- != *i* ]] && return
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# path
-export PATH="$HOME/.scripts:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-
-# eval
-eval "$(starship init bash)"
+# exports
 eval "$(fzf --bash)"
+eval "$(starship init bash)"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.scripts/src:$PATH"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+source "$HOME/.cache/wallust/colors"
 
 # navegacao
 alias c="clear"
@@ -55,5 +53,5 @@ alias spotdl="source ~/.venv/spotdl/bin/activate; spotdl"
 
 # conf
 alias .rc="nvim ~/.bashrc"
-alias bsu="source ~/.bashrc" # atualizar .bashrc
+alias bsu="source ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
