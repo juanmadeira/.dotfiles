@@ -25,7 +25,6 @@ if gum confirm "VOCÊ DESEJA INICIAR A ATUALIZAÇÃO AGORA?" --prompt.foreground
 elif [ $? -eq 130 ]; then
     exit 130
 else
-    echo
     echo ":: Atualização cancelada."
     exit
 fi

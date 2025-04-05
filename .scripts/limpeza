@@ -14,9 +14,7 @@ if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?" --prompt.foreground="#$WA
 elif [ $? -eq 130 ]; then
     exit 130
 else
-    echo
     echo ":: Limpeza cancelada."
-    kitty @ close-window
     exit
 fi
 
@@ -51,4 +49,3 @@ fi
 notify-send "Limpeza completa"
 echo
 echo ":: Limpeza completa."
-
