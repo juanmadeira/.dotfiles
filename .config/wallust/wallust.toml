@@ -92,6 +92,9 @@ starship.target= '~/.config/starship.toml'
 wallpaper.template = 'wallpaper'
 wallpaper.target = '~/.cache/wallust/wallpaper'
 
+wallust.template = 'wallust'
+wallust.target = '~/.cache/wallust/colors'
+
 waybar.template = 'waybar.css'
 waybar.target = '~/.config/waybar/wallust.css'
 
