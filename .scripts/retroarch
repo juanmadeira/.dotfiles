@@ -7,7 +7,7 @@ sleep 1
 clear
 
 # exibir "RetroArch" através do figlet
-printf '\e[1;96m'; figlet "RetroArch"
+printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "RetroArch"
 echo
 
 # definir diretório do RetroArch

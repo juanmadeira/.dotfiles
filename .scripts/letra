@@ -15,7 +15,8 @@ SONG_EXTENSION=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f2)
 if [[ $(mpc current) ]]; then
     clear
     echo
-    echo ":: $SONG_ARTIST - $SONG_TITLE"
+    printf "$(hexToAnsi "$WALLUST_COLOR3")"; echo ":: $SONG_ARTIST - $SONG_TITLE"
+    printf "\033[0m"
     echo
     if [ -s "$SONG_PATH/$SONG_FILENAME.lrc" ]; then
         sleep 0.25

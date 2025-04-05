@@ -3,7 +3,8 @@
 # script para exibir os signals do linux
 
 # exibir "Signals" através do figlet
-printf '\e[1;96m'; figlet "Signals"
+printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Signals"
+printf "\033[0m"
 echo
 
 echo "1     SIGHUP        Hangup (POSIX)"

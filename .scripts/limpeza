@@ -4,11 +4,11 @@
 # script para limpar pacotes órfãos e cache do yay/pacman
 
 # exibir "Limpeza" através do figlet
-printf '\e[1;96m'; figlet "Limpeza"
+printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Limpeza"
 echo
 
 # perguntar ao usuário se deseja iniciar a limpeza
-if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+if gum confirm "VOCÊ DESEJA INICIAR A LIMPEZA AGORA?" --prompt.foreground="#$WALLUST_COLOR3" --selected.background="#$WALLUST_BACKGROUND"; then
     echo 
     echo ":: Limpeza iniciada."
 elif [ $? -eq 130 ]; then
