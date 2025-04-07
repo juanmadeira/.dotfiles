@@ -8,9 +8,9 @@ SONG_TITLE=$(mpc current -f %title%)
 SONG_PATH="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2)"
 SONG_PATH_CORRECTED="$HOME/Music/$(mpc current -f %file% | cut -d '/' -f1,2 | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')"
 
-SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1)
-SONG_FILENAME_CORRECTED=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f1 | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')
-SONG_EXTENSION=$(mpc current -f %file% | cut -d '/' -f3 | cut -d '.' -f2)
+SONG_FILENAME=$(mpc current -f %file% | cut -d '/' -f3 | rev | cut -d '.' -f2- | rev)
+SONG_FILENAME_CORRECTED=$(mpc current -f %file% | cut -d '/' -f3 | rev | cut -d '.' -f2- | rev | sed 's/ /\\ /g' | sed 's/(/\\(/g' | sed 's/)/\\)/g')
+SONG_EXTENSION=$(mpc current -f %file% | cut -d '/' -f3 | rev | cut -d '.' -f1 | rev)
 
 if [[ $(mpc current) ]]; then
     clear
