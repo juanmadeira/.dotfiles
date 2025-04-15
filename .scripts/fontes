@@ -18,8 +18,8 @@ if [ ! -d "$FONT_DIR" ]; then
 fi
 
 # copiar todas as fontes para a pasta de fontes do sistema
-sudo cp -r -v $FONT_DIR/*.otf /usr/share/fonts/;
-sudo cp -r -v $FONT_DIR/*.ttf /usr/share/fonts/;
+sudo cp -r -v "$FONT_DIR"/*.otf /usr/share/fonts/;
+sudo cp -r -v "$FONT_DIR"/*.ttf /usr/share/fonts/;
 echo
 
 # atualizar cache das fontes
