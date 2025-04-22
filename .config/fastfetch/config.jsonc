@@ -28,7 +28,8 @@
         {
             "type": "packages",
             "key": "  󰮯",
-            "keyColor": "yellow"
+            "keyColor": "yellow",
+            "format": "{2} (pacman), {14}/{15} (flatpak)"
         },
         {
             "type": "wm",
