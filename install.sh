@@ -51,29 +51,29 @@ sudo chmod +x ~/.config/rofi/scripts/*
 sudo chmod +x ~/.config/rmpc/scripts/*
 
 # importar funcoes e pacotes para serem instalados
-source ./install-functions.sh
+source ./functions.sh
 source ./packages.conf
 
 # instalar pacotes com yay
-install_packages "${temas[@]}"
-install_packages "${linguagens[@]}"
-install_packages "${sistema[@]}"
-install_packages "${fontes[@]}"
-install_packages "${imagem[@]}"
-install_packages "${video[@]}"
-install_packages "${audio[@]}"
-install_packages "${musica[@]}"
-install_packages "${terminal[@]}"
-install_packages "${texto[@]}"
-install_packages "${gerenciamento[@]}"
-install_packages "${particionamento[@]}"
-install_packages "${hyprtools[@]}"
-install_packages "${navegadores[@]}"
-install_packages "${bluetooth[@]}"
-install_packages "${jogos[@]}"
-install_packages "${ferramentas[@]}"
-install_packages "${legais[@]}"
-install_packages "${outros[@]}"
+installPackages "${temas[@]}"
+installPackages "${linguagens[@]}"
+installPackages "${sistema[@]}"
+installPackages "${fontes[@]}"
+installPackages "${imagem[@]}"
+installPackages "${video[@]}"
+installPackages "${audio[@]}"
+installPackages "${musica[@]}"
+installPackages "${terminal[@]}"
+installPackages "${texto[@]}"
+installPackages "${gerenciamento[@]}"
+installPackages "${particionamento[@]}"
+installPackages "${hyprtools[@]}"
+installPackages "${navegadores[@]}"
+installPackages "${bluetooth[@]}"
+installPackages "${jogos[@]}"
+installPackages "${ferramentas[@]}"
+installPackages "${legais[@]}"
+installPackages "${outros[@]}"
 
 # instalar pacotes com pip
 mkdir ~/.venv;
@@ -91,7 +91,7 @@ sudo chmod a+wr /opt/spotify/Apps -R
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh # spicetify
 
 # instalar flatpaks
-install_flatpaks "${flatpaks[@]}"
+installFlatpaks "${flatpaks[@]}"
 
 # habilitar systemd units
 echo; echo; echo

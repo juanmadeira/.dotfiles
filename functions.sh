@@ -1,34 +1,34 @@
 #!/bin/env sh
 
-# funcao para verificar se o pacote esta instalado
-is_installed() {
+# função para verificar se o pacote está instalado
+isInstalled() {
     pacman -Qi "$1" &> /dev/null
 }
 
-# funcao para verificar se o grupo esta instalado
-is_group_installed() {
+# função para verificar se o grupo está instalado
+isGroupInstalled() {
     pacman -Qg "$1" &> /dev/null
 }
 
-# funcao para instalar pacotes nao instalados
-install_packages() {
+# função para instalar pacotes não instalados
+installPackages() {
     local packages=("$@")
-    local to_install=()
+    local toInstall=()
 
     for pkg in "${packages[@]}"; do
-        if ! is_installed "$pkg" && ! is_group_installed "$pkg"; then
-            to_install+=("$pkg")
+        if ! isInstalled "$pkg" && ! isGroupInstalled "$pkg"; then
+            toInstall+=("$pkg")
         fi
     done
 
-    if [ ${#to_install[@]} -ne 0 ]; then
-        echo "Instalando: ${to_install[*]}"
-        yay -S --noconfirm "${to_install[@]}"
+    if [ ${#toInstall[@]} -ne 0 ]; then
+        echo "Instalando: ${toInstall[*]}"
+        yay -S --noconfirm "${toInstall[@]}"
     fi
 }
 
 # funcao para instalar flatpaks
-install_flatpaks() {
+installFlatpaks() {
     local flatpackages=("$@")
 
     for pak in "${flatpackages[@]}"; do
