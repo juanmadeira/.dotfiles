@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2025-04-28
+#	última atualização: 2025-04-29
 #
 
 ##################
@@ -22,7 +22,7 @@ echo "  | (_| | (_) | |_|  _| | | __/|__ |";
 echo "(_)___,_||___/|_| |_| |_|_|___|____/";
 echo "                                    ";
 
-# yay
+# instalar yay
 sudo pacman-key --populate
 sudo pacman --noconfirm -Sy --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -31,7 +31,7 @@ makepkg -si
 cd ..
 sudo rm -rf yay/
 
-# copiar configuracoes
+# copiar configurações
 cp -v .bashrc ~/
 cp -r -v .config ~/
 cp -r -v .scripts ~/
@@ -44,13 +44,13 @@ sudo cp -r fonts/* /usr/share/fonts/
     # geral -> FiraCode-..., HackNerdFontMono-..., OpenSans 
     # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
 
-# permitir executaveis
+# permitir executáveis
 sudo chmod +x ~/.scripts/*
 sudo chmod +x ~/.config/hypr/scripts/*
 sudo chmod +x ~/.config/rofi/scripts/*
 sudo chmod +x ~/.config/rmpc/scripts/*
 
-# importar funcoes e pacotes para serem instalados
+# importar funções e pacotes para serem instalados
 source ./functions.sh
 source ./packages.conf
 
@@ -75,6 +75,9 @@ installPackages "${ferramentas[@]}"
 installPackages "${legais[@]}"
 installPackages "${outros[@]}"
 
+# instalar pacotes com flatpak
+installFlatpaks "${flatpaks[@]}"
+
 # instalar pacotes com pip
 mkdir ~/.venv;
 python -m venv ~/.venv/venv
@@ -89,9 +92,6 @@ source ~/.venv/venv/bin/activate
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh # spicetify
-
-# instalar flatpaks
-installFlatpaks "${flatpaks[@]}"
 
 # habilitar systemd units
 echo; echo; echo
