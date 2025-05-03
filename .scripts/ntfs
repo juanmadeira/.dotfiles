@@ -15,6 +15,10 @@ echo "Ponto de montagem: $MOUNT_POINT"
 printf "\033[0m"
 echo
 
+if [ ! -d "$MOUNT_POINT" ]; then
+    sudo mkdir -p "$MOUNT_POINT"
+fi
+
 OPTION="$(gum choose "Montar partição NTFS" "Desmontar partição NTFS" "Sair" --cursor.foreground="#$WALLUST_COLOR3" --cursor.background="#$WALLUST_BACKGROUND" --item.foreground="#$WALLUST_FOREGROUND")"
 
 if [ "$OPTION" == "Montar partição NTFS" ]; then
