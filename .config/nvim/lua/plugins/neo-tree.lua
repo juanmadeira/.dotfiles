@@ -1,12 +1,15 @@
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    enabled = true,
+    lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
     config = function()
+        local map = vim.api.nvim_set_keymap
+        map("n", "<C-b>", ":Neotree toggle<CR>", {}) -- alterna neotree
         require("neo-tree").setup({
             window = {
                 position = "left",
