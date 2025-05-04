@@ -23,13 +23,13 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "pylsp",
-                    "lua_ls",
-                    "rust_analyzer",
-                    "ts_ls",
                     "bashls",
                     "cssls",
+                    "lua_ls",
                     "marksman"
+                    "pylsp",
+                    "rust_analyzer",
+                    "ts_ls",
                 }
             })
         end
