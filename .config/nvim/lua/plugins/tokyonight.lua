@@ -3,7 +3,7 @@ return {
     enabled = true,
     lazy = false,
     config = function()
-        require("tokyonight").setup ({
+        require("tokyonight").setup({
             transparent = true,
             styles = {
                sidebars = "transparent",

@@ -8,8 +8,6 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        local map = vim.api.nvim_set_keymap
-        map("n", "<C-b>", ":Neotree toggle<CR>", {}) -- alterna neotree
         require("neo-tree").setup({
             window = {
                 position = "left",
