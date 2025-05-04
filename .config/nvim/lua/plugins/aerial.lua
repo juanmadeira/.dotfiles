@@ -1,16 +1,12 @@
 return {
-    'stevearc/aerial.nvim',
+    "stevearc/aerial.nvim",
     enabled = true,
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons"
     },
     config = function()
-        require("aerial").setup({
-            on_attach = function(bufnr)
-                vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-                vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-            end,
+        require("aerial").setup({ 
             layout = {
                 min_width = 25,
             }

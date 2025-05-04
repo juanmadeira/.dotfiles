@@ -1,12 +1,12 @@
 return {
-    'saghen/blink.cmp',
+    "saghen/blink.cmp",
     enabled = true,
     lazy = false,
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { "rafamadriz/friendly-snippets" },
     opts = { 
-        keymap = { preset = 'default' },
+        keymap = { preset = "default" },
         appearance = {
-            nerd_font_variant = 'mono'
+            nerd_font_variant = "mono"
         },
         completion = {
             documentation = {
@@ -14,7 +14,7 @@ return {
             }
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { "lsp", "path", "snippets", "buffer" },
         },
         fuzzy = { implementation = "prefer_rust_with_warning" }
     },
