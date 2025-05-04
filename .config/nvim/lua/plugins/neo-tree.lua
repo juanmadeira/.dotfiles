@@ -9,10 +9,15 @@ return {
     },
     config = function()
         require("neo-tree").setup({
+            filesystem = {
+                filtered_items = {
+                    visible = true
+                }
+            },
             window = {
                 position = "left",
-                width = 25,
-            },
+                width = 25
+            }
         })
     end
 }
