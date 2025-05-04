@@ -26,10 +26,10 @@ return {
                     "bashls",
                     "cssls",
                     "lua_ls",
-                    "marksman"
+                    "marksman",
                     "pylsp",
                     "rust_analyzer",
-                    "ts_ls",
+                    "ts_ls"
                 }
             })
         end
