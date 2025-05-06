@@ -1,97 +1,136 @@
-@import url("./wallust.css");
+@import "wallust.css";
 
-window#waybar {
-    font-size: 0.8rem;
-    font-family: "FiraCode Medium";
-    background-color: rgba(0, 0, 0, 0);
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 10px;
 }
 
-.modules-left, .modules-center, .modules-right  {
-    padding: 1px;
-    border: 1px solid @color3;
-    border-radius: 0.5rem;
-    color: rgba(255, 255, 255, 0.45);
-    background: linear-gradient(45deg, @background, rgba(0, 0, 0, 0.5));
+window#waybar {
+    background: @background2;
 }
 
 tooltip {
-    border: none;
-    font-size: 0.65rem;
-    font-family: "FiraCode Medium";
-    background: @background;
-}
-
-tooltip * {
-    padding: 2.5px;
-    border-radius: 0.5rem;
     color: @foreground;
+    background: @background;
+    border-radius: 2px;
+    border-width: 0px;
 }
 
-button {
-    min-height: 24px;
-    min-width: 16px;
-}
-
-/* left */
 #workspaces {
-    padding: 0 5px;
-    border-radius: 0.5rem;
+    padding: 0px;
 }
 
 #workspaces button {
-    color: rgba(255, 255, 255, 0.5);
-    padding: 0 0.3rem 0 0;
-    font-size: 0.6rem;
+    color: @color3;
     background: transparent;
+    box-shadow: none;
+	text-shadow: none;
+    margin: 2px 0px;
+    padding: 0px 4px;
+    border-radius: 2px;
+    animation: ws_normal 5s ease-in-out 1;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background: @color3;
+    padding: 0px 4px;
+    animation: ws_active 5s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button:hover {
-    color: rgba(255, 255, 255, 1);
+    color: @foreground;
+    background: @color0;
+    animation: ws_hover 5s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-/* center */
-#window {
-    padding: 2px 5px;
-    border-radius: 0.5rem;
+#tray {
+    color: @color3;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 1;
 }
 
-window#waybar.empty .modules-center {
-    border: none;
-    background: transparent;
+#tray menu * {
+    min-height: 16px
 }
 
-/* right */
-#wireplumber {
-    padding: 0 0 0 10px; /* inserir esse padding no primeiro modulo */
-    color: rgba(255, 255, 255, 0.45);
+#tray menu separator {
+    min-height: 10px
 }
 
-#battery {
-    color: rgba(144, 238, 144, 0.5);
+#clock:hover {
+    color: @color3;
 }
 
-#disk {
-    color: rgba(135, 206, 250, 0.5);
+#idle_inhibitor,
+#clock,
+#workspaces,
+#window,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#battery,
+#disk,
+#memory,
+#cpu,
+#custom-gpu,
+#temperature,
+#custom-wallchange,
+#custom-cliphist,
+#custom-power,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#custom-rr_end {
+    color: @color3;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 1;
+    margin: 3px 0px 3px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
-#memory {
-    color: rgba(255, 182, 193, 0.5);
+#custom-r_end {
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 8px;
+    padding-right: 0px;
 }
 
-#cpu {
-    color: rgba(250, 250, 210, 0.5);
+#custom-l_end {
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 8px;
+    padding-left: 0px;
 }
 
-#temperature {
-    color: rgba(255, 255, 255, 0.45);
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 8px;
+    padding-right: 0px;
 }
 
-#idle_inhibitor {
-    color: rgba(255, 255, 255, 0.45);
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 8px;
+    padding-left: 0px;
 }
 
-#clock {
-    padding: 0 10px 0 0; /* inserir esse padding no ultimo modulo */
-    color: rgba(255, 255, 255, 0.45);
-    font-weight: bolder;
+#custom-rr_end {
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 8px;
+    padding-right: 0px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 8px;
+    padding-left: 0px;
 }

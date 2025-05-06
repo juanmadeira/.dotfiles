@@ -1,62 +1,164 @@
-{   
-    "name": "bar0",
-    
+// base: https://github.com/Xakak/dotfiles
+
+{
+    /* gerais */
     "layer": "top",
     "position": "top",
-
-    // "width": 1920,
-    "height": 30,
-
-    "margin": "5",
-    "spacing": 10,
-    
-    // "mode": "top",
-    // "exclusive": true,
-
-    "output": "HDMI-A-1",
-
+    "mod": "dock",
+    "height": 28,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
     "reload_style_on_change": true,
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": [
-        // "tray",
-        // "backlight",
-        "wireplumber",
-        // "battery",
-        "disk",
-        "memory",
-        "cpu",
-        "temperature",
-        "idle_inhibitor",
-        "clock"
-    ], 
+    /* módulos */
+	"modules-left": ["custom/l_end","idle_inhibitor","clock","custom/r_end","custom/l_end","hyprland/workspaces","custom/r_end","custom/padd"],
+	"modules-center": ["custom/padd","custom/l_end","hyprland/window","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","battery","custom/r_end","custom/l_end","disk","memory","cpu","custom/gpu","temperature","custom/r_end","custom/l_end","tray","custom/wallchange","custom/cliphist","custom/power","custom/r_end"],
 
-    "backlight": {
-        "interval": 2,
-        "format": "󰖨 {percent}%",
-        "on-scroll-up": "brightnessctl set +4",
-        "on-scroll-down": "brightnessctl set 4-"
+    /* esquerda  */
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "rotate": 0,
+        "format-icons": {
+            "activated": "󰥔",
+            "deactivated": ""
+        }
     },
 
-    "wireplumber": {
-        "format": "󰕾 {volume}%",
-        "format-muted": "󰖁 [{volume}%]",
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%H:%M:%S 󰃭 %d·%m·%y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "rotate": 0,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "show-special": true,
+        "rotate": 0,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace +1",
+        "on-scroll-down": "hyprctl dispatch workspace -1",
+        "format": "{icon}",
+        "format-icons": {
+            "special": ""
+        }
+    },
+
+    /* centro */
+    "hyprland/window": {
+        "icon": "true",
+        "icon-size": 20,
+        "rotate": 0,
+        "separate-outputs": true,
+        "max-length": 1000
+    },
+
+    /* direita */
+    "backlight": {
+        "device": "intel_backlight",
+        "rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
+    },
+
+    "network": {
+        "tooltip": true,
+        "format": "",
+        "rotate": 0,
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2
+    },
+
+    "bluetooth": {
+        "format": "",
+        "rotate": 0,
+        "format-disabled": "󰂲",
+        "format-connected": " {num_connections}",
+        //"format-connected-battery": "{icon} {num_connections}",
+        "format-connected-battery": "{icon} {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // se a ordem não for especificada, mostrará o último dispositivo conectado
+        "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+        "on-click": "blueman-manager",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}",
+        "rotate": 0,
+        "format-muted": "婢 [{volume}]",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "kitty --class pulsemixer -e 'pulsemixer'",
+        "tooltip-format": "{icon} {desc} // {volume}%",
         "scroll-step": 5,
-        "tooltip": true,
-        "tooltip-format": "dispositivo: {node_name}"
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "rotate": 0,
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "kitty --class pulsemixer -e 'pulsemixer'",
+        "on-click-right": "kitty --class pulsemixer -e 'pulsemixer'",
+        "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+        "scroll-step": 5
     },
 
     "battery": {
-        "interval": 10,
-        "format": "{icon}{capacity}%",
-        "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-        "tooltip": true,
-        "tooltip-format": "{timeTo}"
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-
+    
     "disk": {
         "intervel": 30,
         "format": "󰋊 {percentage_used}%",
@@ -64,14 +166,33 @@
     },
 
     "memory": {
-        "interval": 10,
-        "format": " {used}",
-        "tooltip-format": "{used}GiB em uso de {total}GiB ({percentage}%)"
+        "states": {
+            "c": 90, // critical
+            "h": 60, // high
+            "m": 30 // medium
+        },
+        "interval": 30,
+        "format": "󰾆 {used}GB",
+        "format-m": "󰾅 {used}GB",
+        "format-h": "󰓅 {used}GB",
+        "format-c": " {used}GB",
+        "format-alt": "󰾆 {percentage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
     },
-
+   
     "cpu": {
         "interval": 10,
-        "format": " {usage}%"
+        "format": " {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "custom/gpu": {
+        "interval": 10,
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": " {}%"
     },
 
     "temperature": {
@@ -79,65 +200,86 @@
         "tooltip": false
     },
 
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰛊",
-            "deactivated": "󰾫"
-        }
+    "tray": {
+        "icon-size": 16,
+        "rotate": 0,
+        "spacing": 5
     },
 
-    "clock": {
-        "interval": 1,
-	    "format": "{:%H:%M:%S}",
-            "on-click-right": "wlogout",
-            //"format-alt": "{:%A, %B %d, %Y (%R)}  ",
-	    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-	    "calendar": {
-		    "mode"          : "year",
-		    "mode-mon-col"  : 3,
-		    "weeks-pos"     : "right",
-		    "on-scroll"     : 1,
-		    "on-click": "mode",
-		    "format": {
-			    "months":     "<span color='#ffead3'><b>{}</b></span>",
-			    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-			    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-			    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-			    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-		    }
-	    },
-	    "actions": {
-		    "on-click": "mode",
-		    "on-click-forward": "tz_up",
-		    "on-click-backward": "tz_down",
-		    "on-scroll-up": "shift_up",
-		    "on-scroll-down": "shift_down"
-	    }
+    "custom/wallchange": {
+        "format": "{}",
+        "rotate": 0,
+        "exec": "echo ; echo 󰆊 alterar papel de parede",
+        "on-click": "~/.scripts/wall",
+        "on-click-right": "~/.scripts/wall",
+        "on-click-middle": "sleep 0.1 && ~/.scripts/wall",
+        "interval" : 86400,
+        "tooltip": true
     },
 
-    "hyprland/workspaces": {
-        "show-special": true,
-        "persistent-workspaces": {
-            "*":[1,2,3,4,5,6,7,8,9,10]
-        },
-        "format": "{icon}",
-        "format-icons": {
-            "active": "",
-            "empty": "",
-            "default": "",
-            "urgent": "",
-            "special": "󰠱"
-        }
+    "custom/cliphist": {
+        "format": "{}",
+        "rotate": 0,
+        "exec": "echo ; echo 󰅇 área de transferência",
+        "on-click": "kitty --class clipse -e 'clipse'",
+        "on-click-right": "kitty --class clipse -e 'clipse'",
+        "on-click-middle": "kitty --class clipse -e 'clipse'",
+        "interval" : 86400,
+        "tooltip": true
     },
-    "hyprland/window": {
-        "max-length": 75,
-        "icon": true,
-        "icon-size": 20,
-        "rewrite": {
-            "(.*) — Mozilla Firefox": "$1 - Firefox",
-            "(.*) - Visual Studio Code": "$1 - VSCode ",
-            "Spotify Free": "Spotify"
-        }
+
+    "custom/power": {
+        "format": "{}",
+        "rotate": 0,
+        "exec": "echo ; echo  logout",
+        "on-click": "wlogout",
+        "on-click-right": "wlogout",
+        "on-click-middle": "wlogout",
+        "interval" : 86400,
+        "tooltip": true
+    },
+
+    /* padding */
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
     }
 }
+
