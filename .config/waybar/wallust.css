@@ -1,12 +1,13 @@
 @define-color foreground #D6ECE2;
 @define-color background #0B0E0F;
-@define-color background2 rgba(11,14,15,0.45);
+@define-color background-1 rgba(11,14,15,0.45);
 @define-color cursor #949A93;
 
 @define-color color0 #363939;
 @define-color color1 #1D464A;
 @define-color color2 #794D37;
 @define-color color3 #1D7E8C;
+@define-color color3-1 rgba(29,126,140,0.25);
 @define-color color4 #7D7D36;
 @define-color color5 #268E8C;
 @define-color color6 #46C98E;

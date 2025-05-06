@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-    background: @background2;
+    background: @background-1;
 }
 
 tooltip {
@@ -37,7 +37,7 @@ tooltip {
 
 #workspaces button.active {
     color: @foreground;
-    background: @color3;
+    background: @color3-1;
     padding: 0px 4px;
     animation: ws_active 5s ease-in-out 1;
     transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
@@ -62,10 +62,6 @@ tooltip {
 
 #tray menu separator {
     min-height: 10px
-}
-
-#clock:hover {
-    color: @color3;
 }
 
 #idle_inhibitor,
