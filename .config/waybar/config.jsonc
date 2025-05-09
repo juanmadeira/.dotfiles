@@ -14,7 +14,7 @@
     /* módulos */
 	"modules-left": ["custom/l_end","idle_inhibitor","clock","custom/r_end","custom/l_end","hyprland/workspaces","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","hyprland/window","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","battery","custom/r_end","custom/l_end","disk","memory","cpu","custom/gpu","temperature","custom/r_end","custom/l_end","tray","custom/wallchange","custom/cliphist","custom/power","custom/r_end"],
+	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","battery","custom/r_end","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","tray","custom/wallchange","custom/cliphist","custom/power","custom/r_end"],
 
     /* esquerda  */
     "idle_inhibitor": {
@@ -143,12 +143,27 @@
             "warning": 30,
             "critical": 20
         }
+    }, 
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
-    
-    "disk": {
-        "format": "󰋊 {percentage_used}%",
-        "interval": 30,
-        "tooltip-format": "{used} em uso de {total} em \"{path}\" ({percentage_used}%)"
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hardware",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "memory",
+            "custom/gpu",
+            "disk"
+        ]
     },
 
     "memory": {
@@ -158,7 +173,6 @@
         "format-c": " {used}GB",
         "format-alt": "󰾆 {percentage}%",
         "interval": 30,
-        "max-length": 10,
         "tooltip": true,
         "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
         "states": {
@@ -167,18 +181,17 @@
             "m": 30 // medium
         }
     },
-   
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },
 
     "custom/gpu": {
         "interval": 10,
         "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-        "format": " {}%"
+        "format": "󰡁 {}%"
+    },
+
+    "disk": {
+        "format": "󰋊 {percentage_used}%",
+        "interval": 30,
+        "tooltip-format": "{used} em uso de {total} em \"{path}\" ({percentage_used}%)"
     },
 
     "temperature": {
