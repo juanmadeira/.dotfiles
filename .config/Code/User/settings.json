@@ -7,11 +7,13 @@
         ".env": ".env*"
     },
     "explorer.compactFolders": false,
-    "editor.minimap.enabled": false,
+
+    "editor.minimap.enabled": true,
     "editor.minimap.showSlider": "always",
     "editor.semanticHighlighting.enabled": false,
     "editor.stickyScroll.enabled": false,
-
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    
     "emmet.includeLanguages": {
         "php": "html",
         "javascript": "html"
@@ -21,27 +23,15 @@
     "terminal.integrated.fontSize": 12,
 
     "window.commandCenter": false,
-    "window.menuBarVisibility": "toggle",
+
     "workbench.activityBar.location": "hidden",
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "symbols",
     "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
-    "workbench.statusBar.visible": false,
-
-    "vim.disableExtension": true,
+    "workbench.statusBar.visible": true,
 
     "discord.enabled": false,
-    "discord.removeLowerDetails": true,
     "discord.removeRemoteRepository": true,
-
-    "symbols.hidesExplorerArrows": false,
-    
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "apc.listRow": {
-        "height": 24
-    },
-    "apc.stylesheet": {
-        ".title-label > h2": "display: none;"
-    }
+    "symbols.hidesExplorerArrows": false
 }
