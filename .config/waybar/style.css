@@ -5,7 +5,7 @@
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
     min-height: 10px;
 }
 
@@ -51,17 +51,31 @@ tooltip {
 }
 
 #tray {
+    padding: 3px 0px;
+    background: transparent;
+}
+
+#tray > .active {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+#tray menu,
+#tray menu label,
+#tray menu separator,
+#tray menu box,
+#tray menu image {
+    background: @background1-1;
+}
+
+#tray menu menuitem {
+    color: @foreground;
+    background: @background1-1;
+    margin: 3px;
+}
+
+#tray menu menuitem:hover {
     color: @color3;
     background: rgba(0, 0, 0, 0.65);
-    opacity: 1;
-}
-
-#tray menu * {
-    min-height: 16px
-}
-
-#tray menu separator {
-    min-height: 10px
 }
 
 #idle_inhibitor,

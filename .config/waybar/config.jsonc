@@ -3,18 +3,13 @@
 {
     /* gerais */
     "layer": "top",
-    "position": "top",
-    "mod": "dock",
     "height": 28,
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
     "reload_style_on_change": true,
 
     /* módulos */
 	"modules-left": ["custom/l_end","idle_inhibitor","clock","custom/r_end","custom/l_end","hyprland/workspaces","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","hyprland/window","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","battery","custom/r_end","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","tray","custom/wallchange","custom/cliphist","custom/power","custom/r_end"],
+	"modules-right": ["custom/padd","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","battery","tray","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/power","custom/r_end"],
 
     /* esquerda  */
     "idle_inhibitor": {
@@ -71,6 +66,77 @@
     },
 
     /* direita */
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hardware",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "memory",
+            "custom/gpu",
+            "disk"
+        ]
+    },
+
+    "memory": {
+        "format": "󰾆 {used}GB",
+        "format-m": "󰾅 {used}GB",
+        "format-h": "󰓅 {used}GB",
+        "format-c": " {used}GB",
+        "format-alt": "󰾆 {percentage}%",
+        "interval": 30,
+        "tooltip": true,
+        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
+        "states": {
+            "c": 90, // critical
+            "h": 60, // high
+            "m": 30 // medium
+        }
+    },
+
+    "custom/gpu": {
+        "interval": 10,
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "󰡁 {}%"
+    },
+
+    "disk": {
+        "format": "󰋊 {percentage_used}%",
+        "interval": 30,
+        "tooltip-format": "{used} em uso de {total} em \"{path}\" ({percentage_used}%)"
+    },
+
+    "temperature": {
+        "interval": 10,
+        "tooltip": false
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        }
+    }, 
+
+    "tray": {
+        "icon-size": 12
+    },
+
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
@@ -132,77 +198,6 @@
         "tooltip-format": "{format_source} {source_desc} // {source_volume}%"
     },
 
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        }
-    }, 
-
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },
-
-    "group/hardware": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "hardware",
-            "transition-left-to-right": true
-        },
-        "modules": [
-            "memory",
-            "custom/gpu",
-            "disk"
-        ]
-    },
-
-    "memory": {
-        "format": "󰾆 {used}GB",
-        "format-m": "󰾅 {used}GB",
-        "format-h": "󰓅 {used}GB",
-        "format-c": " {used}GB",
-        "format-alt": "󰾆 {percentage}%",
-        "interval": 30,
-        "tooltip": true,
-        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
-        "states": {
-            "c": 90, // critical
-            "h": 60, // high
-            "m": 30 // medium
-        }
-    },
-
-    "custom/gpu": {
-        "interval": 10,
-        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-        "format": "󰡁 {}%"
-    },
-
-    "disk": {
-        "format": "󰋊 {percentage_used}%",
-        "interval": 30,
-        "tooltip-format": "{used} em uso de {total} em \"{path}\" ({percentage_used}%)"
-    },
-
-    "temperature": {
-        "interval": 10,
-        "tooltip": false
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 5
-    },
 
     "custom/wallchange": {
         "format": "{}",
