@@ -12,7 +12,7 @@ export PATH="$HOME/.scripts/src:$PATH"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 source "$HOME/.cache/wallust/colors"
 
-# navegacao
+# navegação
 alias c="clear"
 alias cls="clear"
 alias qt="exit"
@@ -24,8 +24,7 @@ alias doc="cd ~/Documents/"
 
 # cli
 alias y="yazi"
-alias vi="nvim"
-alias vim="nvim"
+alias v="nvim"
 alias lg="lazygit"
 alias of="onefetch"
 alias ff="fastfetch"
@@ -55,3 +54,4 @@ alias spotdl="source ~/.venv/spotdl/bin/activate; spotdl"
 alias .rc="nvim ~/.bashrc"
 alias bsu="source ~/.bashrc"
 alias hyprcfg="nvim ~/.config/hypr/hyprland.conf"
+alias nvimcfg="nvim ~/.config/nvim/"
