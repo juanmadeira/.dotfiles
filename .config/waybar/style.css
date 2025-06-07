@@ -29,8 +29,8 @@ tooltip {
     background: transparent;
     box-shadow: none;
 	text-shadow: none;
-    margin: 2px 0px;
-    padding: 0px 4px;
+    margin: 0px 2px;
+    padding: 0px 3px;
     border-radius: 2px;
     animation: ws_normal 5s ease-in-out 1;
 }
@@ -38,16 +38,13 @@ tooltip {
 #workspaces button.active {
     color: @foreground;
     background: @color3-1;
-    padding: 0px 4px;
-    animation: ws_active 5s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    margin: 3px 2px;
+    padding: 0px 3px;
 }
 
 #workspaces button:hover {
     color: @foreground;
     background: @color0;
-    animation: ws_hover 5s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #tray {
