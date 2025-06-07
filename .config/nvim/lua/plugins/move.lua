@@ -1,4 +1,4 @@
-return { 
+return {
     "fedepujol/move.nvim",
     enabled = true,
     config = function()

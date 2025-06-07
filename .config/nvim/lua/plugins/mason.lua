@@ -25,6 +25,7 @@ return {
                 ensure_installed = {
                     "bashls",
                     "cssls",
+                    "emmet_language_server",
                     "lua_ls",
                     "marksman",
                     "pylsp",
