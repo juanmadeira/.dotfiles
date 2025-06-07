@@ -30,21 +30,24 @@ tooltip {
     box-shadow: none;
 	text-shadow: none;
     margin: 0px 2px;
-    padding: 0px 3px;
+    padding: 0px 2px;
     border-radius: 2px;
-    animation: ws_normal 5s ease-in-out 1;
 }
 
 #workspaces button.active {
     color: @foreground;
     background: @color3-1;
     margin: 3px 2px;
-    padding: 0px 3px;
+    padding: 0px 2px;
+    transition: background 0.35s linear;
 }
 
 #workspaces button:hover {
     color: @foreground;
     background: @color0;
+    margin: 3px 2px;
+    padding: 0px 2px;
+    transition: background 0.35s linear;
 }
 
 #tray {
