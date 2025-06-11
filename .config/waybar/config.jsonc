@@ -161,7 +161,7 @@
         "format": "",
         "format-disabled": "󰂲",
         "format-connected": " {num_connections}",
-        "format-connected-battery": "{icon} {device_alias} {device_battery_percentage}%",
+        "format-connected-battery": " {icon} {device_battery_percentage}%",
         // "format-device-preference": [ "device1", "device2" ], // se a ordem não for especificada, mostrará o último dispositivo conectado
         "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
         "on-click": "blueman-manager",
@@ -176,7 +176,7 @@
         "format-muted": "婢 [{volume}]",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "kitty --class pulsemixer -e 'pulsemixer'",
-        "tooltip-format": "{icon} {desc} // {volume}%",
+        "tooltip-format": "{icon} {desc} {volume}%",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
@@ -195,7 +195,7 @@
         "format-source-muted": "",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-click-right": "kitty --class pulsemixer -e 'pulsemixer'",
-        "tooltip-format": "{format_source} {source_desc} // {source_volume}%"
+        "tooltip-format": "{format_source} {source_desc} {source_volume}%"
     },
 
 
