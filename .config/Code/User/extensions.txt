@@ -7,17 +7,16 @@
 # REMOVER TODAS EXTENSÕES (!!!):
 # code --list-extensions | xargs -n 1 code --uninstall-extension
 
-# juan, 2024-08-27
+# juan, 2025-06-20
 
 devsense.composer-php-vscode
 devsense.intelli-php-vscode
 devsense.phptools-vscode
 devsense.profiler-php-vscode
-drcika.apc-extension
 enkia.tokyo-night
 icrawl.discord-vscode
 miguelsolorio.symbols
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
-vscodevim.vim
+takumii.markdowntable
