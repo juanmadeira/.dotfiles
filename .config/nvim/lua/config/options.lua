@@ -23,6 +23,7 @@ local options = {
     foldexpr = "nvim_treesitter#foldexpr()",
 
     -- pesquisa
+    clipboard = "unnamedplus",
 	hlsearch = false,
     ignorecase = true,
     smartcase = true
