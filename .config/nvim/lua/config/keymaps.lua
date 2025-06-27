@@ -7,14 +7,22 @@ end
 
 local M = {}
 
-map("n", "<C-s>", '<cmd>write<cr>', { desc = "Save" })
-map("n", "<A-z>", ":set wrap!<CR>", { desc = "Toggle wrap" })
-map("n", "<A-j>", ":m .+1<CR>==")
-map("n", "<A-k>", ":m .-2<CR>==")
-map("v", "<A-j>", ":m '>+1<CR>gv=gv")
-map("v", "<A-k>", ":m '<-2<CR>gv=gv")
-map("x", ">", ">gv")
-map("x", "<", "<gv")
+map("n", "<C-s>", '<cmd>w<CR>', { desc = "Save" })
+map("n", "<C-A-s>", '<cmd>wqa!<CR>', { desc = "Save, close all buffers and force quit" })
+map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
+
+map("i", "<C-h>", "<Left>", { desc = "Move left in insert mode" })
+map("i", "<C-j>", "<Down>", { desc = "Move down in insert mode" })
+map("i", "<C-k>", "<Up>", { desc = "Move up in insert mode" })
+map("i", "<C-l>", "<Right>", { desc = "Move right in insert mode" })
+
+map("x", ">", ">gv", { desc = "Right indent" })
+map("x", "<", "<gv", { desc = "Left indent" })
+map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move text to lower line" })
+map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move text to upper line" })
+map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "Move text to lower line" })
+map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "Move text to upper line" })
+
 
 map("n", "<leader>nn", function()
     if vim.wo.relativenumber then vim.wo.relativenumber = false vim.wo.number = true
@@ -22,7 +30,7 @@ map("n", "<leader>nn", function()
 end)
 
 --- neotree
-map("n", "<C-b>", ":Neotree toggle<CR>", { desc = "Toggle Neotree" })
+map("n", "<C-b>", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neotree" })
 
 --- aerial
 map("n", "<C-a>", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })
@@ -48,16 +56,16 @@ map("n", "<leader>fb", telescope.buffers, { desc = "Telescope buffer" })
 map("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
 
 --- flash
-map({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash" })
-map({ "n", "x", "o" }, "S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
-map({ "x", "o" }, "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
-map("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
-map("c", "<c-s>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
+map({ "n", "x", "o" }, "s", "<cmd>lua require('flash').jump()<CR>", { desc = "Flash" })
+map({ "n", "x", "o" }, "S", "<cmd>lua require('flash').treesitter()<CR>", { desc = "Flash Treesitter" })
+map({ "x", "o" }, "R", "<cmd>lua require('flash').treesitter_search()<CR>", { desc = "Treesitter Search" })
+map("o", "r", "<cmd>lua require('flash').remote()<CR>", { desc = "Remote Flash" })
+map("c", "<A-s>", "<cmd>lua require('flash').toggle()<CR>", { desc = "Toggle Flash Search" })
 
 --- trouble
-map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Trouble Diagnostics" })
-map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Trouble Buffer Diagnostics" })
-map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Trouble Symbols" })
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble Diagnostics" })
+map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Trouble Buffer Diagnostics" })
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<CR>", { desc = "Trouble Symbols" })
 
 --- exportar as funções
 return M
