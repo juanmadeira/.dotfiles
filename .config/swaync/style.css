@@ -1,0 +1,232 @@
+@import "wallust.css";
+
+* {
+    font-family: "Hack Nerd Font Mono";
+    border-radius: 0px;
+}
+
+/* notification */
+.notification {
+    background: @bg;
+    margin: 3px -2px 3px 0;
+    padding: 5px;
+    border: 1px solid @border;
+    border-radius: 10px;
+}
+
+.summary {
+    background: transparent;
+    color: @title;
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+.body {
+    background: transparent;
+    color: @text;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+.notification:hover .close-button {
+    opacity: 1;
+}
+
+.notification-action {
+    border: 2px solid @border;
+    border-radius: 10px
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: transparent;
+    color: @title;
+}
+
+.close-button {
+    background: @bg;
+    color: @text;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 0px;
+    opacity: 0;
+    border: none;
+    border-radius: 10px;
+    text-shadow: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.close-button:hover {
+    background: @hover;
+    box-shadow: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.inline-reply-entry {
+    background: @bg;
+    color: @text;
+    caret-color: @text;
+    border: 1px solid @border;
+    border-radius: 10px;
+}
+
+.inline-reply-button {
+    background: @bg;
+    color: @text;
+    margin-top: 4px;
+    margin-left: 4px;
+    border: 1px solid @border;
+    border-radius: 10px;
+}
+
+.inline-reply-button:disabled {
+    background: transparent;
+    color: @disabled;
+    border: 1px solid @border;
+}
+
+.inline-reply-button:hover {
+    background: transparent;
+}
+
+/* control center */
+.control-center {
+    background: @panel;
+    border-radius: 10px;
+    border: 1px solid @border;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    background: transparent;
+    opacity: 1;
+}
+
+.notification-row {
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.time {
+    background: transparent;
+    color: @text;
+    font-size: 0.65rem;
+    font-weight: 400;
+    margin-right: 10px;
+    text-shadow: none;
+}
+
+/* title */
+.widget-title {
+    background: transparent;
+    color: @title;
+    font-size: 1.5rem;
+    margin: 5px 10px;
+    padding: 10px 10px;
+}
+
+.widget-title>button {
+    background: transparent;
+    color: @text;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.widget-title>button:hover {
+    background: @title;
+    color: @text;
+}
+
+/* dnd */
+.widget-dnd {
+    background: transparent;
+    color: @title;
+    font-size: 1.25rem;
+    margin: 0px 10px;
+    padding: 0px 10px;
+    opacity: 0.75;
+}
+
+.widget-dnd>switch {
+    background: @bg;
+    border-radius: 5px;
+}
+
+.widget-dnd>switch:checked {
+    background: @title;
+    border: 1px solid @border;
+}
+
+.widget-dnd>switch slider {
+    border-radius: 10px;
+}
+
+/* buttons */
+.widget-buttons-grid {
+    background: transparent;
+    font-size: x-large;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    background: @bg;
+    color: @text;
+    margin: 3px;
+    border-radius: 10px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @bg;
+    color: @text;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+    background: @bg;
+    color: @cc-bg;
+}
+/* volume e backlight */
+.widget-volume,
+.widget-backlight {
+    background: transparent;
+    color: @title;
+    font-size: 1rem;
+    margin: 5px 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* label */
+.widget-label>label {
+    color: @title;
+    font-size: 1rem;
+    margin: 10px;
+}
+
+/* mpris */
+.widget-mpris {
+    background: transparent;
+    color: @title;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.widget-mpris>box>button,
+.widget-mpris-player {
+    padding: 5px;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.widget-mpris-album-art {
+    margin: 5px;
+}

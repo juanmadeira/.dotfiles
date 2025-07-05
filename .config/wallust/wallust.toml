@@ -90,7 +90,10 @@ spicetify.template = 'spicetify.ini'
 spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
 
 starship.template = 'starship.toml'
-starship.target= '~/.config/starship.toml'
+starship.target = '~/.config/starship.toml'
+
+swaync.template = 'swaync.css'
+swaync.target = '~/.config/swaync/wallust.css'
 
 wallpaper.template = 'wallpaper'
 wallpaper.target = '~/.cache/wallust/wallpaper'

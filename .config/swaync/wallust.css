@@ -1,0 +1,7 @@
+@define-color panel                 rgba(11,14,15,0.7);
+@define-color bg                    #0B0E0F;
+@define-color text                  #D6ECE2;
+@define-color title                 #1D7E8C;
+@define-color border                #1D7E8C;
+@define-color hover                 #7D7D36;
+@define-color disabled              rgba(29,126,140,0.7);
