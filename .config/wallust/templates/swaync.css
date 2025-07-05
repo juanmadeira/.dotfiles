@@ -1,4 +1,4 @@
-@define-color panel                 rgba({{background | rgb}},0.7);
+@define-color panel                 rgba({{background | rgb}},0.85);
 @define-color bg                    {{background}};
 @define-color text                  {{foreground}};
 @define-color title                 {{color3}};

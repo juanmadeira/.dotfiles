@@ -17,16 +17,16 @@
 .summary {
     background: transparent;
     color: @title;
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: normal;
     text-shadow: none;
 }
 
 .body {
     background: transparent;
     color: @text;
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: 0.65rem;
+    font-weight: lighter;
     text-shadow: none;
 }
 
@@ -145,7 +145,7 @@
 .widget-dnd {
     background: transparent;
     color: @title;
-    font-size: 1.25rem;
+    font-size: 0.9rem;
     margin: 0px 10px;
     padding: 0px 10px;
     opacity: 0.75;
@@ -191,6 +191,7 @@
     background: @bg;
     color: @cc-bg;
 }
+
 /* volume e backlight */
 .widget-volume,
 .widget-backlight {
@@ -219,7 +220,6 @@
     box-shadow: none;
 }
 
-.widget-mpris>box>button,
 .widget-mpris-player {
     padding: 5px;
     margin: 0px;
@@ -229,4 +229,12 @@
 
 .widget-mpris-album-art {
     margin: 5px;
+}
+
+.widget-mpris-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.widget-mpris-subtitle {
+    font-size: 0.75rem;
 }
