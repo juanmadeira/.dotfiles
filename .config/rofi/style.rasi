@@ -4,21 +4,23 @@ configuration {
     modi:                       "drun,run,filebrowser,recursivebrowser,window";
     show-icons:                 true;
     display-drun:               "󰀻";
-    display-emoji:              ":)";
     display-run:                "";
     display-filebrowser:        "";
     display-recursivebrowser:   "󰚝";
     display-window:             "";
+    display-emoji:              "😀";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
 }
 
 * {
+    font: "Hack Mono Nerd Font 10";
     border-colour:               var(selected);
     handle-colour:               var(selected);
-    background-colour:           var(background);
     foreground-colour:           var(foreground);
+    background-colour:           var(background);
     alternate-background:        var(background-alt);
+    placeholder-colour:          var(placeholder);
     normal-background:           transparent;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
@@ -37,7 +39,6 @@ configuration {
     alternate-urgent-foreground: var(background);
     alternate-active-background: var(active);
     alternate-active-foreground: var(background);
-    font: "Hack Mono Nerd Font 10";
 }
 
 window {
@@ -46,35 +47,26 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       375px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
+    cursor:                      "default";
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
     border-radius:               10px;
     border-color:                @border-colour;
-    cursor:                      "default";
-    /* Backgroud Colors */
     background-color:            @background-colour;
-    /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
-    /* Simple Linear Gradient */
-    //background-image:          linear-gradient(red, orange, pink, purple);
-    /* Directional Linear Gradient */
-    //background-image:          linear-gradient(to bottom, pink, yellow, magenta);
-    /* Angle Linear Gradient */
-    //background-image:          linear-gradient(45, cyan, purple, indigo);
 }
 
 mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     20px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
@@ -117,7 +109,7 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Procurar...";
-    placeholder-color:           inherit;
+    placeholder-color:           @placeholder-colour;
 }
 
 num-filtered-rows {
@@ -172,7 +164,7 @@ listview {
 }
 
 scrollbar {
-    handle-width:                5px ;
+    handle-width:                3px ;
     handle-color:                @handle-colour;
     border-radius:               10px;
     background-color:            @alternate-background;
@@ -265,9 +257,9 @@ mode-switcher {
 }
 
 button {
-    padding:                     5px 10px;
+    padding:                     4.25px 7.75px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               7.75px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  inherit;

@@ -35,7 +35,7 @@ show_menu() {
     10) selection=$(echo "$kaomojis" | head -n -1 | shuf -n 1) ;;
     0)
       selection=$(echo "$kaomojis" |
-        rofi -dmenu -i -theme style.rasi -theme-str '* { font: "Hack Mono Nerd Font 10"; }')
+        rofi -dmenu -i -theme style.rasi)
       ;;
     *) exit ;;
   esac
