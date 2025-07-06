@@ -50,9 +50,6 @@ cava.target = '~/.config/cava/config'
 clipse.template = 'clipse.json'
 clipse.target = '~/.config/clipse/wallust.json'
 
-dunstrc.template = 'dunstrc'
-dunstrc.target = '~/.config/dunst/dunstrc'
-
 gtk-2-0.template = 'gtk-2.0'
 gtk-2-0.target = '~/.local/share/themes/wallust/gtk-2.0/gtkrc'
 
