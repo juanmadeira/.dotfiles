@@ -1,5 +1,4 @@
-#!/bin/env sh
-
+#!/bin/bash
 # script para atualizar arquivo de configuração do RetroArch após ter sido utilizado pela última vez no windows em dual boot
 
 # esperar 1 segundo e limpar a tela

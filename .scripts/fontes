@@ -1,7 +1,6 @@
-#!/bin/env sh
-
-# autor: https://github.com/miguelgargallo/install-arch-fonts
+#!/bin/bash
 # script para instalar todas as fontes do diretório atual
+# autor: https://github.com/miguelgargallo/install-arch-fonts
 
 # exibir "Fontes" através do figlet
 printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Fontes"
@@ -27,3 +26,4 @@ sudo fc-cache -f -v;
 echo
 
 echo ":: Fontes instaladas com sucesso."
+

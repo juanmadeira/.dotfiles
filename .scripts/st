@@ -1,5 +1,4 @@
-#!/bin/env sh
-
+#!/bin/bash
 # script para testar os lados stereo do fone de ouvido/auto-falante
 
 # exibir "Stereo test" através do figlet
@@ -11,3 +10,4 @@ mpv $HOME/.scripts/src/stereo-test.mp3
 
 echo
 echo ":: Teste finalizado."
+

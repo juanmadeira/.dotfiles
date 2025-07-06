@@ -1,5 +1,4 @@
-#!/bin/env sh
-
+#!/bin/bash
 # script para exibir os signals do linux
 
 # exibir "Signals" através do figlet
@@ -37,3 +36,4 @@ echo "27    SIGPROF	    Profiling alarm clock (4.2 BSD)"
 echo "28    SIGWINCH	    Window size change (4.3 BSD, Sun)"
 echo "29    SIGIO	    I/O now possible (4.2 BSD)"
 echo "30    SIGPWR	    Power failure restart (System V)"
+

@@ -1,5 +1,5 @@
-#!/bin/env sh
-
+#!/bin/bash
+# script para converter cores de hexadecimal para ansi
 # autor: https://github.com/pieman72
 
 # get the individual color components as decimals
@@ -113,3 +113,4 @@ if [ -z "$2" ]; then
 else
     printf "\e[48;5;"$CC"m"
 fi
+

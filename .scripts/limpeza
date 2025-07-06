@@ -1,7 +1,6 @@
-#!/bin/env sh
-
-# autor: https://github.com/gustavomarchesim/dotfiles
+#!/bin/bash
 # script para limpar pacotes órfãos e cache do yay/pacman
+# autor: https://github.com/gustavomarchesim/dotfiles
 
 # exibir "Limpeza" através do figlet
 printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Limpeza"
@@ -49,3 +48,4 @@ fi
 notify-send "Limpeza completa"
 echo
 echo ":: Limpeza completa."
+

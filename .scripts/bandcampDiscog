@@ -1,9 +1,8 @@
-#!/bin/env sh
-
-# autor: https://github.com/calebccff
+#!/bin/bash
 # script para baixar toda discografia de um artista atraves do bandcamp-dl
+# autor: https://github.com/calebccff
 
-# bandcampdiscog URL [DESTINATION]
+# bandcampDiscog [URL] [DESTINATION]
 
 source ~/.venv/venv/bin/activate
 
@@ -41,3 +40,4 @@ while IFS= read -r album; do
     echo "$ALBUM"
     bandcamp-dl $ALBUM -e --base-dir "$DOWNLOAD_DIR"
 done <<< "$ALBUMS"
+

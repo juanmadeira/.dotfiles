@@ -1,7 +1,6 @@
-#!/bin/env sh
-
-# autor: https://github.com/gustavomarchesim/dotfiles
+#!/bin/bash
 # script para atualizar o sistema através do yay
+# autor: https://github.com/gustavomarchesim/dotfiles
 
 # exibir "Atualizar" através do figlet
 printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Atualizar"

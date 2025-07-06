@@ -1,9 +1,7 @@
-#!/bin/env sh
-
+#!/bin/bash
 # script feito para automatizar a troca de wallpaper e sua sincronização com wallust
 
 DIR="$HOME/.dotfiles/wallpapers"
-
 WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "~/.config/rofi/style.rasi" -show-icons)
 
 if [ -n "$WALL" ]; then
@@ -24,7 +22,7 @@ hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 # wallust
 wallust -s run "$WALL_PATH"
 pywalfox update
-killall dunst
+swaync-client -rs
 
 ps -C spotify > /dev/null
 if [ $? = 0 ]; then
@@ -34,3 +32,4 @@ else
     spicetify apply
     exit
 fi
+

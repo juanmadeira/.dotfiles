@@ -1,4 +1,5 @@
-#!/bin/env sh
+#!/bin/bash
+# script para aplicar o tema do wallust através do spicetify 
 
 source "$HOME/.cache/wallust/colors"
 if gum confirm "Reiniciar o Spotify para aplicar o tema do wallust?" --prompt.foreground="#$WALLUST_COLOR3" --selected.background="#$WALLUST_BACKGROUND"; then
@@ -13,3 +14,4 @@ else
     sleep 0.5
     exit
 fi
+
