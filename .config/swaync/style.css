@@ -16,7 +16,7 @@
 
 .summary {
     background: transparent;
-    color: @title;
+    color: @text;
     font-size: 0.8rem;
     font-weight: normal;
     text-shadow: none;
