@@ -55,6 +55,13 @@ return {
                         },
                         telemetry = { enable = false },
                     },
+                    pylsp = {
+                        plugins = {
+                            flake8 = {
+                                args = { "--ignore=E501" }
+                            }
+                        }
+                    }
                 },
             })
         end
