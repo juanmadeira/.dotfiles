@@ -43,17 +43,17 @@ return {
         end
     },
     {
+        "brenoprata10/nvim-highlight-colors",
+        enabled = true,
+        config = function()
+            require("nvim-highlight-colors").setup()
+        end
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         enabled = true,
         config = function()
             require("ibl").setup()
-        end
-    },
-    {
-        "andweeb/presence.nvim",
-        enabled = true,
-        config = function()
-            require("presence").setup()
         end
     }
 }

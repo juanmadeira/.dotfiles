@@ -48,6 +48,9 @@ map("n", "<leader><S-Tab>", "<cmd>BufferRestore<CR>", { desc = "Restore Buffer" 
 --- window-picker
 map("n", "<leader><Space>", "<cmd>lua require('nvim-window').pick()<CR>", { desc = "Jump to window" })
 
+--- which-key
+map("n", "<leader>?", function() require("which-key").show({ global = false}) end, { desc = "Buffer Local Keymaps" })
+
 --- telescope
 local telescope = require('telescope.builtin')
 map("n", "<leader>ff", telescope.find_files, { desc = "Telescope find files" })
