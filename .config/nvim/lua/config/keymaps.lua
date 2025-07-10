@@ -10,12 +10,12 @@ local M = {}
 map("n", "<C-s>", '<cmd>w<CR>', { desc = "Save" })
 map("n", "<C-A-s>", '<cmd>wqa!<CR>', { desc = "Save, close all buffers and force quit" })
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
-map("i", "jj", "<Esc>", { desc = "Escape" })
+map("i", "<leader>j", "<Esc>", { desc = "Escape" })
 
-map("i", "<S-h>", "<Left>", { desc = "Move left in insert mode" })
-map("i", "<S-j>", "<Down>", { desc = "Move down in insert mode" })
-map("i", "<S-k>", "<Up>", { desc = "Move up in insert mode" })
-map("i", "<S-l>", "<Right>", { desc = "Move right in insert mode" })
+map("i", "<A-h>", "<Left>", { desc = "Move left in insert mode" })
+map("i", "<A-j>", "<Down>", { desc = "Move down in insert mode" })
+map("i", "<A-k>", "<Up>", { desc = "Move up in insert mode" })
+map("i", "<A-l>", "<Right>", { desc = "Move right in insert mode" })
 
 map("x", ">", ">gv", { desc = "Right indent" })
 map("x", "<", "<gv", { desc = "Left indent" })
