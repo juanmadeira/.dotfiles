@@ -43,6 +43,15 @@ return {
         end
     },
     {
+        'MeanderingProgrammer/render-markdown.nvim',
+        enabled = true,
+        lazy = false,
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("render-markdown").setup()
+        end
+    },
+    {
         "brenoprata10/nvim-highlight-colors",
         enabled = true,
         config = function()
