@@ -2,7 +2,7 @@
 # script feito para automatizar a troca de wallpaper e sua sincronização com wallust
 
 DIR="$HOME/.dotfiles/wallpapers"
-WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "~/.config/rofi/style.rasi" -show-icons)
+WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "$HOME/.config/rofi/style.rasi" -show-icons)
 
 if [ -n "$WALL" ]; then
     WALL_PATH="$DIR/$WALL"
@@ -13,9 +13,13 @@ else
 fi
 
 # hyprpaper
-echo '' > ~/.config/hypr/hyprpaper.conf
-echo "preload = $WALL_PATH" >>  ~/.config/hypr/hyprpaper.conf
-echo "wallpaper =,$WALL_PATH" >>  ~/.config/hypr/hyprpaper.conf
+HYPRPAPER="$HOME/.config/hypr/hyprpaper.conf"
+figlet "hyprpaper" > $HYPRPAPER
+sed "1,6 s/^/# /" $HYPRPAPER > $HYPRPAPER.TMP
+mv $HYPRPAPER.TMP $HYPRPAPER
+echo "" >> $HYPRPAPER
+echo "preload = $WALL_PATH" >> $HYPRPAPER
+echo "wallpaper =,$WALL_PATH" >>  $HYPRPAPER
 hyprctl hyprpaper preload "$WALL_PATH"
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 
@@ -23,6 +27,12 @@ hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 wallust -s run "$WALL_PATH"
 pywalfox update
 swaync-client -rs
+
+# hyprlock
+HYPRLOCK="$HOME/.config/hypr/hyprlock.conf"
+WALL_SED=$(printf '%s\n' "$WALL_PATH" | sed 's/[\/&]/\\&/g')
+sed "10s/.*/    path = $WALL_SED/" $HYPRLOCK > $HYPRLOCK.TMP
+mv $HYPRLOCK.TMP $HYPRLOCK
 
 ps -C spotify > /dev/null
 if [ $? = 0 ]; then
