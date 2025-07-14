@@ -35,14 +35,11 @@ sudo rm -rf yay/
 cp -v .bashrc ~/
 cp -r -v .config ~/
 cp -r -v .scripts ~/
-cp -r -v .local/share/themes/ ~/.local/share # temas gtk
-cp -r -v .local/share/icons/ ~/.local/share # icones gtk
-sudo cp -r -v .config/Kvantum/themes/* /usr/share/Kvantum # qt
-sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes # link para o tema
-sudo cp -r -v .etc/grub/* /boot/grub/themes/ # temas grub
+cp -r -v .local/share/themes/ ~/.local/share/
+cp -r -v .local/share/icons/ ~/.local/share/
+sudo cp -r -v .config/Kvantum/themes/* /usr/share/Kvantum/
+sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes/
 sudo cp -r fonts/* /usr/share/fonts/
-    # geral -> FiraCode-..., HackNerdFontMono-..., OpenSans 
-    # rofi  -> GrapeNuts-Regular, Icomoon-Feather, Isoveka-Nerd-Font-Complete, JetBrains-Mono-Nerd-Font-Complete
 
 # permitir executáveis
 sudo chmod +x ~/.scripts/*
