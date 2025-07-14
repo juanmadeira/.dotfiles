@@ -1,7 +1,7 @@
 @import "wallust.css";
 
 * {
-    font-family: "Hack Nerd Font Mono";
+    font-family: "JetBrainsMono Nerd Font";
 }
 
 /* notification */
@@ -11,6 +11,15 @@
     padding: 5px;
     border: 1px solid @border;
     border-radius: 10px;
+}
+
+.notification box:hover {
+    background: transparent;
+}
+
+.notification image {
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 .summary {
@@ -28,22 +37,6 @@
     font-weight: lighter;
     opacity: 0.75;
     text-shadow: none;
-}
-
-.notification image {
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.notification-action {
-    border: 1px solid @border;
-    border-radius: 5px
-}
-
-.notification-default-action:hover,
-.notification-action:hover {
-    background: transparent;
-    color: @title;
 }
 
 .close-button {
@@ -65,33 +58,6 @@
     transition: all 0.15s ease-in-out;
 }
 
-.inline-reply-entry {
-    background: @bg;
-    color: @text;
-    caret-color: @text;
-    border: 1px solid @border;
-    border-radius: 5px;
-}
-
-.inline-reply-button {
-    background: @bg;
-    color: @text;
-    margin-top: 4px;
-    margin-left: 4px;
-    border: 1px solid @border;
-    border-radius: 5px;
-}
-
-.inline-reply-button:disabled {
-    background: transparent;
-    color: @disabled;
-    border: 1px solid @border;
-}
-
-.inline-reply-button:hover {
-    background: transparent;
-}
-
 /* control center */
 .control-center {
     background: @panel;
@@ -105,13 +71,7 @@
     opacity: 1;
 }
 
-.notification-row {
-    outline: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-row:hover {
+.notification-group {
     background: transparent;
 }
 
@@ -136,14 +96,14 @@ row:hover {
 .widget-title>button {
     background: transparent;
     color: @text;
-    font-size: 1rem;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 1.25rem;
     border-radius: 5px;
-    box-shadow: none;
 }
 
 .widget-title>button:hover {
     background: @title;
-    color: @text;
 }
 
 /* dnd */
@@ -158,6 +118,7 @@ row:hover {
 
 .widget-dnd>switch {
     background: @bg;
+    border: 0.25px solid @title;
     border-radius: 5px;
 }
 
@@ -168,6 +129,40 @@ row:hover {
 
 .widget-dnd>switch slider {
     border-radius: 5px;
+}
+
+/* mpris */
+.widget-mpris {
+    background: transparent;
+    color: @text;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.widget-mpris-player {
+    margin: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.widget-mpris-player button {
+    border-radius: 5px;
+}
+
+.widget-mpris-album-art {
+    margin: 5px -2.5px 5px 5px;
+    border-radius: 5px;
+}
+
+.widget-mpris-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.widget-mpris-subtitle {
+    font-size: 0.75rem;
 }
 
 /* buttons */
@@ -213,38 +208,4 @@ row:hover {
     color: @title;
     font-size: 1rem;
     margin: 10px;
-}
-
-/* mpris */
-.widget-mpris {
-    background: transparent;
-    color: @text;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: none;
-}
-
-.widget-mpris-player {
-    margin: 0px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: none;
-}
-
-.widget-mpris-player button {
-    border-radius: 5px;
-}
-
-.widget-mpris-album-art {
-    margin: 5px -2.5px 5px 5px;
-    border-radius: 5px;
-}
-
-.widget-mpris-title {
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-.widget-mpris-subtitle {
-    font-size: 0.75rem;
 }
