@@ -12,7 +12,6 @@ map("n", "<C-A-s>", '<cmd>wqa!<CR>', { desc = "Save, close all buffers and force
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 map("x", "<", "<gv", { desc = "Left indent" })
 map("x", ">", ">gv", { desc = "Right indent" })
-map("i", "<leader>j", "<Esc>", { desc = "Escape" })
 map("v", "c", '"_c', { desc = "Change without copying" })
 map("n", "d", '"_d', { desc = "Delete without copying" })
 map("n", "dd", '"_dd', { desc = "Delete line without copying" })
