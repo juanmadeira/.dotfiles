@@ -8,17 +8,66 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 <br>
 
 ## o que eu utilizo __φ(．．)
-|                 |                      |
-| --------------- | -------------------- |
-| wm              | hyprland             |
-| terminal        | kitty                |
-| shell           | bash                 |
-| prompt          | starship             |
-| menu            | rofi                 |
-| barra de status | waybar               |
-| editor de texto | neovim, vscode       |
-| música          | rmpc, spotify        |
-| vídeo           | mpv, vlc             |
+|                 |                |
+| --------------- | -------------- |
+| wm              | hyprland       |
+| terminal        | kitty          |
+| shell           | bash           |
+| prompt          | starship       |
+| menu            | rofi           |
+| barra de status | waybar         |
+| editor de texto | neovim, vscode |
+| música          | rmpc, spotify  |
+| vídeo           | mpv, vlc       |
+
+---
+## teclas de atalho (＾＾＃)
+|                                            |                          |
+| ------------------------------------------ | ------------------------ |
+| abrir terminal                             | `SUPER + Q`              |
+| abrir navegador                            | `SUPER + B`              |
+| abrir gerenciador de arquivos              | `SUPER + E`              |
+| abrir gerenciador de arquivos via terminal | `SUPER + SHIFT + E`      |
+| abrir launcher de aplicativos              | `SUPER + R`              |
+| alternar painel                            | `SUPER + CTRL + B`       |
+| abrir área de transferência                | `SUPER + V`              |
+| abrir menu de logout                       | `SUPER + L`              |
+| abrir controlador de áudio                 | `SUPER + SHIFT + F1`     |
+| abrir gerenciador bluetooth                | `SUPER + CTRL + F1`      |
+| abrir gerenciador de redes                 | `SUPER + ALT + F1`       |
+| abrir selecionador de emojis               | `SUPER + .`              |
+| abrir selecionador de kaomojis             | `SUPER + SHIFT + .`      |
+| alternar modo minimalista                  | `SUPER + F4`             |
+| abrir seletor de cores                     | `SUPER + SHIFT + INSERT` |
+| abrir seletor de papel de parede           | `SUPER + SHIFT + HOME`   |
+
+|                            |                     |
+| -------------------------- | ------------------- |
+| fechar janela              | `SUPER + C`         |
+| travar janela              | `SUPER + P`         |
+| tela cheia                 | `SUPER + F`         |
+| tela cheia (workspace)     | `SUPER + SHIFT + F` |
+| tela cheia (tiling)        | `SUPER + ALT + F`   |
+| alternar modo flutuante    | `SUPER + X`         |
+| alternar divisão de janela | `SUPER + Z`         |
+| alternar modo dwindle      | `SUPER + A`         |
+| alternar janela especial   | `SUPER + S`         |
+| mover para janela especial | `SUPER + SHIFT + S` |
+
+|                              |                      |
+| ---------------------------- | -------------------- |
+| silenciar volume             | `SUPER + F1`         |
+| diminuir volume em 1%        | `SUPER + CTRL + F2`  |
+| aumentar volume em 1%        | `SUPER + CTRL + F3`  |
+| diminuir volume em 5%        | `SUPER + F2`         |
+| aumentar volume em 5%        | `SUPER + F3`         |
+| diminuir volume em 10%       | `SUPER + SHIFT + F2` |
+| aumentar volume em 10%       | `SUPER + SHIFT + F3` |
+| pausar música (mpd)          | `SUPER + F5`         |
+| música anterior (mpd)        | `SUPER + SHIFT + F6` |
+| próxima música (mpd)         | `SUPER + SHIFT + F7` |
+| diminuir volume em 10% (mpd) | `SUPER + F6`         |
+| aumentar volume em 10% (mpd) | `SUPER + F7`         |
 
 ---
 ## como instalar \(◕ ◡ ◕\)
