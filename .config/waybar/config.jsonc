@@ -151,9 +151,10 @@
         "format": "",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "on-click": "$HOME/.config/hypr/scripts/networktoggle.sh",
+        "on-click-right": "kitty --class nmtui -e 'nmtui'",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "tooltip": true,
         "tooltip-format-disconnected": "Disconnected"
     },
@@ -165,7 +166,8 @@
         "format-connected-battery": " {icon} {device_battery_percentage}%",
         // "format-device-preference": [ "device1", "device2" ], // se a ordem não for especificada, mostrará o último dispositivo conectado
         "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
-        "on-click": "blueman-manager",
+        "on-click": "rfkill toggle bluetooth",
+        "on-click-right": "blueman-manager",
         "tooltip-format": "{controller_alias}\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
