@@ -4,7 +4,7 @@
 	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/screenshots/2024-08-07.png" align="right" width="400px" alt="hyprland screenshot"
 </p>
 <br>
-bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e <a href="https://github.com/juanmadeira/.dotfiles/tree/windows">windows 11</a>.
+bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e <a href="https://github.com/juanmadeira/.dotfiles/tree/windows">windows 10</a>.
 <br>
 
 ## o que eu utilizo __φ(．．)
