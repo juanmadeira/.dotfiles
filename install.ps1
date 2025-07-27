@@ -1,5 +1,5 @@
 <#
-	script de configuração do meu windows 11
+	script de configuração do meu windows 10
 	
 	— juan.
 	data: 2024-04-11
