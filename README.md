@@ -44,6 +44,7 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 |                            |                     |
 | -------------------------- | ------------------- |
 | fechar janela              | `SUPER + C`         |
+| matar janela               | `SUPER + SHIFT + C` |
 | travar janela              | `SUPER + P`         |
 | tela cheia                 | `SUPER + F`         |
 | tela cheia (workspace)     | `SUPER + SHIFT + F` |
