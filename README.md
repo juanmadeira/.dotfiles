@@ -38,8 +38,8 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 | abrir selecionador de emojis               | `SUPER + .`              |
 | abrir selecionador de kaomojis             | `SUPER + SHIFT + .`      |
 | alternar modo minimalista                  | `SUPER + F4`             |
-| abrir seletor de cores                     | `SUPER + SHIFT + INSERT` |
-| abrir seletor de papel de parede           | `SUPER + SHIFT + HOME`   |
+| abrir seletor de cores                     | `SUPER + INSERT`         |
+| abrir seletor de papel de parede           | `SUPER + HOME`           |
 
 |                            |                     |
 | -------------------------- | ------------------- |
