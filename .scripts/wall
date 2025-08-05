@@ -3,6 +3,7 @@
 
 DIR="$HOME/.dotfiles/wallpapers"
 WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "$HOME/.config/rofi/style.rasi" -show-icons)
+WALL_EXT=$(echo $WALL | cut -d '/' -f3 | rev | cut -d '.' -f1 | rev)
 
 if [ -n "$WALL" ]; then
     WALL_PATH="$DIR/$WALL"
@@ -28,9 +29,15 @@ wallust -s run "$WALL_PATH"
 pywalfox update
 swaync-client -rs
 
+# blur wallpaper
+WALLUST="$HOME/.cache/wallust"
+cp -r $WALL_PATH $WALLUST/wallpaper.$WALL_EXT
+magick "$WALLUST/wallpaper.$WALL_EXT" -blur 0x8 "$WALLUST/wallpaper-blurred.$WALL_EXT"
+WALL_BLUR="$WALLUST/wallpaper-blurred.$WALL_EXT"
+
 # hyprlock
 HYPRLOCK="$HOME/.config/hypr/hyprlock.conf"
-WALL_SED=$(printf '%s\n' "$WALL_PATH" | sed 's/[\/&]/\\&/g')
+WALL_SED=$(printf '%s\n' "$WALL_BLUR" | sed 's/[\/&]/\\&/g')
 sed "10s/.*/    path = $WALL_SED/" $HYPRLOCK > $HYPRLOCK.TMP
 mv $HYPRLOCK.TMP $HYPRLOCK
 

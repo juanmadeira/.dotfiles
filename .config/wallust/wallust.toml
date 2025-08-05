@@ -93,7 +93,7 @@ swaync.template = 'swaync.css'
 swaync.target = '~/.config/swaync/wallust.css'
 
 wallpaper.template = 'wallpaper'
-wallpaper.target = '~/.cache/wallust/wallpaper'
+wallpaper.target = '~/.cache/wallust/wallpaper-path'
 
 wallust.template = 'wallust'
 wallust.target = '~/.cache/wallust/colors'
