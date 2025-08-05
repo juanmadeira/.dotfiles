@@ -31,7 +31,7 @@ swaync-client -rs
 
 # blur wallpaper
 WALLUST="$HOME/.cache/wallust"
-cp -r $WALL_PATH $WALLUST/wallpaper.$WALL_EXT
+cp $WALL_PATH $WALLUST/wallpaper.$WALL_EXT
 magick "$WALLUST/wallpaper.$WALL_EXT" -blur 0x8 "$WALLUST/wallpaper-blurred.$WALL_EXT"
 WALL_BLUR="$WALLUST/wallpaper-blurred.$WALL_EXT"
 
