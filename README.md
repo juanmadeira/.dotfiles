@@ -22,38 +22,41 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 
 ---
 ## teclas de atalho (＾＾＃)
-|                                            |                          |
-| ------------------------------------------ | ------------------------ |
-| abrir terminal                             | `SUPER + Q`              |
-| abrir navegador                            | `SUPER + B`              |
-| abrir gerenciador de arquivos              | `SUPER + E`              |
-| abrir gerenciador de arquivos via terminal | `SUPER + SHIFT + E`      |
-| abrir launcher de aplicativos              | `SUPER + R`              |
-| alternar painel                            | `SUPER + CTRL + B`       |
-| abrir área de transferência                | `SUPER + V`              |
-| abrir menu de logout                       | `SUPER + L`              |
-| abrir controlador de áudio                 | `SUPER + SHIFT + F1`     |
-| abrir gerenciador bluetooth                | `SUPER + CTRL + F1`      |
-| abrir gerenciador de redes                 | `SUPER + ALT + F1`       |
-| abrir selecionador de emojis               | `SUPER + .`              |
-| abrir selecionador de kaomojis             | `SUPER + SHIFT + .`      |
-| alternar modo minimalista                  | `SUPER + F4`             |
-| abrir seletor de cores                     | `SUPER + INSERT`         |
-| abrir seletor de papel de parede           | `SUPER + HOME`           |
+|                                            |                      |
+| ------------------------------------------ | -------------------- |
+| abrir terminal                             | `SUPER + Q`          |
+| abrir navegador                            | `SUPER + B`          |
+| abrir gerenciador de arquivos              | `SUPER + E`          |
+| abrir gerenciador de arquivos via terminal | `SUPER + SHIFT + E`  |
+| abrir launcher de aplicativos              | `SUPER + R`          |
+| alternar painel                            | `SUPER + CTRL + B`   |
+| abrir área de transferência                | `SUPER + V`          |
+| abrir menu de logout                       | `SUPER + L`          |
+| abrir controlador de áudio                 | `SUPER + SHIFT + F1` |
+| abrir gerenciador bluetooth                | `SUPER + CTRL + F1`  |
+| abrir gerenciador de redes                 | `SUPER + ALT + F1`   |
+| abrir selecionador de emojis               | `SUPER + .`          |
+| abrir selecionador de kaomojis             | `SUPER + SHIFT + .`  |
+| alternar modo minimalista                  | `SUPER + F4`         |
+| abrir seletor de cores                     | `SUPER + INSERT`     |
+| abrir seletor de papel de parede           | `SUPER + HOME`       |
 
-|                            |                     |
-| -------------------------- | ------------------- |
-| fechar janela              | `SUPER + C`         |
-| matar janela               | `SUPER + SHIFT + C` |
-| travar janela              | `SUPER + P`         |
-| tela cheia                 | `SUPER + F`         |
-| tela cheia (workspace)     | `SUPER + SHIFT + F` |
-| tela cheia (tiling)        | `SUPER + ALT + F`   |
-| alternar modo flutuante    | `SUPER + X`         |
-| alternar divisão de janela | `SUPER + Z`         |
-| alternar modo dwindle      | `SUPER + A`         |
-| alternar janela especial   | `SUPER + S`         |
-| mover para janela especial | `SUPER + SHIFT + S` |
+|                                           |                               |
+| ----------------------------------------- | ----------------------------- |
+| fechar janela                             | `SUPER + C`                   |
+| matar janela                              | `SUPER + SHIFT + C`           |
+| travar janela                             | `SUPER + P`                   |
+| tela cheia                                | `SUPER + F`                   |
+| tela cheia (workspace)                    | `SUPER + SHIFT + F`           |
+| tela cheia (tiling)                       | `SUPER + ALT + F`             |
+| alternar modo flutuante                   | `SUPER + X`                   |
+| alternar divisão de janela                | `SUPER + Z`                   |
+| alternar modo dwindle                     | `SUPER + A`                   |
+| alternar janela especial                  | `SUPER + S`                   |
+| mover janela para um workspace específico | `SUPER + SHIFT + [0-9]`       |
+| mover janela para o workspace anterior    | `SUPER + SHIFT + ALT + LEFT`  |
+| mover janela para o próximo workspace     | `SUPER + SHIFT + ALT + RIGHT` |
+| mover janela para workspace especial      | `SUPER + SHIFT + S`           |
 
 |                              |                      |
 | ---------------------------- | -------------------- |
