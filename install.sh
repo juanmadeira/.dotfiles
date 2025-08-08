@@ -85,7 +85,7 @@ python -m venv ~/.venv/spotdl
 source ~/.venv/spotdl/bin/activate
     pip install spotdl # spotify downloader
 source ~/.venv/venv/bin/activate
-    pip install syncedlyrics eyed3 lyrics-in-terminal lyrics-in-terminal[mpd] # letras no terminal
+    pip install syncedlyrics eyed3  # letras no terminal
     pip install bandcamp-downloader # bandcamp downloader
  
 # instalar spicetify
