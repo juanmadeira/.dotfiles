@@ -1,0 +1,146 @@
+@import "wallust.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: bold;
+    font-size: 11px;
+    min-height: 10px;
+}
+
+window#waybar {
+    background: @background-1;
+}
+
+tooltip {
+    color: @foreground;
+    background: @background;
+    border-radius: 2px;
+    border-width: 0px;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button {
+    color: @color3;
+    background: transparent;
+    box-shadow: none;
+	text-shadow: none;
+    margin: 0px 1px;
+    padding: 0px;
+    border-radius: 2px;
+}
+
+#workspaces button.focused {
+    color: @foreground;
+    background: @color3-1;
+    margin: 3px 1px;
+    padding: 0px 0px;
+    transition: background 0.35s linear;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+    background: @color0;
+    margin: 3px 1px;
+    padding: 0px;
+    transition: background 0.35s linear;
+}
+
+#tray {
+    padding: 3px 0px;
+    background: transparent;
+}
+
+#tray > .active {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+#tray menu,
+#tray menu label,
+#tray menu separator,
+#tray menu box,
+#tray menu image {
+    background: @background1-1;
+}
+
+#tray menu menuitem {
+    color: @foreground;
+    background: @background1-1;
+    margin: 3px;
+}
+
+#tray menu menuitem:hover {
+    color: @color3;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+#idle_inhibitor,
+#clock,
+#workspaces,
+#window,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#battery,
+#disk,
+#memory,
+#cpu,
+#custom-gpu,
+#temperature,
+#custom-wallchange,
+#custom-cliphist,
+#custom-power,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#custom-rr_end {
+    color: @color3;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 1;
+    margin: 3px 0px 3px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-r_end {
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 8px;
+    padding-right: 0px;
+}
+
+#custom-l_end {
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 8px;
+    padding-left: 0px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 8px;
+    padding-right: 0px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 8px;
+    padding-left: 0px;
+}
+
+#custom-rr_end {
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 8px;
+    padding-right: 0px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 8px;
+    padding-left: 0px;
+}

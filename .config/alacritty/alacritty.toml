@@ -1,0 +1,13 @@
+[window]
+opacity = 0.75
+padding.x = 5
+padding.y = 5
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[font]
+size = 10
+normal.family = "Hack Nerd Font Mono"
+bold.family = "Hack Nerd Font Mono"
+italic.family = "Hack Nerd Font Mono"
+bold_italic.family = "Hack Nerd Font Mono"

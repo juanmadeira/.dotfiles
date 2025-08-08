@@ -1,0 +1,270 @@
+// base: https://github.com/Xakak/dotfiles
+
+{
+    /* gerais */
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "reload_style_on_change": true,
+
+    /* módulos */
+	"modules-left": ["custom/l_end","idle_inhibitor","clock","custom/r_end","custom/l_end","sway/workspaces","custom/r_end","custom/padd"],
+	"modules-center": ["custom/padd","custom/l_end","sway/window","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","battery","tray","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/power","custom/r_end"],
+
+    /* esquerda  */
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰥔",
+            "deactivated": ""
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%H:%M:%S 󰃭 %d·%m·%y}",
+        "interval": 1,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "special": ""
+        }
+    },
+
+    /* centro */
+    "sway/window": {
+        "icon": "true",
+        "icon-size": 20,
+        "max-length": 75,
+        "separate-outputs": true
+    },
+
+    /* direita */
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hardware",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "memory",
+            "custom/gpu",
+            "disk"
+        ]
+    },
+
+    "memory": {
+        "format": "󰾆 {used}GB",
+        "format-m": "󰾅 {used}GB",
+        "format-h": "󰓅 {used}GB",
+        "format-c": " {used}GB",
+        "format-alt": "󰾆 {percentage}%",
+        "interval": 30,
+        "tooltip": true,
+        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
+        "states": {
+            "c": 90,    // critical
+            "h": 60,    // high
+            "m": 30     // medium
+        }
+    },
+
+    "custom/gpu": {
+        "interval": 10,
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "󰡁 {}%"
+    },
+
+    "disk": {
+        "format": "󰋊 {percentage_used}%",
+        "interval": 30,
+        "tooltip-format": "{used} em uso de {total} em \"{path}\" ({percentage_used}%)"
+    },
+
+    "temperature": {
+        "interval": 10,
+        "tooltip": false
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        }
+    }, 
+
+    "tray": {
+        "icon-size": 12
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "device": "intel_backlight",
+        "min-length": 6,
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    },
+
+    "network": {
+        "format": "",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "interval": 2,
+        "on-click": "$HOME/.scripts/networktoggle",
+        "on-click-right": "alacritty --class nmtui -e 'nmtui'",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "tooltip": true,
+        "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": " {num_connections}",
+        "format-connected-battery": " {icon} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // se a ordem não for especificada, mostrará o último dispositivo conectado
+        "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+        "on-click": "rfkill toggle bluetooth",
+        "on-click-right": "blueman-manager",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}",
+        "format-muted": "婢 [{volume}]",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "alacritty --class pulsemixer -e 'pulsemixer'",
+        "tooltip-format": "{icon} {desc} {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-right": "alacritty --class pulsemixer -e 'pulsemixer'",
+        "tooltip-format": "{format_source} {source_desc} {source_volume}%"
+    },
+
+
+    "custom/wallchange": {
+        "format": "{}",
+        "exec": "echo ; echo 󰆊 alterar papel de parede",
+        "on-click": "$HOME/.scripts/wall",
+        "on-click-right": "$HOME/.scripts/wall",
+        "on-click-middle": "sleep 0.1 && $HOME/.scripts/wall",
+        "interval" : 86400,
+        "tooltip": true
+    },
+
+    "custom/cliphist": {
+        "format": "{}",
+        "interval" : 86400,
+        "exec": "echo ; echo 󰅇 área de transferência",
+        "on-click": "alacritty --class clipse -e clipse",
+        "tooltip": true
+    },
+
+    "custom/power": {
+        "format": "{}",
+        "interval" : 86400,
+        "exec": "echo ; echo  logout",
+        "on-click": "wlogout",
+        "tooltip": true
+    },
+
+    /* padding */
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
+    }
+}
+
