@@ -32,11 +32,14 @@ cd ..
 sudo rm -rf yay/
 
 # copiar configurações
+sudo mkdir -p ~/.local/share/
+sudo mkdir -p /usr/share/Kvantum/
+sudo mkdir -p /usr/share/themes/
 cp -v .bashrc ~/
-cp -r -v .config ~/
-cp -r -v .scripts ~/
-cp -r -v .local/share/themes/ ~/.local/share/
-cp -r -v .local/share/icons/ ~/.local/share/
+cp -rv .config ~/
+cp -rv .scripts ~/
+cp -rv .local/share/themes/ ~/.local/share/
+cp -rv .local/share/icons/ ~/.local/share/
 sudo cp -r -v .config/Kvantum/themes/* /usr/share/Kvantum/
 sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes/
 sudo cp -r fonts/* /usr/share/fonts/
