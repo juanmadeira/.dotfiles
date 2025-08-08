@@ -1,7 +1,0 @@
-@define-color panel                 rgba({{background | rgb}},0.85);
-@define-color bg                    {{background}};
-@define-color text                  {{foreground}};
-@define-color title                 {{color3}};
-@define-color border                {{color3}};
-@define-color hover                 {{color4}};
-@define-color disabled              rgba({{color3 | rgb}},0.7);
