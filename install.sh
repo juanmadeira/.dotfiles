@@ -1,12 +1,12 @@
 #!/bin/env sh
 #
-#	script de configuração do meu hyprland
+#	script de configuração do meu sway
 #       [!!!] feito para ser executado apos uma instalação limpa do arch linux
 #
 #	— juan.
-#	data: 2024-06-02
+#	data: 2024-08-08
 #
-#	última atualização: 2025-04-29
+#	última atualização: 2025-08-08
 #
 
 ##################
@@ -31,31 +31,11 @@ makepkg -si
 cd ..
 sudo rm -rf yay/
 
-# copiar configurações
-sudo mkdir -p ~/.local/share/
-sudo mkdir -p /usr/share/Kvantum/
-sudo mkdir -p /usr/share/themes/
-cp -v .bashrc ~/
-cp -rv .config ~/
-cp -rv .scripts ~/
-cp -rv .local/share/themes/ ~/.local/share/
-cp -rv .local/share/icons/ ~/.local/share/
-sudo cp -r -v .config/Kvantum/themes/* /usr/share/Kvantum/
-sudo ln -s ~/.local/share/themes/wallust/ /usr/share/themes/
-sudo cp -r fonts/* /usr/share/fonts/
-
-# permitir executáveis
-sudo chmod +x ~/.scripts/*
-sudo chmod +x ~/.config/hypr/scripts/*
-sudo chmod +x ~/.config/rofi/scripts/*
-sudo chmod +x ~/.config/rmpc/scripts/*
-
 # importar funções e pacotes para serem instalados
 source ./functions.sh
 source ./packages.conf
 
 # instalar pacotes com yay
-installPackages "${temas[@]}"
 installPackages "${linguagens[@]}"
 installPackages "${sistema[@]}"
 installPackages "${fontes[@]}"
@@ -67,16 +47,12 @@ installPackages "${terminal[@]}"
 installPackages "${texto[@]}"
 installPackages "${gerenciamento[@]}"
 installPackages "${particionamento[@]}"
-installPackages "${hyprtools[@]}"
 installPackages "${navegadores[@]}"
 installPackages "${bluetooth[@]}"
 installPackages "${jogos[@]}"
 installPackages "${ferramentas[@]}"
 installPackages "${legais[@]}"
 installPackages "${outros[@]}"
-
-# instalar pacotes com flatpak
-installFlatpaks "${flatpaks[@]}"
 
 # instalar pacotes com pip
 mkdir ~/.venv;
@@ -95,18 +71,17 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resource
 
 # habilitar systemd units
 echo; echo; echo
-if gum confirm "HABILITAR UNIDADES SYSTEMD? (ly; bluetooth; jellyfin; mpd-discord-rpc)" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
+if gum confirm "HABILITAR UNIDADES SYSTEMD? (ly; bluetooth; mpd-discord-rpc)" --prompt.foreground="#00cdcd" --selected.background="#003030"; then
     echo
     sudo systemctl enable ly
-    sudo systemctl enable jellyfin
     systemctl --user enable mpd 
     systemctl --user enable mpd-discord-rpc 
 elif [ $? -eq 130 ]; then
     echo
-    echo ":: Unidades não iniciadas. O display manager (ly) terá de ser habilitado manualmente."
+    echo ":: Unidades não iniciadas. Será necessário habilitá-las manualmente."
 else
     echo
-    echo ":: Unidades não iniciadas. O display manager (ly) terá de ser habilitado manualmente."
+    echo ":: Unidades não iniciadas. Será necessário habilitá-las manualmente."
 fi
 
 # reiniciar sistema
