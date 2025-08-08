@@ -17,7 +17,11 @@ else
 fi
 
 MEMCARD_DIR="/run/media/$USER/EVAMEMCARD/Android/data/com.retroarch/files/"
+MEMCARD_SYS="$MEMCARD_DIR/system/"
+
 RA_DIR="$HOME/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/"
+RA_PS2="$RA_DIR/system/pcsx2/pcsx2.AppImage.home/.config/PCSX2/memcards/"
+RA_DC="$RA_DIR/system/dc/"
 
 if [ "$COPY" == "MEMCARD -> PC" ]; then
     echo ":: Copiando arquivos do memory card para o computador local."
@@ -30,7 +34,8 @@ elif [ "$COPY" == "PC -> MEMCARD" ]; then
     sleep 1.5
     mkdir -p $MEMCARD_DIR
     cp -rv $RA_DIR/saves $MEMCARD_DIR
-    cp -rv
+    cp -rv $RA_PS2 $MEMCARD_SYS
+    cp -rv $RA_DC $MEMCARD_SYS
     exit
 elif [ "$COPY" == "Cancelar" ]; then
     echo
