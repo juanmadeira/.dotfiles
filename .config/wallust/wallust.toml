@@ -83,8 +83,8 @@ spicetify.target = '~/.config/spicetify/Themes/wallust/color.ini'
 starship.template = 'starship.toml'
 starship.target = '~/.config/starship.toml'
 
-sway.template = 'sway'
-sway.target = '~/.config/sway/colors'
+sway.template = 'sway.conf'
+sway.target = '~/.config/sway/colors.conf'
 
 swaync.template = 'swaync.css'
 swaync.target = '~/.config/swaync/wallust.css'
