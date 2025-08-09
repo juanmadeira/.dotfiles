@@ -212,7 +212,7 @@
         "format": "{}",
         "interval" : 86400,
         "exec": "echo ; echo 󰅇 área de transferência",
-        "on-click": "alacritty --class clipse -e clipse",
+        "on-click": "alacritty --class clipse -e 'clipse'",
         "tooltip": true
     },
 

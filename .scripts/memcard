@@ -1,0 +1,51 @@
+#!/bin/bash
+# script para automatizar a copia entre arquivos do memory card para computador e vice-versa.
+
+printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Memcard"
+printf '\033[0m'
+echo
+
+COPY="$(gum choose "MEMCARD -> PC" "PC -> MEMCARD" "Sair" --cursor.foreground="#$WALLUST_COLOR3" --cursor.background="#$WALLUST_BACKGROUND" --item.foreground="#$WALLUST_FOREGROUND")"
+
+if [ -d /run/media/$USER/EVAMEMCARD ]; then
+    :
+else
+    echo
+    echo ":: Operação cancelada ou diretório do memory card não encontrado."
+    sleep 1
+    exit
+fi
+
+MEMCARD_DIR="/run/media/$USER/EVAMEMCARD/Android/data/com.retroarch/files/"
+MEMCARD_SYS="$MEMCARD_DIR/system/"
+
+RA_DIR="$HOME/Games/RetroArch/RetroArch.AppImage.home/.config/retroarch/"
+RA_PS2="$RA_DIR/system/pcsx2/pcsx2.AppImage.home/.config/PCSX2/memcards/"
+RA_DC="$RA_DIR/system/dc/"
+
+if [ "$COPY" == "MEMCARD -> PC" ]; then
+    echo ":: Copiando arquivos do memory card para o computador local."
+    sleep 1.5
+    mkdir -p $RA_DIR
+    cp -rv $MEMCARD_DIR/saves $RA_DIR
+    exit
+elif [ "$COPY" == "PC -> MEMCARD" ]; then
+    echo ":: Copiando arquivos do computador local para o memory card."
+    sleep 1.5
+    mkdir -p $MEMCARD_DIR
+    cp -rv $RA_DIR/saves $MEMCARD_DIR
+    cp -rv $RA_PS2 $MEMCARD_SYS
+    cp -rv $RA_DC $MEMCARD_SYS
+    exit
+elif [ "$COPY" == "Cancelar" ]; then
+    echo
+    echo ":: Cópia cancelada"
+    sleep 1
+    exit
+else
+    echo
+    echo ":: Cópia cancelada."
+    sleep 1
+    exit
+fi
+

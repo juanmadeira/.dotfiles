@@ -1,0 +1,10 @@
+#!/bin/bash
+# script para desativar ou ativar a conexão com a internet alternadamente
+
+if nmcli networking connectivity | grep -q "none"; then
+    echo ":: Ativando conexão com a internet."
+    nmcli networking on
+else
+    echo ":: Desativando conexão com a internet."
+    nmcli networking off
+fi
