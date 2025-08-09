@@ -29,24 +29,24 @@ tooltip {
     background: transparent;
     box-shadow: none;
 	text-shadow: none;
-    margin: 0px 1px;
-    padding: 0px;
+    margin: 0px 2px;
+    padding: 0px 2px;
     border-radius: 2px;
 }
 
 #workspaces button.focused {
     color: @foreground;
     background: @color3-1;
-    margin: 3px 1px;
-    padding: 0px 0px;
+    margin: 3px 2px;
+    padding: 0px 2px;
     transition: background 0.35s linear;
 }
 
 #workspaces button:hover {
     color: @foreground;
     background: @color0;
-    margin: 3px 1px;
-    padding: 0px;
+    margin: 3px 2px;
+    padding: 0px 2px;
     transition: background 0.35s linear;
 }
 
