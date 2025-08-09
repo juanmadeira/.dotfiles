@@ -84,7 +84,7 @@ starship.template = 'starship.toml'
 starship.target = '~/.config/starship.toml'
 
 sway.template = 'sway.conf'
-sway.target = '~/.config/sway/colors.conf'
+sway.target = '~/.config/sway/config.d/colors.conf'
 
 swaync.template = 'swaync.css'
 swaync.target = '~/.config/swaync/wallust.css'
