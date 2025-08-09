@@ -17,6 +17,7 @@ set $browser firefox
 set $fileManager thunar
 set $menu wofi
 
+
 exec_always {
     gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
     gsettings set org.gnome.desktop.interface font-name "FiraCode Regular 10"
@@ -39,6 +40,9 @@ exec swayidle -w \
 # this will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+# mouse moves to the middle of the contianer on switch
+mouse_warping container
 
 ### input configuration
 input type:keyboard {
@@ -202,7 +206,7 @@ bindsym Print exec grim
 
 # borders and titles
 titlebar_padding 1
-titlebar_border_thickness 0
+titlebar_border_thickness 1
 font pango:arial 0.001
 
 # status bar:
@@ -211,3 +215,4 @@ bar {
 }
 
 include /etc/sway/config.d/*
+include ~/.config/sway/colors
