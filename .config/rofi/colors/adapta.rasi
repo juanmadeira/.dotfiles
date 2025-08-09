@@ -1,0 +1,8 @@
+* {
+    background:     rgba(34, 45, 50, 0.9);
+    background-alt: rgb(41, 53, 59, 0.9);
+    foreground:     rgb(184, 194, 198);
+    selected:       rgb(0, 188, 212);
+    active:         rgb(33, 255, 144);
+    urgent:         rgb(255, 75, 96);
+}
