@@ -13,37 +13,25 @@ else
     exit 0
 fi
 
-# hyprpaper
-HYPRPAPER="$HOME/.config/hypr/hyprpaper.conf"
-figlet "hyprpaper" > $HYPRPAPER
-sed "1,6 s/^/# /" $HYPRPAPER > $HYPRPAPER.TMP
-mv $HYPRPAPER.TMP $HYPRPAPER
-echo "" >> $HYPRPAPER
-echo "preload = $WALL_PATH" >> $HYPRPAPER
-echo "wallpaper =,$WALL_PATH" >>  $HYPRPAPER
-hyprctl hyprpaper preload "$WALL_PATH"
-hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
+# swaybg
+SWAYBG="$HOME/.config/sway/config.d/monitors.conf"
+sed -i '$d' $SWAYBG
+echo "output * bg $WALL_PATH fill" >> $SWAYBG
+swaymsg reload
 
 # wallust
 wallust -s run "$WALL_PATH"
 pywalfox update
 swaync-client -rs
 
-# blur wallpaper
-WALLUST="$HOME/.cache/wallust"
-cp $WALL_PATH $WALLUST/wallpaper.$WALL_EXT
-magick "$WALLUST/wallpaper.$WALL_EXT" -blur 0x8 "$WALLUST/wallpaper-blurred.$WALL_EXT"
-WALL_BLUR="$WALLUST/wallpaper-blurred.$WALL_EXT"
-
-# hyprlock
-HYPRLOCK="$HOME/.config/hypr/hyprlock.conf"
-WALL_SED=$(printf '%s\n' "$WALL_BLUR" | sed 's/[\/&]/\\&/g')
-sed "10s/.*/    path = $WALL_SED/" $HYPRLOCK > $HYPRLOCK.TMP
-mv $HYPRLOCK.TMP $HYPRLOCK
+# swaylock
+SWAYLOCK="$HOME/.config/swaylock/config"
+WALL_SED=$(printf '%s\n' "$WALL_PATH" | sed 's/[\/&]/\\&/g')
+sed -i "1s/.*/image=$WALL_SED/" $SWAYLOCK
 
 ps -C spotify > /dev/null
 if [ $? = 0 ]; then
-    kitty --app-id confirm ~/.scripts/src/wallustify
+    alacritty --app-id confirm ~/.scripts/src/wallustify
     exit
 else
     spicetify apply
