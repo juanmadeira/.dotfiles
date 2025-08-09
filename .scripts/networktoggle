@@ -1,11 +1,10 @@
 #!/bin/bash
 # script para desativar ou ativar a conexão com a internet alternadamente
 
-DEVICE=$(nmcli device | grep ethernet | awk '{print $1}')
-STATUS=$(nmcli device status | grep "$DEVICE" | awk '{print $3}')
-if [ "$STATUS" = "connected" ]; then
-    nmcli device disconnect "$DEVICE"
+if nmcli networking connectivity | grep -q "none"; then
+    echo "Networking is currently off. Turning it on..."
+    nmcli networking on
 else
-    nmcli device connect "$DEVICE"
+    echo "Networking is currently on. Turning it off..."
+    nmcli networking off
 fi
-
