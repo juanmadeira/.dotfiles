@@ -17,8 +17,16 @@ set $browser firefox
 set $fileManager thunar
 set $menu wofi
 
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme Bibata-Original-Ice
+    gsettings set org.gnome.desktop.interface font-name "FiraCode Regular 10"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+    gsettings set org.gnome.desktop.interface icon-theme Clarity
+    gsettings set org.gnome.desktop.interface gtk-theme wallust
+}
+
 ### output configuration
-output * bg /home/juan/.dotfiles/wallpapers/ludwig-halauska.jpg fill
+output * bg /home/juan/.dotfiles/wallpapers/gustav-barbarini.jpg fill
 
 # you can get the names of your outputs by running: swaymsg -t get_outputs
 output LVDS-1 resolution 1920x1080 position 1920,0
