@@ -6,7 +6,7 @@
 #	— juan.
 #	data: 2024-06-02
 #
-#	última atualização: 2025-04-29
+#	última atualização: 2025-08-09
 #
 
 ##################
