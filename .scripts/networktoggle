@@ -2,9 +2,9 @@
 # script para desativar ou ativar a conexão com a internet alternadamente
 
 if nmcli networking connectivity | grep -q "none"; then
-    echo "Networking is currently off. Turning it on..."
+    echo ":: Ativando conexão com a internet."
     nmcli networking on
 else
-    echo "Networking is currently on. Turning it off..."
+    echo ":: Desativando conexão com a internet."
     nmcli networking off
 fi
