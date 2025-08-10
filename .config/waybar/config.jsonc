@@ -172,7 +172,7 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}",
-        "format-muted": "婢 [{volume}]",
+        "format-muted": "󰖁 [{volume}]",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "alacritty --class pulsemixer -e 'pulsemixer'",
         "tooltip-format": "{icon} {desc} {volume}%",
