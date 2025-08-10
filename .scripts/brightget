@@ -1,0 +1,9 @@
+#!/bin/bash
+# script para obter o brilho através do brightnessctl e enviar notificação
+
+BRILHO=$(brightnessctl get)
+BRILHO_MAX=$(brightnessctl max)
+BRILHO_PERCENT=$(awk -v brilho="$BRILHO" -v brilhoMax="$BRILHO_MAX" 'BEGIN { printf "%.0f%%", (brilho/brilhoMax*100) }')
+
+notify-send "☼ brilho: $BRILHO_PERCENT" -h string:x-canonical-private-synchronous:anything
+
