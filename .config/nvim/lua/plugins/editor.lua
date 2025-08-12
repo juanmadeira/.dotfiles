@@ -7,6 +7,13 @@ return {
         end
     },
     {
+        "echasnovski/mini.nvim",
+        enabled = true,
+        config = function()
+            require("mini.surround").setup()
+        end
+    },
+    {
         "m4xshen/autoclose.nvim",
         enabled = true,
         config = function()

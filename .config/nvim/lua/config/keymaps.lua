@@ -29,7 +29,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move text to upper line" })
 map("n", "<leader>nn", function()
     if vim.wo.relativenumber then vim.wo.relativenumber = false vim.wo.number = true
 	else vim.wo.relativenumber = true end
-end)
+end, { desc = "Toggle between relative line numbers" })
 
 --- neotree
 map("n", "<C-b>", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neotree" })
@@ -61,11 +61,18 @@ map("n", "<leader>fb", telescope.buffers, { desc = "Telescope buffer" })
 map("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
 
 --- flash
-map({ "n", "x", "o" }, "s", "<cmd>lua require('flash').jump()<CR>", { desc = "Flash" })
-map({ "n", "x", "o" }, "S", "<cmd>lua require('flash').treesitter()<CR>", { desc = "Flash Treesitter" })
+map({ "n", "x", "o" }, "f", "<cmd>lua require('flash').jump()<CR>", { desc = "Flash" })
+map({ "n", "x", "o" }, "F", "<cmd>lua require('flash').treesitter()<CR>", { desc = "Flash Treesitter" })
 map({ "x", "o" }, "R", "<cmd>lua require('flash').treesitter_search()<CR>", { desc = "Treesitter Search" })
 map("o", "r", "<cmd>lua require('flash').remote()<CR>", { desc = "Remote Flash" })
 map("c", "<A-s>", "<cmd>lua require('flash').toggle()<CR>", { desc = "Toggle Flash Search" })
+
+--- marksman
+map("n", "gd", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
+map("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover Documentation" })
+map("n", "gr", vim.lsp.buf.references, { desc = "LSP: Find References" })
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code Action" })
 
 --- trouble
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble Diagnostics" })

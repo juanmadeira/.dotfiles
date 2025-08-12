@@ -67,7 +67,13 @@ return {
         enabled = true,
         event = "VeryLazy",
         config = function()
-            require("flash").setup()
+            require("flash").setup({
+                modes = {
+                    char = {
+                        keys = { "t", "T", ";", "," },
+                    }
+                }
+            })
         end
     },
     {
