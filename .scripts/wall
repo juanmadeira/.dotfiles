@@ -2,11 +2,18 @@
 # script feito para automatizar a troca de wallpaper e sua sincronização com wallust
 
 DIR="$HOME/.dotfiles/wallpapers"
-WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "$HOME/.config/rofi/style.rasi" -show-icons)
-WALL_EXT=$(echo $WALL | cut -d '/' -f3 | rev | cut -d '.' -f1 | rev)
 
-if [ -n "$WALL" ]; then
+if command -v nsxiv > /dev/null; then 
+    WALL_PATH=$(nsxiv -otfb $DIR)
+elif command -v rofi >/dev/null; then
+    WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "$HOME/.config/rofi/style.rasi" -show-icons)
     WALL_PATH="$DIR/$WALL"
+else 
+    echo ":: É necessário os pacotes nsxiv ou rofi para selecionar o papel de parede."
+fi
+
+if [ -n "$WALL_PATH" ]; then
+    WALL_EXT=$(echo $WALL_PATH | sed 's/.*\.\(.*\)/\1/')
     echo "$WALL_PATH"
 else
     echo ":: Nenhum papel de parede selecionado. Saindo..."
@@ -28,6 +35,7 @@ hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 wallust -s run "$WALL_PATH"
 pywalfox update
 swaync-client -rs
+xrdb -load $HOME/.Xresources
 
 # blur wallpaper
 WALLUST="$HOME/.cache/wallust"
