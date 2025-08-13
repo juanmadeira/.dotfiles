@@ -4,7 +4,7 @@
 DIR="$HOME/.dotfiles/wallpapers"
 
 if command -v nsxiv > /dev/null; then 
-    WALL_PATH=$(nsxiv -otfb $DIR)
+    WALL_PATH=$(nsxiv -otb $DIR)
 elif command -v rofi >/dev/null; then
     WALL=$(echo "$(ls $DIR)" | rofi -dmenu -theme "$HOME/.config/rofi/style.rasi" -show-icons)
     WALL_PATH="$DIR/$WALL"
