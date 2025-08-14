@@ -50,6 +50,7 @@ end, { desc = "Delete current file" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope help tags" })
+map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Telescope help keymaps" })
 map("n", "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<CR>", { desc = "Telescope buffer" })
 
 --- flash
