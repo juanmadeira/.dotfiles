@@ -1,35 +1,29 @@
-local options = {
-    -- numeração
-	number = true,
-	numberwidth = 2,
-    relativenumber = true,
+-- numeração
+vim.opt.number = true
+vim.opt.numberwidth = 2
+vim.opt.relativenumber = true
 
-    -- identação
-	tabstop = 4,
-	softtabstop = 4,
-	shiftwidth = 4,
-    wrap = false,
-	linebreak = true,
-	breakindent = true,
-	expandtab = true,
-    smarttab = true,
-    cindent = true,
+-- identação
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.cindent = true
 
-    -- visual
-    title = true,
-    splitright = true,
-    splitkeep = "screen",
-    foldmethod = "expr",
-	foldlevel = 99,
-    foldexpr = "nvim_treesitter#foldexpr()",
+-- visual
+vim.opt.title = true
+vim.opt.splitright = true
+vim.opt.splitkeep = "screen"
+vim.opt.foldmethod = "expr"
+vim.opt.foldlevel = 99
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-    -- pesquisa
-    clipboard = "unnamedplus",
-	hlsearch = false,
-    ignorecase = true,
-    smartcase = true
-}
-
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
+-- pesquisa
+vim.opt.clipboard = "unnamedplus"
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

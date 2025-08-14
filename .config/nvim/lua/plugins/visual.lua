@@ -18,8 +18,8 @@ return {
         enabled = true,
         lazy = false,
         dependencies = {
-            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+            "lewis6991/gitsigns.nvim",
+            "nvim-tree/nvim-web-devicons",
         },
         init = function()
             vim.g.barbar_auto_setup = false
@@ -31,9 +31,7 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         enabled = true;
-        dependencies = {
-            "nvim-tree/nvim-web-devicons"
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("lualine").setup({
                 options = {
@@ -43,13 +41,13 @@ return {
         end
     },
     {
-        "OXY2DEV/markview.nvim",
-        enabled = true,
-        lazy = false,
-        priority = 49,
-        dependencies = { "saghen/blink.cmp", "nvim-treesitter/nvim-treesitter" },
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
         config = function()
-            require("markview").setup()
+            require("render-markdown").setup()
         end
     },
     {
@@ -70,10 +68,12 @@ return {
         "3rd/image.nvim",
         enabled = true,
         build = false,
+        event = "VeryLazy",
         config = function()
             require("image").setup({
                 integrations = {
                     markdown = {
+                        clear_in_insert_mode = true,
                         only_render_image_at_cursor = true,
                     },
                     html = {
@@ -86,7 +86,7 @@ return {
                 max_width = nil,
                 max_height = nil,
                 max_width_window_percentage = nil,
-                max_height_window_percentage = 200
+                max_height_window_percentage = 35
             })
         end
     }
