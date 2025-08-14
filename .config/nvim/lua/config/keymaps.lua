@@ -15,7 +15,7 @@ map("x", "<", "<gv", { desc = "Left indent" })
 map("x", ">", ">gv", { desc = "Right indent" })
 map("v", "c", '"_c', { desc = "Change without copying" })
 map("n", "d", '"_d', { desc = "Delete without copying" })
-map("n", "dd", '"_dd', { desc = "Delete line without copying" })
+map("n", "dd", "_dd", { desc = "Delete line without copying" })
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 
 map("i", "<C-h>", "<Left>", { desc = "Move left in insert mode" })
@@ -50,6 +50,7 @@ end, { desc = "Delete current file" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope help tags" })
+map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Telescope help keymaps" })
 map("n", "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<CR>", { desc = "Telescope buffer" })
 
 --- flash
@@ -95,7 +96,6 @@ map("n", "<leader>?", function() require("which-key").show({ global = false }) e
 
 --- toggleterm
 map("n", "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
-
 
 --- exportar as funções
 return M
