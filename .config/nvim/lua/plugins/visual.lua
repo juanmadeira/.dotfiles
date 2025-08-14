@@ -14,20 +14,6 @@ return {
         end
     },
     {
-        "nvim-lualine/lualine.nvim",
-        enabled = true;
-        dependencies = {
-            "nvim-tree/nvim-web-devicons"
-        },
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "tokyonight"
-                }
-            })
-        end
-    },
-    {
         "romgrk/barbar.nvim",
         enabled = true,
         lazy = false,
@@ -43,12 +29,27 @@ return {
         end
     },
     {
-        'MeanderingProgrammer/render-markdown.nvim',
+        "nvim-lualine/lualine.nvim",
+        enabled = true;
+        dependencies = {
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = "tokyonight"
+                }
+            })
+        end
+    },
+    {
+        "OXY2DEV/markview.nvim",
         enabled = true,
         lazy = false,
-        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        priority = 49,
+        dependencies = { "saghen/blink.cmp", "nvim-treesitter/nvim-treesitter" },
         config = function()
-            require("render-markdown").setup()
+            require("markview").setup()
         end
     },
     {
@@ -63,6 +64,30 @@ return {
         enabled = true,
         config = function()
             require("ibl").setup()
+        end
+    },
+    {
+        "3rd/image.nvim",
+        enabled = true,
+        build = false,
+        config = function()
+            require("image").setup({
+                integrations = {
+                    markdown = {
+                        only_render_image_at_cursor = true,
+                    },
+                    html = {
+                        enabled = true,
+                    },
+                    css = {
+                        enabled = true,
+                    }
+                },
+                max_width = nil,
+                max_height = nil,
+                max_width_window_percentage = nil,
+                max_height_window_percentage = 200
+            })
         end
     }
 }

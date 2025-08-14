@@ -7,24 +7,17 @@ return {
         end
     },
     {
-        "echasnovski/mini.nvim",
+        "echasnovski/mini.surround",
         enabled = true,
         config = function()
             require("mini.surround").setup()
         end
     },
     {
-        "m4xshen/autoclose.nvim",
-        enabled = true,
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
         config = function()
-            require("autoclose").setup({
-                options = {
-                    disabled_filetypes = {
-                        "text",
-                        "markdown"
-                    }
-                }
-            })
+            require("nvim-autopairs").setup()
         end
     },
     {

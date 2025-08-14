@@ -28,20 +28,29 @@ return {
         config = function()
             require("nvim-window").setup({
                 chars = {
-                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+                    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
                 }
             })
         end
     },
     {
-        'nvim-telescope/telescope.nvim',
+        "nvim-telescope/telescope.nvim",
         enabled = true,
         dependencies = {
-            'nvim-lua/plenary.nvim'
+            "nvim-lua/plenary.nvim"
         },
         config = function()
-            require("telescope").setup()
+            require("telescope").setup({
+                defaults = {
+                    mappings = {
+                        n = {
+                            ["d"] = require("telescope.actions").delete_buffer,
+                            ["q"] = require("telescope.actions").close
+                        }
+                    }
+                }
+            })
         end
     },
     {
@@ -80,62 +89,35 @@ return {
         "saghen/blink.cmp",
         enabled = true,
         lazy = false,
+        version = "1.*",
         dependencies = { "rafamadriz/friendly-snippets" },
-        version = '1.*',
         config = function()
             require("blink.cmp").setup({
-                keymap = {
-                    preset = "default"
+                keymaps = {
+                    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+                    ["<C-e>"] = { "hide", "fallback" },
+                    ["<CR>"] = { "accept", "fallback" },
+
+                    ["<Tab>"] = { "snippet_forward", "fallback" },
+                    ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+                    ["<Up>"] = { "select_prev", "fallback" },
+                    ["<Down>"] = { "select_next", "fallback" },
+                    ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+                    ["<C-n>"] = { "select_next", "fallback_to_mappings" },
+
+                    ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+                    ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+                    ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
                 },
                 appearance = {
                     nerd_font_variant = "mono"
                 },
-                completion = {
-                    menu = {
-                        draw = {
-                            components = {
-                                kind_icon = {
-                                    text = function(ctx)
-                                        -- default kind icon
-                                        local icon = ctx.kind_icon
-                                        -- if LSP source, check for color derived from documentation
-                                        if ctx.item.source_name == "LSP" then
-                                            local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, { kind = ctx.kind })
-                                            if color_item and color_item.abbr ~= "" then
-                                                icon = color_item.abbr
-                                            end
-                                        end
-                                        return icon .. ctx.icon_gap
-                                    end,
-                                    highlight = function(ctx)
-                                        -- default highlight group
-                                        local highlight = "BlinkCmpKind" .. ctx.kind
-                                        -- if LSP source, check for color derived from documentation
-                                        if ctx.item.source_name == "LSP" then
-                                            local color_item = require("nvim-highlight-colors").format(ctx.item.documentation, { kind = ctx.kind })
-                                            if color_item and color_item.abbr_hl_group then
-                                                highlight = color_item.abbr_hl_group
-                                            end
-                                        end
-                                        return highlight
-                                    end,
-                                },
-                            },
-                        },
-                    },
-                    documentation = {
-                        auto_show = false
-                    }
-                },
-                sources = {
-                    default = {
-                        "lsp", "path",
-                        "snippets", "buffer"
-                    },
-                },
                 fuzzy = {
-                    implementation = "prefer_rust_with_warning"
+                    implementation = "lua"
                 }
+
             })
         end
     }
