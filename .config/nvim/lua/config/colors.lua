@@ -1,0 +1,5 @@
+vim.cmd("colorscheme tokyonight")
+vim.cmd("hi BufferTabpageFill guibg=transparent")
+vim.cmd("hi BufferCurrent guibg=transparent guifg=white")
+vim.cmd("hi BufferInactive guibg=transparent guifg=gray")
+vim.cmd("hi BufferVisible guibg=transparent guifg=gray")

@@ -8,10 +8,20 @@ return {
         end
     },
     {
+        "akinsho/toggleterm.nvim",
+        enabled = true,
+        config = function()
+            require("toggleterm").setup()
+        end
+
+    },
+    {
         "andweeb/presence.nvim",
         enabled = true,
         config = function()
-            require("presence").setup()
+            require("presence").setup({
+                enable_line_number = true
+            })
         end
     }
 }

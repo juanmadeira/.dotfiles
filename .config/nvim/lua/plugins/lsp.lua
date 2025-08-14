@@ -40,21 +40,24 @@ return {
         enabled = true,
         lazy = false,
         config = function()
-            require('lspconfig').lua_ls.setup({
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { 'vim' },
+                            globals = { "vim", "require" },
                         },
-                        runtime = {
-                            version = 'LuaJIT',
-                        },
+                        runtime = { version = "LuaJIT" },
                         workspace = {
                             library = vim.api.nvim_get_runtime_file("", true),
                             checkThirdParty = false,
                         },
                         telemetry = { enable = false },
                     },
+                },
+            })
+            lspconfig.pylsp.setup({
+                settings = {
                     pylsp = {
                         plugins = {
                             flake8 = {
@@ -62,7 +65,7 @@ return {
                             }
                         }
                     }
-                },
+                }
             })
         end
     },
@@ -97,6 +100,9 @@ return {
                     "json",
                     "lua",
                     "markdown",
+                    "markdown_inline",
+                    "latex",
+                    "typst",
                     "php",
                     "phpdoc",
                     "python",

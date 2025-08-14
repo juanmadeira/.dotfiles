@@ -2,7 +2,7 @@ local options = {
     -- numeração
 	number = true,
 	numberwidth = 2,
-    relativenumber = false,
+    relativenumber = true,
 
     -- identação
 	tabstop = 4,
@@ -17,6 +17,7 @@ local options = {
 
     -- visual
     title = true,
+    splitright = true,
     splitkeep = "screen",
     foldmethod = "expr",
 	foldlevel = 99,
