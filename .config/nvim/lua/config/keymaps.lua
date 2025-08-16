@@ -38,6 +38,7 @@ map("n", "<leader>nn", function()
     else vim.wo.relativenumber = true end
 end, { desc = "Toggle between relative line numbers" })
 
+-- delete file
 map("n", "<leader>df", function()
     local filename = vim.fn.expand("%:p")
     if vim.fn.confirm("Delete:\n" .. filename .. "?", "&Yes\n&No", 2) == 1 then
@@ -45,6 +46,21 @@ map("n", "<leader>df", function()
         vim.cmd("bd!")
     end
 end, { desc = "Delete current file" })
+
+-- open file
+map("n", "<leader>fo", function()
+    local line = vim.api.nvim_get_current_line()
+    local file = line:match("%[.-%]%((.-)%)") or line:match("%[%[([^%]]+)%]%]") or vim.fn.expand("<cfile>")
+    -- local file = line:match("%[%[(.-)%]%]") or line:match("%((.*)%)") or vim.fn.expand("<cfile>")
+    file = file:gsub("%%20", " ")
+    local base_dir = vim.fn.expand("%:p:h")
+    local full_path = vim.fn.resolve(base_dir .. "/" .. file)
+    if file:match("%.md$") then
+        vim.cmd("edit " .. vim.fn.fnameescape(full_path))
+    else
+        vim.fn.jobstart({ "xdg-open", file }, { detach = true })
+    end
+end, { desc = "Open file (Markdown, PDF, image etc.) under cursor" })
 
 --- Telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
