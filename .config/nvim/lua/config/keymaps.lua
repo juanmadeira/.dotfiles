@@ -49,16 +49,42 @@ end, { desc = "Delete current file" })
 
 -- open file
 map("n", "<leader>fo", function()
-    local line = vim.api.nvim_get_current_line()
-    local file = line:match("%[.-%]%((.-)%)") or line:match("%[%[([^%]]+)%]%]") or vim.fn.expand("<cfile>")
-    -- local file = line:match("%[%[(.-)%]%]") or line:match("%((.*)%)") or vim.fn.expand("<cfile>")
+    local col = vim.fn.col(".") - 1
+    local line = vim.fn.getline(".")
+    local file
+
+    local start = 0
+    while true do
+        local match = vim.fn.matchstrpos(line, "\\[[^]]*\\](\\([^)]*\\))", start)
+        if match[2] == -1 then break end
+        local s, e = match[2], match[3]
+        if col >= s and col < e then file = match[1]:match("%((.-)%)") break end
+        start = e
+    end
+
+    if not file then
+        local start2 = 0
+        while true do
+            local match = vim.fn.matchstrpos(line, "\\[\\[[^]]*\\]\\]", start2)
+            if match[2] == -1 then break end
+            local s, e = match[2], match[3]
+            if col >= s and col < e then file = match[1]:match("%[%[(.-)%]%]") break end
+            start2 = e
+        end
+    end
+
+    if not file or file == "" then file = vim.fn.expand("<cfile>") end
+    file = file:gsub("^%s+", ""):gsub("%s+$", "")
     file = file:gsub("%%20", " ")
-    local base_dir = vim.fn.expand("%:p:h")
+
+    -- local base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
+    local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
     local full_path = vim.fn.resolve(base_dir .. "/" .. file)
+
     if file:match("%.md$") then
         vim.cmd("edit " .. vim.fn.fnameescape(full_path))
     else
-        vim.fn.jobstart({ "xdg-open", file }, { detach = true })
+        vim.fn.jobstart({ "xdg-open", full_path }, { detach = true })
     end
 end, { desc = "Open file (Markdown, PDF, image etc.) under cursor" })
 
