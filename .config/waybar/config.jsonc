@@ -10,7 +10,7 @@
     /* módulos */
 	"modules-left": ["custom/l_end","idle_inhibitor","clock","custom/r_end","custom/l_end","sway/workspaces","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","sway/window","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","battery","tray","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/power","custom/r_end"],
+	"modules-right": ["custom/padd","custom/l_end","cpu","group/hardware","temperature","custom/r_end","custom/l_end","tray","battery","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/power","custom/r_end"],
 
     /* esquerda  */
     "idle_inhibitor": {
@@ -117,6 +117,10 @@
         "tooltip": false
     },
 
+    "tray": {
+        "icon-size": 12
+    },
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
@@ -129,10 +133,6 @@
             "critical": 20
         }
     }, 
-
-    "tray": {
-        "icon-size": 12
-    },
 
     "backlight": {
         "format": "{icon} {percent}%",
