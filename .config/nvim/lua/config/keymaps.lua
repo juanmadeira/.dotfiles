@@ -77,14 +77,20 @@ map("n", "<leader>fo", function()
     file = file:gsub("^%s+", ""):gsub("%s+$", "")
     file = file:gsub("%%20", " ")
 
-    -- local base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
-    local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
-    local full_path = vim.fn.resolve(base_dir .. "/" .. file)
-
-    if file:match("%.md$") then
-        vim.cmd("edit " .. vim.fn.fnameescape(full_path))
+    if file:match("^https?://") then
+        vim.fn.jobstart({ "xdg-open", file }, { detach = true })
     else
-        vim.fn.jobstart({ "xdg-open", full_path }, { detach = true })
+        local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
+        local full_path = vim.fn.resolve(base_dir .. "/" .. file)
+        if vim.fn.filereadable(full_path) == 0 then
+            base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
+            full_path = vim.fn.resolve(base_dir .. "/" .. file)
+        end
+        if file:match("%.md$") then
+            vim.cmd("edit " .. vim.fn.fnameescape(full_path))
+        else
+            vim.fn.jobstart({ "xdg-open", full_path }, { detach = true })
+        end
     end
 end, { desc = "Open file (Markdown, PDF, image etc.) under cursor" })
 
