@@ -15,7 +15,7 @@ map("x", "<", "<gv", { desc = "Left indent" })
 map("x", ">", ">gv", { desc = "Right indent" })
 map("v", "c", '"_c', { desc = "Change without copying" })
 map("n", "d", '"_d', { desc = "Delete without copying" })
-map("n", "dd", "_dd", { desc = "Delete line without copying" })
+map("n", "dd", '"_dd', { desc = "Delete line without copying" })
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 
 map("i", "<C-h>", "<Left>", { desc = "Move left in insert mode" })
@@ -144,6 +144,7 @@ map("n", "<leader>?", function() require("which-key").show({ global = false }) e
 
 --- toggleterm
 map("n", "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit from terminal mode to normal" })
 
 --- exportar as funções
 return M
