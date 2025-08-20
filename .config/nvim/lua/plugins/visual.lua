@@ -76,7 +76,7 @@ return {
                         clear_in_insert_mode = true,
                         only_render_image_at_cursor = true,
                         resolve_image_path = function(document_path, image_path, fallback)
-                            local cwd = vim.fn.getcwd() -- Caminho relativo ao cwd do Neovim
+                            local cwd = vim.fn.getcwd()
                             local new_path = cwd .. "/" .. image_path
                             if vim.fn.filereadable(new_path) == 1 then
                                 return new_path

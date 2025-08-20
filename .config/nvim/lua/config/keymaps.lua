@@ -15,7 +15,7 @@ map("x", "<", "<gv", { desc = "Left indent" })
 map("x", ">", ">gv", { desc = "Right indent" })
 map("v", "c", '"_c', { desc = "Change without copying" })
 map("n", "d", '"_d', { desc = "Delete without copying" })
-map("n", "dd", "_dd", { desc = "Delete line without copying" })
+map("n", "dd", '"_dd', { desc = "Delete line without copying" })
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 
 map("i", "<C-h>", "<Left>", { desc = "Move left in insert mode" })
@@ -77,14 +77,20 @@ map("n", "<leader>fo", function()
     file = file:gsub("^%s+", ""):gsub("%s+$", "")
     file = file:gsub("%%20", " ")
 
-    -- local base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
-    local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
-    local full_path = vim.fn.resolve(base_dir .. "/" .. file)
-
-    if file:match("%.md$") then
-        vim.cmd("edit " .. vim.fn.fnameescape(full_path))
+    if file:match("^https?://") then
+        vim.fn.jobstart({ "xdg-open", file }, { detach = true })
     else
-        vim.fn.jobstart({ "xdg-open", full_path }, { detach = true })
+        local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
+        local full_path = vim.fn.resolve(base_dir .. "/" .. file)
+        if vim.fn.filereadable(full_path) == 0 then
+            base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
+            full_path = vim.fn.resolve(base_dir .. "/" .. file)
+        end
+        if file:match("%.md$") then
+            vim.cmd("edit " .. vim.fn.fnameescape(full_path))
+        else
+            vim.fn.jobstart({ "xdg-open", full_path }, { detach = true })
+        end
     end
 end, { desc = "Open file (Markdown, PDF, image etc.) under cursor" })
 
@@ -137,7 +143,7 @@ map("n", "<leader><Space>", "<cmd>lua require('nvim-window').pick()<CR>", { desc
 map("n", "<leader>?", function() require("which-key").show({ global = false }) end, { desc = "Buffer Local Keymaps" })
 
 --- toggleterm
-map("n", "<A-t>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+map("n", "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
 map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit from terminal mode to normal" })
 
 --- exportar as funções
