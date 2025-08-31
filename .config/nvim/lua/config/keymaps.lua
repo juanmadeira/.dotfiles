@@ -33,6 +33,16 @@ map("n", "<S-j>", "<cmd>wincmd j<CR>", { desc = "Focus on bottom buffer" })
 map("n", "<S-k>", "<cmd>wincmd k<CR>", { desc = "Focus on top buffer" })
 map("n", "<S-l>", "<cmd>wincmd l<CR>", { desc = "Focus on right buffer" })
 
+-- toggle between tab spaces
+map("n", "<leader>nt2", function()
+    vim.opt.tabstop = 2 vim.opt.softtabstop = 2 vim.opt.shiftwidth = 2
+end, { desc = "Tab spaces: 2" })
+
+map("n", "<leader>nt4", function()
+    vim.opt.tabstop = 4 vim.opt.softtabstop = 4 vim.opt.shiftwidth = 4
+end, { desc = "Tab spaces: 4" })
+
+-- toggle between relative line numbers
 map("n", "<leader>nn", function()
     if vim.wo.relativenumber then vim.wo.relativenumber = false vim.wo.number = true
     else vim.wo.relativenumber = true end
