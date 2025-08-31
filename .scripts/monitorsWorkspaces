@@ -1,0 +1,30 @@
+#!/bin/bash
+# script para distribuir workspaces caso tenha mais de um monitor conectado
+
+# detecta monitores conectados
+CONNECTED_OUTPUTS=$(swaymsg -t get_outputs | jq -r '.[] | select(.active) | .name')
+
+# função para atribuir workspaces a uma saída
+assign_workspaces() {
+    local output=$1
+    local start=$2
+    local end=$3
+
+    for i in $(seq $start $end); do
+        swaymsg "workspace $i output $output"
+    done
+}
+
+# verifica presença dos monitores
+HAS_LVDS=$(echo "$CONNECTED_OUTPUTS" | grep -q "^LVDS-1$" && echo yes || echo no)
+HAS_VGA=$(echo "$CONNECTED_OUTPUTS" | grep -q "^VGA-1$" && echo yes || echo no)
+
+if [[ "$HAS_LVDS" == "yes" && "$HAS_VGA" == "yes" ]]; then
+    assign_workspaces "LVDS-1" 1 5
+    assign_workspaces "VGA-1" 6 10
+else
+    # apenas um monitor – atribuir todos os workspaces a ele
+    SINGLE_OUTPUT=$(echo "$CONNECTED_OUTPUTS" | head -n 1)
+    assign_workspaces "$SINGLE_OUTPUT" 1 10
+fi
+
