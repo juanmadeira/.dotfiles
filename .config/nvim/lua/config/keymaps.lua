@@ -152,9 +152,5 @@ map("n", "<leader><Space>", "<cmd>lua require('nvim-window').pick()<CR>", { desc
 --- which-key
 map("n", "<leader>?", function() require("which-key").show({ global = false }) end, { desc = "Buffer Local Keymaps" })
 
---- toggleterm
-map("n", "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
-map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit from terminal mode to normal" })
-
 --- exportar as funções
 return M
