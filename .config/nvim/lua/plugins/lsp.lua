@@ -61,7 +61,11 @@ return {
                     pylsp = {
                         plugins = {
                             flake8 = {
-                                args = { "--ignore=E501" }
+                                enabled = true,
+                                ignore = { "E501" },
+                            },
+                            pycodestyle = {
+                                enabled = false,
                             }
                         }
                     }
