@@ -4,7 +4,6 @@
     "$schema": "./schema.json",
     "logo": {
         "type": "file",
-        "color": {"1": "green"},
         "source": "~/.config/fastfetch/logo.txt",
         "padding": {
             "top": 2,
@@ -30,7 +29,7 @@
             "type": "packages",
             "key": "  󰮯",
             "keyColor": "yellow",
-            "format": "{2} (pacman), {14}/{15} (flatpak)"
+            "format": "{2} (pacman), {44} (flatpak)"
         },
         {
             "type": "wm",
