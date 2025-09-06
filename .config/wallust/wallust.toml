@@ -44,6 +44,9 @@ alpha = 100
 # target: ABSOLUTE path in which to place a file with generated templated values.
 # ¡ If either one is a directory, then both SHOULD be one. !
 
+alacritty.template = 'alacritty.toml'
+alacritty.target = '.config/alacritty/alacritty.toml'
+
 cava.template = 'cava'
 cava.target = '~/.config/cava/config'
 
