@@ -68,6 +68,9 @@ gtk-4-0-dark.target = '~/.local/share/themes/wallust/gtk-4.0/gtk-dark.css'
 hyprland.template = 'hyprland.conf'
 hyprland.target = '~/.config/hypr/config/colors.conf'
 
+kitty.template = 'kitty.conf'
+kitty.target = '~/.config/kitty/kitty.conf'
+
 kvantum.template = 'kvantum.kvconfig'
 kvantum.target = '/usr/share/Kvantum/wallust/wallust.kvconfig'
 

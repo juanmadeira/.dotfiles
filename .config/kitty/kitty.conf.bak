@@ -12,36 +12,36 @@ allow_remote_control    yes
 foreground #dddddd
 background #000000
 selection_foreground #000000
-selection_background #1D7D8D
+selection_background #fffacd
 
 # black
 color0 #000000
-color8 #36393A
+color8 #767676
 
 # red
-color1 #1D404C
-color9 #1D404C
+color1 #cc0403
+color9 #f2201f
 
 # green
-color2 #794537
-color10 #794537
+color2  #19cb00
+color10 #23fd00
 
 # yellow
-color3  #1D7D8D
-color11 #1D7D8D
+color3  #cecb00
+color11 #fffd00
 
 # blue
-color4  #7B7B36
-color12 #7B7B36
+color4  #0d73cc
+color12 #1a8fff
 
 # magenta
-color5  #268D8D
-color13 #268D8D
+color5  #cb1ed1
+color13 #fd28ff
 
 # cyan
-color6  #46C98F
-color14 #46C98F
+color6  #0dcdcd
+color14 #14ffff
 
 # white
-color7  #BDDCCE
+color7  #dddddd
 color15 #ffffff
