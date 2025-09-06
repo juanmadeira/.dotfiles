@@ -4,9 +4,16 @@ PS1='[\u@\h \W]\$ '
 # exports
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
+eval "$(batman --export-env)"
 source "$HOME/.cache/wallust/colors"
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.scripts/src:$PATH"
+export TERM="xterm"
+export EDITOR="nvim"
+export LIBVA_DRIVER_NAME="i965"
+export NOTES_DIR="$HOME/Documents/caderninho"
 
 # navegação
 alias c="clear"
@@ -16,22 +23,25 @@ alias ..="cd .."
 alias cfg="cd ~/.config"
 alias dots="cd ~/.dotfiles"
 alias doc="cd ~/Documents"
+alias notas="cd $NOTES_DIR; nvim index.md; cd -"
 
 # cli
 alias y="yazi"
 alias v="nvim"
 alias lg="lazygit"
+
 alias of="onefetch"
 alias ff="fastfetch"
-alias ffd="fastfetch -c ~/.config/fastfetch/default.jsonc"
-alias f="fastfetch -c ~/.config/fastfetch/config_tldr.jsonc"
+
 alias ls="eza -a --icons"
 alias ll="eza -al --icons"
 alias lt="eza -a --tree --level=2 --icons"
+alias lsblk="lsblk | bat -l conf"
+alias pid="ps ax | grep "
+
 alias clock="tty-clock -C 6 -D -B -c -s"    # tty-clock sempre ciano
 alias figlet="printf '\e[1;96m'; figlet"    # figlet sempre ciano
 alias neo="neo -c cyan --colormode 16"      # neomatrix sempre ciano
-alias pid="ps ax | grep "
 
 # config
 alias .rc="nvim ~/.bashrc"
