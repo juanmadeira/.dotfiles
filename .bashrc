@@ -12,7 +12,6 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/.scripts/src:$PATH"
 export PATH="$NOTES_DIR/assets/scripts:$PATH"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-export PATH="/opt/miniconda3/bin:$PATH"
 
 # navegação
 alias c="clear"
