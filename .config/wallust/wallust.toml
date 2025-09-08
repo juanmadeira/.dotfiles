@@ -74,6 +74,9 @@ kitty.target = '~/.config/kitty/kitty.conf'
 kvantum.template = 'kvantum.kvconfig'
 kvantum.target = '/usr/share/Kvantum/wallust/wallust.kvconfig'
 
+neovim.template = 'neovim.vim'
+neovim.target = '~/.cache/wal/colors-wal.vim'
+
 pywal.template = 'pywal'
 pywal.target = '~/.cache/wal/colors'
 

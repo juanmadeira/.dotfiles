@@ -1,7 +1,7 @@
 return {
     {
         "folke/tokyonight.nvim",
-        enabled = true,
+        enabled = false,
         lazy = false,
         config = function()
             require("tokyonight").setup({
@@ -10,6 +10,17 @@ return {
                     sidebars = "transparent",
                     floats = "transparent",
                 },
+            })
+        end
+    },
+    {
+        "RedsXDD/neopywal.nvim",
+        enabled = true,
+        lazy = false,
+        config = function()
+            require("neopywal").setup({
+                use_palette = "tokyonight",
+                transparent_background = true,
             })
         end
     },

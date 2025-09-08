@@ -1,4 +1,5 @@
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme neopywal")
+-- vim.cmd("colorscheme tokyonight")
 
 vim.cmd("hi BufferTabpageFill guibg=transparent")
 vim.cmd("hi BufferCurrent guibg=transparent guifg=white")
