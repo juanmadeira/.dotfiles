@@ -1,26 +1,14 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        enabled = false,
-        lazy = false,
-        config = function()
-            require("tokyonight").setup({
-                transparent = true,
-                styles = {
-                    sidebars = "transparent",
-                    floats = "transparent",
-                },
-            })
-        end
-    },
-    {
         "RedsXDD/neopywal.nvim",
         enabled = true,
         lazy = false,
         config = function()
+            local colors = vim.fn.expand("~/.cache/wal/colors-wal.vim")
             require("neopywal").setup({
-                use_palette = "tokyonight",
                 transparent_background = true,
+                colorscheme_file = vim.fn.filereadable(colors) == 1 and colors or nil,
+                use_palette = vim.fn.filereadable(colors) == 0 and "tokyonight" or nil,
             })
         end
     },
@@ -44,11 +32,7 @@ return {
         enabled = true;
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "tokyonight"
-                }
-            })
+            require("lualine").setup()
         end
     },
     {
