@@ -2,13 +2,13 @@
 # script para montar a partição ntfs (não uso com frequência)
 
 # exibir "mountNtfs" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "mountNtfs"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "mountNtfs"
 echo
 
 NTFS_PART="/dev/sdc2"
 MOUNT_POINT="/run/ntfs"
 
-printf "$(hexToAnsi "$WALLUST_COLOR0")"
+printf "$(hextoansi "$WALLUST_COLOR0")"
 echo "Partição NTFS atual: $NTFS_PART"
 echo "Ponto de montagem: $MOUNT_POINT"
 printf "\033[0m"

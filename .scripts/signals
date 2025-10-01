@@ -2,7 +2,7 @@
 # script para exibir os signals do linux
 
 # exibir "Signals" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Signals"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Signals"
 printf "\033[0m"
 echo
 

@@ -3,7 +3,7 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 
 # exibir "Limpeza" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Limpeza"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Limpeza"
 echo
 
 # perguntar ao usuário se deseja iniciar a limpeza

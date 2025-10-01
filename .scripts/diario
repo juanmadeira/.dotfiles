@@ -1,0 +1,22 @@
+#!/bin/bash
+# script para criar uma nota diária
+
+ANO=$(date "+%Y")
+DATA=$(date "+%Y-%m-%d")
+DIARIO="diario/$ANO/$DATA.md"
+
+cd $NOTES_DIR
+mkdir -p diario/$ANO
+
+if [ ! -f "$DIARIO" ]; then
+    touch $DIARIO
+    echo "---" > $DIARIO
+    echo "tag: diário" >> $DIARIO
+    echo "date: $DATA" >> $DIARIO
+    echo "---" >> $DIARIO
+    echo "" >> $DIARIO
+fi
+
+nvim $DIARIO
+cd -
+

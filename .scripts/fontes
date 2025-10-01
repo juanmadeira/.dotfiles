@@ -3,7 +3,7 @@
 # autor: https://github.com/miguelgargallo/install-arch-fonts
 
 # exibir "Fontes" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Fontes"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Fontes"
 printf "\033[0m"
 echo
 

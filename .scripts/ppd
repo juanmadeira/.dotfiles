@@ -6,7 +6,7 @@ sleep 1
 clear
 
 # exibir "Pacotes por data" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Pacotes por data"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Pacotes por data"
 printf "\033[0m"
 echo
 

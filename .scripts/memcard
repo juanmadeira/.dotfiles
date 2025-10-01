@@ -1,7 +1,7 @@
 #!/bin/bash
 # script para automatizar a copia entre arquivos do memory card para computador e vice-versa.
 
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Memcard"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Memcard"
 printf '\033[0m'
 echo
 

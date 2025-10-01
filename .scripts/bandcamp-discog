@@ -1,13 +1,13 @@
 #!/bin/bash
-# script para baixar toda discografia de um artista atraves do bandcamp-dl
+# script para baixar toda discografia de um artista através do bandcamp-dl
 # autor: https://github.com/calebccff
 
-# bandcampDiscog [URL] [DESTINATION]
+# bandcamp-discog [URL] [DESTINO]
 
 source ~/.venv/venv/bin/activate
 
 if [ -z $1 ]; then
-    echo ":: Nenhuma URL especificada. Uso: 'bandcampdiscog URL [DESTINO]'"
+    echo ":: Nenhuma URL especificada. Uso: 'bandcamp-discog [URL] [DESTINO]'"
     exit 1
 fi
 
@@ -32,7 +32,7 @@ echo -e $ALBUMS | tr " " "\n"
 # /album/xys
 # /track/abc
 
-# For each line in ALBUMS
+# for each line in ALBUMS
 while IFS= read -r album; do
     ALBUM=$BASE_URL$album
     echo

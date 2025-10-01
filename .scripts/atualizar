@@ -3,7 +3,7 @@
 # autor: https://github.com/gustavomarchesim/dotfiles
 
 # exibir "Atualizar" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Atualizar"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Atualizar"
 echo
 
 # verificar se um pacote está instalado com yay

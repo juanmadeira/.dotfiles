@@ -2,7 +2,7 @@
 # script para testar os lados stereo do fone de ouvido/auto-falante
 
 # exibir "Stereo test" através do figlet
-printf "$(hexToAnsi "$WALLUST_COLOR3")"; figlet "Stereo test"
+printf "$(hextoansi "$WALLUST_COLOR3")"; figlet "Stereo test"
 echo
 
 # executar teste através do mpv
