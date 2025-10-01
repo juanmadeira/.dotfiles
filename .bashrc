@@ -6,11 +6,7 @@ eval "$(fzf --bash)"
 eval "$(starship init bash)"
 eval "$(batman --export-env)"
 source "$HOME/.cache/wallust/colors"
-
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
-export PATH="$HOME/.scripts/src:$PATH"
-export PATH="$NOTES_DIR/assets/scripts:$PATH"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # navegação
