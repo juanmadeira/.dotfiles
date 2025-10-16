@@ -37,7 +37,6 @@ map("n", "<S-l>", "<cmd>wincmd l<CR>", { desc = "Focus on right buffer" })
 map("n", "<leader>nt2", function()
     vim.opt.tabstop = 2 vim.opt.softtabstop = 2 vim.opt.shiftwidth = 2
 end, { desc = "Tab spaces: 2" })
-
 map("n", "<leader>nt4", function()
     vim.opt.tabstop = 4 vim.opt.softtabstop = 4 vim.opt.shiftwidth = 4
 end, { desc = "Tab spaces: 4" })

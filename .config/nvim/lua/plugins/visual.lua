@@ -4,7 +4,7 @@ return {
         enabled = true,
         lazy = false,
         config = function()
-            local colors = vim.fn.expand("~/.cache/wal/colors-wal.vim")
+            -- local colors = vim.fn.expand("~/.cache/wal/colors-wal.vim")
             require("neopywal").setup({
                 transparent_background = true,
                 colorscheme_file = vim.fn.filereadable(colors) == 1 and colors or nil,

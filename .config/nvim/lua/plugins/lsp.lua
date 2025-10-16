@@ -28,7 +28,7 @@ return {
                     "emmet_language_server",
                     "lua_ls",
                     "marksman",
-                    "pylsp",
+                    "pyright",
                     "rust_analyzer",
                     "ts_ls"
                 }
@@ -40,8 +40,7 @@ return {
         enabled = true,
         lazy = false,
         config = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({
+            vim.lsp.config("lua_ls", {
                 settings = {
                     Lua = {
                         diagnostics = {
@@ -55,21 +54,6 @@ return {
                         telemetry = { enable = false },
                     },
                 },
-            })
-            lspconfig.pylsp.setup({
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            flake8 = {
-                                enabled = true,
-                                ignore = { "E501" },
-                            },
-                            pycodestyle = {
-                                enabled = false,
-                            }
-                        }
-                    }
-                }
             })
         end
     },
