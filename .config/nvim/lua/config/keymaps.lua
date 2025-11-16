@@ -89,10 +89,9 @@ map("n", "<leader>fo", function()
     if file:match("^https?://") then
         vim.fn.jobstart({ "xdg-open", file }, { detach = true })
     else
-        local base_dir = vim.fn.expand("%:p:h") -- caminho relativo ao buffer
-        local full_path = vim.fn.resolve(base_dir .. "/" .. file)
+        local base_dir = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+        local full_path = vim.fs.normalize(base_dir .. "/" .. file)
         if vim.fn.filereadable(full_path) == 0 then
-            base_dir = vim.fn.getcwd() -- caminho relativo ao cwd
             full_path = vim.fn.resolve(base_dir .. "/" .. file)
         end
         if file:match("%.md$") then
