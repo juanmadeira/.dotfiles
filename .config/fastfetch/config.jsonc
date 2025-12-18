@@ -29,7 +29,7 @@
             "type": "packages",
             "key": "  󰮯",
             "keyColor": "yellow",
-            "format": "{2} (pacman), {44} (flatpak)"
+            "format": "{2} (pacman), {45} (flatpak)"
         },
         {
             "type": "wm",
