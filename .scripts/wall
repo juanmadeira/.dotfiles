@@ -22,12 +22,16 @@ fi
 
 # hyprpaper
 HYPRPAPER="$HOME/.config/hypr/hyprpaper.conf"
-figlet "hyprpaper" > $HYPRPAPER
-sed "1,6 s/^/# /" $HYPRPAPER > $HYPRPAPER.TMP
-mv $HYPRPAPER.TMP $HYPRPAPER
-echo "" >> $HYPRPAPER
-echo "preload = $WALL_PATH" >> $HYPRPAPER
-echo "wallpaper =,$WALL_PATH" >>  $HYPRPAPER
+{
+  figlet "hyprpaper" | sed '1,6 s/^/# /'
+  cat << EOF
+
+wallpaper {
+    path = $WALL_PATH
+}
+EOF
+} > "$HYPRPAPER"
+
 hyprctl hyprpaper preload "$WALL_PATH"
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALL_PATH"
 
