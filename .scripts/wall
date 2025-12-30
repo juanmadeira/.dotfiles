@@ -27,7 +27,9 @@ HYPRPAPER="$HOME/.config/hypr/hyprpaper.conf"
   cat << EOF
 
 wallpaper {
+    monitor = HDMI-A-1
     path = $WALL_PATH
+    fit_mode = cover
 }
 EOF
 } > "$HYPRPAPER"
