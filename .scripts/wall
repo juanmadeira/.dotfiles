@@ -44,22 +44,6 @@ swaync-client -rs
 xrdb -load $HOME/.Xresources
 
 # blur wallpaper
-WALLUST="$HOME/.cache/wallust"
-cp "$WALL_PATH" "$WALLUST/wallpaper.$WALL_EXT"
-magick "$WALLUST/wallpaper.$WALL_EXT" -blur 0x8 "$WALLUST/wallpaper-blurred.$WALL_EXT"
-WALL_BLUR="$WALLUST/wallpaper-blurred.$WALL_EXT"
-
-# hyprlock
-HYPRLOCK="$HOME/.config/hypr/hyprlock.conf"
-WALL_SED=$(printf '%s\n' "$WALL_BLUR" | sed 's/[\/&]/\\&/g')
-sed "10s/.*/    path = $WALL_SED/" $HYPRLOCK
-
-ps -C spotify > /dev/null
-if [ $? = 0 ]; then
-    kitty --app-id confirm ~/.scripts/wallustify
-    exit
-else
-    spicetify apply
-    exit
-fi
-
+WALLUST_DIR="$HOME/.cache/wallust"
+cp "$WALL_PATH" "$WALLUST_DIR/wallpaper.$WALL_EXT"
+magick "$WALLUST_DIR/wallpaper.$WALL_EXT" -blur 0x8 "$WALLUST_DIR/wallpaper-blurred.$WALL_EXT"
