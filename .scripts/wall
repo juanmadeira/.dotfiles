@@ -26,6 +26,8 @@ HYPRPAPER="$HOME/.config/hypr/hyprpaper.conf"
   figlet "hyprpaper" | sed '1,6 s/^/# /'
   cat << EOF
 
+splash = false
+
 wallpaper {
     monitor = HDMI-A-1
     path = $WALL_PATH
