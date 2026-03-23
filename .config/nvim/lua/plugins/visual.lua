@@ -46,6 +46,18 @@ return {
         end
     },
     {
+        "jakewvincent/mkdnflow.nvim",
+        ft = { "markdown", "rmd" },
+        config = function()
+            require("mkdnflow").setup({
+                mappings = {
+                    MkdnNextLink = false,
+                    MkdnPrevLink = false,
+                },
+            })
+        end
+    },
+    {
         "brenoprata10/nvim-highlight-colors",
         enabled = true,
         config = function()

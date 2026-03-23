@@ -9,7 +9,7 @@ return {
     },
     {
         "andweeb/presence.nvim",
-        enabled = true,
+        enabled = false,
         config = function()
             require("presence").setup({
                 enable_line_number = true
