@@ -1,105 +1,28 @@
-return {
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        enabled = true,
-        lazy = false,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        },
-        config = function()
-            require("neo-tree").setup({
-                filesystem = {
-                    filtered_items = {
-                        visible = true
-                    }
-                },
-                window = {
-                    position = "left",
-                    width = 25
-                }
-            })
-        end
+vim.pack.add({
+    { src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
+        { src = "https://github.com/nvim-lua/plenary.nvim" },
+        { src = "https://github.com/MunifTanjim/nui.nvim" },
+        { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/saghen/blink.cmp" },
+    { src = "https://github.com/folke/which-key.nvim" },
+    { src = "https://github.com/yorickpeterse/nvim-window" },
+})
+
+require("neo-tree").setup({
+    filesystem = {
+        filtered_items = {
+            visible = true
+        }
     },
-    {
-        "yorickpeterse/nvim-window",
-        enabled = true,
-        config = function()
-            require("nvim-window").setup({
-                chars = {
-                    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-                    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-                }
-            })
-        end
-    },
-    {
-        "nvim-telescope/telescope.nvim",
-        enabled = true,
-        dependencies = {
-            "nvim-lua/plenary.nvim"
-        },
-        config = function()
-            require("telescope").setup({
-                defaults = {
-                    mappings = {
-                        n = {
-                            ["d"] = require("telescope.actions").delete_buffer,
-                            ["q"] = require("telescope.actions").close
-                        }
-                    }
-                }
-            })
-        end
-    },
-    {
-        "stevearc/aerial.nvim",
-        enabled = true,
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons"
-        },
-        config = function()
-            require("aerial").setup({
-                layout = {
-                    min_width = 25,
-                },
-                on_attach = function(bufnr)
-                    require("config.keymaps").on_attach(bufnr)
-                end
-            })
-        end
-    },
-    {
-        "folke/flash.nvim",
-        enabled = true,
-        event = "VeryLazy",
-        config = function()
-            require("flash").setup({
-                modes = {
-                    char = {
-                        keys = { "t", "T", ";", "," },
-                    }
-                }
-            })
-        end
-    },
-    {
-        "saghen/blink.cmp",
-        enabled = true,
-        lazy = false,
-        version = "1.*",
-        dependencies = { "rafamadriz/friendly-snippets" },
-        config = function()
-            require("blink.cmp").setup({
-                appearance = {
-                    nerd_font_variant = "mono"
-                },
-                fuzzy = {
-                    implementation = "lua"
-                }
-            })
-        end
+    window = {
+        position = "left",
+        width = 25
     }
-}
+})
+require("blink.cmp").setup({
+    fuzzy = {
+        implementation = "lua"
+    }
+})
+require("which-key").setup({})
+require("nvim-window").setup({})

@@ -20,6 +20,7 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "screen"
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99
+vim.opt.termguicolors = true
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- pesquisa
