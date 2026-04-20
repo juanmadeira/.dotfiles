@@ -73,9 +73,6 @@ map("c", "<A-s>", "<cmd>lua require('flash').toggle()<CR>", { desc = "Toggle Fla
 --- marksman
 map("n", "gd", vim.lsp.buf.definition, { desc = "LSP: Go to definition (markdown)" })
 map("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover Documentation (markdown)" })
-map("n", "gr", vim.lsp.buf.references, { desc = "LSP: Find References (markdown)" })
-map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol (markdown)" })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code Action (markdown)" })
 
 --- trouble
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble Diagnostics" })

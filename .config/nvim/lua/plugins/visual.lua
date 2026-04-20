@@ -8,7 +8,7 @@ vim.pack.add({
         { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-    { src = "https://github.com/brenoprata10/nvim-highlight-colors" }
+    { src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 })
 
 local colors = vim.fn.expand("~/.cache/wal/colors-wal.vim")
