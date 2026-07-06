@@ -53,11 +53,12 @@ static const struct xkb_rule_names xkb_rules = {
 	/* example:
 	.options = "ctrl:nocaps",
 	*/
-	.options = NULL,
+    .layout = "br",
+    .options = NULL,
 };
 
-static const int repeat_rate = 25;
-static const int repeat_delay = 600;
+static const int repeat_rate = 30;
+static const int repeat_delay = 200;
 
 /* Trackpad */
 static const int tap_to_click = 1;
