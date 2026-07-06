@@ -1,6 +1,7 @@
 # .dotfiles do juan =)
 >ヾ(•ω•`)o
 <br>
+
 <p align="center">
 bem-vindo ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para o meu ambiente de desktop arch linux com <b>hyprland</b> (demais ambientes encontram-se nas <i>branchs</i>).
 </p>
@@ -10,6 +11,7 @@ bem-vindo ao meu repositório de .dotfiles! aqui manterei arquivos de configura�
 	<img src="./screenshots/2026-07-06_1.png" align="center" width="35%" alt="hyprland screenshot">
 	<img src="./screenshots/2026-07-06_2.png" align="center" width="35%" alt="hyprland screenshot">
 </p>
+<br>
 
 ## o que eu utilizo __φ(．．)
 |                 |                |
