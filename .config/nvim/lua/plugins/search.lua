@@ -4,6 +4,7 @@ vim.pack.add({
         { src = "https://github.com/MunifTanjim/nui.nvim" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/saghen/blink.cmp" },
+        { src = "https://github.com/saghen/blink.lib" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/stevearc/aerial.nvim" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
