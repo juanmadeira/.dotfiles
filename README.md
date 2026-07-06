@@ -1,11 +1,15 @@
 # .dotfiles do juan =)
 >ヾ(•ω•`)o
+
 <p align="center">
-	<img src="https://github.com/juanmadeira/.dotfiles/blob/main/screenshots/2024-08-07.png" align="right" width="400px" alt="hyprland screenshot"
+bem-vindo ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para o meu ambiente de desktop arch linux com <b>hyprland</b> (demais ambientes encontram-se nas <i>branchs</i>).
 </p>
 <br>
-bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de configuração para os meus sistemas arch linux (hyprland) e <a href="https://github.com/juanmadeira/.dotfiles/tree/windows">windows 10</a>.
-<br>
+
+<p align="center">
+	<img src="./screenshots/2026-07-06_1.png" align="center" width="35%" alt="hyprland screenshot">
+	<img src="./screenshots/2026-07-06_2.png" align="center" width="35%" alt="hyprland screenshot">
+</p>
 
 ## o que eu utilizo __φ(．．)
 |                 |                |
@@ -41,22 +45,33 @@ bem-vindo(a/e) ao meu repositório de .dotfiles! aqui manterei arquivos de confi
 | abrir seletor de cores                     | `SUPER + INSERT`     |
 | abrir seletor de papel de parede           | `SUPER + HOME`       |
 
-|                                           |                               |
-| ----------------------------------------- | ----------------------------- |
-| fechar janela                             | `SUPER + C`                   |
-| matar janela                              | `SUPER + SHIFT + C`           |
-| travar janela                             | `SUPER + P`                   |
-| tela cheia                                | `SUPER + F`                   |
-| tela cheia (workspace)                    | `SUPER + SHIFT + F`           |
-| tela cheia (tiling)                       | `SUPER + ALT + F`             |
-| alternar modo flutuante                   | `SUPER + X`                   |
-| alternar divisão de janela                | `SUPER + Z`                   |
-| alternar modo dwindle                     | `SUPER + A`                   |
-| alternar janela especial                  | `SUPER + S`                   |
-| mover janela para um workspace específico | `SUPER + SHIFT + [0-9]`       |
-| mover janela para o workspace anterior    | `SUPER + SHIFT + ALT + LEFT`  |
-| mover janela para o próximo workspace     | `SUPER + SHIFT + ALT + RIGHT` |
-| mover janela para workspace especial      | `SUPER + SHIFT + S`           |
+|                                        |                                              |
+| -------------------------------------- | -------------------------------------------- |
+| fechar janela                          | `SUPER + C`                                  |
+| matar janela                           | `SUPER + SHIFT + C`                          |
+| travar janela                          | `SUPER + P`                                  |
+| tela cheia                             | `SUPER + F`                                  |
+| tela cheia (workspace)                 | `SUPER + SHIFT + F`                          |
+| tela cheia (tiling)                    | `SUPER + ALT + F`                            |
+| alternar modo flutuante                | `SUPER + X`                                  |
+| alternar modo dwindle                  | `SUPER + A`                                  |
+| alternar divisão de janela             | `SUPER + Z`                                  |
+| alternar janela especial               | `SUPER + S`                                  |
+| alternar entre janelas abertas         | `SUPER + TAB`                                |
+| alternar entre workspaces              | `SUPER + ALT + LEFT / RIGHT / H / L`         |
+| redimensionar janela                   | `SUPER + SHIFT + [DIREÇÃO]`                  |
+| mover janela                           | `SUPER + CTRL + [DIREÇÃO]`                   |
+| mover janela para workspace especial   | `SUPER + SHIFT + S`                          |
+| mover janela para workspace específico | `SUPER + SHIFT + [0-9]`                      |
+| mover janela para workspace vizinho    | `SUPER + SHIFT + ALT + LEFT / RIGHT / H / L` |
+
+|                          |                                    |
+| ------------------------ | ---------------------------------- |
+| alternar modo grupo      | `SUPER + G`                        |
+| próxima janela do grupo  | `SUPER + N`                        |
+| janela anterior do grupo | `SUPER + P`                        |
+| travar grupo             | `SUPER + ALT + G`                  |
+| mover janela (grupo)     | `SUPER + CTRL + SHIFT + [DIREÇÃO]` |
 
 |                              |                      |
 | ---------------------------- | -------------------- |
@@ -85,4 +100,4 @@ sudo chmod +x install.sh;
 ```
 
 ## informações adicionais ( -_・)
-em alguns diretórios de configuração, há a presença de arquivos ```.bak``` que, em suma, contêm os estilos que eu utilizava antes da aplicação do <a href="https://codeberg.org/explosion-mental/wallust" target="_blank">wallust</a>, ferramenta inspirada no desbandado pywal, que atualiza as cores do desktop conforme o papel de parede. mantive os arquivos ```.bak``` a fim de conservar as cores "estáticas" que escolhi a dedo originalmente, antes de usar essa ferramenta ヽ(~_~(・_・ )ゝ.
+em alguns diretórios de configuração, há a presença de arquivos ```.bak``` que, em suma, contêm os estilos que eu utilizava antes da aplicação do <a href="https://codeberg.org/explosion-mental/wallust">wallust</a>, ferramenta inspirada no desbandado pywal, que atualiza as cores do desktop conforme o papel de parede. mantive os arquivos ```.bak``` a fim de conservar as cores "estáticas" que escolhi a dedo originalmente, antes de usar essa ferramenta ヽ(~_~(・_・ )ゝ.
