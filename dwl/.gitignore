@@ -3,3 +3,5 @@ dwl
 *-protocol.c
 *-protocol.h
 .ccls-cache
+*.rej
+*.orig
