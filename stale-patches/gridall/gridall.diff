@@ -1,0 +1,67 @@
+diff -up ../dwl_winview_gaplessgrid/config.def.h ./config.def.h
+--- ../dwl_winview_gaplessgrid/config.def.h	2025-10-09 09:00:33.058449462 -0300
++++ ./config.def.h	2025-10-09 08:52:57.021707301 -0300
+@@ -144,6 +144,7 @@ static const Key keys[] = {
+ 	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
+ 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
+ 	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },
++	{ MODKEY,                    XKB_KEY_a,          togglegridall,  {0} },
+ 	{ MODKEY,                    XKB_KEY_0,          view,           {.ui = ~0} },
+ 	{ MODKEY,                    XKB_KEY_o,          winview,        {0}},
+ 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright, tag,            {.ui = ~0} },
+diff -up ../dwl_winview_gaplessgrid/dwl.c ./dwl.c
+--- ../dwl_winview_gaplessgrid/dwl.c	2025-10-09 09:00:56.123374462 -0300
++++ ./dwl.c	2025-10-09 08:55:16.022929525 -0300
+@@ -353,6 +353,7 @@ static Monitor *xytomon(double x, double
+ static void xytonode(double x, double y, struct wlr_surface **psurface,
+ 		Client **pc, LayerSurface **pl, double *nx, double *ny);
+ static void zoom(const Arg *arg);
++static void togglegridall(const Arg *arg);
+ 
+ /* variables */
+ static pid_t child_pid = -1;
+@@ -407,6 +408,7 @@ static struct wlr_output_layout *output_
+ static struct wlr_box sgeom;
+ static struct wl_list mons;
+ static Monitor *selmon;
++static int togglegridallstate = 0;
+ 
+ /* global event handlers */
+ static struct wl_listener cursor_axis = {.notify = axisnotify};
+@@ -3066,6 +3068,36 @@ winview(const Arg *a) {
+ 	return;
+ }
+ 
++void
++togglegridall(const Arg *arg)
++{
++	if (togglegridallstate == 0) {
++		/* hide the statusbar when activating the gridall
++		const char *dwlb_hide_cmd[] = { "dwlb", "-hide", "eDP-1", NULL };
++		if (fork() == 0) {
++			setsid();
++			execvp(dwlb_hide_cmd[0], (char *const *)dwlb_hide_cmd);
++			perror("execvp");
++			_exit(1);
++		} */
++		setlayout(&(const Arg){.v = &layouts[3]});
++		view(&(Arg){.ui = ~0});
++	} else {
++		/*const char *dwlb_show_cmd[] = { "dwlb", "-show", "eDP-1", NULL };*/
++		winview(&(const Arg){0});
++		setlayout(&(const Arg){.v = &layouts[0]});
++		/* show the statusbar again after choosing the client window to focus
++		if (fork() == 0) {
++			setsid();
++			execvp(dwlb_show_cmd[0], (char *const *)dwlb_show_cmd);
++			perror("execvp");
++			_exit(1);
++		} */
++	}
++	togglegridallstate = !togglegridallstate;
++}
++
++
+ Monitor *
+ xytomon(double x, double y)
+ {
