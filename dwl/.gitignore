@@ -5,3 +5,4 @@ dwl
 .ccls-cache
 *.rej
 *.orig
+config.h
