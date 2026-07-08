@@ -19,6 +19,8 @@ static const float focuscolor[]            = COLOR(0x005577ff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.0f, 0.0f, 0.0f, 1.0f}; /* You can also use glsl colors */
+static const float default_opacity_unfocus = 0.70f;
+static const float default_opacity_focus   = 1.00f;
 
 /* tagging - TAGCOUNT must be no greater than 31 */
 #define TAGCOUNT (9)
@@ -162,6 +164,12 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_period,      focusmon,         {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,        tagmon,           {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,     tagmon,           {.i = WLR_DIRECTION_RIGHT} },
+
+    /* client-opacity-focus */
+    { MODKEY|WLR_MODIFIER_CTRL,                    XKB_KEY_k,   setopacityunfocus,  {.f = +0.1f} },
+    { MODKEY|WLR_MODIFIER_CTRL,                    XKB_KEY_j,   setopacityunfocus,  {.f = -0.1f} },
+    { MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_K,   setopacityfocus,    {.f = +0.1f} },
+    { MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT, XKB_KEY_J,   setopacityfocus,    {.f = -0.1f} },
 
     /* vanitygaps */
     { MODKEY|WLR_MODIFIER_LOGO,                      XKB_KEY_h,          incgaps,       {.i = +1 } },
