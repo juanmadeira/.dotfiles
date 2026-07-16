@@ -53,9 +53,9 @@ static const Layout layouts[] = {
  * WARNING: negative values other than (-1, -1) cause problems with Xwayland clients due to
  * https://gitlab.freedesktop.org/xorg/xserver/-/issues/899 */
 static const MonitorRule monrules[] = {
-   /* name        mfact  nmaster scale layout       rotate/reflect                x    y
-    * example of a HiDPI laptop monitor:
-    { "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
+	/* name        mfact  nmaster scale layout       rotate/reflect                x    y
+	* example of a HiDPI laptop monitor:
+	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
 	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	/* default monitor rule: can be changed but cannot be eliminated; at least one monitor rule must exist */
 };
@@ -144,8 +144,8 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_f,             togglefullscreen, {0} },
 
 	/* move through windows */
-	{ MODKEY,                    XKB_KEY_j,             focusstack,       {.i = +1} },
-	{ MODKEY,                    XKB_KEY_k,             focusstack,       {.i = -1} },
+	{ MODKEY,                    XKB_KEY_h,             focusstack,       {.i = -1} },
+	{ MODKEY,                    XKB_KEY_l,             focusstack,       {.i = +1} },
 
 	/* resize windows */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_h,             setmfact,         {.f = -0.05f} },
@@ -173,22 +173,22 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_J, setopacityfocus,    {.f = -0.1f} },
 
 	/* patch: vanitygaps */
-	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_h,          incgaps,       {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_l,          incgaps,       {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,      XKB_KEY_H,          incogaps,      {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,      XKB_KEY_L,          incogaps,      {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_CTRL,       XKB_KEY_h,          incigaps,      {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_CTRL,       XKB_KEY_l,          incigaps,      {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_0,          togglegaps,    {0} },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,      XKB_KEY_parenright, defaultgaps,   {0} },
-	{ MODKEY,                                           XKB_KEY_y,          incihgaps,     {.i = +1 } },
+	{ MODKEY,                         		    XKB_KEY_minus,      incgaps,       {.i = +1 } },
+	{ MODKEY,                         		    XKB_KEY_equal,      incgaps,       {.i = -1 } },
+	{ MODKEY|WLR_MODIFIER_SHIFT,      		    XKB_KEY_minus,      incogaps,      {.i = +1 } },
+	{ MODKEY|WLR_MODIFIER_SHIFT,      		    XKB_KEY_equal,      incogaps,      {.i = -1 } },
+	{ MODKEY|WLR_MODIFIER_CTRL,       		    XKB_KEY_minus,      incigaps,      {.i = +1 } },
+	{ MODKEY|WLR_MODIFIER_CTRL,       		    XKB_KEY_equal,      incigaps,      {.i = -1 } },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_minus,      togglegaps,    {0} },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_equal,      defaultgaps,    {0} },
+	{ MODKEY,                         		    XKB_KEY_y,          incihgaps,     {.i = +1 } },
 	{ MODKEY,                                           XKB_KEY_o,          incihgaps,     {.i = -1 } },
+	{ MODKEY,                         		    XKB_KEY_y,          incohgaps,     {.i = +1 } },
+	{ MODKEY,                         		    XKB_KEY_o,          incohgaps,     {.i = -1 } },
 	{ MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_y,          incivgaps,     {.i = +1 } },
 	{ MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_o,          incivgaps,     {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_y,          incohgaps,     {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_o,          incohgaps,     {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_Y,          incovgaps,     {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_O,          incovgaps,     {.i = -1 } },
+	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_y,          incovgaps,     {.i = +1 } },
+	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_o,          incovgaps,     {.i = -1 } },
 
 	/* tagkeys */
 	TAGKEYS(XKB_KEY_1, XKB_KEY_exclam,      0),
