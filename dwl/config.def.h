@@ -35,9 +35,9 @@ static const char *const autostart[] = {
 };
 
 static const Rule rules[] = {
-	/* app_id             title       tags mask     isfloating  alpha onfocus               monitor x y w h */
-    { "EXAMPLE",          NULL,       0,            1,          default_opacity_unfocus,    -1},
-    /* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
+	/* app_id             title       tags mask     isfloating  opacity_focus	   opacity_onfocus             monitor */
+	{ "EXAMPLE",          NULL,       0,            1,          default_opacity_focus, default_opacity_unfocus,    -1},
+	/* default/example rule: can be changed but cannot be eliminated; at least one rule must exist */
 };
 
 /* layout(s) */
@@ -117,7 +117,7 @@ LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
 static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
 
 /* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
-#define MODKEY WLR_MODIFIER_ALT
+#define MODKEY WLR_MODIFIER_LOGO
 
 #define TAGKEYS(KEY,SKEY,TAG) \
 	{ MODKEY,                    KEY,            view,            {.ui = 1 << TAG} }, \
@@ -133,21 +133,21 @@ static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                    function          argument */
 
-    /* applications */
-    { MODKEY,                    XKB_KEY_q,             spawn,            {.v = (const char *[]){"foot", NULL}} },
-    { MODKEY,                    XKB_KEY_r,             spawn,            {.v = (const char *[]){"wmenu-run", NULL}} },
-    { MODKEY,                    XKB_KEY_b,             spawn,            {.v = (const char *[]){"firefox", NULL}} },
+	/* applications */
+	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = (const char *[]){"foot", NULL}} },
+	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = (const char *[]){"wmenu-run", NULL}} },
+	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = (const char *[]){"firefox", NULL}} },
 
-    /* window management */
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_c,             killclient,       {0} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_x,             togglefloating,   {0} },
+	/* window management */
+	{ MODKEY, 		     XKB_KEY_c,             killclient,       {0} },
+	{ MODKEY, 		     XKB_KEY_x,             togglefloating,   {0} },
 	{ MODKEY,                    XKB_KEY_f,             togglefullscreen, {0} },
 
-    /* move through windows */
+	/* move through windows */
 	{ MODKEY,                    XKB_KEY_j,             focusstack,       {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,             focusstack,       {.i = -1} },
 
-    /* resize windows */
+	/* resize windows */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_h,             setmfact,         {.f = -0.05f} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_l,             setmfact,         {.f = +0.05f} },
 
@@ -166,14 +166,14 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,          tagmon,           {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,       tagmon,           {.i = WLR_DIRECTION_RIGHT} },
 
-    /* patch: client-opacity-focus */
-    { MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_k, setopacityunfocus,  {.f = +0.1f} },
-    { MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_j, setopacityunfocus,  {.f = -0.1f} },
-    { MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_K, setopacityfocus,    {.f = +0.1f} },
-    { MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_J, setopacityfocus,    {.f = -0.1f} },
+	/* patch: client-opacity-focus */
+	{ MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_k, setopacityunfocus,  {.f = +0.1f} },
+	{ MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_j, setopacityunfocus,  {.f = -0.1f} },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_K, setopacityfocus,    {.f = +0.1f} },
+	{ MODKEY|WLR_MODIFIER_CTRL|WLR_MODIFIER_SHIFT,      XKB_KEY_J, setopacityfocus,    {.f = -0.1f} },
 
-    /* patch: vanitygaps */
-    { MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_h,          incgaps,       {.i = +1 } },
+	/* patch: vanitygaps */
+	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_h,          incgaps,       {.i = +1 } },
 	{ MODKEY|WLR_MODIFIER_LOGO,                         XKB_KEY_l,          incgaps,       {.i = -1 } },
 	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,      XKB_KEY_H,          incogaps,      {.i = +1 } },
 	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,      XKB_KEY_L,          incogaps,      {.i = -1 } },
@@ -190,7 +190,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_Y,          incovgaps,     {.i = +1 } },
 	{ MODKEY|WLR_MODIFIER_SHIFT,                        XKB_KEY_O,          incovgaps,     {.i = -1 } },
 
-    /* tagkeys */
+	/* tagkeys */
 	TAGKEYS(XKB_KEY_1, XKB_KEY_exclam,      0),
 	TAGKEYS(XKB_KEY_2, XKB_KEY_at,          1),
 	TAGKEYS(XKB_KEY_3, XKB_KEY_numbersign,  2),
@@ -204,10 +204,8 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Escape,      quit,             {0} },
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
-	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
-	 * do not remove them.
-	 */
-#define CHVT(n) { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_XF86Switch_VT_##n, chvt, {.ui = (n)} }
+	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is do not remove them. */
+	#define CHVT(n) { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_XF86Switch_VT_##n, chvt, {.ui = (n)} }
 	CHVT(1), CHVT(2), CHVT(3), CHVT(4), CHVT(5), CHVT(6),
 	CHVT(7), CHVT(8), CHVT(9), CHVT(10), CHVT(11), CHVT(12),
 };
