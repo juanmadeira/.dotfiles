@@ -21,5 +21,23 @@ require("neopywal").setup({
 require("lualine").setup({})
 require("barbar").setup({})
 require("render-markdown").setup({})
+require("nvim-treesitter").install({
+    "comment",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "typst",
+    "php",
+    "phpdoc",
+    "python",
+    "regex",
+    "scss",
+    "vue",
+    "yaml"
+})
 require("ibl").setup({})
 require("nvim-highlight-colors").setup({})
