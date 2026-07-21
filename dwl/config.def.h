@@ -30,7 +30,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-        "wbg", "/home/juan/.dotfiles/wallpapers/araruama-2d5a27.jpg", NULL,
+        "wbg", "-s", "/home/juan/.dotfiles/wallpapers/araruama-2d5a27.jpg", NULL,
         NULL /* terminate */
 };
 
@@ -53,10 +53,10 @@ static const Layout layouts[] = {
  * WARNING: negative values other than (-1, -1) cause problems with Xwayland clients due to
  * https://gitlab.freedesktop.org/xorg/xserver/-/issues/899 */
 static const MonitorRule monrules[] = {
-	/* name        mfact  nmaster scale layout       rotate/reflect                x    y
+	/* name       mfact  nmaster scale layout       rotate/reflect                x    y
 	* example of a HiDPI laptop monitor:
-	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ "eDP-1",    0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 }, */
+	{ NULL,       0.5f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	/* default monitor rule: can be changed but cannot be eliminated; at least one monitor rule must exist */
 };
 
@@ -66,8 +66,8 @@ static const struct xkb_rule_names xkb_rules = {
 	/* example:
 	.options = "ctrl:nocaps",
 	*/
-    .layout = "br",
-    .options = NULL,
+	.layout = "br",
+	.options = NULL,
 };
 
 static const int repeat_rate = 30;
@@ -127,13 +127,10 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = {
-	"wmenu-run",
-	"-f", "JetBrainsMono Nerd Font 10",
-	NULL
-};
-static const char *browsercmd[] = { "firefox", NULL };
+/* commands */
+static const char *term[] = { "foot", NULL };
+static const char *menu[] = { "wmenu-run", "-f", "JetBrainsMono Nerd Font 10", NULL };
+static const char *browser[] = { "firefox", NULL };
 
 /* keybinds */
 static const Key keys[] = {
@@ -141,9 +138,9 @@ static const Key keys[] = {
 	/* modifier                  key                    function          argument */
 
 	/* applications */
-	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = termcmd} },
-	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = menucmd} },
-	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = browsercmd} },
+	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = term} },
+	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = menu} },
+	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = browser} },
 
 	/* window management */
 	{ MODKEY, 		     XKB_KEY_c,             killclient,       {0} },
