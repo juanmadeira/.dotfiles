@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/.dotfiles/dwl
+rm config.h
+sudo make clean install
+cd --
