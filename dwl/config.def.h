@@ -146,29 +146,28 @@ static const Key keys[] = {
 	{ MODKEY, 		     XKB_KEY_c,             killclient,       {0} },
 	{ MODKEY, 		     XKB_KEY_x,             togglefloating,   {0} },
 	{ MODKEY,                    XKB_KEY_f,             togglefullscreen, {0} },
-
-	/* move through windows */
-	{ MODKEY,                    XKB_KEY_h,             focusstack,       {.i = -1} },
-	{ MODKEY,                    XKB_KEY_l,             focusstack,       {.i = +1} },
-
-	/* resize windows */
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_h,             setmfact,         {.f = -0.05f} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_l,             setmfact,         {.f = +0.05f} },
-
-	{ MODKEY,                    XKB_KEY_i,             incnmaster,       {.i = +1} },
-	{ MODKEY,                    XKB_KEY_d,             incnmaster,       {.i = -1} },
-	{ MODKEY,                    XKB_KEY_Return,        zoom,             {0} },
-	{ MODKEY,                    XKB_KEY_Tab,           view,             {0} },
+	{ MODKEY,                    XKB_KEY_space,         setlayout,        {0} },
 	{ MODKEY,                    XKB_KEY_t,             setlayout,        {.v = &layouts[0]} },
 	{ MODKEY,                    XKB_KEY_f,             setlayout,        {.v = &layouts[1]} },
 	{ MODKEY,                    XKB_KEY_m,             setlayout,        {.v = &layouts[2]} },
-	{ MODKEY,                    XKB_KEY_space,         setlayout,        {0} },
 	{ MODKEY,                    XKB_KEY_0,             view,             {.ui = ~0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright,    tag,              {.ui = ~0} },
+	{ MODKEY,                    XKB_KEY_i,             incnmaster,       {.i = +1} },
+	{ MODKEY,                    XKB_KEY_d,             incnmaster,       {.i = -1} },
 	{ MODKEY,                    XKB_KEY_comma,         focusmon,         {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY,                    XKB_KEY_period,        focusmon,         {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,          tagmon,           {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,       tagmon,           {.i = WLR_DIRECTION_RIGHT} },
+
+	/* move through windows */
+	{ MODKEY,                    XKB_KEY_h,             focusstack,       {.i = -1} },
+	{ MODKEY,                    XKB_KEY_l,             focusstack,       {.i = +1} },
+	{ MODKEY,                    XKB_KEY_Return,        zoom,             {0} },
+	{ MODKEY,                    XKB_KEY_Tab,           view,             {0} },
+
+	/* resize windows */
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_h,             setmfact,         {.f = -0.05f} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_l,             setmfact,         {.f = +0.05f} },
 
 	/* patch: client-opacity-focus */
 	{ MODKEY|WLR_MODIFIER_CTRL,                         XKB_KEY_k, setopacityunfocus,  {.f = +0.1f} },
