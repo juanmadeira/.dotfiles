@@ -100,8 +100,7 @@ static const enum libinput_config_click_method click_method = LIBINPUT_CONFIG_CL
 LIBINPUT_CONFIG_SEND_EVENTS_ENABLED
 LIBINPUT_CONFIG_SEND_EVENTS_DISABLED
 LIBINPUT_CONFIG_SEND_EVENTS_DISABLED_ON_EXTERNAL_MOUSE
-*/
-static const uint32_t send_events_mode = LIBINPUT_CONFIG_SEND_EVENTS_ENABLED;
+*/ static const uint32_t send_events_mode = LIBINPUT_CONFIG_SEND_EVENTS_ENABLED;
 
 /* You can choose between:
 LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT
@@ -128,15 +127,23 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+static const char *termcmd[] = { "foot", NULL };
+static const char *menucmd[] = {
+	"wmenu-run",
+	"-f", "JetBrainsMono Nerd Font 10",
+	NULL
+};
+static const char *browsercmd[] = { "firefox", NULL };
+
 /* keybinds */
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                    function          argument */
 
 	/* applications */
-	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = (const char *[]){"foot", NULL}} },
-	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = (const char *[]){"wmenu-run", NULL}} },
-	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = (const char *[]){"firefox", NULL}} },
+	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = termcmd} },
+	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = menucmd} },
+	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = browsercmd} },
 
 	/* window management */
 	{ MODKEY, 		     XKB_KEY_c,             killclient,       {0} },
