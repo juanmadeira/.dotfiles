@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/.dotfiles/dwl
+cd ~/.dotfiles/src/dwl
 rm config.h
 sudo make clean install
 cd --

@@ -28,12 +28,6 @@ static const float default_opacity_focus   = 1.00f;
 /* logging */
 static int log_level = WLR_ERROR;
 
-/* Autostart */
-static const char *const autostart[] = {
-        "wbg", "-s", "/home/juan/.dotfiles/wallpapers/araruama-2d5a27.jpg", NULL,
-        NULL /* terminate */
-};
-
 static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating  opacity_focus	   opacity_onfocus             monitor */
 	{ "EXAMPLE",          NULL,       0,            1,          default_opacity_focus, default_opacity_unfocus,    -1},

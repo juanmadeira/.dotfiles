@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=dwl
-Exec=dwl -s somebar
+Exec=/usr/local/bin/start-dwl
 Type=Application
