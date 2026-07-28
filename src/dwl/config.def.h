@@ -135,6 +135,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_q,             spawn,            {.v = term} },
 	{ MODKEY,                    XKB_KEY_r,             spawn,            {.v = menu} },
 	{ MODKEY,                    XKB_KEY_b,             spawn,            {.v = browser} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,             spawn,            SHCMD("somebar -c toggle all") },
 
 	/* window management */
 	{ MODKEY, 		     XKB_KEY_c,             killclient,       {0} },
