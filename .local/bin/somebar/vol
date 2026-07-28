@@ -1,0 +1,12 @@
+#!/bin/bash
+wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '
+/MUTED/ {
+	gsub(/[^0-9.]/, "", $2)
+	print "[" int($2*100) "]"
+	exit
+}
+{
+	gsub(/[^0-9.]/, "", $2)
+	print int($2*100)
+}
+'

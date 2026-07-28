@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "%(%a, %b %e %H:%M:%S)T"

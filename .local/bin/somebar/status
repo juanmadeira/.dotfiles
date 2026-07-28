@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while true; do
+	cpu=$("$HOME/.local/bin/somebar/cpu")
+	cpu_temp=$("$HOME/.local/bin/somebar/cpu_temp")
+	mem=$("$HOME/.local/bin/somebar/mem")
+	vol=$("$HOME/.local/bin/somebar/vol")
+	date=$("$HOME/.local/bin/somebar/date")
+
+	somebar -c "status   $cpu $cpu_temp |   $mem |   $vol | $date"
+	sleep 1
+done
