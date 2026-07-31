@@ -1,0 +1,52 @@
+#!/bin/sh
+
+dirs="
+$HOME/.local/share/applications
+/usr/share/applications
+/var/lib/flatpak/exports/share/applications
+$HOME/.local/share/flatpak/exports/share/applications
+"
+
+get_apps() {
+    for dir in $dirs; do
+        [ -d "$dir" ] && find "$dir" -name "*.desktop"
+    done
+}
+
+app=$(get_apps |
+while read -r file; do
+    grep -m1 '^Name=' "$file" | cut -d= -f2
+done |
+sort -u |
+bemenu \
+    -i \
+    --center \
+    --list 10 \
+    --fixed-height \
+    --width-factor 0.2 \
+    --fn "JetBrainsMono Nerd Font 14" \
+    --tb "#2d5a27" \
+    --tf "#ffffff" \
+    --fb "#1b2419" \
+    --ff "#d8e6d3" \
+    --nb "#1b2419" \
+    --nf "#d8e6d3" \
+    --hb "#3f7d35" \
+    --hf "#ffffff" \
+    -p ">")
+
+[ -z "$app" ] && exit
+
+file=$(get_apps |
+while read -r file; do
+    name=$(grep -m1 '^Name=' "$file" | cut -d= -f2)
+
+    [ "$name" = "$app" ] && echo "$file" && break
+done)
+
+cmd=$(grep -m1 '^Exec=' "$file" |
+    cut -d= -f2- |
+    sed 's/ *%[fFuUick]//g')
+
+sh -c "$cmd" &
+
