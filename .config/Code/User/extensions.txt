@@ -1,0 +1,14 @@
+# exportar extensões:
+# code --list-extensions >> extensions.txt
+
+# instalar extensões:
+# cat extensions.txt | xargs -n 1 code --install-extension
+
+# REMOVER TODAS EXTENSÕES (!!!):
+# code --list-extensions | xargs -n 1 code --uninstall-extension
+
+# juan, 2025-06-20
+
+icrawl.discord-vscode
+miguelsolorio.symbols
+takumii.markdowntable
