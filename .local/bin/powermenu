@@ -1,0 +1,26 @@
+#!/bin/sh
+
+choice=$(printf "Lock\nLogout\nSuspend\nReboot\nShutdown" | \
+    bemenu \
+        -i \
+        --center \
+        --list 5 \
+        --fixed-height \
+        --width-factor 0.2 \
+        --fn "JetBrainsMono Nerd Font 14" \
+        --tb "#2d5a27" \
+        --tf "#ffffff" \
+        --fb "#1b2419" \
+        --ff "#d8e6d3" \
+        --nb "#1b2419" \
+        --nf "#d8e6d3" \
+        --hb "#3f7d35" \
+        --hf "#ffffff" \
+        -p ">")
+case "$choice" in
+    Lock) swaylock;;
+    Logout) loginctl terminate-session $XDG_SESSION_ID;;
+    Suspend) loginctl suspend;;
+    Reboot) loginctl reboot;;
+    Shutdown) loginctl poweroff;;
+esac
