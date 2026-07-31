@@ -1,0 +1,11 @@
+#!/bin/bash
+# script para testar os lados stereo do fone de ouvido/auto-falante
+
+echo ":: Teste iniciado."
+echo
+
+mpv $HOME/.local/bin/src/stereo-test.mp3
+
+echo
+echo ":: Teste finalizado."
+
