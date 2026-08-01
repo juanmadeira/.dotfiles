@@ -1,13 +1,17 @@
 [global]
-width = 275
+width = 325
 progress_bar_min_width = 250
 progress_bar_max_width = 300
-offset = 10x10
+offset = 16x16
+padding = 12
+horizontal_padding = 12
+line_height = 2
+corner_radius = 10
+
 frame_width = 1
 frame_color = "#2d5a27cc"
-corner_radius = 10
 separator_color = frame
-font = JetBrainsMono Nerd Font 11
+font = JetBrainsMono Nerd Font 10
 
 [urgency_low]
 background = "#1b2419cc"
