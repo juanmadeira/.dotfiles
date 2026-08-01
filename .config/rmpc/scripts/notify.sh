@@ -21,4 +21,4 @@ fi
 notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE"
 
 # executa o script de letra (sem exibir o output para evitar bugar o rmpc)
-exec "~/.scripts/letra" > /dev/null 2>&1
+exec "$HOME/.local/bin/letra" > /dev/null 2>&1
