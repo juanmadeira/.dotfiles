@@ -1,0 +1,35 @@
+#!/bin/bash
+
+DIR="$HOME/Pictures/screenshots"
+mkdir -p "$DIR"
+FILE="$DIR/$(date +%Y-%m-%d_%H-%M-%S).png"
+MODE="${1:-full}"
+ACTION="${2:-}"
+
+case "$MODE" in
+    full)
+        grim "$FILE"
+        ;;
+    area)
+        grim -g "$(slurp)" "$FILE"
+        ;;
+    *)
+        echo ":: Uso: screenshot [full|area] [satty]"
+        exit 1
+        ;;
+esac
+
+
+case "$ACTION" in
+    satty)
+        satty --filename "$FILE" --output-filename "$FILE" --copy-command "wl-copy"
+        ;;
+    "")
+        ;;
+    *)
+        echo ":: Segundo argumento inválido: $ACTION"
+        exit 1
+        ;;
+esac
+
+wl-copy < "$FILE"
