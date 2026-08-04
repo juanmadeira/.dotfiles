@@ -1,52 +1,62 @@
 #!/bin/sh
 
-dirs="
+DIRS="
 $HOME/.local/share/applications
+$HOME/.local/share/flatpak/exports/share/applications
 /usr/share/applications
 /var/lib/flatpak/exports/share/applications
-$HOME/.local/share/flatpak/exports/share/applications
 "
 
-get_apps() {
-    for dir in $dirs; do
-        [ -d "$dir" ] && find "$dir" -name "*.desktop"
-    done
-}
+HISTORY="$HOME/.cache/app-launcher-history"
+mkdir -p "${HISTORY%/*}"
+touch "$HISTORY"
 
-app=$(get_apps |
-while read -r file; do
-    grep -m1 '^Name=' "$file" | cut -d= -f2
+APP=$(
+find $DIRS -name '*.desktop' 2>/dev/null |
+while read -r FILE; do
+    NAME=$(grep -m1 '^Name=' "$FILE" | cut -d= -f2)
+    [ -n "$NAME" ] && printf '%s\t%s\n' "$NAME" "$FILE"
 done |
-sort -u |
+awk -F '\t' '!seen[$1]++' |
+awk -F '\t' '
+FILENAME==ARGV[1] {
+    hist[$1]=$2
+    next
+}
+{
+    print (hist[$1]+0) "\t" $0
+}
+' "$HISTORY" - |
+sort -k1,1rn -k2,2 |
+cut -f2 |
 bemenu \
-    -i \
-    --center \
-    --list 10 \
-    --fixed-height \
-    --width-factor 0.2 \
-    --fn "JetBrainsMono Nerd Font 14" \
-    --tb "#2d5a27" \
-    --tf "#ffffff" \
-    --fb "#1b2419" \
-    --ff "#d8e6d3" \
-    --nb "#1b2419" \
-    --nf "#d8e6d3" \
-    --hb "#3f7d35" \
-    --hf "#ffffff" \
-    -p ">")
+    -i --center --list 10 --fixed-height --width-factor 0.2 \
+    --fn "JetBrainsMono Nerd Font 14" -p ">" \
+    --tb "#2d5a27" --tf "#ffffff" \
+    --fb "#1b2419" --ff "#d8e6d3" \
+    --nb "#1b2419" --nf "#d8e6d3" \
+    --hb "#3f7d35" --hf "#ffffff"
+)
+[ "$APP" ] || exit
 
-[ -z "$app" ] && exit
-
-file=$(get_apps |
-while read -r file; do
-    name=$(grep -m1 '^Name=' "$file" | cut -d= -f2)
-
-    [ "$name" = "$app" ] && echo "$file" && break
+FILE=$(find $DIRS -name '*.desktop' 2>/dev/null |
+while read -r F; do
+    NAME=$(grep -m1 '^Name=' "$F" | cut -d= -f2)
+    [ "$NAME" = "$APP" ] && {
+        echo "$F"
+        break
+    }
 done)
+[ "$FILE" ] || exit
 
-cmd=$(grep -m1 '^Exec=' "$file" |
+COUNT=$(awk -F '\t' -v app="$APP" '$1==app {print $2}' "$HISTORY")
+awk -F '\t' -v app="$APP" '$1!=app' "$HISTORY" > "$HISTORY.tmp"
+printf '%s\t%s\n' "$APP" "$(( ${COUNT:-0} + 1 ))" >> "$HISTORY.tmp"
+mv "$HISTORY.tmp" "$HISTORY"
+
+CMD=$(grep -m1 '^Exec=' "$FILE" |
     cut -d= -f2- |
     sed 's/ *%[fFuUick]//g')
 
-sh -c "$cmd" &
+sh -c "$CMD" &
 
