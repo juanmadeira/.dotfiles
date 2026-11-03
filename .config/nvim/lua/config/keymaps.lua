@@ -47,6 +47,27 @@ map("n", "<leader>nn", function()
     else vim.wo.relativenumber = true end
 end, { desc = "Toggle between relative line numbers" })
 
+-- open markdown link
+vim.keymap.set("n", "<leader>fo", function()
+    local path = vim.api.nvim_get_current_line():match("%[.-%]%((.-)%)")
+    if not path then return end
+
+    -- URI
+    if path:match("^%a[%w+.-]*:") then
+        vim.ui.open(path)
+        return
+    end
+
+    local full = vim.fn.expand("%:p:h") .. "/" .. path
+    local mime = vim.fn.system({ "file", "-b", "--mime-encoding", full })
+
+    if vim.trim(mime) == "binary" then
+        vim.ui.open(full)
+    else
+        vim.cmd.edit(vim.fn.fnameescape(full))
+    end
+end, { desc = "Abrir arquivo do link markdown" })
+
 -- delete file
 map("n", "<leader>df", function()
     local filename = vim.fn.expand("%:p")
